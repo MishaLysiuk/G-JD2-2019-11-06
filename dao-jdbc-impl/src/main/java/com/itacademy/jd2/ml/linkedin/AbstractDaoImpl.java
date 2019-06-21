@@ -14,6 +14,7 @@ import java.util.List;
 import java.util.Properties;
 import java.util.Set;
 
+import com.itacademy.jd2.ml.linkedin.entity.table.IDao;
 import com.itacademy.jd2.ml.linkedin.filter.AbstractFilter;
 import com.itacademy.jd2.ml.linkedin.util.PreparedStatementAction;
 import com.itacademy.jd2.ml.linkedin.util.SQLExecutionException;

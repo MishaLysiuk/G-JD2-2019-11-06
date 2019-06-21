@@ -1,6 +1,6 @@
 package com.itacademy.jd2.ml.linkedin.entity;
 
-import com.itacademy.jd2.ml.linkedin.IBaseEntity;
+import com.itacademy.jd2.ml.linkedin.entity.table.IBaseEntity;
 
 public abstract class BaseEntity implements IBaseEntity {
 
