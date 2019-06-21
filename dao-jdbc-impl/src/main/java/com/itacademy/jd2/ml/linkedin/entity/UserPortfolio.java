@@ -6,20 +6,18 @@ import java.util.Date;
 
 public class UserPortfolio extends BaseEntity implements IUserPortfolio {
 
-    private String name;
+    private String firstName;
 
     private Date created;
 
     private Date updated;
 
-    @Override
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    @Override
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     @Override
@@ -45,7 +43,7 @@ public class UserPortfolio extends BaseEntity implements IUserPortfolio {
     @Override
     public String toString() {
         return "UserPortfolio{" +
-                "name='" + name + '\'' +
+                "name='" + firstName + '\'' +
                 ", created=" + created +
                 ", updated=" + updated +
                 '}';

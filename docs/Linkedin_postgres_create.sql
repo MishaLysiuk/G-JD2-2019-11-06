@@ -50,12 +50,14 @@ CREATE TABLE "user_language" (
 CREATE TABLE "user_portfolio" (
 	"id" serial NOT NULL,
 	"first_name" VARCHAR(255) NOT NULL,
-	"last_name" VARCHAR(255) NOT NULL,
-	"birthday" DATE NOT NULL,
-	"industry_id" integer NOT NULL,
-	"position_id" integer NOT NULL,
-	"contact_info" VARCHAR(255) NOT NULL,
-	"mother_tongue" VARCHAR(255) NOT NULL,
+	"last_name" VARCHAR(255),
+	"birthday" DATE,
+	"industry_id" integer,
+	"position_id" integer,
+	"contact_info" VARCHAR(255),
+	"mother_tongue" VARCHAR(255),
+	"created" DATE NOT NULL,
+	"updated" DATE NOT NULL,
 	CONSTRAINT "user_portfolio_pk" PRIMARY KEY ("id")
 ) WITH (
   OIDS=FALSE

@@ -4,9 +4,9 @@ import java.util.Date;
 
 public interface IUserPortfolio extends IBaseEntity{
 
-    String getName();
+    String getFirstName();
 
-    void setName(String name);
+    void setFirstName(String name);
 
     Date getCreated();
 
