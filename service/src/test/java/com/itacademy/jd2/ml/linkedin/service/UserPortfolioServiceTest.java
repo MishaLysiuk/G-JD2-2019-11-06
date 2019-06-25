@@ -1,11 +1,9 @@
-package com.itacademy.jd2.ml.linkedin;
+package com.itacademy.jd2.ml.linkedin.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import java.util.List;
 
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserPortfolio;
 import org.junit.jupiter.api.Test;

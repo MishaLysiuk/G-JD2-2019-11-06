@@ -1,7 +1,8 @@
-package com.itacademy.jd2.ml.linkedin;
+package com.itacademy.jd2.ml.linkedin.service;
 
 import java.util.Random;
 
+import com.itacademy.jd2.ml.linkedin.IUserPortfolioService;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserPortfolio;
 import com.itacademy.jd2.ml.linkedin.impl.UserPortfolioServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
