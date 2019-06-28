@@ -10,6 +10,7 @@ public interface IUserPortfolioDao extends IDao<IUserPortfolio, Integer> {
 
     List<IUserPortfolio> find(UserPortfolioFilter filter); // skip
 
+
     long getCount(UserPortfolioFilter filter); // skip
 
 }

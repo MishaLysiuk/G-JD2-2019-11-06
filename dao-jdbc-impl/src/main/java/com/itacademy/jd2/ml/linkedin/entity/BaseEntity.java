@@ -6,7 +6,6 @@ public abstract class BaseEntity implements IBaseEntity {
 
     private Integer id;
 
-
     public Integer getId() {
         return id;
     }

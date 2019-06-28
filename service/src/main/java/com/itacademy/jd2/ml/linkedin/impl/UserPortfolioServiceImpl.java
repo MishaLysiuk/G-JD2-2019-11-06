@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.List;
 
 public class UserPortfolioServiceImpl implements IUserPortfolioService {
+
     private IUserPortfolioDao dao = new UserPortfolioDaoImpl();
 
     @Override
