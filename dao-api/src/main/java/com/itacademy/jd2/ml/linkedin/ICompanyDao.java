@@ -1,7 +1,6 @@
 package com.itacademy.jd2.ml.linkedin;
 
 import com.itacademy.jd2.ml.linkedin.entity.table.ICompany;
-import com.itacademy.jd2.ml.linkedin.entity.table.IDao;
 import com.itacademy.jd2.ml.linkedin.filter.CompanyFilter;
 
 import java.util.List;

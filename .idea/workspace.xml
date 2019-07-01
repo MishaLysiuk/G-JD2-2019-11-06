@@ -1,0 +1,708 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c61e096e-95f1-4a4c-b95e-e3f207cfbd32" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/web_war.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/web_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_dblock_waffle_waffle_jna_1_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_18_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_jna_4_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_java_dev_jna_jna_platform_4_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_jcl_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_slf4j_impl_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_2_0_Final.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_launcher_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_runner_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_suite_api_1_1_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_0_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_postgresql_postgresql_9_4_1200_jdbc41.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao-api/dao-api.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao-jdbc-impl/dao-jdbc-impl.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/parent-project.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/service.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/web.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/ICompanyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/ICompanyDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/IUserPortfolioDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/IUserPortfolioDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/entity/table/IBaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/entity/table/IBaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/entity/table/ICompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/entity/table/ICompany.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/entity/table/IDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/IDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/entity/table/IUserPortfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/entity/table/IUserPortfolio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/AbstractDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/AbstractDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/CompanyDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/CompanyDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/UserPortfolioDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/UserPortfolioDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/entity/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/entity/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/entity/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/entity/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/entity/UserPortfolio.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/entity/UserPortfolio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/IUserPortfolioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/IUserPortfolioService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/impl/UserPortfolioServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/impl/UserPortfolioServiceImpl.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/classes/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/service/target/" />
+    <ignored path="$PROJECT_DIR$/web/target/" />
+    <ignored path="$PROJECT_DIR$/dao-jdbc-impl/target/" />
+    <ignored path="$PROJECT_DIR$/dao-api/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DefaultGradleProjectSettings">
+    <option name="isMigrated" value="true" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/entity/Course.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="586">
+              <caret line="85" column="18" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#605#606#0" expanded="true" />
+                <element signature="e#633#634#0" expanded="true" />
+                <element signature="e#688#689#0" expanded="true" />
+                <element signature="e#722#723#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/CourseDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="476">
+              <caret line="42" column="67" lean-forward="true" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="67" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/UserPortfolioDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="83" column="30" lean-forward="true" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/impl/CompanyServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/ICompanyService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/impl/UserPortfolioServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="410">
+              <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/entity/table/ICourse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="45" lean-forward="true" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/IUserPortfolioService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="14" column="42" lean-forward="true" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/AbstractDaoImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1938">
+              <caret line="131" selection-start-line="131" selection-end-line="131" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/ICourseDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="52" lean-forward="true" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>User</find>
+      <find>IBrand</find>
+      <find>iBrand</find>
+      <find>entiry</find>
+      <find>IUserPortfolio</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>Course</replace>
+      <replace>IUserPortfolio</replace>
+      <replace>entiry</replace>
+      <replace>entity</replace>
+      <replace>ICompany</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/entity/table/IBaseEntity.java" />
+        <option value="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/entity/table/IUserPortfolio.java" />
+        <option value="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/filter/CourseFilter.java" />
+        <option value="$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/entity/BaseEntity.java" />
+        <option value="$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/entity/Company.java" />
+        <option value="$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/entity/UserPortfolio.java" />
+        <option value="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/IUserPortfolioDao.java" />
+        <option value="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/entity/IDao.java" />
+        <option value="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/IDao.java" />
+        <option value="$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/UserPortfolioDaoImpl.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/IUserPortfolioService.java" />
+        <option value="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/entity/table/ICompany.java" />
+        <option value="$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/CompanyDaoImpl.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/impl/UserPortfolioServiceImpl.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/impl/CompanyServiceImpl.java" />
+        <option value="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/ICourseDao.java" />
+        <option value="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/entity/table/ICourse.java" />
+        <option value="$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/entity/Course.java" />
+        <option value="$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/CourseDaoImpl.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="260" />
+    <option name="y" value="60" />
+    <option name="width" value="1400" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="parent-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G-JD2-2019-11-06" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parent-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G-JD2-2019-11-06" type="462c0819:PsiDirectoryNode" />
+              <item name="dao-api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parent-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G-JD2-2019-11-06" type="462c0819:PsiDirectoryNode" />
+              <item name="dao-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parent-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G-JD2-2019-11-06" type="462c0819:PsiDirectoryNode" />
+              <item name="dao-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parent-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G-JD2-2019-11-06" type="462c0819:PsiDirectoryNode" />
+              <item name="dao-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parent-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G-JD2-2019-11-06" type="462c0819:PsiDirectoryNode" />
+              <item name="dao-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="linkedin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parent-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G-JD2-2019-11-06" type="462c0819:PsiDirectoryNode" />
+              <item name="dao-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="linkedin" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parent-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G-JD2-2019-11-06" type="462c0819:PsiDirectoryNode" />
+              <item name="dao-api" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="linkedin" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+              <item name="table" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parent-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G-JD2-2019-11-06" type="462c0819:PsiDirectoryNode" />
+              <item name="dao-jdbc-impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parent-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G-JD2-2019-11-06" type="462c0819:PsiDirectoryNode" />
+              <item name="dao-jdbc-impl" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parent-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G-JD2-2019-11-06" type="462c0819:PsiDirectoryNode" />
+              <item name="dao-jdbc-impl" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parent-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G-JD2-2019-11-06" type="462c0819:PsiDirectoryNode" />
+              <item name="dao-jdbc-impl" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parent-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G-JD2-2019-11-06" type="462c0819:PsiDirectoryNode" />
+              <item name="dao-jdbc-impl" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="linkedin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parent-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G-JD2-2019-11-06" type="462c0819:PsiDirectoryNode" />
+              <item name="dao-jdbc-impl" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="linkedin" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parent-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G-JD2-2019-11-06" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parent-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G-JD2-2019-11-06" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parent-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G-JD2-2019-11-06" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parent-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G-JD2-2019-11-06" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parent-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G-JD2-2019-11-06" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="linkedin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parent-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G-JD2-2019-11-06" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="linkedin" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Downloads/G-JD2-2019-11-06_cars-master" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c61e096e-95f1-4a4c-b95e-e3f207cfbd32" name="Default Changelist" comment="" />
+      <created>1561925504293</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1561925504293</updated>
+      <workItem from="1561925505780" duration="4420000" />
+      <workItem from="1561996992308" duration="10222000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="14642000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Java Enterprise" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Maven" order="3" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/filter/CourseFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="59" lean-forward="true" selection-start-line="9" selection-start-column="59" selection-end-line="9" selection-end-column="59" />
+          <folding>
+            <element signature="e#174#175#0" expanded="true" />
+            <element signature="e#211#212#0" expanded="true" />
+            <element signature="e#324#325#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/filter/AbstractFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/filter/UserPortfolioFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-api/dao-api.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/entity/table/IBaseEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/entity/table/ICompany.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/entity/table/IUserPortfolio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="26" lean-forward="true" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/entity/BaseEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="24" column="23" selection-start-line="24" selection-start-column="23" selection-end-line="24" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-jdbc-impl/dao-jdbc-impl.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/filter/CompanyFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/IUserPortfolioDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="42" lean-forward="true" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/IDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/ICompanyDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/entity/Company.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/entity/UserPortfolio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/CompanyDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="62" column="73" lean-forward="true" selection-start-line="62" selection-start-column="73" selection-end-line="62" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/UserPortfolioDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="83" column="30" lean-forward="true" selection-start-line="83" selection-start-column="30" selection-end-line="83" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/IUserPortfolioService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="42" lean-forward="true" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/ICompanyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/impl/CompanyServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/AbstractDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1938">
+          <caret line="131" selection-start-line="131" selection-end-line="131" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/impl/UserPortfolioServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/entity/table/ICourse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="45" lean-forward="true" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/ICourseDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="52" lean-forward="true" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/entity/Course.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="586">
+          <caret line="85" column="18" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#605#606#0" expanded="true" />
+            <element signature="e#633#634#0" expanded="true" />
+            <element signature="e#688#689#0" expanded="true" />
+            <element signature="e#722#723#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-jdbc-impl/src/main/java/com/itacademy/jd2/ml/linkedin/CourseDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="42" column="67" lean-forward="true" selection-start-line="42" selection-start-column="67" selection-end-line="42" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>11</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

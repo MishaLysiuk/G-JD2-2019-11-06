@@ -12,6 +12,8 @@ public interface IUserPortfolioService {
 
     void save(IUserPortfolio entity);
 
+    void save(IUserPortfolio... entities);
+
     void delete(Integer id);
 
     void deleteAll();

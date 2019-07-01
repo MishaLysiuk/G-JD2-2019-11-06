@@ -1,4 +1,4 @@
-package com.itacademy.jd2.ml.linkedin.entity.table;
+package com.itacademy.jd2.ml.linkedin;
 
 import java.util.List;
 

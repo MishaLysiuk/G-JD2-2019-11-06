@@ -4,11 +4,9 @@ import com.itacademy.jd2.ml.linkedin.entity.UserPortfolio;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserPortfolio;
 import com.itacademy.jd2.ml.linkedin.filter.UserPortfolioFilter;
 import com.itacademy.jd2.ml.linkedin.util.PreparedStatementAction;
+import com.itacademy.jd2.ml.linkedin.util.SQLExecutionException;
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Types;
+import java.sql.*;
 import java.util.List;
 
 public class UserPortfolioDaoImpl extends AbstractDaoImpl<IUserPortfolio, Integer> implements IUserPortfolioDao {
@@ -23,10 +21,6 @@ public class UserPortfolioDaoImpl extends AbstractDaoImpl<IUserPortfolio, Intege
         return new UserPortfolio();
     }
 
-    @Override
-    public void update(IUserPortfolio iUserPortfolio) {
-        throw new RuntimeException("Not implemented");
-    }
 
     @Override
     public void insert(IUserPortfolio entity) {
@@ -51,17 +45,73 @@ public class UserPortfolioDaoImpl extends AbstractDaoImpl<IUserPortfolio, Intege
                 return entity;
             }
         });
+    }
 
+    @Override
+    public void update(IUserPortfolio entity) {
+        executeStatement(new PreparedStatementAction<IUserPortfolio>(
+                String.format("update %s set first_name=?, updated=? where id=?", getTableName())) {
+            @Override
+            public IUserPortfolio doWithPreparedStatement(final PreparedStatement pStmt) throws SQLException {
+                pStmt.setString(1, entity.getFirstName());
+                pStmt.setObject(2, entity.getUpdated(), Types.TIMESTAMP);
+                pStmt.setInt(3, entity.getId());
+
+                pStmt.executeUpdate();
+                return entity;
+            }
+        });
+    }
+
+    @Override
+    public void save(IUserPortfolio... entities) {
+        try (Connection c = getConnection()) {
+            c.setAutoCommit(false);
+            try {
+
+                for (IUserPortfolio entity : entities) {
+                    PreparedStatement pStmt = c.prepareStatement(
+                            String.format("insert into %s (name, created, updated) values(?,?,?)", getTableName()),
+                            Statement.RETURN_GENERATED_KEYS);
+
+                    pStmt.setString(1, entity.getFirstName());
+                    pStmt.setObject(2, entity.getCreated(), Types.TIMESTAMP);
+                    pStmt.setObject(3, entity.getUpdated(), Types.TIMESTAMP);
+
+                    pStmt.executeUpdate();
+
+                    final ResultSet rs = pStmt.getGeneratedKeys();
+                    rs.next();
+                    final int id = rs.getInt("id");
+
+                    rs.close();
+                    pStmt.close();
+                    entity.setId(id);
+                }
+
+                // the same should be done in 'update' DAO method
+                c.commit();
+            } catch (final Exception e) {
+                c.rollback();
+                throw new RuntimeException(e);
+            }
+
+        } catch (final SQLException e) {
+            throw new SQLExecutionException(e);
+        }
     }
 
     @Override
     public List<IUserPortfolio> find(UserPortfolioFilter filter) {
-        throw new RuntimeException("Not implemented");
+        final StringBuilder sqlTile = new StringBuilder("");
+        appendSort(filter, sqlTile);
+        appendPaging(filter, sqlTile);
+        return executeFindQuery(sqlTile.toString());
     }
 
     @Override
     public long getCount(UserPortfolioFilter filter) {
-        throw new RuntimeException("Not implemented");
+        return executeCountQuery("");
     }
 
     @Override

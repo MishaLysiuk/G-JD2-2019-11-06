@@ -20,12 +20,15 @@ public class CompanyDaoImpl extends AbstractDaoImpl<ICompany, Integer> implement
 
     @Override
     public List<ICompany> find(CompanyFilter filter) {
-        throw new RuntimeException("Not implemented");
+        final StringBuilder sqlTile = new StringBuilder("");
+        appendSort(filter, sqlTile);
+        appendPaging(filter, sqlTile);
+        return executeFindQuery(sqlTile.toString());
     }
 
     @Override
     public long getCount(CompanyFilter filter) {
-        throw new RuntimeException("Not implemented");
+        return executeCountQuery("");
     }
 
     @Override
@@ -34,8 +37,19 @@ public class CompanyDaoImpl extends AbstractDaoImpl<ICompany, Integer> implement
     }
 
     @Override
-    public void update(ICompany iCompany) {
-        throw new RuntimeException("Not implemented");
+    public void update(ICompany entity) {
+        executeStatement(new PreparedStatementAction<ICompany>(
+                String.format("update %s set name=?, updated=? where id=?", getTableName())) {
+            @Override
+            public ICompany doWithPreparedStatement(final PreparedStatement pStmt) throws SQLException {
+                pStmt.setString(1, entity.getName());
+                pStmt.setObject(2, entity.getUpdated(), Types.TIMESTAMP);
+                pStmt.setInt(3, entity.getId());
+
+                pStmt.executeUpdate();
+                return entity;
+            }
+        });
     }
 
     @Override
