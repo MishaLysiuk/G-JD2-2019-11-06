@@ -5,12 +5,10 @@ import com.itacademy.jd2.ml.linkedin.entity.table.ICourse;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserPortfolio;
 
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
 
 public class Course extends BaseEntity implements ICourse {
 
-    private Set<IUserPortfolio> users = new HashSet<>();
+    private IUserPortfolio userPortfolio;
 
     private String name;
 
@@ -23,13 +21,13 @@ public class Course extends BaseEntity implements ICourse {
     private Integer finalResult;
 
     @Override
-    public Set<IUserPortfolio> getUsers() {
-        return users;
+    public IUserPortfolio getUserPortfolio() {
+        return userPortfolio;
     }
 
     @Override
-    public void setUsers(Set<IUserPortfolio> users) {
-        this.users = users;
+    public void setUserPortfolio(IUserPortfolio userPortfolio) {
+        this.userPortfolio = userPortfolio;
     }
 
     @Override
@@ -85,7 +83,7 @@ public class Course extends BaseEntity implements ICourse {
     @Override
     public String toString() {
         return "Course{" +
-                "users=" + users +
+                "userPortfolio=" + userPortfolio +
                 ", name='" + name + '\'' +
                 ", company=" + company +
                 ", start=" + start +

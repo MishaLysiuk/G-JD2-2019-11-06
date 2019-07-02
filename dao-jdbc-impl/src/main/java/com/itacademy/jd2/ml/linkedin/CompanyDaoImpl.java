@@ -4,6 +4,7 @@ import com.itacademy.jd2.ml.linkedin.entity.Company;
 import com.itacademy.jd2.ml.linkedin.entity.table.ICompany;
 import com.itacademy.jd2.ml.linkedin.filter.CompanyFilter;
 import com.itacademy.jd2.ml.linkedin.util.PreparedStatementAction;
+import org.springframework.stereotype.Repository;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,6 +12,7 @@ import java.sql.SQLException;
 import java.sql.Types;
 import java.util.List;
 
+@Repository
 public class CompanyDaoImpl extends AbstractDaoImpl<ICompany, Integer> implements ICompanyDao {
 
     @Override

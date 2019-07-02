@@ -9,10 +9,15 @@ import com.itacademy.jd2.ml.linkedin.entity.table.IUserPortfolio;
 import com.itacademy.jd2.ml.linkedin.impl.CompanyServiceImpl;
 import com.itacademy.jd2.ml.linkedin.impl.UserPortfolioServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
+@SpringJUnitConfig(locations = "classpath:service-context.xml")
 public abstract class AbstractTest {
-    protected IUserPortfolioService userPortfolioService = new UserPortfolioServiceImpl();
-    protected ICompanyService companyService = new CompanyServiceImpl();
+    @Autowired
+    protected IUserPortfolioService userPortfolioService;
+    @Autowired
+    protected ICompanyService companyService;
 
     private static final Random RANDOM = new Random();
 

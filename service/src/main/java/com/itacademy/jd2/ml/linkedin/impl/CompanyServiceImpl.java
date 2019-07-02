@@ -1,17 +1,25 @@
 package com.itacademy.jd2.ml.linkedin.impl;
 
-import com.itacademy.jd2.ml.linkedin.CompanyDaoImpl;
 import com.itacademy.jd2.ml.linkedin.ICompanyDao;
 import com.itacademy.jd2.ml.linkedin.ICompanyService;
 import com.itacademy.jd2.ml.linkedin.entity.table.ICompany;
 import com.itacademy.jd2.ml.linkedin.filter.CompanyFilter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 
+@Service
 public class CompanyServiceImpl implements ICompanyService {
 
-    private ICompanyDao dao = new CompanyDaoImpl();
+    private ICompanyDao dao;
+
+    @Autowired
+    public CompanyServiceImpl(ICompanyDao dao) {
+        super();
+        this.dao = dao;
+    }
 
     @Override
     public ICompany createEntity() {

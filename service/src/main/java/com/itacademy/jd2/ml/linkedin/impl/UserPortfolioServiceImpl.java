@@ -2,16 +2,24 @@ package com.itacademy.jd2.ml.linkedin.impl;
 
 import com.itacademy.jd2.ml.linkedin.IUserPortfolioDao;
 import com.itacademy.jd2.ml.linkedin.IUserPortfolioService;
-import com.itacademy.jd2.ml.linkedin.UserPortfolioDaoImpl;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserPortfolio;
 import com.itacademy.jd2.ml.linkedin.filter.UserPortfolioFilter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 
+@Service
 public class UserPortfolioServiceImpl implements IUserPortfolioService {
 
-    private IUserPortfolioDao dao = new UserPortfolioDaoImpl();
+    private IUserPortfolioDao dao;
+
+    @Autowired
+    public UserPortfolioServiceImpl(IUserPortfolioDao dao) {
+        super();
+        this.dao = dao;
+    }
 
     @Override
     public IUserPortfolio createEntity() {
