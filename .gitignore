@@ -27,3 +27,4 @@ dao-api/target/
 service/target/
 dao-jdbc-impl/target/
 web/target/
+.idea/
