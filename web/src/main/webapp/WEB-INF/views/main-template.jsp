@@ -1,10 +1,8 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" scope="request" />
-<c:set var="pagesBrand" value="${contextPath}/brand" scope="request" />
-<c:set var="pagesModel" value="${contextPath}/model" scope="request" />
-<c:set var="pagesEngine" value="${contextPath}/engine" scope="request" />
-<c:set var="pagesCar" value="${contextPath}/car" scope="request" />
+<c:set var="pagesUser" value="${contextPath}/user" scope="request" />
+
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">

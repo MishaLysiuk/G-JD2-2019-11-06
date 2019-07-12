@@ -4,10 +4,12 @@ import com.itacademy.jd2.ml.linkedin.entity.Course;
 import com.itacademy.jd2.ml.linkedin.entity.table.ICourse;
 import com.itacademy.jd2.ml.linkedin.filter.CourseFilter;
 import com.itacademy.jd2.ml.linkedin.util.PreparedStatementAction;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.List;
 
+@Repository
 public class CourseDaoImpl extends AbstractDaoImpl<ICourse, Integer> implements ICourseDao {
     @Override
     protected String getTableName() {

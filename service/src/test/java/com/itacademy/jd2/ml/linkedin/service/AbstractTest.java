@@ -12,7 +12,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-@SpringJUnitConfig(locations = "classpath:service-context.xml")
+@SpringJUnitConfig(locations = "classpath:service-context-test.xml")
 public abstract class AbstractTest {
     @Autowired
     protected IUserPortfolioService userPortfolioService;

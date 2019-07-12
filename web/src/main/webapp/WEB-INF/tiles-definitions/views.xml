@@ -6,7 +6,7 @@
 
     <definition name="DefaultTemplate"
                 template="/WEB-INF/views/main-template.jsp">
-        <put-attribute name="title" value="Джылли и Ко" />
+        <put-attribute name="title" value="Linkedin" />
         <put-attribute name="header"
                        value="/WEB-INF/views/header.jsp" />
         <put-attribute name="body" value="" />
@@ -17,6 +17,11 @@
     <definition name="home" extends="DefaultTemplate">
         <put-attribute name="body"
                        value="/WEB-INF/views/home.jsp" />
+    </definition>
+
+    <definition name="user.list" extends="DefaultTemplate">
+        <put-attribute name="body"
+                       value="/WEB-INF/views/user/list.jsp" />
     </definition>
 
 

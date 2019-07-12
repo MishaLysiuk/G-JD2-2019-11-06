@@ -24,6 +24,8 @@ public class UserPortfolioDaoImpl extends AbstractDaoImpl<IUserPortfolio, Intege
     }
 
 
+
+
     @Override
     public void insert(IUserPortfolio entity) {
 
