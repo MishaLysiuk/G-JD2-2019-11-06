@@ -24,5 +24,9 @@
                        value="/WEB-INF/views/user/list.jsp" />
     </definition>
 
+    <definition name="user.edit" extends="DefaultTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/user/form.jsp" />
+    </definition>
+
 
 </tiles-definitions>

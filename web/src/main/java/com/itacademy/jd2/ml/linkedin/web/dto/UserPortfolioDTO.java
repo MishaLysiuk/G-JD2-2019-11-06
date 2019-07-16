@@ -1,5 +1,6 @@
 package com.itacademy.jd2.ml.linkedin.web.dto;
 
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 public class UserPortfolioDTO {
@@ -7,6 +8,7 @@ public class UserPortfolioDTO {
     private Integer id;
     private Date created;
     private Date updated;
+    @Size(min = 1, max = 50)
     private String firstName;
 
     public Integer getId() {

@@ -22,10 +22,10 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
+.idea/
 /bin/
 dao-api/target/
 service/target/
 dao-jdbc-impl/target/
 web/target/
-.idea/
 logs/2019-07/app-07-02-2019-1.log.gz
