@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="mytaglib" uri="my-custom-tags-uri"%>
-<%@ taglib prefix="jspFragments" tagdir="/WEB-INF/tags"%>
+<%@ taglib prefix="mytaglib" uri="my-custom-tags-uri" %>
+<%@ taglib prefix="jspFragments" tagdir="/WEB-INF/tags" %>
 
 <h4 class="header">Brands</h4>
 <table class="bordered highlight">
@@ -29,5 +29,5 @@
     </c:forEach>
     </tbody>
 </table>
-<jspFragments:paging />
+<jspFragments:paging/>
 <a class="waves-effect waves-light btn right" href="${pagesUser}/add"><i class="material-icons">add</i></a>

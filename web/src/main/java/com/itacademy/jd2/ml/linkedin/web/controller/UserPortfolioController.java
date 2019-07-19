@@ -16,6 +16,8 @@ import com.itacademy.jd2.ml.linkedin.web.converter.UserPortfolioToDTOConverter;
 import com.itacademy.jd2.ml.linkedin.web.dto.UserPortfolioDTO;
 import com.itacademy.jd2.ml.linkedin.web.dto.grid.GridStateDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -108,6 +110,14 @@ public class UserPortfolioController extends AbstractController {
         hashMap.put("formUser", dto);
 
         return new ModelAndView("user.edit", hashMap);
+    }
+
+    @RequestMapping(value = "/json", method = RequestMethod.GET)
+    public ResponseEntity<UserPortfolioDTO> getCountries(
+            @RequestParam(name = "id", required = true) final Integer id) {
+        final UserPortfolioDTO dto = toDtoConverter.apply(userPortfolioService.get(id));
+
+        return new ResponseEntity<UserPortfolioDTO>(dto, HttpStatus.OK);
     }
 
 }
