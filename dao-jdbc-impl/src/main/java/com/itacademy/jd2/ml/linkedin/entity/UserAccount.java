@@ -29,7 +29,7 @@ public class UserAccount extends BaseEntity implements IUserAccount {
     }
 
     @Override
-    public Integer getRole_id() {
+    public Integer getRoleId() {
         return roleId;
     }
 
@@ -43,7 +43,7 @@ public class UserAccount extends BaseEntity implements IUserAccount {
         return "UserAccount{" +
                 "email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", role_id=" + roleId +
+                ", roleId=" + roleId +
                 '}';
     }
 }

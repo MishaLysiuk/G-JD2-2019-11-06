@@ -1,16 +1,13 @@
 package com.itacademy.jd2.ml.linkedin;
 
-import com.itacademy.jd2.ml.linkedin.AbstractDaoImpl;
 import com.itacademy.jd2.ml.linkedin.entity.UserAccount;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 import com.itacademy.jd2.ml.linkedin.filter.UserAccountFilter;
 import com.itacademy.jd2.ml.linkedin.util.PreparedStatementAction;
-import com.itacademy.jd2.ml.linkedin.util.SQLExecutionException;
 import com.itacademy.jd2.ml.linkedin.util.StatementAction;
 import org.springframework.stereotype.Repository;
 
 import java.sql.*;
-import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -27,8 +24,6 @@ public class UserAccountDaoImpl extends AbstractDaoImpl<IUserAccount, Integer> i
     }
 
 
-
-
     @Override
     public void insert(IUserAccount entity) {
 
@@ -38,7 +33,7 @@ public class UserAccountDaoImpl extends AbstractDaoImpl<IUserAccount, Integer> i
             public IUserAccount doWithPreparedStatement(final PreparedStatement pStmt) throws SQLException {
                 pStmt.setString(1, entity.getEmail());
                 pStmt.setString(2, entity.getPassword());
-                pStmt.setInt(3, entity.getRole_id());
+                pStmt.setInt(3, entity.getRoleId());
                 pStmt.setObject(4, entity.getCreated(), Types.TIMESTAMP);
                 pStmt.setObject(5, entity.getUpdated(), Types.TIMESTAMP);
 
@@ -64,7 +59,7 @@ public class UserAccountDaoImpl extends AbstractDaoImpl<IUserAccount, Integer> i
             public IUserAccount doWithPreparedStatement(final PreparedStatement pStmt) throws SQLException {
                 pStmt.setString(1, entity.getEmail());
                 pStmt.setString(2, entity.getPassword());
-                pStmt.setInt(3, entity.getRole_id());
+                pStmt.setInt(3, entity.getRoleId());
                 pStmt.setObject(4, entity.getUpdated(), Types.TIMESTAMP);
                 pStmt.setInt(5, entity.getId());
 
@@ -106,7 +101,7 @@ public class UserAccountDaoImpl extends AbstractDaoImpl<IUserAccount, Integer> i
     }
 
     @Override
-    public IUserAccount findByEmail(String email){
+    public IUserAccount findByEmail(String email) {
         StatementAction<IUserAccount> action = (statement) -> {
             statement.executeQuery(String.format("select * from user_account where email='%s'", email));
 

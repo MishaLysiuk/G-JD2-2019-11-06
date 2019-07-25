@@ -1,13 +1,14 @@
 package com.itacademy.jd2.ml.linkedin.filter;
 
 public class CourseFilter extends AbstractFilter {
-    private Integer loggedCourseId;
 
-    public Integer getLoggedCourseId() {
-        return loggedCourseId;
+    private String name;
+
+    public String getName() {
+        return name;
     }
 
-    public void setLoggedCourseId(Integer loggedCourseId) {
-        this.loggedCourseId = loggedCourseId;
+    public void setName(String name) {
+        this.name = name;
     }
 }

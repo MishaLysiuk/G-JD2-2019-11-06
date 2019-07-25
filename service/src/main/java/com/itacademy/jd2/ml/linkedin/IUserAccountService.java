@@ -4,7 +4,6 @@ package com.itacademy.jd2.ml.linkedin;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 import com.itacademy.jd2.ml.linkedin.filter.UserAccountFilter;
 
-import java.sql.SQLException;
 import java.util.List;
 
 public interface IUserAccountService {
