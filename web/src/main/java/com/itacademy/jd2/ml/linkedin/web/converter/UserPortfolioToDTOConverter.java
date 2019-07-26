@@ -19,14 +19,4 @@ public class UserPortfolioToDTOConverter implements Function<IUserPortfolio, Use
         dto.setUpdated(entity.getUpdated());
         return dto;
     }
-
-    @Override
-    public <V> Function<V, UserPortfolioDTO> compose(Function<? super V, ? extends IUserPortfolio> before) {
-        return null;
-    }
-
-    @Override
-    public <V> Function<IUserPortfolio, V> andThen(Function<? super UserPortfolioDTO, ? extends V> after) {
-        return null;
-    }
 }

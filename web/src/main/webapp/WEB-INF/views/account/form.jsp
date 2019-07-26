@@ -1,16 +1,28 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<h4 class="header">Edit user</h4>
+<h4 class="header">Edit account</h4>
 <div class="row">
 
-    <form:form class="col s12" method="POST" action="${pagesUser}"
-               modelAttribute="formUser">
+    <form:form class="col s12" method="POST" action="${pagesAccount}"
+               modelAttribute="formAccount">
         <form:input path="id" type="hidden" />
         <div class="row">
             <div class="input-field col s12">
-                <form:input path="firstName" type="text" disabled="${readonly}" />
-                <form:errors path="firstName" cssClass="red-text" />
-                <label for="firstName">First Name</label>
+                <form:input path="email" type="text" disabled="${readonly}" />
+                <form:errors path="email" cssClass="red-text" />
+                <label for="email">Email</label>
+            </div>
+
+            <div class="input-field col s12">
+                <form:input path="password" type="text" disabled="${readonly}" />
+                <form:errors path="password" cssClass="red-text" />
+                <label for="password">Password</label>
+            </div>
+
+            <div class="input-field col s12">
+                <form:input path="roleId" type="number" disabled="${readonly}" />
+                <form:errors path="roleId" cssClass="red-text" />
+                <label for="roleId">roleId</label>
             </div>
         </div>
         <div class="row">
@@ -21,7 +33,7 @@
                 </c:if>
             </div>
             <div class="col s3">
-                <a class="btn waves-effect waves-light right" href="${pagesUser}">to list<i
+                <a class="btn waves-effect waves-light right" href="${pagesAccount}">to list<i
                         class="material-icons right"></i>
                 </a>
             </div>

@@ -6,30 +6,39 @@
 
     <definition name="DefaultTemplate"
                 template="/WEB-INF/views/main-template.jsp">
-        <put-attribute name="title" value="Linkedin" />
+        <put-attribute name="title" value="Linkedin"/>
         <put-attribute name="header"
-                       value="/WEB-INF/views/header.jsp" />
-        <put-attribute name="body" value="" />
+                       value="/WEB-INF/views/header.jsp"/>
+        <put-attribute name="body" value=""/>
         <put-attribute name="footer"
-                       value="/WEB-INF/views/footer.jsp" />
+                       value="/WEB-INF/views/footer.jsp"/>
     </definition>
 
     <definition name="home" extends="DefaultTemplate">
         <put-attribute name="body"
-                       value="/WEB-INF/views/home.jsp" />
+                       value="/WEB-INF/views/home.jsp"/>
     </definition>
 
     <definition name="user.list" extends="DefaultTemplate">
         <put-attribute name="body"
-                       value="/WEB-INF/views/user/list.jsp" />
+                       value="/WEB-INF/views/user/list.jsp"/>
     </definition>
 
     <definition name="user.edit" extends="DefaultTemplate">
-        <put-attribute name="body" value="/WEB-INF/views/user/form.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/user/form.jsp"/>
+    </definition>
+
+    <definition name="account.list" extends="DefaultTemplate">
+        <put-attribute name="body"
+                       value="/WEB-INF/views/account/list.jsp"/>
+    </definition>
+
+    <definition name="account.edit" extends="DefaultTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/account/form.jsp"/>
     </definition>
 
     <definition name="login" extends="DefaultTemplate">
-        <put-attribute name="body" value="/WEB-INF/views/login.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/login.jsp"/>
     </definition>
 
 
