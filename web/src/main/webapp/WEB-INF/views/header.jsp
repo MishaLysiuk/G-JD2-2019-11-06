@@ -1,5 +1,5 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <header>
     <nav>
         <div class="nav-wrapper container">
@@ -7,6 +7,14 @@
                 <li><a href="${contextPath}/">home</a></li>
                 <li><a href="${pagesUser}">Users</a></li>
                 <li><a href="${pagesAccount}">Accounts</a></li>
+                <sec:authorize access="!isAnonymous()">
+                    Id: <sec:authentication property="id"/>
+                    Name: <sec:authentication property="principal"/>
+                    RoleID:<sec:authentication property="authorities"/>
+                </sec:authorize>
+                <sec:authorize access="isAnonymous()">
+                    Logged user is anonymous
+                </sec:authorize>
                 <sec:authorize access="!isAnonymous()">
                     <a class="right" href="${contextPath}/execute_logout" title="logout"><i
                             class="material-icons">arrow_forward</i></a>
