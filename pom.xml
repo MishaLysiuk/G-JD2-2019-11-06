@@ -261,7 +261,7 @@
     </dependencyManagement>
 
     <build>
-        <finalName>ROOT</finalName>
+        <finalName>linkedin</finalName>
         <pluginManagement>
             <plugins>
                 <plugin>
