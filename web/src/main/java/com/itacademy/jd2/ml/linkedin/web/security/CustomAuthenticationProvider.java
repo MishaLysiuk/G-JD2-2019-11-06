@@ -5,11 +5,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.itacademy.jd2.ml.linkedin.IUserAccountDao;
 import com.itacademy.jd2.ml.linkedin.IUserAccountService;
 import com.itacademy.jd2.ml.linkedin.entity.enums.Role;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
-import com.itacademy.jd2.ml.linkedin.util.StatementAction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
