@@ -1,9 +1,10 @@
 package com.itacademy.jd2.ml.linkedin.entity.table;
 
 public interface IVacancy extends IBaseEntity {
-    IUserPortfolio getCreator();
 
-    void setCreator(IUserPortfolio creator);
+    IUserAccount getCreator();
+
+    void setCreator(IUserAccount creator);
 
     Boolean getActive();
 

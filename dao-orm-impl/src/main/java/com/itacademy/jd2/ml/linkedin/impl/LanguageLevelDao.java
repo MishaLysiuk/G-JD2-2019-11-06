@@ -21,6 +21,7 @@ public class LanguageLevelDao extends AbstractDaoImpl<ILanguageLevel, Integer> i
 
     @Override
     public ILanguageLevel createEntity() {
-        return null;
+        LanguageLevel languageLevel = new LanguageLevel();
+        return languageLevel;
     }
 }

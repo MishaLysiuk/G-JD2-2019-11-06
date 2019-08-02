@@ -5,9 +5,9 @@ public interface ISkill extends IBaseEntity {
 
     void setName(String name);
 
-    IUserPortfolio getUserPortfolio();
+    IUserAccount getUser();
 
-    void setUserPortfolio(IUserPortfolio userPortfolio);
+    void setUser(IUserAccount user);
 
     IGroup getGroup();
 

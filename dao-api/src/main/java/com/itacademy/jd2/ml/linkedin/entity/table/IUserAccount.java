@@ -2,7 +2,7 @@ package com.itacademy.jd2.ml.linkedin.entity.table;
 
 import com.itacademy.jd2.ml.linkedin.entity.enums.Role;
 
-public interface IUserAccount extends IBaseEntity {
+public interface IUserAccount extends IBaseEntity{
     String getEmail();
 
     void setEmail(String email);

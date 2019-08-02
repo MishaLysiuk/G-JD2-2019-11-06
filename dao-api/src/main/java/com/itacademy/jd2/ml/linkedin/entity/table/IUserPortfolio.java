@@ -2,7 +2,11 @@ package com.itacademy.jd2.ml.linkedin.entity.table;
 
 import java.util.Date;
 
-public interface IUserPortfolio extends IBaseEntity{
+public interface IUserPortfolio{
+
+    Integer getId();
+
+    void setId(Integer id);
 
     String getFirstName();
 
@@ -31,4 +35,12 @@ public interface IUserPortfolio extends IBaseEntity{
     String getMotherTongue();
 
     void setMotherTongue(String motherTongue);
+
+    Date getCreated();
+
+    void setCreated(Date created);
+
+    Date getUpdated();
+
+    void setUpdated(Date updated);
 }

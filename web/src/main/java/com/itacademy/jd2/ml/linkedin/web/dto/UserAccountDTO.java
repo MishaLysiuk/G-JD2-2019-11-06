@@ -1,5 +1,7 @@
 package com.itacademy.jd2.ml.linkedin.web.dto;
 
+import com.itacademy.jd2.ml.linkedin.entity.enums.Role;
+
 import java.util.Date;
 
 public class UserAccountDTO {
@@ -7,7 +9,7 @@ public class UserAccountDTO {
     private Integer id;
     private String email;
     private String password;
-    private Integer roleId;
+    private Role roleId;
     private Date created;
     private Date updated;
 
@@ -35,11 +37,11 @@ public class UserAccountDTO {
         this.password = password;
     }
 
-    public Integer getRoleId() {
+    public Role getRoleId() {
         return roleId;
     }
 
-    public void setRoleId(Integer roleId) {
+    public void setRoleId(Role roleId) {
         this.roleId = roleId;
     }
 

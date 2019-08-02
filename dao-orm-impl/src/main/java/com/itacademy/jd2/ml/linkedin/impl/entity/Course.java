@@ -2,21 +2,24 @@ package com.itacademy.jd2.ml.linkedin.impl.entity;
 
 import com.itacademy.jd2.ml.linkedin.entity.table.ICompany;
 import com.itacademy.jd2.ml.linkedin.entity.table.ICourse;
+import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserPortfolio;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Course extends BaseEntity implements ICourse {
 
-    @Transient
-    private IUserPortfolio userPortfolio;
+    @JoinTable(name = "course_2_user", joinColumns = {@JoinColumn(name = "course_id")}, inverseJoinColumns = {
+            @JoinColumn(name = "user_id")})
+    @ManyToMany(targetEntity = UserAccount.class, fetch = FetchType.LAZY)
+    private Set<IUserAccount> users = new HashSet<>();
     @Column
     private String name;
-    @Transient
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Company.class)
     private ICompany company;
     @Column
     private Date start;
@@ -26,13 +29,13 @@ public class Course extends BaseEntity implements ICourse {
     private Integer finalResult;
 
     @Override
-    public IUserPortfolio getUserPortfolio() {
-        return userPortfolio;
+    public Set<IUserAccount> getUsers() {
+        return users;
     }
 
     @Override
-    public void setUserPortfolio(IUserPortfolio userPortfolio) {
-        this.userPortfolio = userPortfolio;
+    public void setUsers(Set<IUserAccount> users) {
+        this.users = users;
     }
 
     @Override

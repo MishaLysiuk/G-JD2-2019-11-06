@@ -22,6 +22,7 @@ public class CityDaoImpl extends AbstractDaoImpl<ICity,Integer> implements ICity
 
     @Override
     public ICity createEntity() {
-        return null;
+        City city = new City();
+        return city;
     }
 }

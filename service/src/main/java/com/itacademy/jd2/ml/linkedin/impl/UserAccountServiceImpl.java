@@ -38,17 +38,6 @@ public class UserAccountServiceImpl implements IUserAccountService {
         }
     }
 
-    @Override
-    public void save(IUserAccount... entities) {
-        Date modified = new Date();
-        for (IUserAccount entity : entities) {
-
-            entity.setUpdated(modified);
-            entity.setCreated(modified);
-        }
-
-        dao.save(entities);
-    }
 
     @Override
     public IUserAccount get(final Integer id) {

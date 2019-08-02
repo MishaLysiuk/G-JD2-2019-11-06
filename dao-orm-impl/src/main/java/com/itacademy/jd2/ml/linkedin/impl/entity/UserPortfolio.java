@@ -4,11 +4,14 @@ import com.itacademy.jd2.ml.linkedin.entity.table.IUserPortfolio;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
-public class UserPortfolio extends BaseEntity implements IUserPortfolio {
+public class UserPortfolio implements IUserPortfolio {
 
+    @Id
+    private Integer id;
     @Column
     private String firstName;
     @Column
@@ -23,6 +26,20 @@ public class UserPortfolio extends BaseEntity implements IUserPortfolio {
     private String contactInfo;
     @Column
     private String motherTongue;
+    @Column(updatable = false)
+    private Date created;
+    @Column
+    private Date updated;
+
+    @Override
+    public Integer getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     @Override
     public String getFirstName() {
@@ -92,5 +109,25 @@ public class UserPortfolio extends BaseEntity implements IUserPortfolio {
     @Override
     public void setMotherTongue(String motherTongue) {
         this.motherTongue = motherTongue;
+    }
+
+    @Override
+    public Date getCreated() {
+        return created;
+    }
+
+    @Override
+    public void setCreated(Date created) {
+        this.created = created;
+    }
+
+    @Override
+    public Date getUpdated() {
+        return updated;
+    }
+
+    @Override
+    public void setUpdated(Date updated) {
+        this.updated = updated;
     }
 }

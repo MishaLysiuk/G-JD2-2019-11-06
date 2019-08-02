@@ -10,7 +10,7 @@ public interface IUserLanguage extends IBaseEntity {
 
     void setLevel(ILanguageLevel level);
 
-    IUserPortfolio getUserPortfolio();
+    IUserAccount getUser();
 
-    void setUserPortfolio(IUserPortfolio userPortfolio);
+    void setUser(IUserAccount user);
 }

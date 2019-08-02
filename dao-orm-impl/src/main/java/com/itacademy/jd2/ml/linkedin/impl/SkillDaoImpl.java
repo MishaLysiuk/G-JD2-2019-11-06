@@ -25,6 +25,7 @@ public class SkillDaoImpl extends AbstractDaoImpl<ISkill,Integer> implements ISk
 
     @Override
     public ISkill createEntity() {
-        return null;
+        Skill skill = new Skill();
+        return skill;
     }
 }

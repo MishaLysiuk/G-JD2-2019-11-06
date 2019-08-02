@@ -21,6 +21,7 @@ public class RegionDaoImpl extends AbstractDaoImpl<IRegion,Integer> implements I
 
     @Override
     public IRegion createEntity() {
-        return null;
+        Region region = new Region();
+        return region;
     }
 }

@@ -32,6 +32,7 @@ public class UserAccountDaoImpl extends AbstractDaoImpl<IUserAccount,Integer> im
 
     @Override
     public IUserAccount createEntity() {
-        return null;
+        UserAccount userAccount = new UserAccount();
+        return userAccount;
     }
 }

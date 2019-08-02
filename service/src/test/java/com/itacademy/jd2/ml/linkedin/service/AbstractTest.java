@@ -25,7 +25,7 @@ public abstract class AbstractTest {
     public void setUpMethod() {
         // clean DB recursive
         //modelService.deleteAll();
-        userPortfolioService.deleteAll();
+        //userPortfolioService.deleteAll();
     }
 
     protected String getRandomPrefix() {

@@ -21,6 +21,7 @@ public class LanguageDaoImpl extends AbstractDaoImpl<ILanguage,Integer> implemen
 
     @Override
     public ILanguage createEntity() {
-        return null;
+        Language language = new Language();
+        return language;
     }
 }

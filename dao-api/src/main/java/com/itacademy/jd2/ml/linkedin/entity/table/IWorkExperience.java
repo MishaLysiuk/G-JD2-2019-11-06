@@ -3,7 +3,10 @@ package com.itacademy.jd2.ml.linkedin.entity.table;
 import java.util.Date;
 
 public interface IWorkExperience extends IBaseEntity {
-    void setUserPortfolio(IUserPortfolio userPortfolio);
+
+    IUserAccount getUser();
+
+    void setUser(IUserAccount user);
 
     Integer getIndustryId();
 

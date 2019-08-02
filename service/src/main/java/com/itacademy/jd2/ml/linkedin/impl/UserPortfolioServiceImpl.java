@@ -39,18 +39,6 @@ public class UserPortfolioServiceImpl implements IUserPortfolioService {
     }
 
     @Override
-    public void save(IUserPortfolio... entities) {
-        Date modified = new Date();
-        for (IUserPortfolio entity : entities) {
-
-            entity.setUpdated(modified);
-            entity.setCreated(modified);
-        }
-
-        dao.save(entities);
-    }
-
-    @Override
     public IUserPortfolio get(final Integer id) {
         final IUserPortfolio entity = dao.get(id);
         return entity;

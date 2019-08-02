@@ -27,6 +27,7 @@ public class CompanyDaoImpl extends AbstractDaoImpl<ICompany, Integer> implement
 
     @Override
     public ICompany createEntity() {
-        return null;
+        Company company = new Company();
+        return company;
     }
 }

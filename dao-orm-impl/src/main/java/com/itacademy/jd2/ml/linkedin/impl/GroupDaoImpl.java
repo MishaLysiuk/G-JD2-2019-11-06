@@ -27,6 +27,7 @@ public class GroupDaoImpl extends AbstractDaoImpl<IGroup,Integer> implements IGr
 
     @Override
     public IGroup createEntity() {
-        return null;
+        Group group = new Group();
+        return group;
     }
 }

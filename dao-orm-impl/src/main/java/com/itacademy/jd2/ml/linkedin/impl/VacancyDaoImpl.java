@@ -22,6 +22,7 @@ public class VacancyDaoImpl extends AbstractDaoImpl<IVacancy,Integer> implements
 
     @Override
     public IVacancy createEntity() {
-        return null;
+        Vacancy vacancy = new Vacancy();
+        return vacancy;
     }
 }

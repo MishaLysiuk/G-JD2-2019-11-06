@@ -2,7 +2,7 @@ package com.itacademy.jd2.ml.linkedin.impl.entity;
 
 import com.itacademy.jd2.ml.linkedin.entity.table.IAddress;
 import com.itacademy.jd2.ml.linkedin.entity.table.ICompany;
-import com.itacademy.jd2.ml.linkedin.entity.table.IUserPortfolio;
+import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 import com.itacademy.jd2.ml.linkedin.entity.table.IWorkExperience;
 
 import javax.persistence.Column;
@@ -14,7 +14,7 @@ import java.util.Date;
 public class WorkExperience extends BaseEntity implements IWorkExperience {
 
     @Transient
-    private IUserPortfolio userPortfolio;
+    private IUserAccount user;
     @Column
     private Integer industryId;
     @Column
@@ -28,13 +28,14 @@ public class WorkExperience extends BaseEntity implements IWorkExperience {
     @Transient
     private ICompany company;
 
-    public IUserPortfolio getUserPortfolio() {
-        return userPortfolio;
+    @Override
+    public IUserAccount getUser() {
+        return user;
     }
 
     @Override
-    public void setUserPortfolio(IUserPortfolio userPortfolio) {
-        this.userPortfolio = userPortfolio;
+    public void setUser(IUserAccount user) {
+        this.user = user;
     }
 
     @Override

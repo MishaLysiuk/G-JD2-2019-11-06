@@ -4,9 +4,11 @@ import com.itacademy.jd2.ml.linkedin.ICourseDao;
 import com.itacademy.jd2.ml.linkedin.entity.table.ICourse;
 import com.itacademy.jd2.ml.linkedin.filter.CourseFilter;
 import com.itacademy.jd2.ml.linkedin.impl.entity.Course;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public class CourseDaoImpl extends AbstractDaoImpl<ICourse,Integer> implements ICourseDao {
 
     protected CourseDaoImpl() {
@@ -30,6 +32,7 @@ public class CourseDaoImpl extends AbstractDaoImpl<ICourse,Integer> implements I
 
     @Override
     public ICourse createEntity() {
-        return null;
+        Course course = new Course();
+        return course;
     }
 }

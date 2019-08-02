@@ -21,6 +21,7 @@ public class CountryDaoImpl extends AbstractDaoImpl<ICountry, Integer> implement
 
     @Override
     public ICountry createEntity() {
-        return null;
+        Country country = new Country();
+        return country;
     }
 }

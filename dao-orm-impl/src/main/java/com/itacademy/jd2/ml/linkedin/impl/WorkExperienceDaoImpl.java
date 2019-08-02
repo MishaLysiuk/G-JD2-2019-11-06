@@ -21,6 +21,7 @@ public class WorkExperienceDaoImpl extends AbstractDaoImpl<IWorkExperience,Integ
 
     @Override
     public IWorkExperience createEntity() {
-        return null;
+        WorkExperience workExperience = new WorkExperience();
+        return workExperience;
     }
 }

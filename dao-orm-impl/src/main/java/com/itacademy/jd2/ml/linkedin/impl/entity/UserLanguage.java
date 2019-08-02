@@ -3,7 +3,7 @@ package com.itacademy.jd2.ml.linkedin.impl.entity;
 import com.itacademy.jd2.ml.linkedin.entity.table.ILanguage;
 import com.itacademy.jd2.ml.linkedin.entity.table.ILanguageLevel;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserLanguage;
-import com.itacademy.jd2.ml.linkedin.entity.table.IUserPortfolio;
+import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 
 import javax.persistence.Entity;
 import javax.persistence.Transient;
@@ -16,7 +16,7 @@ public class UserLanguage extends BaseEntity implements IUserLanguage {
     @Transient
     private ILanguageLevel level;
     @Transient
-    private IUserPortfolio userPortfolio;
+    private IUserAccount user;
 
     @Override
     public ILanguage getLanguage() {
@@ -39,12 +39,12 @@ public class UserLanguage extends BaseEntity implements IUserLanguage {
     }
 
     @Override
-    public IUserPortfolio getUserPortfolio() {
-        return userPortfolio;
+    public IUserAccount getUser() {
+        return user;
     }
 
     @Override
-    public void setUserPortfolio(IUserPortfolio userPortfolio) {
-        this.userPortfolio = userPortfolio;
+    public void setUser(IUserAccount user) {
+        this.user = user;
     }
 }

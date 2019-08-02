@@ -2,7 +2,7 @@ package com.itacademy.jd2.ml.linkedin.impl.entity;
 
 import com.itacademy.jd2.ml.linkedin.entity.table.IAddress;
 import com.itacademy.jd2.ml.linkedin.entity.table.ICompany;
-import com.itacademy.jd2.ml.linkedin.entity.table.IUserPortfolio;
+import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 import com.itacademy.jd2.ml.linkedin.entity.table.IVacancy;
 
 import javax.persistence.Column;
@@ -13,7 +13,7 @@ import javax.persistence.Transient;
 public class Vacancy extends BaseEntity implements IVacancy {
 
     @Transient
-    private IUserPortfolio creator;
+    private IUserAccount creator;
     @Column
     private Boolean active;
     @Column
@@ -28,12 +28,12 @@ public class Vacancy extends BaseEntity implements IVacancy {
     private String contactInfo;
 
     @Override
-    public IUserPortfolio getCreator() {
+    public IUserAccount getCreator() {
         return creator;
     }
 
     @Override
-    public void setCreator(IUserPortfolio creator) {
+    public void setCreator(IUserAccount creator) {
         this.creator = creator;
     }
 

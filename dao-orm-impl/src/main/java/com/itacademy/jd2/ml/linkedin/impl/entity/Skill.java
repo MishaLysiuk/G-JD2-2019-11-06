@@ -2,7 +2,7 @@ package com.itacademy.jd2.ml.linkedin.impl.entity;
 
 import com.itacademy.jd2.ml.linkedin.entity.table.IGroup;
 import com.itacademy.jd2.ml.linkedin.entity.table.ISkill;
-import com.itacademy.jd2.ml.linkedin.entity.table.IUserPortfolio;
+import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,7 +15,7 @@ public class Skill extends BaseEntity implements ISkill {
     private String name;
 
     @Transient
-    private IUserPortfolio userPortfolio;
+    private IUserAccount user;
 
     @Transient
     private IGroup group;
@@ -31,13 +31,13 @@ public class Skill extends BaseEntity implements ISkill {
     }
 
     @Override
-    public IUserPortfolio getUserPortfolio() {
-        return userPortfolio;
+    public IUserAccount getUser() {
+        return user;
     }
 
     @Override
-    public void setUserPortfolio(IUserPortfolio userPortfolio) {
-        this.userPortfolio = userPortfolio;
+    public void setUser(IUserAccount user) {
+        this.user = user;
     }
 
     @Override

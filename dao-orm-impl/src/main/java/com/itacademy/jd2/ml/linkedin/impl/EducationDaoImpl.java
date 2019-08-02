@@ -19,6 +19,7 @@ public class EducationDaoImpl extends AbstractDaoImpl<IEducation, Integer> imple
 
     @Override
     public IEducation createEntity() {
-        return null;
+        Education education = new Education();
+        return education;
     }
 }

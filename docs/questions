@@ -1,5 +1,4 @@
-ask about pagesUser what is it??
-how does work buttons in the list of accounts??
-main template
-OneToOne
-my tag lib
+убрать автоинкремент в user_portfolio
+поменять везде user_portfolio на user_account
+добавить таблицу для course_2_user
+переделать все enum в стринги и замапить

@@ -2,7 +2,7 @@ package com.itacademy.jd2.ml.linkedin.impl.entity;
 
 import com.itacademy.jd2.ml.linkedin.entity.table.IAddress;
 import com.itacademy.jd2.ml.linkedin.entity.table.IEducation;
-import com.itacademy.jd2.ml.linkedin.entity.table.IUserPortfolio;
+import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +13,7 @@ import java.util.Date;
 public class Education extends BaseEntity implements IEducation {
 
     @Transient
-    private IUserPortfolio userPortfolio;
+    private IUserAccount user;
     @Column
     private String university;
     @Column
@@ -28,13 +28,13 @@ public class Education extends BaseEntity implements IEducation {
     private IAddress address;
 
     @Override
-    public IUserPortfolio getUserPortfolio() {
-        return userPortfolio;
+    public IUserAccount getUser() {
+        return user;
     }
 
     @Override
-    public void setUserPortfolio(IUserPortfolio userPortfolio) {
-        this.userPortfolio = userPortfolio;
+    public void setUser(IUserAccount user) {
+        this.user = user;
     }
 
     @Override

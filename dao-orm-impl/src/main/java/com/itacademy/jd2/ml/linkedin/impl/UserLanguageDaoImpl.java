@@ -21,6 +21,7 @@ public class UserLanguageDaoImpl extends AbstractDaoImpl<IUserLanguage,Integer> 
 
     @Override
     public IUserLanguage createEntity() {
-        return null;
+        UserLanguage userLanguage = new UserLanguage();
+        return userLanguage;
     }
 }

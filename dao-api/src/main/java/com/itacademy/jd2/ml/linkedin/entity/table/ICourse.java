@@ -5,10 +5,9 @@ import java.util.Set;
 
 public interface ICourse extends IBaseEntity {
 
+    Set<IUserAccount> getUsers();
 
-    IUserPortfolio getUserPortfolio();
-
-    void setUserPortfolio(IUserPortfolio userPortfolio);
+    void setUsers(Set<IUserAccount> users);
 
     String getName();
 
