@@ -7,8 +7,6 @@ import java.util.List;
 
 public interface IUserPortfolioDao extends IDao<IUserPortfolio, Integer> {
 
-    void save(IUserPortfolio... entities);
-
     List<IUserPortfolio> find(UserPortfolioFilter filter); // skip
 
 
