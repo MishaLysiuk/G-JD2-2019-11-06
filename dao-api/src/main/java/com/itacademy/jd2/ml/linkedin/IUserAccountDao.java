@@ -7,7 +7,6 @@ import java.util.List;
 
 public interface IUserAccountDao extends IDao<IUserAccount, Integer> {
 
-    void save(IUserAccount... entities);
 
     List<IUserAccount> find(UserAccountFilter filter); // skip
 

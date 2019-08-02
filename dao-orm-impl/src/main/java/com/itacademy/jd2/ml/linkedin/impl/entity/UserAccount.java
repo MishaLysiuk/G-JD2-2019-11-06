@@ -1,9 +1,12 @@
 package com.itacademy.jd2.ml.linkedin.impl.entity;
 
+import com.itacademy.jd2.ml.linkedin.entity.enums.Role;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 @Entity
 public class UserAccount extends BaseEntity implements IUserAccount {
@@ -13,7 +16,8 @@ public class UserAccount extends BaseEntity implements IUserAccount {
     @Column
     private String password;
     @Column
-    private Integer roleId;
+    @Enumerated(EnumType.ORDINAL)
+    private Role roleId;
 
     @Override
     public String getEmail() {
@@ -36,12 +40,12 @@ public class UserAccount extends BaseEntity implements IUserAccount {
     }
 
     @Override
-    public Integer getRoleId() {
+    public Role getRoleId() {
         return roleId;
     }
 
     @Override
-    public void setRoleId(Integer roleId) {
+    public void setRoleId(Role roleId) {
         this.roleId = roleId;
     }
 }
