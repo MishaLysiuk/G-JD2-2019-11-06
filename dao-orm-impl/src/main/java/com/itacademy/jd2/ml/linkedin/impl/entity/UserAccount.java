@@ -2,15 +2,15 @@ package com.itacademy.jd2.ml.linkedin.impl.entity;
 
 import com.itacademy.jd2.ml.linkedin.entity.enums.Role;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
+import com.itacademy.jd2.ml.linkedin.entity.table.IUserPortfolio;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.*;
 
 @Entity
 public class UserAccount extends BaseEntity implements IUserAccount {
 
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "model", targetEntity = UserPortfolio.class)
+    private IUserPortfolio userPortfolio;
     @Column
     private String email;
     @Column

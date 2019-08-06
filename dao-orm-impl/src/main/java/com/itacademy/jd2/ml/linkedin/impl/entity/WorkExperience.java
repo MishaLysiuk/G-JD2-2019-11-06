@@ -5,16 +5,18 @@ import com.itacademy.jd2.ml.linkedin.entity.table.ICompany;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 import com.itacademy.jd2.ml.linkedin.entity.table.IWorkExperience;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class WorkExperience extends BaseEntity implements IWorkExperience {
 
-    @Transient
-    private IUserAccount user;
+    @JoinTable(name = "experience_2_user", joinColumns = {@JoinColumn(name = "experience_id")}, inverseJoinColumns = {
+            @JoinColumn(name = "user_id")})
+    @ManyToMany(targetEntity = UserAccount.class, fetch = FetchType.LAZY)
+    private Set<IUserAccount> users = new HashSet<>();
     @Column
     private Integer industryId;
     @Column
@@ -23,19 +25,19 @@ public class WorkExperience extends BaseEntity implements IWorkExperience {
     private Date start;
     @Column
     private Date end;
-    @Transient
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Address.class)
     private IAddress address;
-    @Transient
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Company.class)
     private ICompany company;
 
     @Override
-    public IUserAccount getUser() {
-        return user;
+    public Set<IUserAccount> getUsers() {
+        return users;
     }
 
     @Override
-    public void setUser(IUserAccount user) {
-        this.user = user;
+    public void setUsers(Set<IUserAccount> users) {
+        this.users = users;
     }
 
     @Override

@@ -26,11 +26,6 @@ public class CourseDaoImpl extends AbstractDaoImpl<ICourse,Integer> implements I
     }
 
     @Override
-    public ICourse getFullInfo(Integer id) {
-        return null;
-    }
-
-    @Override
     public ICourse createEntity() {
         Course course = new Course();
         return course;

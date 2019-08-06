@@ -10,6 +10,4 @@ public interface ICourseDao extends IDao<ICourse, Integer> {
 
     long getCount(CourseFilter filter); // skip {
 
-    ICourse getFullInfo(Integer id);
-
 }

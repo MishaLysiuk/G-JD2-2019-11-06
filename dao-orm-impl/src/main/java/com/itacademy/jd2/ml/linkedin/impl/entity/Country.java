@@ -3,16 +3,14 @@ package com.itacademy.jd2.ml.linkedin.impl.entity;
 import com.itacademy.jd2.ml.linkedin.entity.table.ICountry;
 import com.itacademy.jd2.ml.linkedin.entity.table.IRegion;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 @Entity
 public class Country extends BaseEntity implements ICountry {
 
     @Column
     private Integer nameId;
-    @Transient
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Region.class)
     private IRegion region;
 
     @Override

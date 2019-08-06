@@ -8,6 +8,11 @@ public interface IUserPortfolio{
 
     void setId(Integer id);
 
+
+    IUserAccount getUserAccount();
+
+    void setUserAccount(IUserAccount userAccount);
+
     String getFirstName();
 
     void setFirstName(String name);

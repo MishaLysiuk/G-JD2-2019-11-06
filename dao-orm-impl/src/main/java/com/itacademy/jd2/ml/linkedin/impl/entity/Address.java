@@ -5,14 +5,15 @@ import com.itacademy.jd2.ml.linkedin.entity.table.ICity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Transient;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Address extends BaseEntity implements IAddress {
 
     @Column
     private String address;
-    @Transient
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = City.class)
     private ICity city;
 
     @Override

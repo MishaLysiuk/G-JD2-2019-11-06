@@ -4,9 +4,7 @@ import com.itacademy.jd2.ml.linkedin.entity.table.IGroup;
 import com.itacademy.jd2.ml.linkedin.entity.table.ISkill;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Transient;
+import javax.persistence.*;
 
 @Entity
 public class Skill extends BaseEntity implements ISkill {
@@ -17,7 +15,7 @@ public class Skill extends BaseEntity implements ISkill {
     @Transient
     private IUserAccount user;
 
-    @Transient
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Group.class)
     private IGroup group;
 
     @Override

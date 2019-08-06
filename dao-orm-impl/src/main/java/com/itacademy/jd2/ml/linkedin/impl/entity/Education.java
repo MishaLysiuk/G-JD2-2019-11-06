@@ -3,17 +3,20 @@ package com.itacademy.jd2.ml.linkedin.impl.entity;
 import com.itacademy.jd2.ml.linkedin.entity.table.IAddress;
 import com.itacademy.jd2.ml.linkedin.entity.table.IEducation;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
+import com.itacademy.jd2.ml.linkedin.entity.table.IUserPortfolio;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Education extends BaseEntity implements IEducation {
 
-    @Transient
-    private IUserAccount user;
+    @JoinTable(name = "education_2_user", joinColumns = {@JoinColumn(name = "education_id")}, inverseJoinColumns = {
+            @JoinColumn(name = "user_id")})
+    @ManyToMany(targetEntity = UserAccount.class, fetch = FetchType.LAZY)
+    private Set<IUserAccount> users = new HashSet<>();
     @Column
     private String university;
     @Column
@@ -24,17 +27,17 @@ public class Education extends BaseEntity implements IEducation {
     private String speciality;
     @Column
     private String degree;
-    @Transient
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Address.class)
     private IAddress address;
 
     @Override
-    public IUserAccount getUser() {
-        return user;
+    public Set<IUserAccount> getUsers() {
+        return users;
     }
 
     @Override
-    public void setUser(IUserAccount user) {
-        this.user = user;
+    public void setUsers(Set<IUserAccount> users) {
+        this.users = users;
     }
 
     @Override

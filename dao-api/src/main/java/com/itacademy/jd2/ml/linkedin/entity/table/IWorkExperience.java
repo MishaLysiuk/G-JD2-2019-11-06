@@ -1,12 +1,13 @@
 package com.itacademy.jd2.ml.linkedin.entity.table;
 
 import java.util.Date;
+import java.util.Set;
 
 public interface IWorkExperience extends IBaseEntity {
 
-    IUserAccount getUser();
+    Set<IUserAccount> getUsers();
 
-    void setUser(IUserAccount user);
+    void setUsers(Set<IUserAccount> users);
 
     Integer getIndustryId();
 

@@ -7,12 +7,13 @@ import com.itacademy.jd2.ml.linkedin.entity.table.IVacancy;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Transient;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Vacancy extends BaseEntity implements IVacancy {
 
-    @Transient
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = UserAccount.class)
     private IUserAccount creator;
     @Column
     private Boolean active;
@@ -20,9 +21,9 @@ public class Vacancy extends BaseEntity implements IVacancy {
     private Integer industryId;
     @Column
     private Integer positionId;
-    @Transient
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Company.class)
     private ICompany company;
-    @Transient
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Address.class)
     private IAddress address;
     @Column
     private String contactInfo;

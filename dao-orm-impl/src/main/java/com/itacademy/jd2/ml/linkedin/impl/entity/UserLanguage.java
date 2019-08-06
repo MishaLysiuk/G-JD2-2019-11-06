@@ -6,14 +6,16 @@ import com.itacademy.jd2.ml.linkedin.entity.table.IUserLanguage;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 
 @Entity
 public class UserLanguage extends BaseEntity implements IUserLanguage {
 
-    @Transient
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Language.class)
     private ILanguage language;
-    @Transient
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = LanguageLevel.class)
     private ILanguageLevel level;
     @Transient
     private IUserAccount user;

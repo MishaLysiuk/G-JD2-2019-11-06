@@ -1,4 +1,6 @@
-убрать автоинкремент в user_portfolio
-поменять везде user_portfolio на user_account
-добавить таблицу для course_2_user
 переделать все enum в стринги и замапить
+
+таблицы skill and user_language
+enum: names in tables: language level, skill, group, company, language,
+стрелка от user_account к user_portfolio
+OneToOne mapping

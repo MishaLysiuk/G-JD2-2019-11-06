@@ -5,14 +5,15 @@ import com.itacademy.jd2.ml.linkedin.entity.table.ICountry;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Transient;
+import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class City extends BaseEntity implements ICity {
 
     @Column
     private Integer nameId;
-    @Transient
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Country.class)
     private ICountry country;
 
     @Override

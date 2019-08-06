@@ -1,10 +1,9 @@
 package com.itacademy.jd2.ml.linkedin.impl.entity;
 
+import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserPortfolio;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -12,6 +11,9 @@ public class UserPortfolio implements IUserPortfolio {
 
     @Id
     private Integer id;
+    @OneToOne(fetch = FetchType.LAZY, optional = false, targetEntity = UserAccount.class)
+    @PrimaryKeyJoinColumn
+    private IUserAccount userAccount;
     @Column
     private String firstName;
     @Column
@@ -39,6 +41,16 @@ public class UserPortfolio implements IUserPortfolio {
     @Override
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    @Override
+    public IUserAccount getUserAccount() {
+        return userAccount;
+    }
+
+    @Override
+    public void setUserAccount(IUserAccount userAccount) {
+        this.userAccount = userAccount;
     }
 
     @Override
