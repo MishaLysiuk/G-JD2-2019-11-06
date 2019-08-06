@@ -11,6 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+
 public class Course extends BaseEntity implements ICourse {
 
     @JoinTable(name = "course_2_user", joinColumns = {@JoinColumn(name = "course_id")}, inverseJoinColumns = {
@@ -19,12 +20,13 @@ public class Course extends BaseEntity implements ICourse {
     private Set<IUserAccount> users = new HashSet<>();
     @Column
     private String name;
+
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Company.class)
     private ICompany company;
     @Column
     private Date start;
     @Column
-    private Date end;
+    private Date endDate;
     @Column
     private Integer finalResult;
 
@@ -69,13 +71,13 @@ public class Course extends BaseEntity implements ICourse {
     }
 
     @Override
-    public Date getEnd() {
-        return end;
+    public Date getEndDate() {
+        return endDate;
     }
 
     @Override
-    public void setEnd(Date end) {
-        this.end = end;
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 
     @Override

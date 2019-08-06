@@ -4,9 +4,11 @@ import java.util.List;
 import java.util.Random;
 
 import com.itacademy.jd2.ml.linkedin.ICompanyService;
+import com.itacademy.jd2.ml.linkedin.ICourseService;
 import com.itacademy.jd2.ml.linkedin.IUserPortfolioService;
 import com.itacademy.jd2.ml.linkedin.entity.table.IBaseEntity;
 import com.itacademy.jd2.ml.linkedin.entity.table.ICompany;
+import com.itacademy.jd2.ml.linkedin.entity.table.ICourse;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserPortfolio;
 import com.itacademy.jd2.ml.linkedin.impl.CompanyServiceImpl;
 import com.itacademy.jd2.ml.linkedin.impl.UserPortfolioServiceImpl;
@@ -22,6 +24,8 @@ public abstract class AbstractTest {
     protected IUserPortfolioService userPortfolioService;
     @Autowired
     protected ICompanyService companyService;
+    @Autowired
+    protected ICourseService courseService;
 
     private static final Random RANDOM = new Random();
 

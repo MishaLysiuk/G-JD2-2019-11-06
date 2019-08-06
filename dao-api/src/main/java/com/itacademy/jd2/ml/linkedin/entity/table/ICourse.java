@@ -21,9 +21,9 @@ public interface ICourse extends IBaseEntity {
 
     void setStart(Date start);
 
-    Date getEnd();
+    Date getEndDate();
 
-    void setEnd(Date end);
+    void setEndDate(Date endDate);
 
     Integer getFinalResult();
 

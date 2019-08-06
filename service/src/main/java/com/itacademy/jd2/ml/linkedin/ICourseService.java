@@ -22,4 +22,6 @@ public interface ICourseService {
     List<ICourse> find(CourseFilter filter);
 
     long getCount(CourseFilter filter);
+
+    ICourse getFullInfo(Integer id);
 }

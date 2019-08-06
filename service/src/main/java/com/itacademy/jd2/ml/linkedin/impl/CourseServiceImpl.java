@@ -64,4 +64,11 @@ public class CourseServiceImpl implements ICourseService {
         return dao.getCount(filter);
     }
 
+    @Override
+    public ICourse getFullInfo(final Integer id) {
+        final ICourse entity = dao.getFullInfo(id);
+        return entity;
+    }
+
+
 }

@@ -2,12 +2,15 @@ package com.itacademy.jd2.ml.linkedin.web.dto;
 
 import com.itacademy.jd2.ml.linkedin.entity.enums.Role;
 
+import javax.validation.constraints.Size;
 import java.util.Date;
 
 public class UserAccountDTO {
 
     private Integer id;
+    @Size(min = 1, max = 50)
     private String email;
+    @Size(min = 1, max = 50)
     private String password;
     private Role roleId;
     private Date created;

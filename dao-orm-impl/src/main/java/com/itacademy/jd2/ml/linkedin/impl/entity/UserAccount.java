@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Entity
 public class UserAccount extends BaseEntity implements IUserAccount {
 
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "model", targetEntity = UserPortfolio.class)
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "userAccount", targetEntity = UserPortfolio.class)
     private IUserPortfolio userPortfolio;
     @Column
     private String email;
@@ -18,6 +18,16 @@ public class UserAccount extends BaseEntity implements IUserAccount {
     @Column
     @Enumerated(EnumType.ORDINAL)
     private Role roleId;
+
+    @Override
+    public IUserPortfolio getUserPortfolio() {
+        return userPortfolio;
+    }
+
+    @Override
+    public void setUserPortfolio(IUserPortfolio userPortfolio) {
+        this.userPortfolio = userPortfolio;
+    }
 
     @Override
     public String getEmail() {
