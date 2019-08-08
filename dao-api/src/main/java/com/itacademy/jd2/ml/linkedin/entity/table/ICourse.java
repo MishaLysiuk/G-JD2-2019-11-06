@@ -17,9 +17,9 @@ public interface ICourse extends IBaseEntity {
 
     void setCompany(ICompany company);
 
-    Date getStart();
+    Date getStartDate();
 
-    void setStart(Date start);
+    void setStartDate(Date startDate);
 
     Date getEndDate();
 

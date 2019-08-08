@@ -16,19 +16,19 @@ public class CourseServiceTest extends AbstractTest {
         final ICourse entity = courseService.createEntity();
         entity.setName("course-" + getRandomPrefix());
         entity.setCompany(saveNewCompany());
-        entity.setStart(new Date());
+        entity.setStartDate(new Date());
         entity.setEndDate(new Date());
         courseService.save(entity);
 
         final ICourse entityFromDb = courseService.getFullInfo(entity.getId());
 
-        assertEquals(entity.getName(), entityFromDb.getName());
-        assertEquals(entity.getCompany().getId(), entityFromDb.getCompany().getId());
         assertNotNull(entityFromDb.getId());
         assertNotNull(entityFromDb.getCreated());
         assertNotNull(entityFromDb.getUpdated());
+        assertEquals(entity.getName(), entityFromDb.getName());
+        assertEquals(entity.getCompany().getId(), entityFromDb.getCompany().getId());
         assertTrue(entityFromDb.getCreated().equals(entityFromDb.getUpdated()));
-        assertTrue(entityFromDb.getStart().equals(entityFromDb.getStart()));
+        assertTrue(entityFromDb.getStartDate().equals(entityFromDb.getStartDate()));
         assertTrue(entityFromDb.getEndDate().equals(entityFromDb.getEndDate()));
     }
     

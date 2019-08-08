@@ -1,7 +1,5 @@
 package com.itacademy.jd2.ml.linkedin.web.security;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 

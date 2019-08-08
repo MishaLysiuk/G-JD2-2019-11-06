@@ -2,8 +2,8 @@ package com.itacademy.jd2.ml.linkedin.impl.entity;
 
 import com.itacademy.jd2.ml.linkedin.entity.table.ILanguage;
 import com.itacademy.jd2.ml.linkedin.entity.table.ILanguageLevel;
-import com.itacademy.jd2.ml.linkedin.entity.table.IUserLanguage;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
+import com.itacademy.jd2.ml.linkedin.entity.table.IUserLanguage;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -17,7 +17,7 @@ public class UserLanguage extends BaseEntity implements IUserLanguage {
     private ILanguage language;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = LanguageLevel.class)
     private ILanguageLevel level;
-    @Transient
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = UserAccount.class)
     private IUserAccount user;
 
     @Override

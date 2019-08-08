@@ -1,17 +1,12 @@
 package com.itacademy.jd2.ml.linkedin.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-import com.itacademy.jd2.ml.linkedin.ICompanyService;
-import com.itacademy.jd2.ml.linkedin.ICourseService;
-import com.itacademy.jd2.ml.linkedin.IUserPortfolioService;
-import com.itacademy.jd2.ml.linkedin.entity.table.IBaseEntity;
-import com.itacademy.jd2.ml.linkedin.entity.table.ICompany;
-import com.itacademy.jd2.ml.linkedin.entity.table.ICourse;
-import com.itacademy.jd2.ml.linkedin.entity.table.IUserPortfolio;
-import com.itacademy.jd2.ml.linkedin.impl.CompanyServiceImpl;
-import com.itacademy.jd2.ml.linkedin.impl.UserPortfolioServiceImpl;
+import com.itacademy.jd2.ml.linkedin.*;
+import com.itacademy.jd2.ml.linkedin.entity.enums.Role;
+import com.itacademy.jd2.ml.linkedin.entity.table.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
@@ -21,7 +16,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @SpringJUnitConfig(locations = "classpath:service-context-test.xml")
 public abstract class AbstractTest {
     @Autowired
-    protected IUserPortfolioService userPortfolioService;
+    protected ISkillService skillService;
+    @Autowired
+    protected IGroupSkillService groupService;
+    @Autowired
+    protected IUserAccountService userAccountService;
     @Autowired
     protected ICompanyService companyService;
     @Autowired
@@ -48,10 +47,15 @@ public abstract class AbstractTest {
         return RANDOM;
     }
 
-    protected IUserPortfolio saveNewUser() {
-        final IUserPortfolio entity = userPortfolioService.createEntity();
-        entity.setFirstName("user-" + getRandomPrefix());
-        userPortfolioService.save(entity);
+    protected IUserAccount saveNewUser() {
+        final IUserAccount entity = userAccountService.createEntity();
+        entity.setEmail("email-" + getRandomPrefix());
+        entity.setPassword("password-" + getRandomPrefix());
+        entity.setRoleId(Role.ADMIN);
+        entity.setFirstName("firstName-" + getRandomPrefix());
+        entity.setLastName("lastName-" + getRandomPrefix());
+        entity.setBirthday(new Date());
+        userAccountService.save(entity);
         return entity;
     }
 
@@ -59,6 +63,13 @@ public abstract class AbstractTest {
         final ICompany entity = companyService.createEntity();
         entity.setName("company-" + getRandomPrefix());
         companyService.save(entity);
+        return entity;
+    }
+
+    protected IGroupSkill saveNewGroup() {
+        final IGroupSkill entity = groupService.createEntity();
+        entity.setName("name-" + getRandomPrefix());
+        groupService.save(entity);
         return entity;
     }
 

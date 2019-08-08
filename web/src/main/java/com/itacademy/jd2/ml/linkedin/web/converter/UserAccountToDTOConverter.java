@@ -17,6 +17,13 @@ public class UserAccountToDTOConverter implements Function<IUserAccount, UserAcc
         dto.setEmail(entity.getEmail());
         dto.setPassword(entity.getPassword());
         dto.setRoleId(entity.getRoleId());
+        dto.setFirstName(entity.getFirstName());
+        dto.setLastName(entity.getLastName());
+        dto.setBirthday(entity.getBirthday());
+        dto.setIndustryId(entity.getIndustryId());
+        dto.setPositionId(entity.getPositionId());
+        dto.setContactInfo(entity.getContactInfo());
+        dto.setMotherTongue(entity.getMotherTongue());
         dto.setCreated(entity.getCreated());
         dto.setUpdated(entity.getUpdated());
         return dto;

@@ -3,7 +3,6 @@ package com.itacademy.jd2.ml.linkedin.impl.entity;
 import com.itacademy.jd2.ml.linkedin.entity.table.IAddress;
 import com.itacademy.jd2.ml.linkedin.entity.table.IEducation;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
-import com.itacademy.jd2.ml.linkedin.entity.table.IUserPortfolio;
 
 import javax.persistence.*;
 import java.util.Date;

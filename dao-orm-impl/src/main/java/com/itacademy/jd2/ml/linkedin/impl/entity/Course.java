@@ -3,7 +3,6 @@ package com.itacademy.jd2.ml.linkedin.impl.entity;
 import com.itacademy.jd2.ml.linkedin.entity.table.ICompany;
 import com.itacademy.jd2.ml.linkedin.entity.table.ICourse;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
-import com.itacademy.jd2.ml.linkedin.entity.table.IUserPortfolio;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -24,7 +23,7 @@ public class Course extends BaseEntity implements ICourse {
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Company.class)
     private ICompany company;
     @Column
-    private Date start;
+    private Date startDate;
     @Column
     private Date endDate;
     @Column
@@ -61,13 +60,13 @@ public class Course extends BaseEntity implements ICourse {
     }
 
     @Override
-    public Date getStart() {
-        return start;
+    public Date getStartDate() {
+        return startDate;
     }
 
     @Override
-    public void setStart(Date start) {
-        this.start = start;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
     @Override

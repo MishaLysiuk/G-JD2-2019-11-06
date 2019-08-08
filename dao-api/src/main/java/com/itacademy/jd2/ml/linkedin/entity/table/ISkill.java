@@ -1,15 +1,18 @@
 package com.itacademy.jd2.ml.linkedin.entity.table;
 
+import java.util.Set;
+
 public interface ISkill extends IBaseEntity {
+
     String getName();
 
     void setName(String name);
 
-    IUserAccount getUser();
+    Set<IUserAccount> getUsers();
 
-    void setUser(IUserAccount user);
+    void setUsers(Set<IUserAccount> users);
 
-    IGroup getGroup();
+    IGroupSkill getGroup();
 
-    void setGroup(IGroup group);
+    void setGroup(IGroupSkill group);
 }

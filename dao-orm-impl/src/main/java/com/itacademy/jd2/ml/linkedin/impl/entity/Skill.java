@@ -1,10 +1,12 @@
 package com.itacademy.jd2.ml.linkedin.impl.entity;
 
-import com.itacademy.jd2.ml.linkedin.entity.table.IGroup;
+import com.itacademy.jd2.ml.linkedin.entity.table.IGroupSkill;
 import com.itacademy.jd2.ml.linkedin.entity.table.ISkill;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Skill extends BaseEntity implements ISkill {
@@ -12,11 +14,13 @@ public class Skill extends BaseEntity implements ISkill {
     @Column
     private String name;
 
-    @Transient
-    private IUserAccount user;
+    @JoinTable(name = "skill_2_user", joinColumns = {@JoinColumn(name = "skill_id")}, inverseJoinColumns = {
+            @JoinColumn(name = "user_id")})
+    @ManyToMany(targetEntity = UserAccount.class, fetch = FetchType.LAZY)
+    private Set<IUserAccount> users = new HashSet<>();
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Group.class)
-    private IGroup group;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = GroupSkill.class)
+    private IGroupSkill group;
 
     @Override
     public String getName() {
@@ -29,22 +33,22 @@ public class Skill extends BaseEntity implements ISkill {
     }
 
     @Override
-    public IUserAccount getUser() {
-        return user;
+    public Set<IUserAccount> getUsers() {
+        return users;
     }
 
     @Override
-    public void setUser(IUserAccount user) {
-        this.user = user;
+    public void setUsers(Set<IUserAccount> users) {
+        this.users = users;
     }
 
     @Override
-    public IGroup getGroup() {
+    public IGroupSkill getGroup() {
         return group;
     }
 
     @Override
-    public void setGroup(IGroup group) {
+    public void setGroup(IGroupSkill group) {
         this.group = group;
     }
 }

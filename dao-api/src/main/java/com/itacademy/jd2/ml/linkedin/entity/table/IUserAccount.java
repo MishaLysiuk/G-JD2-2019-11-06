@@ -2,11 +2,9 @@ package com.itacademy.jd2.ml.linkedin.entity.table;
 
 import com.itacademy.jd2.ml.linkedin.entity.enums.Role;
 
-public interface IUserAccount extends IBaseEntity{
-    IUserPortfolio getUserPortfolio();
+import java.util.Date;
 
-    void setUserPortfolio(IUserPortfolio userPortfolio);
-
+public interface IUserAccount extends IBaseEntity {
     String getEmail();
 
     void setEmail(String email);
@@ -18,4 +16,32 @@ public interface IUserAccount extends IBaseEntity{
     Role getRoleId();
 
     void setRoleId(Role roleId);
+
+    String getFirstName();
+
+    void setFirstName(String firstName);
+
+    String getLastName();
+
+    void setLastName(String lastName);
+
+    Date getBirthday();
+
+    void setBirthday(Date birthday);
+
+    Integer getIndustryId();
+
+    void setIndustryId(Integer industryId);
+
+    Integer getPositionId();
+
+    void setPositionId(Integer positionId);
+
+    String getContactInfo();
+
+    void setContactInfo(String contactInfo);
+
+    String getMotherTongue();
+
+    void setMotherTongue(String motherTongue);
 }

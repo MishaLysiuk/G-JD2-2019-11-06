@@ -1,8 +1,8 @@
 package com.itacademy.jd2.ml.linkedin.impl;
 
-import com.itacademy.jd2.ml.linkedin.IGroupDao;
-import com.itacademy.jd2.ml.linkedin.IGroupService;
-import com.itacademy.jd2.ml.linkedin.entity.table.IGroup;
+import com.itacademy.jd2.ml.linkedin.IGroupSkillDao;
+import com.itacademy.jd2.ml.linkedin.IGroupSkillService;
+import com.itacademy.jd2.ml.linkedin.entity.table.IGroupSkill;
 import com.itacademy.jd2.ml.linkedin.filter.GroupFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,22 +11,22 @@ import java.util.Date;
 import java.util.List;
 
 @Service
-public class GroupServiceImpl implements IGroupService {
+public class GroupSkillServiceImpl implements IGroupSkillService {
     
-    private IGroupDao dao;
+    private IGroupSkillDao dao;
 
     @Autowired
-    public GroupServiceImpl(IGroupDao dao) {
+    public GroupSkillServiceImpl(IGroupSkillDao dao) {
         this.dao = dao;
     }
 
     @Override
-    public IGroup createEntity() {
+    public IGroupSkill createEntity() {
         return dao.createEntity();
     }
 
     @Override
-    public void save(final IGroup entity) {
+    public void save(final IGroupSkill entity) {
         final Date modifedOn = new Date();
         entity.setUpdated(modifedOn);
         if (entity.getId() == null) {
@@ -38,8 +38,8 @@ public class GroupServiceImpl implements IGroupService {
     }
 
     @Override
-    public IGroup get(final Integer id) {
-        final IGroup entity = dao.get(id);
+    public IGroupSkill get(final Integer id) {
+        final IGroupSkill entity = dao.get(id);
         return entity;
     }
 
@@ -54,15 +54,15 @@ public class GroupServiceImpl implements IGroupService {
     }
 
     @Override
-    public List<IGroup> getAll() {
-        final List<IGroup> all = dao.selectAll();
+    public List<IGroupSkill> getAll() {
+        final List<IGroupSkill> all = dao.selectAll();
         return all;
     }
 
 
 
     @Override
-    public List<IGroup> find(GroupFilter filter) {
+    public List<IGroupSkill> find(GroupFilter filter) {
         return dao.find(filter);
     }
 
@@ -70,5 +70,5 @@ public class GroupServiceImpl implements IGroupService {
     public long getCount(GroupFilter filter) {
         return dao.getCount(filter);
     }
-    
+
 }

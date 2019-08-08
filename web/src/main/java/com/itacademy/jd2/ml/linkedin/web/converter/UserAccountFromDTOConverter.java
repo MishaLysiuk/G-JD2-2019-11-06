@@ -10,7 +10,7 @@ import java.util.function.Function;
 
 @Component
 public class UserAccountFromDTOConverter implements Function<UserAccountDTO, IUserAccount> {
-    
+
     private IUserAccountService userAccountService;
 
     @Autowired
@@ -25,6 +25,13 @@ public class UserAccountFromDTOConverter implements Function<UserAccountDTO, IUs
         entity.setEmail(dto.getEmail());
         entity.setPassword(dto.getPassword());
         entity.setRoleId(dto.getRoleId());
+        entity.setFirstName(dto.getFirstName());
+        entity.setLastName(dto.getLastName());
+        entity.setBirthday(dto.getBirthday());
+        entity.setIndustryId(dto.getIndustryId());
+        entity.setPositionId(dto.getPositionId());
+        entity.setContactInfo(dto.getContactInfo());
+        entity.setMotherTongue(dto.getMotherTongue());
         return entity;
     }
 
