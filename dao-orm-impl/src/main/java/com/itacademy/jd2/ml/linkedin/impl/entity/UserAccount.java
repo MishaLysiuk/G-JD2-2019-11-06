@@ -2,11 +2,17 @@ package com.itacademy.jd2.ml.linkedin.impl.entity;
 
 import com.itacademy.jd2.ml.linkedin.entity.enums.Role;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
+import org.hibernate.search.annotations.Analyze;
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.Index;
+import org.hibernate.search.annotations.Store;
 
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity
+@Indexed
 public class UserAccount extends BaseEntity implements IUserAccount {
 
     @Column
@@ -17,6 +23,7 @@ public class UserAccount extends BaseEntity implements IUserAccount {
     @Enumerated(EnumType.ORDINAL)
     private Role roleId;
     @Column
+    @Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO)
     private String firstName;
     @Column
     private String lastName;

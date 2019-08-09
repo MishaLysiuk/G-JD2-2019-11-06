@@ -14,7 +14,7 @@ http://www.springframework.org/schema/context/spring-context-4.2.xsd">
             base-package="com.itacademy.jd2.ml.linkedin.web.security" />
 
     <http>
-        <!--<intercept-url pattern="/linkedin**" access="!isAnonymous()" />-->
+        <intercept-url pattern="/linkedin**" access="!isAnonymous()" />
         <!--<intercept-url pattern="/user**" access="!isAnonymous()" />-->
         <!-- <intercept-url pattern="/model**" access="hasRole('admin')" /> -->
 

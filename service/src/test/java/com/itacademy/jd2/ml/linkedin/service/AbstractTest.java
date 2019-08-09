@@ -52,7 +52,7 @@ public abstract class AbstractTest {
         entity.setEmail("email-" + getRandomPrefix());
         entity.setPassword("password-" + getRandomPrefix());
         entity.setRoleId(Role.ADMIN);
-        entity.setFirstName("firstName-" + getRandomPrefix());
+        entity.setFirstName("qwerty-" + getRandomPrefix());
         entity.setLastName("lastName-" + getRandomPrefix());
         entity.setBirthday(new Date());
         userAccountService.save(entity);

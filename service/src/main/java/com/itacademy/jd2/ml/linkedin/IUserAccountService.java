@@ -23,6 +23,9 @@ public interface IUserAccountService {
 
     IUserAccount createEntity();
 
+    @Transactional
+    List<IUserAccount> search(String text);
+
     List<IUserAccount> find(UserAccountFilter filter);
 
     long getCount(UserAccountFilter filter);

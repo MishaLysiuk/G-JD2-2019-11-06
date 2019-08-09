@@ -20,7 +20,7 @@ public final class StartJetty {
      */
 
     public static void main(final String[] args) throws MalformedURLException {
-        startInstance(8081);
+        startInstance(8080);
     }
 
     private static void startInstance(final int port) throws MalformedURLException {

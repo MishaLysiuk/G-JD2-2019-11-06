@@ -61,6 +61,11 @@ public class UserAccountServiceImpl implements IUserAccountService {
         return all;
     }
 
+    @Override
+    public List<IUserAccount> search(String text) {
+        return dao.search(text);
+    }
+
 
     @Override
     public List<IUserAccount> find(UserAccountFilter filter) {
