@@ -2,6 +2,7 @@ package com.itacademy.jd2.ml.linkedin.impl;
 
 import com.itacademy.jd2.ml.linkedin.ICountryDao;
 import com.itacademy.jd2.ml.linkedin.entity.table.ICountry;
+import com.itacademy.jd2.ml.linkedin.filter.CountryFilter;
 import com.itacademy.jd2.ml.linkedin.filter.CourseFilter;
 import com.itacademy.jd2.ml.linkedin.impl.entity.Country;
 import org.springframework.stereotype.Repository;
@@ -15,7 +16,7 @@ public class CountryDaoImpl extends AbstractDaoImpl<ICountry, Integer> implement
     }
 
     @Override
-    public List<ICountry> find(CourseFilter filter) {
+    public List<ICountry> find(CountryFilter filter) {
         return null;
     }
 
