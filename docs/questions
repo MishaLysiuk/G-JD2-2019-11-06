@@ -7,4 +7,9 @@ enum: names in tables: language level, skill, group, company, language,
 //сделать чтобы хидер оставался всё время вверху
 запрос в базу на поиск по email
 id повторяющихся полей(company, address, etc)
-добавить объект(skill, education, etc.)
+добавить объект(skill, education, etc.)|
+
+
+убрать пароль из профиля
+разбить мой аккаунт на много страниц
+in service layer add role_id in update and save

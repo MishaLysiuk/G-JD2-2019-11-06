@@ -4,5 +4,6 @@
     <entry key="page.home.title">Домашняя страница</entry>
     <entry key="page.home.welcomeMessage">Привет, {0}</entry>
     <entry key="page.login.credentialsError">неверный логин или пароль!</entry>
+    <entry key="header.myAccount">Мой профиль</entry>
 
 </properties>

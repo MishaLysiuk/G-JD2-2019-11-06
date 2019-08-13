@@ -17,6 +17,7 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Path;
 import javax.persistence.criteria.Root;
 import javax.persistence.metamodel.SingularAttribute;
+import java.rmi.UnexpectedException;
 import java.util.List;
 
 @Repository
@@ -84,11 +85,22 @@ public class UserAccountDaoImpl extends AbstractDaoImpl<IUserAccount, Integer> i
     public IUserAccount findByEmail(String email) {
         final EntityManager em = getEntityManager();
         final CriteriaBuilder cb = em.getCriteriaBuilder();
-        final CriteriaQuery<Long> cq = cb.createQuery(Long.class);
+        final CriteriaQuery<IUserAccount> cq = cb.createQuery(IUserAccount.class);
         final Root<UserAccount> from = cq.from(UserAccount.class);
-        cq.select(cb.count(from));
-        final TypedQuery<Long> q = em.createQuery(cq);
-        return new UserAccount();
+        cq.select(from);
+
+        cq.where(cb.equal(from.get(UserAccount_.email), email));
+        final TypedQuery<IUserAccount> q = em.createQuery(cq);
+
+        List<IUserAccount> resultList = q.getResultList();
+        if (resultList.isEmpty()) {
+            return null;
+        }
+        if (resultList.size() == 1) {
+            return resultList.get(0);
+        }
+        throw new RuntimeException("resultList > 1");
+
     }
 
     @Override

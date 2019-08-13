@@ -6,7 +6,7 @@
         <form name='loginForm' action="<c:url value='login' />" method='POST'>
             <div class="row">
                 <div class="input-field col s12 center">
-                    <input id="email" type='text' required> <label for="email">Email:</label>
+                    <input id="email" type='email' required> <label for="email">Email:</label>
                 </div>
             </div>
             <div class="row">

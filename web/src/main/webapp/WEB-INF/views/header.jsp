@@ -16,7 +16,7 @@
         <div class="nav-wrapper purple lighten-3">
             <a href="#" class="brand-logo">FindDreamJob</a>
             <ul class="right hide-on-med-and-down">
-                <li><a href="${contextPath}/">My account</a></li>
+                <li><a href="${contextPath}/"><spring:message code="header.myAccount"></spring:message></a></li>
                 <li><a href="${listWorker}">Workers</a></li>
                 <li><a href="${listVacancy}">Jobs</a></li>
                 <li><a href="${postVacancy}">Post new vacancy</a></li>
