@@ -21,7 +21,6 @@ public abstract class AbstractDaoImpl<T, ID> implements IDao<T, ID> {
         this.entityClass = entityClass;
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     @Deprecated
     public List<T> selectAll() {

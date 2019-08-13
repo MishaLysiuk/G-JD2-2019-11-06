@@ -65,5 +65,10 @@ public class VacancyServiceImpl implements IVacancyService {
     public List<IVacancy> find(VacancyFilter filter) {
         return dao.find(filter);
     }
+
+    @Override
+    public long getCount(VacancyFilter filter) {
+        return dao.getCount(filter);
+    }
     
 }

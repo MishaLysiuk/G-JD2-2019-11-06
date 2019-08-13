@@ -73,26 +73,22 @@ public class UserAccountDaoImpl extends AbstractDaoImpl<IUserAccount, Integer> i
     public long getCount(UserAccountFilter filter) {
         final EntityManager em = getEntityManager();
         final CriteriaBuilder cb = em.getCriteriaBuilder();
-        final CriteriaQuery<Long> cq = cb.createQuery(Long.class); // define
-        // type of
-        // result
-        final Root<UserAccount> from = cq.from(UserAccount.class); // select from UserAccount
-        cq.select(cb.count(from)); // select what? select count(*)
+        final CriteriaQuery<Long> cq = cb.createQuery(Long.class);
+        final Root<UserAccount> from = cq.from(UserAccount.class);
+        cq.select(cb.count(from));
         final TypedQuery<Long> q = em.createQuery(cq);
-        return q.getSingleResult(); // execute query
+        return q.getSingleResult();
     }
 
     @Override
     public IUserAccount findByEmail(String email) {
         final EntityManager em = getEntityManager();
         final CriteriaBuilder cb = em.getCriteriaBuilder();
-        final CriteriaQuery<Long> cq = cb.createQuery(Long.class); // define
-        // type of
-        // result
-        final Root<UserAccount> from = cq.from(UserAccount.class); // select from UserAccount
-        cq.select(cb.count(from)); // select what? select count(*)
+        final CriteriaQuery<Long> cq = cb.createQuery(Long.class);
+        final Root<UserAccount> from = cq.from(UserAccount.class);
+        cq.select(cb.count(from));
         final TypedQuery<Long> q = em.createQuery(cq);
-        return new UserAccount(); // execute query
+        return new UserAccount();
     }
 
     @Override

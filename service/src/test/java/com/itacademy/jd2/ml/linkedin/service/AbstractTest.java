@@ -25,6 +25,16 @@ public abstract class AbstractTest {
     protected ICompanyService companyService;
     @Autowired
     protected ICourseService courseService;
+    @Autowired
+    protected IVacancyService vacancyService;
+    @Autowired
+    protected IAddressService addressService;
+    @Autowired
+    protected ICityService cityService;
+    @Autowired
+    protected ICountryService countryService;
+    @Autowired
+    protected IRegionService regionService;
 
     private static final Random RANDOM = new Random();
 
@@ -54,7 +64,6 @@ public abstract class AbstractTest {
         entity.setRoleId(Role.USER);
         entity.setFirstName("firstName-" + getRandomPrefix());
         entity.setLastName("lastName-" + getRandomPrefix());
-        entity.setBirthday(new Date());
         userAccountService.save(entity);
         return entity;
     }
@@ -70,6 +79,37 @@ public abstract class AbstractTest {
         final IGroupSkill entity = groupService.createEntity();
         entity.setName("name-" + getRandomPrefix());
         groupService.save(entity);
+        return entity;
+    }
+
+    protected IAddress saveNewAddress() {
+        final IAddress entity = addressService.createEntity();
+        entity.setAddress("name-" + getRandomPrefix());
+        entity.setCity(saveNewCity());
+        addressService.save(entity);
+        return entity;
+    }
+
+    protected ICity saveNewCity() {
+        final ICity entity = cityService.createEntity();
+        entity.setNameId(getRandomObjectsCount());
+        entity.setCountry(saveNewCountry());
+        cityService.save(entity);
+        return entity;
+    }
+
+    protected ICountry saveNewCountry() {
+        final ICountry entity = countryService.createEntity();
+        entity.setNameId(getRandomObjectsCount());
+        entity.setRegion(saveNewRegion());
+        countryService.save(entity);
+        return entity;
+    }
+
+    protected IRegion saveNewRegion() {
+        final IRegion entity = regionService.createEntity();
+        entity.setNameId(getRandomObjectsCount());
+        regionService.save(entity);
         return entity;
     }
 

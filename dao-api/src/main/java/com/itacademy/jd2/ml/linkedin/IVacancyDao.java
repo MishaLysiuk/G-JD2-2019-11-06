@@ -9,4 +9,5 @@ public interface IVacancyDao extends IDao<IVacancy, Integer> {
 
     List<IVacancy> find(VacancyFilter filter);
 
+    long getCount(VacancyFilter filter);
 }

@@ -19,4 +19,6 @@ public interface IVacancyService {
     List<IVacancy> getAll();
 
     List<IVacancy> find(VacancyFilter filter);
+
+    long getCount(VacancyFilter filter);
 }
