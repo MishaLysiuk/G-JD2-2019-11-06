@@ -17,10 +17,9 @@ public class UserAccountServiceTest extends AbstractTest {
         final IUserAccount entity = userAccountService.createEntity();
         entity.setEmail("email-" + getRandomPrefix());
         entity.setPassword("password-" + getRandomPrefix());
-        entity.setRoleId(Role.ADMIN);
+        entity.setRoleId(Role.USER);
         entity.setFirstName("firstName-" + getRandomPrefix());
         entity.setLastName("lastName-" + getRandomPrefix());
-        entity.setBirthday(new Date());
         userAccountService.save(entity);
 
         final IUserAccount entityFromDb = userAccountService.get(entity.getId());
@@ -33,7 +32,6 @@ public class UserAccountServiceTest extends AbstractTest {
         assertEquals(entity.getRoleId(), entityFromDb.getRoleId());
         assertEquals(entity.getFirstName(), entityFromDb.getFirstName());
         assertEquals(entity.getLastName(), entityFromDb.getLastName());
-        //assertEquals(entity.getBirthday(), entityFromDb.getBirthday());
         assertTrue(entityFromDb.getCreated().equals(entityFromDb.getUpdated()));
     }
 

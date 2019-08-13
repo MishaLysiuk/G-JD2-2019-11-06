@@ -6,7 +6,7 @@
 
     <definition name="DefaultTemplate"
                 template="/WEB-INF/views/main-template.jsp">
-        <put-attribute name="title" value="Linkedin"/>
+        <put-attribute name="title" value="FindDreamJob"/>
         <put-attribute name="header"
                        value="/WEB-INF/views/header.jsp"/>
         <put-attribute name="body" value=""/>
@@ -19,15 +19,6 @@
                        value="/WEB-INF/views/home.jsp"/>
     </definition>
 
-    <definition name="user.list" extends="DefaultTemplate">
-        <put-attribute name="body"
-                       value="/WEB-INF/views/user/list.jsp"/>
-    </definition>
-
-    <definition name="user.edit" extends="DefaultTemplate">
-        <put-attribute name="body" value="/WEB-INF/views/user/form.jsp"/>
-    </definition>
-
     <definition name="account.list" extends="DefaultTemplate">
         <put-attribute name="body"
                        value="/WEB-INF/views/account/list.jsp"/>
@@ -37,8 +28,20 @@
         <put-attribute name="body" value="/WEB-INF/views/account/form.jsp"/>
     </definition>
 
+    <definition name="vacancy.list" extends="DefaultTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/vacancy/list.jsp"/>
+    </definition>
+
+    <definition name="vacancy.form" extends="DefaultTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/vacancy/form.jsp"/>
+    </definition>
+
     <definition name="login" extends="DefaultTemplate">
         <put-attribute name="body" value="/WEB-INF/views/login.jsp"/>
+    </definition>
+
+    <definition name="registration" extends="DefaultTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/registration.jsp"/>
     </definition>
 
 

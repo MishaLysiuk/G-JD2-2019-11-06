@@ -2,4 +2,9 @@
 
 enum: names in tables: language level, skill, group, company, language,
 
-G-JD2-2019-11-06\web
+передача данных с формы(address etc.), одна форма или несколько
+передача данных в форму(запрос)
+сделать чтобы хидер оставался всё время вверху
+запрос в базу на поиск по email
+id повторяющихся полей(company, address, etc)
+добавить объект(skill, education, etc.)

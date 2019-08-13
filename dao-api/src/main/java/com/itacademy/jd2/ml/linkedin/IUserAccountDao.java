@@ -13,7 +13,7 @@ public interface IUserAccountDao extends IDao<IUserAccount, Integer> {
 
     long getCount(UserAccountFilter filter); // skip
 
-    IUserAccount findByEmail(String username);
+    IUserAccount findByEmail(String email);
 
     List<IUserAccount> search(String text);
 }

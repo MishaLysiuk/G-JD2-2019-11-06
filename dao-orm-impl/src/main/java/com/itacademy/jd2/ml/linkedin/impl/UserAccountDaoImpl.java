@@ -4,11 +4,19 @@ import com.itacademy.jd2.ml.linkedin.IUserAccountDao;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 import com.itacademy.jd2.ml.linkedin.filter.UserAccountFilter;
 import com.itacademy.jd2.ml.linkedin.impl.entity.UserAccount;
+import com.itacademy.jd2.ml.linkedin.impl.entity.UserAccount_;
+import org.hibernate.jpa.criteria.OrderImpl;
 import org.hibernate.search.jpa.FullTextEntityManager;
 import org.hibernate.search.query.dsl.QueryBuilder;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Path;
+import javax.persistence.criteria.Root;
+import javax.persistence.metamodel.SingularAttribute;
 import java.util.List;
 
 @Repository
@@ -20,16 +28,62 @@ public class UserAccountDaoImpl extends AbstractDaoImpl<IUserAccount, Integer> i
 
     @Override
     public List<IUserAccount> find(UserAccountFilter filter) {
-        return null;
+        final EntityManager em = getEntityManager();
+        final CriteriaBuilder cb = em.getCriteriaBuilder();
+        final CriteriaQuery<IUserAccount> cq = cb.createQuery(IUserAccount.class); // define
+        // type
+        // of
+        // result
+        final Root<UserAccount> from = cq.from(UserAccount.class);// select from UserAccount
+        cq.select(from); // select what? select *
+
+        if (filter.getSortColumn() != null) {
+            final SingularAttribute<? super UserAccount, ?> sortProperty = toMetamodelFormat(
+                    filter.getSortColumn());
+
+            final Path<?> expression = from.get(sortProperty);
+            cq.orderBy(new OrderImpl(expression, filter.getSortOrder()));
+        }
+
+        final TypedQuery<IUserAccount> q = em.createQuery(cq);
+        setPaging(filter, q);
+        return q.getResultList();
+    }
+
+    private SingularAttribute<? super UserAccount, ?> toMetamodelFormat(
+            final String sortColumn) {
+        switch (sortColumn) {
+            case "created":
+                return UserAccount_.created;
+            case "updated":
+                return UserAccount_.updated;
+            case "id":
+                return UserAccount_.id;
+            case "firstName":
+                return UserAccount_.firstName;
+            case "lastName":
+                return UserAccount_.lastName;
+            default:
+                throw new UnsupportedOperationException(
+                        "sorting is not supported by column:" + sortColumn);
+        }
     }
 
     @Override
     public long getCount(UserAccountFilter filter) {
-        return 0;
+        final EntityManager em = getEntityManager();
+        final CriteriaBuilder cb = em.getCriteriaBuilder();
+        final CriteriaQuery<Long> cq = cb.createQuery(Long.class); // define
+        // type of
+        // result
+        final Root<UserAccount> from = cq.from(UserAccount.class); // select from UserAccount
+        cq.select(cb.count(from)); // select what? select count(*)
+        final TypedQuery<Long> q = em.createQuery(cq);
+        return q.getSingleResult(); // execute query
     }
 
     @Override
-    public IUserAccount findByEmail(String username) {
+    public IUserAccount findByEmail(String email) {
         return null;
     }
 

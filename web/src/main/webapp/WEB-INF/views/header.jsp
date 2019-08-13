@@ -13,21 +13,23 @@
 
 <header>
     <nav>
-        <div class="nav-wrapper container">
-            <ul class="left hide-on-med-and-down">
-                <li><a href="${contextPath}/">home</a></li>
-                <li><a href="${pagesUser}">Users</a></li>
-                <li><a href="${pagesAccount}">Accounts</a></li>
-                <sec:authorize access="!isAnonymous()">
+        <div class="nav-wrapper purple lighten-3">
+            <a href="#" class="brand-logo">FindDreamJob</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="${contextPath}/">My account</a></li>
+                <li><a href="${listWorker}">Workers</a></li>
+                <li><a href="${listVacancy}">Jobs</a></li>
+                <li><a href="${postVacancy}">Post new vacancy</a></li>
+                <%--<sec:authorize access="!isAnonymous()">
                     Id: <sec:authentication property="id"/>
                     Name: <sec:authentication property="principal"/>
                     RoleID:<sec:authentication property="authorities"/>
-                </sec:authorize>
+                </sec:authorize>--%>
                 <sec:authorize access="isAnonymous()">
                     Logged user is anonymous
                 </sec:authorize>
                 <sec:authorize access="!isAnonymous()">
-                    <a class="right" href="${contextPath}/execute_logout" title="logout"><i
+                    <a class="right" href="${contextPath}/execute_logout" title="Log out"><i
                             class="material-icons">arrow_forward</i></a>
                 </sec:authorize>
                 <li><a class="highlighted-menu-ru" href="?lang=ru">RU</a></li>

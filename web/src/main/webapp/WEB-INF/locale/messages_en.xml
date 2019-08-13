@@ -4,4 +4,5 @@
     <entry key="page.home.title">Home Page</entry>
     <entry key="page.home.welcomeMessage">Hello, {0}</entry>
     <entry key="page.login.credentialsError">Invalid username and password!</entry>
+
 </properties>

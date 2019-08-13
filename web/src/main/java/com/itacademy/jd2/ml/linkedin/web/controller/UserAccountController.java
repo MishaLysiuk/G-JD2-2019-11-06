@@ -23,9 +23,9 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Controller
-@RequestMapping(value = "/account")
+@RequestMapping(value = "/worker")
 public class UserAccountController extends AbstractController {
-    
+
     private IUserAccountService userAccountService;
     private UserAccountFromDTOConverter fromDtoConverter;
     private UserAccountToDTOConverter toDtoConverter;
@@ -76,7 +76,7 @@ public class UserAccountController extends AbstractController {
         } else {
             final IUserAccount entity = fromDtoConverter.apply(formAccount);
             userAccountService.save(entity);
-            return "redirect:/account";
+            return "redirect:/worker";
         }
     }
 

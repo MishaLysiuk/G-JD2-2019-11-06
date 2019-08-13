@@ -1,8 +1,9 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" scope="request" />
-<c:set var="pagesUser" value="${contextPath}/user" scope="request" />
-<c:set var="pagesAccount" value="${contextPath}/account" scope="request" />
+<c:set var="listWorker" value="${contextPath}/worker" scope="request" />
+<c:set var="listVacancy" value="${contextPath}/jobs" scope="request" />
+<c:set var="postVacancy" value="${contextPath}/postvacancy" scope="request" />
 
 
 
@@ -22,7 +23,7 @@
 <body>
 <tiles:insertAttribute name="header" />
 <main>
-    <div class="container">
+    <div class="container ">
         <tiles:insertAttribute name="body" />
     </div>
 </main>

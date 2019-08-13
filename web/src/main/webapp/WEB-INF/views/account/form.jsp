@@ -29,11 +29,11 @@
             <div class="col s6"></div>
             <div class="col s3">
                 <c:if test="${!readonly}">
-                    <button class="btn waves-effect waves-light right" type="submit">submit</button>
+                    <button class="btn purple lighten-3 right" type="submit">submit</button>
                 </c:if>
             </div>
             <div class="col s3">
-                <a class="btn waves-effect waves-light right" href="${pagesAccount}">to list<i
+                <a class="btn purple lighten-3 right" href="${pagesAccount}">to list<i
                         class="material-icons right"></i>
                 </a>
             </div>
