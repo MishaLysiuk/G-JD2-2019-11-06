@@ -84,7 +84,15 @@ public class UserAccountDaoImpl extends AbstractDaoImpl<IUserAccount, Integer> i
 
     @Override
     public IUserAccount findByEmail(String email) {
-        return null;
+        final EntityManager em = getEntityManager();
+        final CriteriaBuilder cb = em.getCriteriaBuilder();
+        final CriteriaQuery<Long> cq = cb.createQuery(Long.class); // define
+        // type of
+        // result
+        final Root<UserAccount> from = cq.from(UserAccount.class); // select from UserAccount
+        cq.select(cb.count(from)); // select what? select count(*)
+        final TypedQuery<Long> q = em.createQuery(cq);
+        return new UserAccount(); // execute query
     }
 
     @Override

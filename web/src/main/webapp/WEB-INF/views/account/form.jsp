@@ -3,7 +3,7 @@
 <h4 class="header">Edit account</h4>
 <div class="row">
 
-    <form:form class="col s12" method="POST" action="${pagesAccount}"
+    <form:form class="col s12" method="POST" action="${listWorker}"
                modelAttribute="formAccount">
         <form:input path="id" type="hidden" />
         <div class="row">
@@ -33,7 +33,7 @@
                 </c:if>
             </div>
             <div class="col s3">
-                <a class="btn purple lighten-3 right" href="${pagesAccount}">to list<i
+                <a class="btn purple lighten-3 right" href="${listWorker}">to list<i
                         class="material-icons right"></i>
                 </a>
             </div>

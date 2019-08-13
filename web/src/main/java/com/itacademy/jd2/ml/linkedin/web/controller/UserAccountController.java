@@ -83,7 +83,7 @@ public class UserAccountController extends AbstractController {
     @RequestMapping(value = "/{id}/delete", method = RequestMethod.GET)
     public String delete(@PathVariable(name = "id", required = true) final Integer id) {
         userAccountService.delete(id);
-        return "redirect:/account";
+        return "redirect:/worker";
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)

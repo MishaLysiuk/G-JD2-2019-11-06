@@ -36,6 +36,28 @@ public class UserAccountServiceTest extends AbstractTest {
     }
 
     @Test
+    public void testAddAdmin() {
+        final IUserAccount entity = userAccountService.createEntity();
+        entity.setEmail("admin@gmail.com");
+        entity.setPassword("admin");
+        entity.setRoleId(Role.ADMIN);
+        entity.setFirstName("admin");
+        entity.setLastName("admin");
+        userAccountService.save(entity);
+    }
+
+    @Test
+    public void testAddUser() {
+        final IUserAccount entity = userAccountService.createEntity();
+        entity.setEmail("user@gmail.com");
+        entity.setPassword("user");
+        entity.setRoleId(Role.USER);
+        entity.setFirstName("user");
+        entity.setLastName("user");
+        userAccountService.save(entity);
+    }
+
+    @Test
     public void testSearch() {
         List<IUserAccount> result = userAccountService.search("qwerty");
         assertTrue(result.isEmpty());
