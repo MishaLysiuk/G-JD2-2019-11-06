@@ -19,6 +19,26 @@
                        value="/WEB-INF/views/home.jsp"/>
     </definition>
 
+    <definition name="profile.skill" extends="DefaultTemplate">
+        <put-attribute name="body"
+                       value="/WEB-INF/views/profile/skill.jsp"/>
+    </definition>
+
+    <definition name="profile.course" extends="DefaultTemplate">
+        <put-attribute name="body"
+                       value="/WEB-INF/views/profile/course.jsp"/>
+    </definition>
+
+    <definition name="profile.education" extends="DefaultTemplate">
+        <put-attribute name="body"
+                       value="/WEB-INF/views/profile/education.jsp"/>
+    </definition>
+
+    <definition name="profile.work-experience" extends="DefaultTemplate">
+        <put-attribute name="body"
+                       value="/WEB-INF/views/profile/work-experience.jsp"/>
+    </definition>
+
     <definition name="account.list" extends="DefaultTemplate">
         <put-attribute name="body"
                        value="/WEB-INF/views/account/list.jsp"/>

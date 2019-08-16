@@ -5,5 +5,9 @@
     <entry key="page.home.welcomeMessage">Hello, {0}</entry>
     <entry key="page.login.credentialsError">Invalid username and password!</entry>
     <entry key="header.myAccount">My account</entry>
+    <entry key="header.education">Education</entry>
+    <entry key="header.workExperience">Work experience</entry>
+    <entry key="header.course">Course</entry>
+    <entry key="header.skill">Skills</entry>
 
 </properties>

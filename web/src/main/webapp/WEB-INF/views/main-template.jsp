@@ -1,6 +1,10 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" scope="request" />
+<c:set var="education" value="${contextPath}/education" scope="request" />
+<c:set var="workExperience" value="${contextPath}/work-experience" scope="request" />
+<c:set var="course" value="${contextPath}/course" scope="request" />
+<c:set var="skill" value="${contextPath}/skill" scope="request" />
 <c:set var="listWorker" value="${contextPath}/worker" scope="request" />
 <c:set var="listVacancy" value="${contextPath}/jobs" scope="request" />
 <c:set var="postVacancy" value="${contextPath}/postvacancy" scope="request" />

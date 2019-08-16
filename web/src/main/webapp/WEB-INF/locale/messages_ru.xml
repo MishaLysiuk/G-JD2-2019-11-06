@@ -5,5 +5,9 @@
     <entry key="page.home.welcomeMessage">Привет, {0}</entry>
     <entry key="page.login.credentialsError">неверный логин или пароль!</entry>
     <entry key="header.myAccount">Мой профиль</entry>
+    <entry key="header.education">Образование</entry>
+    <entry key="header.workExperience">Рабочий опыт</entry>
+    <entry key="header.course">Курсы</entry>
+    <entry key="header.skill">Умения</entry>
 
 </properties>

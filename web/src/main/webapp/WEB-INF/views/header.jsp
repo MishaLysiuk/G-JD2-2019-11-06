@@ -17,6 +17,10 @@
             <a href="#" class="brand-logo">FindDreamJob</a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="${contextPath}/"><spring:message code="header.myAccount"></spring:message></a></li>
+                <li><a href="${education}/"><spring:message code="header.education"></spring:message></a></li>
+                <li><a href="${workExperience}/"><spring:message code="header.workExperience"></spring:message></a></li>
+                <li><a href="${course}/"><spring:message code="header.course"></spring:message></a></li>
+                <li><a href="${skill}/"><spring:message code="header.skill"></spring:message></a></li>
                 <li><a href="${listWorker}">Workers</a></li>
                 <li><a href="${listVacancy}">Jobs</a></li>
                 <li><a href="${postVacancy}">Post new vacancy</a></li>

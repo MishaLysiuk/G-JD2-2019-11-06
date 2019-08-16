@@ -6,7 +6,7 @@
 </div>
 
 <div class="row">
-    <form:form class="col s12" method="post">
+    <form:form class="col s12" method="get">
 
         <div class="input-field col s12">
             <select>
