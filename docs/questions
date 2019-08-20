@@ -13,3 +13,5 @@ in service layer add role_id in update and save
 создание вакансии тест
 address разделение enumoв
 поиск с ajax
+
+autocomplete field jquery
