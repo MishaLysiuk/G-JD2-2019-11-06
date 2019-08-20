@@ -23,9 +23,7 @@ public class VacancyFromDTOConverter implements Function<VacancyDTO, IVacancy> {
         final IVacancy entity = vacancyService.createEntity();
         entity.setId(dto.getId());
         entity.setCreator(dto.getCreator());
-        entity.setActive(dto.getActive());
-        entity.setIndustryId(dto.getIndustryId());
-        entity.setPositionId(dto.getPositionId());
+        entity.setJobTitle(dto.getJobTitle());
         entity.setCompany(dto.getCompany());
         entity.setAddress(dto.getAddress());
         entity.setContactInfo(dto.getContactInfo());

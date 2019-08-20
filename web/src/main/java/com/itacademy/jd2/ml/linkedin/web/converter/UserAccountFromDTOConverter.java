@@ -28,8 +28,7 @@ public class UserAccountFromDTOConverter implements Function<UserAccountDTO, IUs
         entity.setFirstName(dto.getFirstName());
         entity.setLastName(dto.getLastName());
         entity.setBirthday(dto.getBirthday());
-        entity.setIndustryId(dto.getIndustryId());
-        entity.setPositionId(dto.getPositionId());
+        entity.setJobTitle(dto.getJobTitle());
         entity.setContactInfo(dto.getContactInfo());
         entity.setMotherTongue(dto.getMotherTongue());
         return entity;

@@ -25,9 +25,8 @@
                 <input id="email" type="email" class="validate">
                 <label for="email">Email</label>
             </div>
-            <div class="input-field col s6">
-                <input id="password" type="password" class="validate">
-                <label for="password">Password</label>
+            <div class="col s6">
+                <a class="btn purple lighten-3">Change password</a>
             </div>
         </div>
 

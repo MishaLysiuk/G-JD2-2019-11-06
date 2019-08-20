@@ -16,8 +16,7 @@ public class UserAccountDTO {
     private String firstName;
     private String lastName;
     private Date birthday;
-    private Integer industryId;
-    private Integer positionId;
+    private String jobTitle;
     private String contactInfo;
     private String motherTongue;
     private Date created;
@@ -79,20 +78,12 @@ public class UserAccountDTO {
         this.birthday = birthday;
     }
 
-    public Integer getIndustryId() {
-        return industryId;
+    public String getJobTitle() {
+        return jobTitle;
     }
 
-    public void setIndustryId(Integer industryId) {
-        this.industryId = industryId;
-    }
-
-    public Integer getPositionId() {
-        return positionId;
-    }
-
-    public void setPositionId(Integer positionId) {
-        this.positionId = positionId;
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
     }
 
     public String getContactInfo() {

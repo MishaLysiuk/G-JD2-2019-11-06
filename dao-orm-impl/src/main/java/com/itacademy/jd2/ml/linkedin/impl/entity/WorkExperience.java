@@ -18,9 +18,7 @@ public class WorkExperience extends BaseEntity implements IWorkExperience {
     @ManyToMany(targetEntity = UserAccount.class, fetch = FetchType.LAZY)
     private Set<IUserAccount> users = new HashSet<>();
     @Column
-    private Integer industryId;
-    @Column
-    private Integer positionId;
+    private String jobTitle;
     @Column
     private Date start;
     @Column
@@ -41,23 +39,13 @@ public class WorkExperience extends BaseEntity implements IWorkExperience {
     }
 
     @Override
-    public Integer getIndustryId() {
-        return industryId;
+    public String getJobTitle() {
+        return jobTitle;
     }
 
     @Override
-    public void setIndustryId(Integer industryId) {
-        this.industryId = industryId;
-    }
-
-    @Override
-    public Integer getPositionId() {
-        return positionId;
-    }
-
-    @Override
-    public void setPositionId(Integer positionId) {
-        this.positionId = positionId;
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
     }
 
     @Override

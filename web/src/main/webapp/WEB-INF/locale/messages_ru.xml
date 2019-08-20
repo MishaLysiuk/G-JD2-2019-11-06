@@ -9,5 +9,8 @@
     <entry key="header.workExperience">Рабочий опыт</entry>
     <entry key="header.course">Курсы</entry>
     <entry key="header.skill">Умения</entry>
+    <entry key="header.workers">Работники</entry>
+    <entry key="header.jobs">Вакансии</entry>
+    <entry key="header.addVacancy">Добавить вакансию</entry>
 
 </properties>

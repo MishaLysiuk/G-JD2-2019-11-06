@@ -9,9 +9,7 @@ public class VacancyDTO {
 
     private Integer id;
     private IUserAccount creator;
-    private Boolean active;
-    private Integer industryId;
-    private Integer positionId;
+    private String jobTitle;
     private ICompany company;
     private IAddress address;
     private String contactInfo;
@@ -32,28 +30,12 @@ public class VacancyDTO {
         this.creator = creator;
     }
 
-    public Boolean getActive() {
-        return active;
+    public String getJobTitle() {
+        return jobTitle;
     }
 
-    public void setActive(Boolean active) {
-        this.active = active;
-    }
-
-    public Integer getIndustryId() {
-        return industryId;
-    }
-
-    public void setIndustryId(Integer industryId) {
-        this.industryId = industryId;
-    }
-
-    public Integer getPositionId() {
-        return positionId;
-    }
-
-    public void setPositionId(Integer positionId) {
-        this.positionId = positionId;
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
     }
 
     public ICompany getCompany() {

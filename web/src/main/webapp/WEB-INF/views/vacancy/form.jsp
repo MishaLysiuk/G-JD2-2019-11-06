@@ -9,23 +9,8 @@
     <form:form class="col s12" method="get">
 
         <div class="input-field col s12">
-            <select>
-                <option value="" disabled selected>Choose your industry</option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-            </select>
-            <label>Industry</label>
-        </div>
-
-        <div class="input-field col s12">
-            <select>
-                <option value="" disabled selected>Choose your position</option>
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-                <option value="3">Option 3</option>
-            </select>
-            <label>Position</label>
+            <input id="jobTitle" type="text" class="validate" placeholder="Job title">
+            <label for="jobTitle">Job title</label>
         </div>
 
         <div class="row">
@@ -40,14 +25,10 @@
         </div>
 
         <div class="row">
-            <div class="input-field col s11">
+            <div class="input-field col s12">
                 <input id="contact_info" type="text" class="validate">
                 <label for="contact_info">Contact info</label>
             </div>
-            <label>
-                <input type="checkbox" class="filled-in s2" checked="checked"/>
-                <span>Relevant</span>
-            </label>
         </div>
 
         <div class="col s2 offset-s5">

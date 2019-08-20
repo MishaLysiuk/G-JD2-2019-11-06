@@ -6,17 +6,9 @@ public interface IVacancy extends IBaseEntity {
 
     void setCreator(IUserAccount creator);
 
-    Boolean getActive();
+    String getJobTitle();
 
-    void setActive(Boolean active);
-
-    Integer getIndustryId();
-
-    void setIndustryId(Integer industryId);
-
-    Integer getPositionId();
-
-    void setPositionId(Integer positionId);
+    void setJobTitle(String jobTitle);
 
     ICompany getCompany();
 

@@ -9,5 +9,8 @@
     <entry key="header.workExperience">Work experience</entry>
     <entry key="header.course">Course</entry>
     <entry key="header.skill">Skills</entry>
+    <entry key="header.workers">Workers</entry>
+    <entry key="header.jobs">Jobs</entry>
+    <entry key="header.addVacancy">Add vacancy</entry>
 
 </properties>

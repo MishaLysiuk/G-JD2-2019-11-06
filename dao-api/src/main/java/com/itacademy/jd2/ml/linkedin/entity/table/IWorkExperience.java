@@ -9,13 +9,9 @@ public interface IWorkExperience extends IBaseEntity {
 
     void setUsers(Set<IUserAccount> users);
 
-    Integer getIndustryId();
+    String getJobTitle();
 
-    void setIndustryId(Integer industryId);
-
-    Integer getPositionId();
-
-    void setPositionId(Integer positionId);
+    void setJobTitle(String jobTitle);
 
     Date getStart();
 

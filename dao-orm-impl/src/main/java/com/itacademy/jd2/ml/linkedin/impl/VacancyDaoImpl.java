@@ -48,18 +48,16 @@ public class VacancyDaoImpl extends AbstractDaoImpl<IVacancy,Integer> implements
     private SingularAttribute<? super Vacancy, ?> toMetamodelFormat(
             final String sortColumn) {
         switch (sortColumn) {
-            case "created":
-                return Vacancy_.active;
-            case "updated":
+            case "company":
                 return Vacancy_.company;
             case "id":
                 return Vacancy_.id;
-            case "industryId":
-                return Vacancy_.industryId;
-            case "positionId":
-                return Vacancy_.positionId;
+            case "jobTitle":
+                return Vacancy_.jobTitle;
             case "address":
                 return Vacancy_.address;
+            case "contactInfo":
+                return Vacancy_.contactInfo;
             default:
                 throw new UnsupportedOperationException(
                         "sorting is not supported by column:" + sortColumn);

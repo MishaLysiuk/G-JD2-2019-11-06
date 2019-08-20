@@ -29,13 +29,9 @@ public interface IUserAccount extends IBaseEntity {
 
     void setBirthday(Date birthday);
 
-    Integer getIndustryId();
+    String getJobTitle();
 
-    void setIndustryId(Integer industryId);
-
-    Integer getPositionId();
-
-    void setPositionId(Integer positionId);
+    void setJobTitle(String jobTitle);
 
     String getContactInfo();
 

@@ -30,9 +30,7 @@ public class UserAccount extends BaseEntity implements IUserAccount {
     @Column
     private Date birthday;
     @Column
-    private Integer industryId;
-    @Column
-    private Integer positionId;
+    private String jobTitle;
     @Column
     private String contactInfo;
     @Column
@@ -99,23 +97,13 @@ public class UserAccount extends BaseEntity implements IUserAccount {
     }
 
     @Override
-    public Integer getIndustryId() {
-        return industryId;
+    public String getJobTitle() {
+        return jobTitle;
     }
 
     @Override
-    public void setIndustryId(Integer industryId) {
-        this.industryId = industryId;
-    }
-
-    @Override
-    public Integer getPositionId() {
-        return positionId;
-    }
-
-    @Override
-    public void setPositionId(Integer positionId) {
-        this.positionId = positionId;
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
     }
 
     @Override
