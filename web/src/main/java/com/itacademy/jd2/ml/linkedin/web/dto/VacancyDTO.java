@@ -11,6 +11,7 @@ public class VacancyDTO {
     private IUserAccount creator;
     private String jobTitle;
     private ICompany company;
+    private String companyName;
     private IAddress address;
     private String contactInfo;
 
@@ -44,6 +45,14 @@ public class VacancyDTO {
 
     public void setCompany(ICompany company) {
         this.company = company;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
     public IAddress getAddress() {

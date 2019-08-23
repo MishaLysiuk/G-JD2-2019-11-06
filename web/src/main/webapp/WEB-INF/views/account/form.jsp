@@ -14,7 +14,7 @@
             </div>
 
             <div class="input-field col s12">
-                <form:input path="password" type="text" disabled="${readonly}"/>
+                <form:input path="password" type="password" disabled="${readonly}"/>
                 <form:errors path="password" cssClass="red-text"/>
                 <label for="password">Password</label>
             </div>

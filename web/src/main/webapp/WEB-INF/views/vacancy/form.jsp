@@ -6,33 +6,52 @@
 </div>
 
 <div class="row">
-    <form:form class="col s12" method="get">
+    <form:form class="col s12" method="POST" modelAttribute="formVacancy">
+        <form:input path="id" type="hidden" />
 
         <div class="input-field col s12">
-            <input id="jobTitle" type="text" class="validate" placeholder="Job title">
+            <form:input path="jobTitle" type="text" disabled="${readonly}"/>
+            <form:errors path="jobTitle" cssClass="red-text"/>
             <label for="jobTitle">Job title</label>
         </div>
 
         <div class="row">
-            <div class="input-field col s6">
-                <input id="company" type="text" class="validate">
-                <label for="company">Company</label>
+            <div class="input-field col s12">
+                <form:input path="companyName" type="text" disabled="${readonly}"/>
+                <form:errors path="companyName" cssClass="red-text"/>
+                <label for="companyName">Company</label>
             </div>
             <div class="input-field col s6">
-                <input id="address" type="text" class="validate">
+                <form:input path="address" type="text" disabled="${readonly}"/>
+                <form:errors path="address" cssClass="red-text"/>
                 <label for="address">Address</label>
             </div>
         </div>
 
         <div class="row">
             <div class="input-field col s12">
-                <input id="contact_info" type="text" class="validate">
-                <label for="contact_info">Contact info</label>
+                <form:input path="contactInfo" type="text" disabled="${readonly}"/>
+                <form:errors path="jobTitle" cssClass="red-text"/>
+                <label for="contactInfo">Contact info</label>
             </div>
         </div>
 
         <div class="col s2 offset-s5">
-            <button class="btn purple lighten-3 " type="submit" name="action">Post vacancy</button>
+            <c:if test="${!readonly}">
+                <button class="btn purple lighten-3 right" type="submit">submit</button>
+            </c:if>
         </div>
     </form:form>
 </div>
+
+<script>
+    $(document).ready(function(){
+        $('input.autocomplete').autocomplete({
+            data: {
+                "Apple": null,
+                "Microsoft": null,
+                "Google": 'https://placehold.it/250x250'
+            },
+        });
+    });
+</script>

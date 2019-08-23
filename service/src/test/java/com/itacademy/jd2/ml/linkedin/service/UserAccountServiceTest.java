@@ -14,6 +14,7 @@ public class UserAccountServiceTest extends AbstractTest {
 
     @Test
     public void testCreate() {
+
         final IUserAccount entity = userAccountService.createEntity();
         entity.setEmail("email-" + getRandomPrefix());
         entity.setPassword("password-" + getRandomPrefix());

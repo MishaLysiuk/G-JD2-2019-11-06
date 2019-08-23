@@ -2,6 +2,7 @@ package com.itacademy.jd2.ml.linkedin.impl;
 
 import com.itacademy.jd2.ml.linkedin.IVacancyDao;
 import com.itacademy.jd2.ml.linkedin.IVacancyService;
+import com.itacademy.jd2.ml.linkedin.entity.table.ICourse;
 import com.itacademy.jd2.ml.linkedin.entity.table.IVacancy;
 import com.itacademy.jd2.ml.linkedin.filter.VacancyFilter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,8 +68,19 @@ public class VacancyServiceImpl implements IVacancyService {
     }
 
     @Override
+    public List<IVacancy> findByCreatorId(Integer creatorId) {
+        return dao.findByCreatorId(creatorId);
+    }
+
+    @Override
     public long getCount(VacancyFilter filter) {
         return dao.getCount(filter);
+    }
+
+    @Override
+    public IVacancy getFullInfo(final Integer id) {
+        final IVacancy entity = dao.getFullInfo(id);
+        return entity;
     }
     
 }

@@ -22,8 +22,8 @@
                 <li><a href="${course}/"><spring:message code="header.course"></spring:message></a></li>
                 <li><a href="${skill}/"><spring:message code="header.skill"></spring:message></a></li>
                 <li><a href="${listWorker}"><spring:message code="header.workers"></spring:message></a></li>
-                <li><a href="${listVacancy}"><spring:message code="header.jobs"></spring:message></a></li>
-                <li><a href="${postVacancy}"><spring:message code="header.addVacancy"></spring:message></a></li>
+                <li><a href="${findVacancy}"><spring:message code="header.findVacancy"></spring:message></a></li>
+                <li><a href="${myVacancy}"><spring:message code="header.myVacancy"></spring:message></a></li>
                 <%--<sec:authorize access="!isAnonymous()">
                     Id: <sec:authentication property="id"/>
                     Name: <sec:authentication property="principal"/>

@@ -10,7 +10,7 @@
     <entry key="header.course">Курсы</entry>
     <entry key="header.skill">Умения</entry>
     <entry key="header.workers">Работники</entry>
-    <entry key="header.jobs">Вакансии</entry>
-    <entry key="header.addVacancy">Добавить вакансию</entry>
+    <entry key="header.findVacancy">Поиск работы</entry>
+    <entry key="header.myVacancy">Мои вакансии</entry>
 
 </properties>

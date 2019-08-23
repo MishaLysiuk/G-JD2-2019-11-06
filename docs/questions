@@ -1,17 +1,12 @@
-переделать все enum в стринги и замапить
-
-enum: names in tables: language level, skill, group, company, language,
-
-передача данных в форму(запрос)
 //сделать чтобы хидер оставался всё время вверху
 
-
 убрать пароль из профиля
-in service layer add role_id in update and save
 изменить страницы с job title
 
-создание вакансии тест
-address разделение enumoв
-поиск с ajax
-
 autocomplete field jquery
+
+login
+количество vacancy controllerов
+поля локации на фронте
+creator_id в дао слое
+спросить про поля дто классов

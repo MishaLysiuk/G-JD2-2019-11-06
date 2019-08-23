@@ -10,10 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Path;
-import javax.persistence.criteria.Root;
+import javax.persistence.criteria.*;
 import javax.persistence.metamodel.SingularAttribute;
 import java.util.List;
 
@@ -43,6 +40,21 @@ public class VacancyDaoImpl extends AbstractDaoImpl<IVacancy,Integer> implements
         final TypedQuery<IVacancy> q = em.createQuery(cq);
         setPaging(filter, q);
         return q.getResultList();
+    }
+
+    @Override
+    public List<IVacancy> findByCreatorId(Integer creatorId) {
+        final EntityManager em = getEntityManager();
+        final CriteriaBuilder cb = em.getCriteriaBuilder();
+        final CriteriaQuery<IVacancy> cq = cb.createQuery(IVacancy.class);
+        final Root<Vacancy> from = cq.from(Vacancy.class);
+        cq.select(from);
+
+        cq.where(cb.equal(from.get(Vacancy_.creator), creatorId));
+        final TypedQuery<IVacancy> q = em.createQuery(cq);
+
+        List<IVacancy> resultList = q.getResultList();
+        return resultList;
     }
 
     private SingularAttribute<? super Vacancy, ?> toMetamodelFormat(
@@ -79,5 +91,27 @@ public class VacancyDaoImpl extends AbstractDaoImpl<IVacancy,Integer> implements
     public IVacancy createEntity() {
         Vacancy vacancy = new Vacancy();
         return vacancy;
+    }
+
+    @Override
+    public IVacancy getFullInfo(final Integer id) {
+        final EntityManager em = getEntityManager();
+        final CriteriaBuilder cb = em.getCriteriaBuilder();
+
+        final CriteriaQuery<IVacancy> cq = cb.createQuery(IVacancy.class); // define returning result
+        final Root<Vacancy> from = cq.from(Vacancy.class); // define table for select
+
+        cq.select(from); // define what need to be selected
+
+        from.fetch(Vacancy_.creator, JoinType.LEFT);
+        from.fetch(Vacancy_.company, JoinType.LEFT);
+        from.fetch(Vacancy_.address, JoinType.LEFT);
+
+        // .. where id=...
+        cq.where(cb.equal(from.get(Vacancy_.id), id)); // where id=?
+
+        final TypedQuery<IVacancy> q = em.createQuery(cq);
+
+        return getSingleResult(q);
     }
 }

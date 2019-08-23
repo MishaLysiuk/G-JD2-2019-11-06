@@ -10,7 +10,7 @@
     <entry key="header.course">Course</entry>
     <entry key="header.skill">Skills</entry>
     <entry key="header.workers">Workers</entry>
-    <entry key="header.jobs">Jobs</entry>
-    <entry key="header.addVacancy">Add vacancy</entry>
+    <entry key="header.findVacancy">Job search</entry>
+    <entry key="header.myVacancy">My vacancies</entry>
 
 </properties>

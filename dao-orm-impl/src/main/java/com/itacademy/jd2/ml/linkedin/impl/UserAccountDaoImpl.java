@@ -100,7 +100,6 @@ public class UserAccountDaoImpl extends AbstractDaoImpl<IUserAccount, Integer> i
             return resultList.get(0);
         }
         throw new RuntimeException("resultList > 1");
-
     }
 
     @Override

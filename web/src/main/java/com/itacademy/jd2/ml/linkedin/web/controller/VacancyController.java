@@ -7,6 +7,7 @@ import com.itacademy.jd2.ml.linkedin.web.converter.VacancyFromDTOConverter;
 import com.itacademy.jd2.ml.linkedin.web.converter.VacancyToDTOConverter;
 import com.itacademy.jd2.ml.linkedin.web.dto.VacancyDTO;
 import com.itacademy.jd2.ml.linkedin.web.dto.grid.GridStateDTO;
+import com.itacademy.jd2.ml.linkedin.web.security.AuthHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +24,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Controller
-@RequestMapping(value = "/jobs")
+@RequestMapping(value = "/vacancy")
 public class VacancyController extends AbstractController {
     
     private IVacancyService vacancyService;
@@ -38,8 +39,8 @@ public class VacancyController extends AbstractController {
         this.toDtoConverter = toDTOConverter;
     }
 
-    @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView index(final HttpServletRequest req,
+    @RequestMapping(value = "/find",method = RequestMethod.GET)
+    public ModelAndView findIndex(final HttpServletRequest req,
                               @RequestParam(name = "page", required = false) final Integer pageNumber,
                               @RequestParam(name = "sort", required = false) final String sortColumn) {
 
@@ -59,6 +60,27 @@ public class VacancyController extends AbstractController {
         return new ModelAndView("vacancy.list", models);
     }
 
+    @RequestMapping(value = "/my",method = RequestMethod.GET)
+    public ModelAndView myIndex(final HttpServletRequest req,
+                              @RequestParam(name = "page", required = false) final Integer pageNumber,
+                              @RequestParam(name = "sort", required = false) final String sortColumn) {
+
+        final GridStateDTO gridState = getListDTO(req);
+        gridState.setPage(pageNumber);
+        gridState.setSort(sortColumn, "id");
+
+        final VacancyFilter filter = new VacancyFilter();
+        prepareFilter(gridState, filter);
+
+        final List<IVacancy> entities = vacancyService.findByCreatorId(AuthHelper.getLoggedUserId());
+        List<VacancyDTO> dtos = entities.stream().map(toDtoConverter).collect(Collectors.toList());
+        gridState.setTotalCount(vacancyService.getCount(filter));
+
+        final Map<String, Object> models = new HashMap<>();
+        models.put("gridItems", dtos);
+        return new ModelAndView("vacancy.list", models);
+    }
+
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public ModelAndView showForm() {
         final Map<String, Object> hashMap = new HashMap<>();
@@ -68,13 +90,13 @@ public class VacancyController extends AbstractController {
         return new ModelAndView("vacancy.edit", hashMap);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public String save(@Valid @ModelAttribute("formVacancy") final VacancyDTO formAccount,
+    @RequestMapping(value = "/postvacancy",method = RequestMethod.POST)
+    public String save(@Valid @ModelAttribute("formVacancy") final VacancyDTO formVacancy,
                        final BindingResult result) {
         if (result.hasErrors()) {
             return "vacancy.edit";
         } else {
-            final IVacancy entity = fromDtoConverter.apply(formAccount);
+            final IVacancy entity = fromDtoConverter.apply(formVacancy);
             vacancyService.save(entity);
             return "redirect:/jobs";
         }

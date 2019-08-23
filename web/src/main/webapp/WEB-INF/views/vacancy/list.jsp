@@ -17,8 +17,8 @@
         <tr>
             <td><c:out value="${vacancy.jobTitle}"/></td>
             <td><c:out value="${vacancy.contactInfo}"/></td>
-            <td><c:out value="${vacancy.company.name}"/></td>
-            <td><c:out value="${vacancy.address.city}"/></td>
+            <td><c:out value="${vacancy.companyName}"/></td>
+            <td><c:out value="${vacancy.address}"/></td>
             <td class="right"><a class="btn-floating purple lighten-3" href="${listVacancy}/${vacancy.id}"><i
                     class="material-icons">info</i></a>
             </td>
