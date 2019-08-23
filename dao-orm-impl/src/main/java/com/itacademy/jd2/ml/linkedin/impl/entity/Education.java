@@ -1,6 +1,6 @@
 package com.itacademy.jd2.ml.linkedin.impl.entity;
 
-import com.itacademy.jd2.ml.linkedin.entity.table.IAddress;
+import com.itacademy.jd2.ml.linkedin.entity.table.ICity;
 import com.itacademy.jd2.ml.linkedin.entity.table.IEducation;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 
@@ -26,8 +26,10 @@ public class Education extends BaseEntity implements IEducation {
     private String speciality;
     @Column
     private String degree;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Address.class)
-    private IAddress address;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = City.class)
+    private ICity city;
+    @Column
+    private String address;
 
     @Override
     public Set<IUserAccount> getUsers() {
@@ -90,12 +92,22 @@ public class Education extends BaseEntity implements IEducation {
     }
 
     @Override
-    public IAddress getAddress() {
+    public ICity getCity() {
+        return city;
+    }
+
+    @Override
+    public void setCity(ICity city) {
+        this.city = city;
+    }
+
+    @Override
+    public String getAddress() {
         return address;
     }
 
     @Override
-    public void setAddress(IAddress address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 }

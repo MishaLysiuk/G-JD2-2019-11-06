@@ -1,6 +1,6 @@
 package com.itacademy.jd2.ml.linkedin.web.dto;
 
-import com.itacademy.jd2.ml.linkedin.entity.table.IAddress;
+import com.itacademy.jd2.ml.linkedin.entity.table.ICity;
 import com.itacademy.jd2.ml.linkedin.entity.table.ICompany;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 
@@ -12,7 +12,8 @@ public class VacancyDTO {
     private String jobTitle;
     private ICompany company;
     private String companyName;
-    private IAddress address;
+    private ICity city;
+    private String address;
     private String contactInfo;
 
     public Integer getId() {
@@ -55,11 +56,19 @@ public class VacancyDTO {
         this.companyName = companyName;
     }
 
-    public IAddress getAddress() {
+    public ICity getCity() {
+        return city;
+    }
+
+    public void setCity(ICity city) {
+        this.city = city;
+    }
+
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(IAddress address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 

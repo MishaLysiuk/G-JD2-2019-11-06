@@ -6,12 +6,12 @@
         <form name='loginForm' action="<c:url value='login' />" method='POST'>
             <div class="row">
                 <div class="input-field col s12 center">
-                    <input id="email" type='email' required> <label for="email">Email:</label>
+                    <input name="username" type='email' required> <label for="username">Email:</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12 center">
-                    <input id="password" type='password' required/><label for="password">Password:</label>
+                    <input name="password" type='password' required/><label for="password">Password:</label>
                 </div>
             </div>
             <c:if test="${not empty error}">

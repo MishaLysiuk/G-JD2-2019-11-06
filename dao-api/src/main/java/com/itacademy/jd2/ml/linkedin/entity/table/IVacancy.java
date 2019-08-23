@@ -14,9 +14,13 @@ public interface IVacancy extends IBaseEntity {
 
     void setCompany(ICompany company);
 
-    IAddress getAddress();
+    ICity getCity();
 
-    void setAddress(IAddress address);
+    void setCity(ICity city);
+
+    String getAddress();
+
+    void setAddress(String address);
 
     String getContactInfo();
 

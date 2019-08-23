@@ -1,6 +1,6 @@
 package com.itacademy.jd2.ml.linkedin.impl.entity;
 
-import com.itacademy.jd2.ml.linkedin.entity.table.IAddress;
+import com.itacademy.jd2.ml.linkedin.entity.table.ICity;
 import com.itacademy.jd2.ml.linkedin.entity.table.ICompany;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 import com.itacademy.jd2.ml.linkedin.entity.table.IWorkExperience;
@@ -23,8 +23,10 @@ public class WorkExperience extends BaseEntity implements IWorkExperience {
     private Date start;
     @Column
     private Date end;
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Address.class)
-    private IAddress address;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = City.class)
+    private ICity city;
+    @Column
+    private String address;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Company.class)
     private ICompany company;
 
@@ -69,12 +71,22 @@ public class WorkExperience extends BaseEntity implements IWorkExperience {
     }
 
     @Override
-    public IAddress getAddress() {
+    public ICity getCity() {
+        return city;
+    }
+
+    @Override
+    public void setCity(ICity city) {
+        this.city = city;
+    }
+
+    @Override
+    public String getAddress() {
         return address;
     }
 
     @Override
-    public void setAddress(IAddress address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 

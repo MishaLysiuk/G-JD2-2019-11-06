@@ -29,7 +29,11 @@ public interface IEducation extends IBaseEntity {
 
     void setDegree(String degree);
 
-    IAddress getAddress();
+    ICity getCity();
 
-    void setAddress(IAddress address);
+    void setCity(ICity city);
+
+    String getAddress();
+
+    void setAddress(String address);
 }

@@ -3,6 +3,7 @@ package com.itacademy.jd2.ml.linkedin.impl;
 import com.itacademy.jd2.ml.linkedin.IVacancyDao;
 import com.itacademy.jd2.ml.linkedin.entity.table.IVacancy;
 import com.itacademy.jd2.ml.linkedin.filter.VacancyFilter;
+import com.itacademy.jd2.ml.linkedin.impl.entity.UserAccount_;
 import com.itacademy.jd2.ml.linkedin.impl.entity.Vacancy;
 import com.itacademy.jd2.ml.linkedin.impl.entity.Vacancy_;
 import org.hibernate.jpa.criteria.OrderImpl;
@@ -50,7 +51,7 @@ public class VacancyDaoImpl extends AbstractDaoImpl<IVacancy,Integer> implements
         final Root<Vacancy> from = cq.from(Vacancy.class);
         cq.select(from);
 
-        cq.where(cb.equal(from.get(Vacancy_.creator), creatorId));
+        cq.where(cb.equal(from.get(Vacancy_.creator).get(UserAccount_.id), creatorId));
         final TypedQuery<IVacancy> q = em.createQuery(cq);
 
         List<IVacancy> resultList = q.getResultList();
@@ -105,7 +106,7 @@ public class VacancyDaoImpl extends AbstractDaoImpl<IVacancy,Integer> implements
 
         from.fetch(Vacancy_.creator, JoinType.LEFT);
         from.fetch(Vacancy_.company, JoinType.LEFT);
-        from.fetch(Vacancy_.address, JoinType.LEFT);
+        from.fetch(Vacancy_.city, JoinType.LEFT);
 
         // .. where id=...
         cq.where(cb.equal(from.get(Vacancy_.id), id)); // where id=?

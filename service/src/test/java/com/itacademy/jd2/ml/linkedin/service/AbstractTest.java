@@ -28,8 +28,6 @@ public abstract class AbstractTest {
     @Autowired
     protected IVacancyService vacancyService;
     @Autowired
-    protected IAddressService addressService;
-    @Autowired
     protected ICityService cityService;
     @Autowired
     protected ICountryService countryService;
@@ -79,14 +77,6 @@ public abstract class AbstractTest {
         final IGroupSkill entity = groupService.createEntity();
         entity.setName("name-" + getRandomPrefix());
         groupService.save(entity);
-        return entity;
-    }
-
-    protected IAddress saveNewAddress() {
-        final IAddress entity = addressService.createEntity();
-        entity.setAddress("name-" + getRandomPrefix());
-        entity.setCity(saveNewCity());
-        addressService.save(entity);
         return entity;
     }
 

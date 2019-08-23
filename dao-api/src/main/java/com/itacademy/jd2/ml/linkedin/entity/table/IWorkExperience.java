@@ -21,9 +21,14 @@ public interface IWorkExperience extends IBaseEntity {
 
     void setEnd(Date end);
 
-    IAddress getAddress();
 
-    void setAddress(IAddress address);
+    ICity getCity();
+
+    void setCity(ICity city);
+
+    String getAddress();
+
+    void setAddress(String address);
 
     ICompany getCompany();
 
