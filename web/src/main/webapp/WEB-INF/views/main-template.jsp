@@ -6,8 +6,8 @@
 <c:set var="course" value="${contextPath}/course" scope="request"/>
 <c:set var="skill" value="${contextPath}/skill" scope="request"/>
 <c:set var="listWorker" value="${contextPath}/worker" scope="request"/>
-<c:set var="findVacancy" value="${contextPath}/vacancy/find" scope="request"/>
-<c:set var="myVacancy" value="${contextPath}/vacancy/my" scope="request"/>
+<c:set var="findVacancy" value="${contextPath}/findvacancy" scope="request"/>
+<c:set var="myVacancy" value="${contextPath}/myvacancy" scope="request"/>
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">

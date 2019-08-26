@@ -60,27 +60,6 @@ public class VacancyController extends AbstractController {
         return new ModelAndView("vacancy.list", models);
     }
 
-    @RequestMapping(value = "/my",method = RequestMethod.GET)
-    public ModelAndView myIndex(final HttpServletRequest req,
-                              @RequestParam(name = "page", required = false) final Integer pageNumber,
-                              @RequestParam(name = "sort", required = false) final String sortColumn) {
-
-        final GridStateDTO gridState = getListDTO(req);
-        gridState.setPage(pageNumber);
-        gridState.setSort(sortColumn, "id");
-
-        final VacancyFilter filter = new VacancyFilter();
-        prepareFilter(gridState, filter);
-
-        final List<IVacancy> entities = vacancyService.findByCreatorId(AuthHelper.getLoggedUserId());
-        List<VacancyDTO> dtos = entities.stream().map(toDtoConverter).collect(Collectors.toList());
-        gridState.setTotalCount(vacancyService.getCount(filter));
-
-        final Map<String, Object> models = new HashMap<>();
-        models.put("gridItems", dtos);
-        return new ModelAndView("vacancy.list", models);
-    }
-
     @RequestMapping(value = "/add", method = RequestMethod.GET)
     public ModelAndView showForm() {
         final Map<String, Object> hashMap = new HashMap<>();
