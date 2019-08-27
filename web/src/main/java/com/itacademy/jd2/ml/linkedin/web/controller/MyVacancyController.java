@@ -10,7 +10,10 @@ import com.itacademy.jd2.ml.linkedin.web.dto.VacancyDTO;
 import com.itacademy.jd2.ml.linkedin.web.dto.grid.GridStateDTO;
 import com.itacademy.jd2.ml.linkedin.web.security.AuthHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -56,7 +59,53 @@ public class MyVacancyController extends AbstractController{
 
         final Map<String, Object> models = new HashMap<>();
         models.put("gridItems", dtos);
-        return new ModelAndView("vacancy.list", models);
+        return new ModelAndView("myVacancy.list", models);
+    }
+
+    @RequestMapping(value = "/add", method = RequestMethod.GET)
+    public ModelAndView showForm() {
+        final Map<String, Object> hashMap = new HashMap<>();
+        final IVacancy newEntity = vacancyService.createEntity();
+        hashMap.put("formVacancy", toDtoConverter.apply(newEntity));
+
+        return new ModelAndView("myVacancy.edit", hashMap);
+    }
+
+    @RequestMapping(value = "/{id}/delete", method = RequestMethod.GET)
+    public String delete(@PathVariable(name = "id", required = true) final Integer id) {
+        vacancyService.delete(id);
+        return "redirect:/myvacancy";
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public ModelAndView viewDetails(
+            @PathVariable(name = "id", required = true) final Integer id) {
+        final IVacancy dbAccount = vacancyService.get(id);
+        final VacancyDTO dto = toDtoConverter.apply(dbAccount);
+        final Map<String, Object> hashMap = new HashMap<>();
+        hashMap.put("formVacancy", dto);
+        hashMap.put("readonly", true);
+
+        return new ModelAndView("myVacancy.edit", hashMap);
+    }
+
+    @RequestMapping(value = "/{id}/edit", method = RequestMethod.GET)
+    public ModelAndView edit(
+            @PathVariable(name = "id", required = true) final Integer id) {
+        final VacancyDTO dto = toDtoConverter.apply(vacancyService.get(id));
+
+        final Map<String, Object> hashMap = new HashMap<>();
+        hashMap.put("formVacancy", dto);
+
+        return new ModelAndView("myVacancy.edit", hashMap);
+    }
+
+    @RequestMapping(value = "/json", method = RequestMethod.GET)
+    public ResponseEntity<VacancyDTO> getCountries(
+            @RequestParam(name = "id", required = true) final Integer id) {
+        final VacancyDTO dto = toDtoConverter.apply(vacancyService.get(id));
+
+        return new ResponseEntity<VacancyDTO>(dto, HttpStatus.OK);
     }
 
 }

@@ -8,6 +8,7 @@ import com.itacademy.jd2.ml.linkedin.web.converter.VacancyToDTOConverter;
 import com.itacademy.jd2.ml.linkedin.web.dto.VacancyDTO;
 import com.itacademy.jd2.ml.linkedin.web.dto.grid.GridStateDTO;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -52,7 +53,19 @@ public class FindVacancyController extends AbstractController{
 
         final Map<String, Object> models = new HashMap<>();
         models.put("gridItems", dtos);
-        return new ModelAndView("vacancy.list", models);
+        return new ModelAndView("findVacancy.list", models);
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    public ModelAndView viewDetails(
+            @PathVariable(name = "id", required = true) final Integer id) {
+        final IVacancy dbAccount = vacancyService.get(id);
+        final VacancyDTO dto = toDtoConverter.apply(dbAccount);
+        final Map<String, Object> hashMap = new HashMap<>();
+        hashMap.put("formVacancy", dto);
+        hashMap.put("readonly", true);
+
+        return new ModelAndView("findVacancy.edit", hashMap);
     }
 
 }

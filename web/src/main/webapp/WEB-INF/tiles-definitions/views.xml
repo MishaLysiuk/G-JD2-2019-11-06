@@ -48,16 +48,20 @@
         <put-attribute name="body" value="/WEB-INF/views/account/form.jsp"/>
     </definition>
 
-    <definition name="vacancy.list" extends="DefaultTemplate">
-        <put-attribute name="body" value="/WEB-INF/views/vacancy/list.jsp"/>
+    <definition name="myVacancy.list" extends="DefaultTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/my-vacancy/list.jsp"/>
     </definition>
 
-    <definition name="vacancy.form" extends="DefaultTemplate">
-        <put-attribute name="body" value="/WEB-INF/views/vacancy/form.jsp"/>
+    <definition name="myVacancy.edit" extends="DefaultTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/my-vacancy/form.jsp"/>
     </definition>
 
-    <definition name="vacancy.edit" extends="DefaultTemplate">
-        <put-attribute name="body" value="/WEB-INF/views/vacancy/form.jsp"/>
+    <definition name="findVacancy.list" extends="DefaultTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/find-vacancy/list.jsp"/>
+    </definition>
+
+    <definition name="findVacancy.edit" extends="DefaultTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/find-vacancy/form.jsp"/>
     </definition>
 
     <definition name="login" extends="DefaultTemplate">

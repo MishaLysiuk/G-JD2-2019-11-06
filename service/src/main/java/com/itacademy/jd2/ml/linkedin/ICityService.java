@@ -1,6 +1,7 @@
 package com.itacademy.jd2.ml.linkedin;
 
 import com.itacademy.jd2.ml.linkedin.entity.table.ICity;
+import com.itacademy.jd2.ml.linkedin.entity.table.ICountry;
 import com.itacademy.jd2.ml.linkedin.filter.CityFilter;
 
 import javax.transaction.Transactional;
@@ -11,6 +12,10 @@ public interface ICityService {
 
     @Transactional
     void save(ICity entity);
+
+    List<ICountry> findCountryByRegionId(Integer regionId);
+
+    List<ICity> findCityByCountryId(Integer countryId);
 
     ICity get(Integer id);
 

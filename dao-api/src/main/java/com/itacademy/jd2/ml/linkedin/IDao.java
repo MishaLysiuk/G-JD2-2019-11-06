@@ -20,8 +20,4 @@ public interface IDao<ENTITY, ID> {
     void deleteAll();
 
     List<ENTITY> selectAll();
-
-    List<ICountry> findCountryByRegionId(Integer regionId);
-
-    List<ICity> findCityByCountryId(Integer countryId);
 }

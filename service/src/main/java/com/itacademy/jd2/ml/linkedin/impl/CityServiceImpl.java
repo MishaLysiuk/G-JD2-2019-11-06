@@ -3,6 +3,7 @@ package com.itacademy.jd2.ml.linkedin.impl;
 import com.itacademy.jd2.ml.linkedin.ICityDao;
 import com.itacademy.jd2.ml.linkedin.ICityService;
 import com.itacademy.jd2.ml.linkedin.entity.table.ICity;
+import com.itacademy.jd2.ml.linkedin.entity.table.ICountry;
 import com.itacademy.jd2.ml.linkedin.filter.CityFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,6 +37,18 @@ public class CityServiceImpl implements ICityService {
         } else {
             dao.update(entity);
         }
+    }
+
+    @Override
+    public List<ICountry> findCountryByRegionId(Integer regionId){
+        List<ICountry> countries = findCountryByRegionId(regionId);
+        return countries;
+    }
+
+    @Override
+    public List<ICity> findCityByCountryId(Integer countryId){
+        List<ICity> cities = findCityByCountryId(countryId);
+        return cities;
     }
 
     @Override
