@@ -25,7 +25,7 @@ import java.util.List;
 @Controller
 @RequestMapping(value = "/location")
 public class LocationController {
-
+/*
     private IRegionService regionService;
     private ICountryService countryService;
     private ICityService cityService;
@@ -85,6 +85,6 @@ public class LocationController {
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView showPage() {
         return new ModelAndView("ajax-samples", "addressForm", new AddressDTO());
-    }
+    }*/
 
 }
