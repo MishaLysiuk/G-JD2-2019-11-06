@@ -40,7 +40,7 @@ public abstract class AbstractTest {
     public void setUpMethod() {
         // clean DB recursive
         //modelService.deleteAll();
-       // userPortfolioService.deleteAll();
+        // userPortfolioService.deleteAll();
     }
 
     protected String getRandomPrefix() {
@@ -82,7 +82,7 @@ public abstract class AbstractTest {
 
     protected ICity saveNewCity() {
         final ICity entity = cityService.createEntity();
-        entity.setNameId(getRandomObjectsCount());
+        entity.setName("city-" + getRandomObjectsCount());
         entity.setCountry(saveNewCountry());
         cityService.save(entity);
         return entity;
@@ -90,7 +90,7 @@ public abstract class AbstractTest {
 
     protected ICountry saveNewCountry() {
         final ICountry entity = countryService.createEntity();
-        entity.setNameId(getRandomObjectsCount());
+        entity.setName("country-" + getRandomObjectsCount());
         entity.setRegion(saveNewRegion());
         countryService.save(entity);
         return entity;
@@ -98,7 +98,7 @@ public abstract class AbstractTest {
 
     protected IRegion saveNewRegion() {
         final IRegion entity = regionService.createEntity();
-        entity.setNameId(getRandomObjectsCount());
+        entity.setName("region-" + getRandomObjectsCount());
         regionService.save(entity);
         return entity;
     }

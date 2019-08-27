@@ -12,18 +12,18 @@ import javax.persistence.ManyToOne;
 public class City extends BaseEntity implements ICity {
 
     @Column
-    private Integer nameId;
+    private String name;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Country.class)
     private ICountry country;
 
     @Override
-    public Integer getNameId() {
-        return nameId;
+    public String getName() {
+        return name;
     }
 
     @Override
-    public void setNameId(Integer nameId) {
-        this.nameId = nameId;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override

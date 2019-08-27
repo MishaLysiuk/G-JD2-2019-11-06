@@ -61,3 +61,38 @@
         </div>
     </form:form>
 </div>
+
+<script>
+    $(document).ready(function(){
+        var input= $('#company_experience');
+        input.autocomplete({
+            data: {
+                "Apple": null,
+                "Microsoft": null,
+                "Google": 'https://placehold.it/250x250'
+            },
+        });
+
+
+        input.on("input change", function () {
+            var autocompleteField =this;
+            var currentValue = autocompleteField.value;
+
+
+            $.ajax({
+                url: '${contextPath}/autocomplete/company?phrase='+currentValue,
+                type: 'get',
+
+                success: function (data) {
+                    alert ('ajax response received')
+                    data = JSON.parse(data);
+                    autocompleteField.autocomplete("updateData", data);
+                },
+                error: function (err) {
+
+                    console.log(err);
+                }
+            });
+        });
+    });
+</script>

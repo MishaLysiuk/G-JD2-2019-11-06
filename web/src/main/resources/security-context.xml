@@ -15,7 +15,6 @@ http://www.springframework.org/schema/context/spring-context-4.2.xsd">
 
     <http>
         <intercept-url pattern="/linkedin/**" access="!isAnonymous()" />
-        <intercept-url pattern="/myvacancy/**" access="!isAnonymous()" />
         <!-- <intercept-url pattern="/model**" access="hasRole('admin')" /> -->
 
         <form-login login-page="/login" default-target-url="/"

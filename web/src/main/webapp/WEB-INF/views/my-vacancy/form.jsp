@@ -67,15 +67,35 @@
     initComboboxes('${pageContext.request.contextPath}');
 </script>
 
-<%--
 <script>
     $(document).ready(function(){
-        $('input.autocomplete').autocomplete({
+        var input= $('input.autocomplete');
+        input.autocomplete({
             data: {
                 "Apple": null,
                 "Microsoft": null,
                 "Google": 'https://placehold.it/250x250'
             },
         });
+
+
+
+
+        input.on("input change", function () {
+            $.ajax({
+                url: '/source/to/server/data',
+                type: 'post',
+                cache: false,
+
+                success: function (data) {
+                    alert ('ajax response received')
+                   // data = JSON.parse(data);
+                   // $(self).autocomplete("updateData", data/*should be object*/);
+                },
+                error: function (err) {
+                    console.log(err);
+                }
+            });
+        });
     });
-</script>--%>
+</script>

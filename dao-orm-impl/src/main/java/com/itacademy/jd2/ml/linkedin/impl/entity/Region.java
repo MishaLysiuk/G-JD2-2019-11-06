@@ -9,15 +9,15 @@ import javax.persistence.Entity;
 public class Region extends BaseEntity implements IRegion {
 
     @Column
-    private Integer nameId;
+    private String name;
 
     @Override
-    public Integer getNameId() {
-        return nameId;
+    public String getName() {
+        return name;
     }
 
     @Override
-    public void setNameId(Integer nameId) {
-        this.nameId = nameId;
+    public void setName(String name) {
+        this.name = name;
     }
 }

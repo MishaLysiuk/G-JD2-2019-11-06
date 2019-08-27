@@ -12,7 +12,7 @@ public class VacancyDTO {
     private String jobTitle;
     private ICompany company;
     private String companyName;
-    private ICity city;
+    private Long cityId;
     private String address;
     private String contactInfo;
 
@@ -56,12 +56,12 @@ public class VacancyDTO {
         this.companyName = companyName;
     }
 
-    public ICity getCity() {
-        return city;
+    public Long getCityId() {
+        return cityId;
     }
 
-    public void setCity(ICity city) {
-        this.city = city;
+    public void setCityId(Long cityId) {
+        this.cityId = cityId;
     }
 
     public String getAddress() {

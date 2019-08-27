@@ -3,7 +3,13 @@ package com.itacademy.jd2.ml.linkedin.web.controller;
 import com.itacademy.jd2.ml.linkedin.ICityService;
 import com.itacademy.jd2.ml.linkedin.ICountryService;
 import com.itacademy.jd2.ml.linkedin.IRegionService;
-import com.itacademy.jd2.ml.linkedin.impl.AbstractDaoImpl;
+import com.itacademy.jd2.ml.linkedin.entity.table.ICity;
+import com.itacademy.jd2.ml.linkedin.entity.table.ICountry;
+import com.itacademy.jd2.ml.linkedin.entity.table.IRegion;
+import com.itacademy.jd2.ml.linkedin.impl.entity.Country;
+import com.itacademy.jd2.ml.linkedin.web.converter.CityToDTOConverter;
+import com.itacademy.jd2.ml.linkedin.web.converter.CountryToDTOConverter;
+import com.itacademy.jd2.ml.linkedin.web.converter.RegionToDTOConverter;
 import com.itacademy.jd2.ml.linkedin.web.dto.CityDTO;
 import com.itacademy.jd2.ml.linkedin.web.dto.CountryDTO;
 import com.itacademy.jd2.ml.linkedin.web.dto.RegionDTO;
@@ -21,63 +27,55 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping(value = "/location")
 public class LocationController {
-/*
     private IRegionService regionService;
     private ICountryService countryService;
     private ICityService cityService;
 
+    private CityToDTOConverter cityToDTOConverter;
+    private CountryToDTOConverter countryToDTOConverter;
+    private RegionToDTOConverter regionToDTOConverter;
+
     @Autowired
-    public LocationController(IRegionService regionService, ICountryService countryService, ICityService cityService) {
+    public LocationController(IRegionService regionService, ICountryService countryService, ICityService cityService, CityToDTOConverter cityToDTOConverter, CountryToDTOConverter countryToDTOConverter, RegionToDTOConverter regionToDTOConverter) {
         this.regionService = regionService;
         this.countryService = countryService;
         this.cityService = cityService;
+        this.cityToDTOConverter = cityToDTOConverter;
+        this.countryToDTOConverter = countryToDTOConverter;
+        this.regionToDTOConverter = regionToDTOConverter;
     }
 
     @RequestMapping(value = "/regions", method = RequestMethod.GET)
     public ResponseEntity<List<RegionDTO>> getRegions() {
-        final List<RegionDTO> regions = regionService.getAll();
-        if (countryId.equals(1)) {
-            regions.add(new RegionDTO(1, "Гродненская область"));
-            regions.add(new RegionDTO(2, "Минская область"));
-            regions.add(new RegionDTO(3, "Витебская область"));
-            regions.add(new RegionDTO(4, "Гомельская область"));
-            regions.add(new RegionDTO(5, "Могилевская область"));
-            regions.add(new RegionDTO(6, "Брестская область"));
-        } else if (countryId.equals(2)) {
-            regions.add(new RegionDTO(7, "russian region 1"));
-            regions.add(new RegionDTO(8, "russian region 2"));
-            regions.add(new RegionDTO(9, "russian region 3"));
-        } else if (countryId.equals(3)) {
-            regions.add(new RegionDTO(10, "france region 1"));
-            regions.add(new RegionDTO(11, "france region 1"));
-        }
-        return new ResponseEntity<List<RegionDTO>>(regions, HttpStatus.OK);
+        final List<IRegion> regions = regionService.getAll();
+        List<RegionDTO> regionsDTO = regions.stream().map(regionToDTOConverter).collect(Collectors.toList());
+        return new ResponseEntity<List<RegionDTO>>(regionsDTO, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/countries", method = RequestMethod.GET)
     public ResponseEntity<List<CountryDTO>> getCountries(
             @RequestParam(name = "regionId", required = true) final Integer regionId) {
-        final List<CountryDTO> countries = cityService.findCountryByRegionId(regionId);
-        countries.add(new CountryDTO(1, "Belarus"));
-        countries.add(new CountryDTO(2, "Russia"));
-        countries.add(new CountryDTO(3, "France"));
-        return new ResponseEntity<List<CountryDTO>>(countries, HttpStatus.OK);
+        final List<ICountry> countries = cityService.findCountryByRegionId(regionId);
+        List<CountryDTO> countriesDTO = countries.stream().map(countryToDTOConverter).collect(Collectors.toList());
+        return new ResponseEntity<List<CountryDTO>>(countriesDTO, HttpStatus.OK);
     }
 
 
     @RequestMapping(value = "/cities", method = RequestMethod.GET)
     public ResponseEntity<List<CityDTO>> getCities(
             @RequestParam(name = "countryId", required = true) final Integer countryId) {
-        final List<CityDTO> cities = cityService.findCityByCountryId(countryId);
+        final List<ICity> cities = cityService.findCityByCountryId(countryId);
+        List<CityDTO> citiesDTO = cities.stream().map(cityToDTOConverter).collect(Collectors.toList());
 
-        return new ResponseEntity<List<CityDTO>>(cities, HttpStatus.OK);
+        return new ResponseEntity<List<CityDTO>>(citiesDTO, HttpStatus.OK);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    /*@RequestMapping(method = RequestMethod.POST)
     public Object save(@Valid @ModelAttribute("addressForm") final AddressDTO formModel, final BindingResult result) {
         return "redirect:/location";
     }
