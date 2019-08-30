@@ -44,7 +44,7 @@
 
         <div class="row">
             <div class="input-field col s6">
-                <input id="company_experience" type="text" class="validate">
+                <input id="company_experience" type="text" class="autocomplete">
                 <label for="company_experience">Company</label>
             </div>
             <div class="input-field col s6">
@@ -70,7 +70,7 @@
                 "Apple": null,
                 "Microsoft": null,
                 "Google": 'https://placehold.it/250x250'
-            },
+            }
         });
 
 
@@ -84,9 +84,14 @@
                 type: 'get',
 
                 success: function (data) {
-                    /*alert('ajax response received')*/
-                    data = JSON.parse(data);
-                    autocompleteField.autocomplete("updateData", data);
+
+                    const pozycje_autocomplete = document.querySelector('#company_experience');
+                    var instance = M.Autocomplete.getInstance(pozycje_autocomplete);
+
+                    instance.updateData(data);
+
+                    instance.open();
+
                 },
                 error: function (err) {
 

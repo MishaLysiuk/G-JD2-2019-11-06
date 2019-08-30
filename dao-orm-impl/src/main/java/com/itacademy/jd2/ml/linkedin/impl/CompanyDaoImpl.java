@@ -55,11 +55,11 @@ public class CompanyDaoImpl extends AbstractDaoImpl<ICompany, Integer> implement
             case "created":
                 return Company_.created;
             case "updated":
-              return Company_.updated;
+                return Company_.updated;
             case "id":
                 return Company_.id;
             case "name":
-              return Company_.name;
+                return Company_.name;
             default:
                 throw new UnsupportedOperationException(
                         "sorting is not supported by column:" + sortColumn);
@@ -86,10 +86,12 @@ public class CompanyDaoImpl extends AbstractDaoImpl<ICompany, Integer> implement
         final Root<Company> from = cq.from(Company.class);
         cq.select(from);
 
-        cq.where(cb.equal(from.get(Company_.name), name));
+        cq.where(cb.like(cb.lower(from.get(Company_.name)), "%" + name.toLowerCase() + "%"));
         final TypedQuery<ICompany> q = em.createQuery(cq);
 
         List<ICompany> resultList = q.getResultList();
+
+
         return resultList;
     }
 
