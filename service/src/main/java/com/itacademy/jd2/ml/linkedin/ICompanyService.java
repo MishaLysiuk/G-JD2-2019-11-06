@@ -2,6 +2,7 @@ package com.itacademy.jd2.ml.linkedin;
 
 import com.itacademy.jd2.ml.linkedin.entity.table.ICompany;
 import com.itacademy.jd2.ml.linkedin.filter.CompanyFilter;
+import com.itacademy.jd2.ml.linkedin.impl.entity.Company;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -26,4 +27,6 @@ public interface ICompanyService {
     List<ICompany> find(CompanyFilter filter);
 
     long getCount(CompanyFilter filter);
+
+    List<ICompany> findByName(String name);
 }

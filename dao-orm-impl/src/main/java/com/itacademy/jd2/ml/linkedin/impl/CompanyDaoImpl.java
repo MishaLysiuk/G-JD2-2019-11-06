@@ -79,6 +79,21 @@ public class CompanyDaoImpl extends AbstractDaoImpl<ICompany, Integer> implement
     }
 
     @Override
+    public List<ICompany> findByName(String name) {
+        final EntityManager em = getEntityManager();
+        final CriteriaBuilder cb = em.getCriteriaBuilder();
+        final CriteriaQuery<ICompany> cq = cb.createQuery(ICompany.class);
+        final Root<Company> from = cq.from(Company.class);
+        cq.select(from);
+
+        cq.where(cb.equal(from.get(Company_.name), name));
+        final TypedQuery<ICompany> q = em.createQuery(cq);
+
+        List<ICompany> resultList = q.getResultList();
+        return resultList;
+    }
+
+    @Override
     public ICompany createEntity() {
         Company company = new Company();
         return company;

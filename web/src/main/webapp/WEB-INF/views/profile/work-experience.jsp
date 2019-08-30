@@ -63,8 +63,8 @@
 </div>
 
 <script>
-    $(document).ready(function(){
-        var input= $('#company_experience');
+    $(document).ready(function () {
+        var input = $('#company_experience');
         input.autocomplete({
             data: {
                 "Apple": null,
@@ -75,16 +75,16 @@
 
 
         input.on("input change", function () {
-            var autocompleteField =this;
+            var autocompleteField = this;
             var currentValue = autocompleteField.value;
 
 
             $.ajax({
-                url: '${contextPath}/autocomplete/company?phrase='+currentValue,
+                url: '${contextPath}/autocomplete/company?name=' + currentValue,
                 type: 'get',
 
                 success: function (data) {
-                    alert ('ajax response received')
+                    /*alert('ajax response received')*/
                     data = JSON.parse(data);
                     autocompleteField.autocomplete("updateData", data);
                 },

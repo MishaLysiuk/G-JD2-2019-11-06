@@ -11,4 +11,6 @@ public interface ICompanyDao extends IDao<ICompany, Integer> {
 
 
     long getCount(CompanyFilter filter); // skip {
+
+    List<ICompany> findByName(String name);
 }
