@@ -19,7 +19,7 @@
             <td><c:out value="${vacancy.contactInfo}"/></td>
             <td><c:out value="${vacancy.companyName}"/></td>
             <td><c:out value="${vacancy.address}"/></td>
-            <td class="right"><a class="btn-floating purple lighten-3" href="${findVacancy}/${vacancy.id}"><i
+            <td class="right"><a class="btn-floating blue darken-2" href="${findVacancy}/${vacancy.id}"><i
                     class="material-icons">info</i></a>
         </tr>
     </c:forEach>

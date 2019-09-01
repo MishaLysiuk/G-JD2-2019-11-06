@@ -21,7 +21,7 @@ public class UserAccount extends BaseEntity implements IUserAccount {
     private String password;
     @Column
     @Enumerated(EnumType.ORDINAL)
-    private Role roleId;
+    private Role role;
     @Column
     @Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO)
     private String firstName;
@@ -57,13 +57,13 @@ public class UserAccount extends BaseEntity implements IUserAccount {
     }
 
     @Override
-    public Role getRoleId() {
-        return roleId;
+    public Role getRole() {
+        return role;
     }
 
     @Override
-    public void setRoleId(Role roleId) {
-        this.roleId = roleId;
+    public void setRole(Role role) {
+        this.role = role;
     }
 
     @Override

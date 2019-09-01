@@ -38,7 +38,7 @@
 
         <div class="col s2 offset-s5">
             <c:if test="${!readonly}">
-                <button class="btn purple lighten-3 right" type="submit">submit</button>
+                <button class="btn blue darken-2 right" type="submit">submit</button>
             </c:if>
         </div>
     </form:form>

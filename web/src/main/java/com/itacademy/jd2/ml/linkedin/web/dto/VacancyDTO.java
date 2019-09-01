@@ -1,8 +1,9 @@
 package com.itacademy.jd2.ml.linkedin.web.dto;
 
-import com.itacademy.jd2.ml.linkedin.entity.table.ICity;
 import com.itacademy.jd2.ml.linkedin.entity.table.ICompany;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
+
+import java.util.Date;
 
 
 public class VacancyDTO {
@@ -15,6 +16,8 @@ public class VacancyDTO {
     private Long cityId;
     private String address;
     private String contactInfo;
+    private String description;
+    private Date created;
 
     public Integer getId() {
         return id;
@@ -78,5 +81,21 @@ public class VacancyDTO {
 
     public void setContactInfo(String contactInfo) {
         this.contactInfo = contactInfo;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
     }
 }

@@ -31,19 +31,19 @@ public class AutocompleteController extends AbstractController {
     }
 
     @RequestMapping(value = "/company", method = RequestMethod.GET)
-    public ResponseEntity<Map<String, String >> getCompanies(@RequestParam(name = "name") String name){
+    public ResponseEntity<Map<String, Integer>> getCompanies(@RequestParam(name = "name") String name) {
         List<ICompany> companies = companyService.findByName(name);
 
 
-        Map<String, String > map= new HashedMap();
-        for (ICompany c:companies             ) {
-            map.put(c.getId().toString(), c.getName());
+        Map<String, Integer> map = new HashedMap();
+        for (ICompany c : companies) {
+            map.put(c.getName(), c.getId());
 
         }
 
 
-       // List<CompanyDTO> companiesDTO = companies.stream().map(toDTOConverter).collect(Collectors.toList());
-        return new ResponseEntity<Map<String, String >>(map, HttpStatus.OK);
+        // List<CompanyDTO> companiesDTO = companies.stream().map(toDTOConverter).collect(Collectors.toList());
+        return new ResponseEntity<Map<String, Integer>>(map, HttpStatus.OK);
     }
 
 }

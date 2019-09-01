@@ -19,11 +19,11 @@
             <td><c:out value="${account.firstName}"/></td>
             <td><c:out value="${account.lastName}"/></td>
             <td><c:out value="${account.password}"/></td>
-            <td><c:out value="${account.roleId}"/></td>
+            <td><c:out value="${account.role}"/></td>
             <td><fmt:formatDate pattern="yyyy-MM-dd" value="${account.updated}"/></td>
-            <td class="right"><a class="btn-floating purple lighten-3" href="${listWorker}/${account.id}"><i class="material-icons">info</i></a>
+            <td class="right"><a class="btn-floating blue darken-2" href="${listWorker}/${account.id}"><i class="material-icons">info</i></a>
                 <a
-                        class="btn-floating purple lighten-3" href="${listWorker}/${account.id}/edit"><i class="material-icons">edit</i></a>
+                        class="btn-floating blue darken-2" href="${listWorker}/${account.id}/edit"><i class="material-icons">edit</i></a>
                 <a
                         class="btn-floating red" href="${listWorker}/${account.id}/delete"><i
                         class="material-icons">delete</i></a></td>
@@ -32,4 +32,4 @@
     </tbody>
 </table>
 <jspFragments:paging/>
-<a class="purple lighten-3 btn right " href="${listWorker}/add"><i class="material-icons">add</i></a>
+<a class="blue darken-2 btn right " href="${listWorker}/add"><i class="material-icons">add</i></a>

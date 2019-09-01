@@ -13,9 +13,9 @@ public interface IUserAccount extends IBaseEntity {
 
     void setPassword(String password);
 
-    Role getRoleId();
+    Role getRole();
 
-    void setRoleId(Role roleId);
+    void setRole(Role role);
 
     String getFirstName();
 

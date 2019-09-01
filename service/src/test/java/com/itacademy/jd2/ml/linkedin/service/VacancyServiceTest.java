@@ -18,6 +18,7 @@ public class VacancyServiceTest extends AbstractTest {
         entity.setCompany(saveNewCompany());
         entity.setCity(saveNewCity());
         entity.setAddress("address" + getRandomPrefix());
+        entity.setDescription("description" + getRandomPrefix());
         entity.setContactInfo("info-" + getRandomPrefix());
         vacancyService.save(entity);
 
@@ -31,6 +32,7 @@ public class VacancyServiceTest extends AbstractTest {
         assertEquals(entity.getCompany().getId(), entityFromDb.getCompany().getId());
         assertEquals(entity.getCity().getId(), entityFromDb.getCity().getId());
         assertEquals(entity.getContactInfo(), entityFromDb.getContactInfo());
+        assertEquals(entity.getDescription(), entityFromDb.getDescription());
         assertTrue(entityFromDb.getCreated().equals(entityFromDb.getUpdated()));
 
     }

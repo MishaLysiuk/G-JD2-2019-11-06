@@ -1,5 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<h2>Login with Email and Password</h2>
+<div class="row s12">
+    <h2>Login with Email and Password</h2>
+</div>
 <div class="row">
     <div class="col s3"></div>
     <div class="col s6">
@@ -30,7 +32,7 @@
             </c:if>
             <div class="row">
                 <div class="col s12 center">
-                    <button class="btn purple lighten-3 " type="submit">Sign in</button>
+                    <button class="btn blue darken-2 " type="submit">Sign in</button>
                 </div>
             </div>
     </div>

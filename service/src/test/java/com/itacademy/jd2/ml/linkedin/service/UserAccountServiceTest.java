@@ -18,7 +18,7 @@ public class UserAccountServiceTest extends AbstractTest {
         final IUserAccount entity = userAccountService.createEntity();
         entity.setEmail("email-" + getRandomPrefix() + "@gmail.com");
         entity.setPassword("password-" + getRandomPrefix());
-        entity.setRoleId(Role.USER);
+        entity.setRole(Role.USER);
         entity.setFirstName("firstName-" + getRandomPrefix());
         entity.setLastName("lastName-" + getRandomPrefix());
         userAccountService.save(entity);
@@ -30,7 +30,7 @@ public class UserAccountServiceTest extends AbstractTest {
         assertNotNull(entityFromDb.getUpdated());
         assertEquals(entity.getEmail(), entityFromDb.getEmail());
         assertEquals(entity.getPassword(), entityFromDb.getPassword());
-        assertEquals(entity.getRoleId(), entityFromDb.getRoleId());
+        assertEquals(entity.getRole(), entityFromDb.getRole());
         assertEquals(entity.getFirstName(), entityFromDb.getFirstName());
         assertEquals(entity.getLastName(), entityFromDb.getLastName());
         assertTrue(entityFromDb.getCreated().equals(entityFromDb.getUpdated()));
@@ -41,7 +41,7 @@ public class UserAccountServiceTest extends AbstractTest {
         final IUserAccount entity = userAccountService.createEntity();
         entity.setEmail("admin@gmail.com");
         entity.setPassword("admin");
-        entity.setRoleId(Role.ADMIN);
+        entity.setRole(Role.ADMIN);
         entity.setFirstName("admin");
         entity.setLastName("admin");
         userAccountService.save(entity);
@@ -52,7 +52,7 @@ public class UserAccountServiceTest extends AbstractTest {
         final IUserAccount entity = userAccountService.createEntity();
         entity.setEmail("user@gmail.com");
         entity.setPassword("user");
-        entity.setRoleId(Role.USER);
+        entity.setRole(Role.USER);
         entity.setFirstName("user");
         entity.setLastName("user");
         userAccountService.save(entity);

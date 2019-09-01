@@ -46,7 +46,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 
         List<String> userRoles = new ArrayList<>();// TODO get list of user's
         // roles
-        Role role = byEmail.getRoleId();
+        Role role = byEmail.getRole();
 
 
         final List<SimpleGrantedAuthority> authorities = new ArrayList<>();

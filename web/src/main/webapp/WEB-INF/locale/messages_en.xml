@@ -6,6 +6,7 @@
     <entry key="page.login.credentialsError">Invalid username and password!</entry>
     <entry key="header.myAccount">My account</entry>
     <entry key="header.education">Education</entry>
+    <entry key="header.language">Foreign languages</entry>
     <entry key="header.workExperience">Work experience</entry>
     <entry key="header.course">Course</entry>
     <entry key="header.skill">Skills</entry>

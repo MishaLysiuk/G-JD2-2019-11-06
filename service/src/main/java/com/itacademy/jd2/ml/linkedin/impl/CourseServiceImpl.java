@@ -70,5 +70,10 @@ public class CourseServiceImpl implements ICourseService {
         return entity;
     }
 
+    @Override
+    public List<ICourse> findByName(String name) {
+        List<ICourse> courses = dao.findByName(name);
+        return courses;
+    }
 
 }

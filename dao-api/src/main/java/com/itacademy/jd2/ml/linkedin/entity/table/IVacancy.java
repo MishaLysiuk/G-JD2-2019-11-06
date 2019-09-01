@@ -22,6 +22,10 @@ public interface IVacancy extends IBaseEntity {
 
     void setAddress(String address);
 
+    String getDescription();
+
+    void setDescription(String description);
+
     String getContactInfo();
 
     void setContactInfo(String contactInfo);

@@ -24,6 +24,8 @@ public class Vacancy extends BaseEntity implements IVacancy {
     @Column
     private String address;
     @Column
+    private String description;
+    @Column
     private String contactInfo;
 
     @Override
@@ -76,6 +78,16 @@ public class Vacancy extends BaseEntity implements IVacancy {
     @Override
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    @Override
+    public String getDescription() {
+        return description;
+    }
+
+    @Override
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override

@@ -19,7 +19,7 @@ public class DefaultController {
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView index(Locale locale) {
 
-        ModelAndView modelAndView = new ModelAndView("home");
+        ModelAndView modelAndView = new ModelAndView("profile");
 
         String login = SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString();
 

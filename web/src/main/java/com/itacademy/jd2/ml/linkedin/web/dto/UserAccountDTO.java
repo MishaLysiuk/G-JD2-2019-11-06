@@ -12,7 +12,7 @@ public class UserAccountDTO {
     private String email;
     @Size(min = 1, max = 50)
     private String password;
-    private Role roleId;
+    private Role role;
     private String firstName;
     private String lastName;
     private Date birthday;
@@ -46,12 +46,12 @@ public class UserAccountDTO {
         this.password = password;
     }
 
-    public Role getRoleId() {
-        return roleId;
+    public Role getRole() {
+        return role;
     }
 
-    public void setRoleId(Role roleId) {
-        this.roleId = roleId;
+    public void setRole(Role roleId) {
+        this.role = roleId;
     }
 
     public String getFirstName() {

@@ -2,7 +2,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <div class="row s12">
-    <h1>Skills</h1>
+    <h1>Foreign languages</h1>
 </div>
 
 <div class="row">
@@ -15,7 +15,7 @@
                     <option value="2">Option 2</option>
                     <option value="3">Option 3</option>
                 </select>
-                <label>Group</label>
+                <label>Language</label>
             </div>
             <div class="input-field col s6">
                 <select>
@@ -24,7 +24,7 @@
                     <option value="2">Option 2</option>
                     <option value="3">Option 3</option>
                 </select>
-                <label>Skill</label>
+                <label>Level</label>
             </div>
         </div>
 

@@ -6,6 +6,7 @@
     <entry key="page.login.credentialsError">неверный логин или пароль!</entry>
     <entry key="header.myAccount">Мой профиль</entry>
     <entry key="header.education">Образование</entry>
+    <entry key="header.language">Иностранные языки</entry>
     <entry key="header.workExperience">Опыт работы</entry>
     <entry key="header.course">Курсы</entry>
     <entry key="header.skill">Умения</entry>

@@ -14,14 +14,18 @@
                        value="/WEB-INF/views/footer.jsp"/>
     </definition>
 
-    <definition name="home" extends="DefaultTemplate">
+    <definition name="profile" extends="DefaultTemplate">
         <put-attribute name="body"
-                       value="/WEB-INF/views/home.jsp"/>
+                       value="/WEB-INF/views/profile.jsp"/>
     </definition>
 
     <definition name="profile.skill" extends="DefaultTemplate">
         <put-attribute name="body"
                        value="/WEB-INF/views/profile/skill.jsp"/>
+
+    </definition><definition name="profile.language" extends="DefaultTemplate">
+        <put-attribute name="body"
+                       value="/WEB-INF/views/profile/language.jsp"/>
     </definition>
 
     <definition name="profile.course" extends="DefaultTemplate">

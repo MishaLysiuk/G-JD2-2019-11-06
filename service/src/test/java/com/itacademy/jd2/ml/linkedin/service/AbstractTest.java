@@ -59,7 +59,7 @@ public abstract class AbstractTest {
         final IUserAccount entity = userAccountService.createEntity();
         entity.setEmail("email-" + getRandomPrefix());
         entity.setPassword("password-" + getRandomPrefix());
-        entity.setRoleId(Role.USER);
+        entity.setRole(Role.USER);
         entity.setFirstName("firstName-" + getRandomPrefix());
         entity.setLastName("lastName-" + getRandomPrefix());
         userAccountService.save(entity);

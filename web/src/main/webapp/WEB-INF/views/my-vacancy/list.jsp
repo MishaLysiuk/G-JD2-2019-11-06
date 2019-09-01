@@ -19,10 +19,10 @@
             <td><c:out value="${vacancy.contactInfo}"/></td>
             <td><c:out value="${vacancy.companyName}"/></td>
             <td><c:out value="${vacancy.address}"/></td>
-            <td class="right"><a class="btn-floating purple lighten-3" href="${myVacancy}/${vacancy.id}"><i
+            <td class="right"><a class="btn-floating blue darken-2" href="${myVacancy}/${vacancy.id}"><i
                     class="material-icons">info</i></a>
                 <a
-                        class="btn-floating purple lighten-3" href="${myVacancy}/${vacancy.id}/edit"><i
+                        class="btn-floating blue darken-2" href="${myVacancy}/${vacancy.id}/edit"><i
                         class="material-icons">edit</i></a>
                 <a
                         class="btn-floating red" href="${myVacancy}/${vacancy.id}/delete"><i
@@ -32,4 +32,4 @@
     </tbody>
 </table>
 <jspFragments:paging/>
-<a class="purple lighten-3 btn right " href="${myVacancy}/add">Post new vacancy</a>
+<a class="blue darken-2 btn right " href="${myVacancy}/add">Post new vacancy</a>

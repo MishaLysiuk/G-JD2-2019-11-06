@@ -32,20 +32,20 @@
             </div>
 
             <div class="input-field col s12">
-                <form:input path="roleId" type="text" disabled="${readonly}"/>
-                <form:errors path="roleId" cssClass="red-text"/>
-                <label for="roleId">roleId</label>
+                <form:input path="role" type="text" disabled="${readonly}"/>
+                <form:errors path="role" cssClass="red-text"/>
+                <label for="role">roleId</label>
             </div>
         </div>
         <div class="row">
             <div class="col s6"></div>
             <div class="col s3">
                 <c:if test="${!readonly}">
-                    <button class="btn purple lighten-3 right" type="submit">submit</button>
+                    <button class="btn blue darken-2 right" type="submit">submit</button>
                 </c:if>
             </div>
             <div class="col s3">
-                <a class="btn purple lighten-3 right" href="${listWorker}">to list<i
+                <a class="btn blue darken-2 right" href="${listWorker}">to list<i
                         class="material-icons right"></i>
                 </a>
             </div>
