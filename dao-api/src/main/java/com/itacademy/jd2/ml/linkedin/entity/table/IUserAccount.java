@@ -3,6 +3,7 @@ package com.itacademy.jd2.ml.linkedin.entity.table;
 import com.itacademy.jd2.ml.linkedin.entity.enums.Role;
 
 import java.util.Date;
+import java.util.Set;
 
 public interface IUserAccount extends IBaseEntity {
     String getEmail();
@@ -20,6 +21,10 @@ public interface IUserAccount extends IBaseEntity {
     String getFirstName();
 
     void setFirstName(String firstName);
+
+    Set<ICourse> getCourses();
+
+    void setCourses(Set<ICourse> courses);
 
     String getLastName();
 

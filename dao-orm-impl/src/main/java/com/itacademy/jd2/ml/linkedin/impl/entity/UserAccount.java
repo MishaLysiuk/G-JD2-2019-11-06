@@ -1,6 +1,7 @@
 package com.itacademy.jd2.ml.linkedin.impl.entity;
 
 import com.itacademy.jd2.ml.linkedin.entity.enums.Role;
+import com.itacademy.jd2.ml.linkedin.entity.table.ICourse;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 import org.hibernate.search.annotations.Analyze;
 import org.hibernate.search.annotations.Field;
@@ -10,6 +11,8 @@ import org.hibernate.search.annotations.Store;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Indexed
@@ -27,6 +30,8 @@ public class UserAccount extends BaseEntity implements IUserAccount {
     private String firstName;
     @Column
     private String lastName;
+    @ManyToMany(targetEntity = Course.class, fetch = FetchType.LAZY, mappedBy = "users")
+    private Set<ICourse> courses = new HashSet<>();
     @Column
     private Date birthday;
     @Column
@@ -74,6 +79,16 @@ public class UserAccount extends BaseEntity implements IUserAccount {
     @Override
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    @Override
+    public Set<ICourse> getCourses() {
+        return courses;
+    }
+
+    @Override
+    public void setCourses(Set<ICourse> courses) {
+        this.courses = courses;
     }
 
     @Override

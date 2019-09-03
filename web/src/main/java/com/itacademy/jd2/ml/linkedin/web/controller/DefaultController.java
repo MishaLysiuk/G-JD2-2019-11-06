@@ -17,15 +17,15 @@ public class DefaultController {
     private MessageSource messageSource;
 
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView index(Locale locale) {
-
-        ModelAndView modelAndView = new ModelAndView("profile.language");
+    public String  index(Locale locale) {
+/*
+        ModelAndView modelAndView = new ModelAndView("profile");
 
         String login = SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString();
 
         modelAndView.addObject("welcomeMessage",
-                messageSource.getMessage("page.home.welcomeMessage", new Object[] { login }, locale));
-
-        return modelAndView;
+                messageSource.getMessage("page.home.welcomeMessage", new Object[]{login}, locale));
+        */
+        return "redirect:/profile";
     }
 }

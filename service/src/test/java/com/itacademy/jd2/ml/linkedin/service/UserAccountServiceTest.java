@@ -44,6 +44,8 @@ public class UserAccountServiceTest extends AbstractTest {
         entity.setRole(Role.ADMIN);
         entity.setFirstName("admin");
         entity.setLastName("admin");
+        entity.setJobTitle("admin job title");
+        entity.setContactInfo("admin contact info");
         userAccountService.save(entity);
     }
 
@@ -55,6 +57,8 @@ public class UserAccountServiceTest extends AbstractTest {
         entity.setRole(Role.USER);
         entity.setFirstName("user");
         entity.setLastName("user");
+        entity.setJobTitle("user job title");
+        entity.setContactInfo("user contact info");
         userAccountService.save(entity);
     }
 

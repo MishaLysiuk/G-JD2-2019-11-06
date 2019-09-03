@@ -82,6 +82,11 @@ public class MyVacancyController extends AbstractController{
             @PathVariable(name = "id", required = true) final Integer id) {
         final IVacancy dbAccount = vacancyService.get(id);
         final VacancyDTO dto = toDtoConverter.apply(dbAccount);
+
+
+
+
+
         final Map<String, Object> hashMap = new HashMap<>();
         hashMap.put("formVacancy", dto);
         hashMap.put("readonly", true);

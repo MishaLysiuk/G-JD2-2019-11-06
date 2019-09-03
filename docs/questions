@@ -1,15 +1,8 @@
 //сделать чтобы хидер оставался всё время вверху
 
-убрать пароль из профиля
-изменить страницы с job title
-
 поля локации на фронте
 
 dto location
 
-обязательная аутефикация
-fields university, mother tongue
 ongoing studies
 locale
-как оперировать loggedUserId
-autocomplete id
