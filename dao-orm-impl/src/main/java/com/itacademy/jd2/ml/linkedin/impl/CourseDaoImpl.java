@@ -5,6 +5,7 @@ import com.itacademy.jd2.ml.linkedin.entity.table.ICourse;
 import com.itacademy.jd2.ml.linkedin.filter.CourseFilter;
 import com.itacademy.jd2.ml.linkedin.impl.entity.Course;
 import com.itacademy.jd2.ml.linkedin.impl.entity.Course_;
+import com.itacademy.jd2.ml.linkedin.impl.entity.UserAccount_;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -70,6 +71,23 @@ public class CourseDaoImpl extends AbstractDaoImpl<ICourse,Integer> implements I
         cq.select(from);
 
         cq.where(cb.like(cb.lower(from.get(Course_.name)), "%" + name.toLowerCase() + "%"));
+        final TypedQuery<ICourse> q = em.createQuery(cq);
+
+        List<ICourse> resultList = q.getResultList();
+
+
+        return resultList;
+    }
+
+    @Override
+    public List<ICourse> findByUserId(Integer userId) {
+        final EntityManager em = getEntityManager();
+        final CriteriaBuilder cb = em.getCriteriaBuilder();
+        final CriteriaQuery<ICourse> cq = cb.createQuery(ICourse.class);
+        final Root<Course> from = cq.from(Course.class);
+        cq.select(from);
+
+        cq.where(cb.equal(from.get(Course_.id), userId));
         final TypedQuery<ICourse> q = em.createQuery(cq);
 
         List<ICourse> resultList = q.getResultList();

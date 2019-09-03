@@ -2,8 +2,7 @@ package com.itacademy.jd2.ml.linkedin.web.controller;
 
 import com.itacademy.jd2.ml.linkedin.ICompanyService;
 import com.itacademy.jd2.ml.linkedin.entity.table.ICompany;
-import com.itacademy.jd2.ml.linkedin.web.converter.CompanyToDTOConverter;
-import com.itacademy.jd2.ml.linkedin.web.dto.CompanyDTO;
+import com.itacademy.jd2.ml.linkedin.web.converter.toDTO.CompanyToDTOConverter;
 import org.apache.commons.collections.map.HashedMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping(value = "autocomplete/")

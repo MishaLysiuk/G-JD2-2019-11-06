@@ -7,7 +7,9 @@
 
 dto location
 
-обязательная регестрация
+обязательная аутефикация
 fields university, mother tongue
 ongoing studies
 locale
+как оперировать loggedUserId
+autocomplete id

@@ -6,29 +6,29 @@
 </div>
 
 <div class="row">
-    <form:form class="col s12" method="post">
+    <form:form class="col s12" method="post" modelAttribute="course">
         <div class="row">
             <div class="input-field col s6">
-                <input id="name" type="text" class="autocomplete">
+                <form:input path="name" type="text" disabled="${readonly}"/>
                 <label for="name">Name</label>
             </div>
             <div class="input-field col s6">
-                <input id="company" type="text" class="autocomplete">
-                <label for="company">Company</label>
+                <form:input path="companyName" type="text" disabled="${readonly}"/>
+                <label for="companyName">Company</label>
             </div>
         </div>
 
         <div class="row">
             <div class="input-field col s4">
-                <input id="startDate" type="date" class="datepicker">
+                <form:input path="startDate" type="text" cssClass="date-picker" disabled="${readonly}"/>
                 <label for="startDate">Start date</label>
             </div>
             <div class="input-field col s4">
-                <input id="endDate" type="date" class="datepicker">
+                <form:input path="endDate" type="text" cssClass="date-picker" disabled="${readonly}"/>
                 <label for="endDate">End date</label>
             </div>
             <div class="input-field col s4">
-                <input id="finalResult" type="number" min="0" class="validate">
+                <form:input path="finalResult" type="text" disabled="${readonly}"/>
                 <label for="finalResult">Final result</label>
             </div>
         </div>

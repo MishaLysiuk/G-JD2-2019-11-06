@@ -29,25 +29,25 @@ function initComboboxes(contextUrl) {
     // запроса.
     // текущая строка кода выполнится при загрузке страницы (в соответствии с
     // местом встави в JSP)
-    $.get(contextUrl + "/ajax-samples/countries", function(countriesArray) {
+    $.get(contextUrl + "/location/regions", function(regionsArray) {
 
         // получив список стран - инициализируем соответствующий комбик
-        initSelectElement('country', countriesArray);
+        initSelectElement('region', regionsArray);
 
         // вешаем функцию-обработчик на 'onchange' событие на нужные элементы.
         // получаем выбранный сейчас элемент и строим с его помощь. новый GET
         // запрос
         // на сервер
-        $("#country").change(function() {
+        $("#region").change(function() {
             var selectedId = $(this).val();
-            $.get(contextUrl + "/ajax-samples/regions?countryId=" + selectedId, function(regionsArray) {
-                initSelectElement('region', regionsArray);
+            $.get(contextUrl + "/location/countries?regionId=" + selectedId, function(countriesArray) {
+                initSelectElement('country', countriesArray);
             })
         });
 
-        $("#region").change(function() {
+        $("#country").change(function() {
             var selectedId = $(this).val();
-            $.get(contextUrl + "/ajax-samples/cities?regionId=" + selectedId, function(citiesArray) {
+            $.get(contextUrl + "/location/cities?countryId=" + selectedId, function(citiesArray) {
                 initSelectElement('city', citiesArray);
             })
 

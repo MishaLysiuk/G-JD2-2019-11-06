@@ -76,4 +76,10 @@ public class CourseServiceImpl implements ICourseService {
         return courses;
     }
 
+    @Override
+    public List<ICourse> findByUserId(Integer userId) {
+        List<ICourse> courses = dao.findByUserId(userId);
+        return courses;
+    }
+
 }

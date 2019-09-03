@@ -6,21 +6,21 @@
 </div>
 
 <div class="row">
-    <form:form class="col s12" method="post">
+    <form:form class="col s12" method="post" modelAttribute="userAccountDTO">
         <div class="row">
             <div class="input-field col s6">
-                <input id="firstName" type="text" class="validate">
+                <form:input path="firstName" type="text" class="validate" disabled="${readonly}"/>
                 <label for="firstName">First Name</label>
             </div>
             <div class="input-field col s6">
-                <input id="lastName" type="text" class="validate">
+                <form:input path="lastName" type="text" class="validate" disabled="${readonly}"/>
                 <label for="lastName">Last Name</label>
             </div>
         </div>
 
         <div class="row">
             <div class="input-field col s6">
-                <input id="email" type="email" class="validate">
+                <form:input path="email" type="email" class="validate" disabled="${readonly}"/>
                 <label for="email">Email</label>
             </div>
             <div class="col s6">
@@ -30,7 +30,7 @@
 
         <div class="row">
             <div class="input-field col s6">
-                <input id="birthday" type="date" class="datepicker">
+                <form:input path="birthday" type="date" cssClass="date-picker" disabled="${readonly}"/>
                 <label for="birthday">Birthday</label>
             </div>
             <div class="input-field col s6">
@@ -46,20 +46,28 @@
 
         <div class="row">
             <div class="input-field col s12">
-                <input id="jobTitle" type="text" class="autocomplete">
+                <form:input path="jobTitle" type="text" class="validate" disabled="${readonly}"/>
                 <label for="jobTitle">Job title</label>
             </div>
         </div>
 
         <div class="row">
             <div class="input-field col s12">
-                <input id="contactInfo" type="text" class="validate">
+                <form:input path="contactInfo" type="text" class="validate" disabled="${readonly}"/>
                 <label for="contactInfo">Contact info</label>
             </div>
         </div>
 
-        <div class="col s2 offset-s5">
-            <button class="btn blue darken-2 " type="submit" name="action">Save changes</button>
-        </div>
+        <c:if test="${!readonly}">
+            <div class="col s2 offset-s5">
+                <button class="btn blue darken-2 " type="submit" name="action">Save changes</button>
+            </div>
+        </c:if>
+
+        <c:if test="${readonly}">
+            <div class="col s2 offset-s5">
+                <a href="${profile}/edit"><i class="small material-icons">edit</i>Edit profile</a>
+            </div>
+        </c:if>
     </form:form>
 </div>

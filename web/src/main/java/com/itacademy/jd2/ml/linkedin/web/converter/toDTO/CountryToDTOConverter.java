@@ -1,4 +1,4 @@
-package com.itacademy.jd2.ml.linkedin.web.converter;
+package com.itacademy.jd2.ml.linkedin.web.converter.toDTO;
 
 import com.itacademy.jd2.ml.linkedin.entity.table.ICountry;
 import com.itacademy.jd2.ml.linkedin.web.dto.CountryDTO;

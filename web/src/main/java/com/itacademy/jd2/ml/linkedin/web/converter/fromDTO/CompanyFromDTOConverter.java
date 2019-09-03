@@ -1,4 +1,4 @@
-package com.itacademy.jd2.ml.linkedin.web.converter;
+package com.itacademy.jd2.ml.linkedin.web.converter.fromDTO;
 
 import com.itacademy.jd2.ml.linkedin.ICompanyService;
 import com.itacademy.jd2.ml.linkedin.entity.table.ICompany;
