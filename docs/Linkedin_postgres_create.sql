@@ -45,18 +45,18 @@ CREATE TABLE "user_language"
 
 CREATE TABLE "user_account"
 (
-    "id"            serial                      NOT NULL,
-    "email"         VARCHAR(255)                NOT NULL UNIQUE,
-    "password"      VARCHAR(255)                NOT NULL,
-    "role"          VARCHAR(255)                NOT NULL,
-    "first_name"    VARCHAR(255)                NOT NULL,
-    "last_name"     VARCHAR(255),
-    "job_title"     VARCHAR(255),
-    "birthday"      TIMESTAMP without time zone,
-    "contact_info"  VARCHAR(255),
-    "mother_tongue" VARCHAR(255),
-    "created"       TIMESTAMP without time zone NOT NULL,
-    "updated"       TIMESTAMP without time zone NOT NULL,
+    "id"               serial                      NOT NULL,
+    "email"            VARCHAR(255)                NOT NULL UNIQUE,
+    "password"         VARCHAR(255)                NOT NULL,
+    "role"             VARCHAR(255)                NOT NULL,
+    "first_name"       VARCHAR(255)                NOT NULL,
+    "last_name"        VARCHAR(255),
+    "job_title"        VARCHAR(255),
+    "birthday"         TIMESTAMP without time zone,
+    "contact_info"     VARCHAR(255),
+    "mother_tongue_id" integer,
+    "created"          TIMESTAMP without time zone NOT NULL,
+    "updated"          TIMESTAMP without time zone NOT NULL,
     CONSTRAINT "user_account_pk" PRIMARY KEY ("id")
 ) WITH (
       OIDS= FALSE
@@ -106,16 +106,16 @@ CREATE TABLE "company"
 
 CREATE TABLE "education"
 (
-    "id"         serial                      NOT NULL,
-    "university" VARCHAR(255)                NOT NULL,
-    "start_date" TIMESTAMP without time zone NOT NULL,
-    "end_date"   TIMESTAMP without time zone NOT NULL,
-    "speciality" VARCHAR(255)                NOT NULL,
-    "degree"     VARCHAR(255)                NOT NULL,
-    "address"    VARCHAR(255)                NOT NULL,
-    "city_id"    integer                     NOT NULL,
-    "created"    TIMESTAMP without time zone NOT NULL,
-    "updated"    TIMESTAMP without time zone NOT NULL,
+    "id"            serial                      NOT NULL,
+    "university"    VARCHAR(255)                NOT NULL,
+    "start_date"    TIMESTAMP without time zone NOT NULL,
+    "end_date"      TIMESTAMP without time zone NOT NULL,
+    "speciality_id" integer                     NOT NULL,
+    "degree_id"     integer,
+    "address"       VARCHAR(255)                NOT NULL,
+    "city_id"       integer                     NOT NULL,
+    "created"       TIMESTAMP without time zone NOT NULL,
+    "updated"       TIMESTAMP without time zone NOT NULL,
     CONSTRAINT "education_pk" PRIMARY KEY ("id")
 ) WITH (
       OIDS= FALSE
@@ -255,6 +255,32 @@ CREATE TABLE "skill_2_user"
 
 
 
+CREATE TABLE "speciality"
+(
+    "id"      serial       NOT NULL,
+    "name"    VARCHAR(255) NOT NULL UNIQUE,
+    "created" DATE         NOT NULL,
+    "updated" DATE         NOT NULL,
+    CONSTRAINT "speciality_pk" PRIMARY KEY ("id")
+) WITH (
+      OIDS= FALSE
+    );
+
+
+
+CREATE TABLE "degree"
+(
+    "id"      serial       NOT NULL,
+    "name"    VARCHAR(255) NOT NULL UNIQUE,
+    "created" DATE         NOT NULL,
+    "updated" DATE         NOT NULL,
+    CONSTRAINT "degree_pk" PRIMARY KEY ("id")
+) WITH (
+      OIDS= FALSE
+    );
+
+
+
 ALTER TABLE "course"
     ADD CONSTRAINT "course_fk0" FOREIGN KEY ("company_id") REFERENCES "company" ("id");
 
@@ -266,6 +292,8 @@ ALTER TABLE "user_language"
 ALTER TABLE "user_language"
     ADD CONSTRAINT "user_language_fk2" FOREIGN KEY ("user_id") REFERENCES "user_account" ("id");
 
+ALTER TABLE "user_account"
+    ADD CONSTRAINT "user_account_fk0" FOREIGN KEY ("mother_tongue_id") REFERENCES "language" ("id");
 
 ALTER TABLE "skill"
     ADD CONSTRAINT "skill_fk0" FOREIGN KEY ("group_id") REFERENCES "group_skill" ("id");
@@ -273,7 +301,11 @@ ALTER TABLE "skill"
 
 
 ALTER TABLE "education"
-    ADD CONSTRAINT "education_fk0" FOREIGN KEY ("city_id") REFERENCES "city" ("id");
+    ADD CONSTRAINT "education_fk0" FOREIGN KEY ("speciality_id") REFERENCES "speciality" ("id");
+ALTER TABLE "education"
+    ADD CONSTRAINT "education_fk1" FOREIGN KEY ("degree_id") REFERENCES "degree" ("id");
+ALTER TABLE "education"
+    ADD CONSTRAINT "education_fk2" FOREIGN KEY ("city_id") REFERENCES "city" ("id");
 
 ALTER TABLE "vacancy"
     ADD CONSTRAINT "vacancy_fk0" FOREIGN KEY ("creator_id") REFERENCES "user_account" ("id");
@@ -314,3 +346,5 @@ ALTER TABLE "skill_2_user"
     ADD CONSTRAINT "skill_2_user_fk0" FOREIGN KEY ("skill_id") REFERENCES "skill" ("id");
 ALTER TABLE "skill_2_user"
     ADD CONSTRAINT "skill_2_user_fk1" FOREIGN KEY ("user_id") REFERENCES "user_account" ("id");
+
+

@@ -78,6 +78,12 @@ public class UserAccountServiceImpl implements IUserAccountService {
     }
 
     @Override
+    public IUserAccount getFullInfo(final Integer id) {
+        final IUserAccount entity = dao.getFullInfo(id);
+        return entity;
+    }
+
+    @Override
     public IUserAccount findByEmail(String email){
         final IUserAccount entity = dao.findByEmail(email);
         return entity;

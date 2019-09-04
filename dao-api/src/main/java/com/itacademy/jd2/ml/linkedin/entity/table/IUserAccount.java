@@ -42,7 +42,7 @@ public interface IUserAccount extends IBaseEntity {
 
     void setContactInfo(String contactInfo);
 
-    String getMotherTongue();
+    ILanguage getMotherTongue();
 
-    void setMotherTongue(String motherTongue);
+    void setMotherTongue(ILanguage motherTongue);
 }

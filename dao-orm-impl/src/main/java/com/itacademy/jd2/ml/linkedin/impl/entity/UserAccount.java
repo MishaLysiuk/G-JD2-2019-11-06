@@ -2,6 +2,7 @@ package com.itacademy.jd2.ml.linkedin.impl.entity;
 
 import com.itacademy.jd2.ml.linkedin.entity.enums.Role;
 import com.itacademy.jd2.ml.linkedin.entity.table.ICourse;
+import com.itacademy.jd2.ml.linkedin.entity.table.ILanguage;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 import org.hibernate.search.annotations.Analyze;
 import org.hibernate.search.annotations.Field;
@@ -38,8 +39,8 @@ public class UserAccount extends BaseEntity implements IUserAccount {
     private String jobTitle;
     @Column
     private String contactInfo;
-    @Column
-    private String motherTongue;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Language.class)
+    private ILanguage motherTongue;
 
     @Override
     public String getEmail() {
@@ -132,12 +133,12 @@ public class UserAccount extends BaseEntity implements IUserAccount {
     }
 
     @Override
-    public String getMotherTongue() {
+    public ILanguage getMotherTongue() {
         return motherTongue;
     }
 
     @Override
-    public void setMotherTongue(String motherTongue) {
+    public void setMotherTongue(ILanguage motherTongue) {
         this.motherTongue = motherTongue;
     }
 }

@@ -21,13 +21,13 @@ public interface IEducation extends IBaseEntity {
 
     void setEnd(Date end);
 
-    String getSpeciality();
+    ISpeciality getSpeciality();
 
-    void setSpeciality(String speciality);
+    void setSpeciality(ISpeciality speciality);
 
-    String getDegree();
+    IDegree getDegree();
 
-    void setDegree(String degree);
+    void setDegree(IDegree degree);
 
     ICity getCity();
 

@@ -30,5 +30,7 @@ public interface IUserAccountService {
 
     long getCount(UserAccountFilter filter);
 
+    IUserAccount getFullInfo(Integer id);
+
     IUserAccount findByEmail(String email);
 }

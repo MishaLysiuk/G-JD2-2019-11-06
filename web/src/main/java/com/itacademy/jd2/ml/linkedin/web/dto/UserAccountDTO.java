@@ -1,6 +1,7 @@
 package com.itacademy.jd2.ml.linkedin.web.dto;
 
 import com.itacademy.jd2.ml.linkedin.entity.enums.Role;
+import com.itacademy.jd2.ml.linkedin.entity.table.ILanguage;
 
 import javax.validation.constraints.Size;
 import java.util.Date;
@@ -18,7 +19,7 @@ public class UserAccountDTO {
     private Date birthday;
     private String jobTitle;
     private String contactInfo;
-    private String motherTongue;
+    private ILanguage motherTongue;
     private Date created;
     private Date updated;
 
@@ -94,11 +95,11 @@ public class UserAccountDTO {
         this.contactInfo = contactInfo;
     }
 
-    public String getMotherTongue() {
+    public ILanguage getMotherTongue() {
         return motherTongue;
     }
 
-    public void setMotherTongue(String motherTongue) {
+    public void setMotherTongue(ILanguage motherTongue) {
         this.motherTongue = motherTongue;
     }
 

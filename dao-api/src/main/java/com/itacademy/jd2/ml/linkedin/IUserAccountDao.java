@@ -14,6 +14,8 @@ public interface IUserAccountDao extends IDao<IUserAccount, Integer> {
 
     long getCount(UserAccountFilter filter); // skip
 
+    IUserAccount getFullInfo(Integer id);
+
     IUserAccount findByEmail(String email);
 
     List<IUserAccount> search(String text);

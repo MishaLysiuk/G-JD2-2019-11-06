@@ -1,8 +1,6 @@
 package com.itacademy.jd2.ml.linkedin.impl.entity;
 
-import com.itacademy.jd2.ml.linkedin.entity.table.ICity;
-import com.itacademy.jd2.ml.linkedin.entity.table.IEducation;
-import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
+import com.itacademy.jd2.ml.linkedin.entity.table.*;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -22,10 +20,10 @@ public class Education extends BaseEntity implements IEducation {
     private Date start;
     @Column
     private Date end;
-    @Column
-    private String speciality;
-    @Column
-    private String degree;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Speciality.class)
+    private ISpeciality speciality;
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Degree.class)
+    private IDegree degree;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = City.class)
     private ICity city;
     @Column
@@ -72,22 +70,22 @@ public class Education extends BaseEntity implements IEducation {
     }
 
     @Override
-    public String getSpeciality() {
+    public ISpeciality getSpeciality() {
         return speciality;
     }
 
     @Override
-    public void setSpeciality(String speciality) {
+    public void setSpeciality(ISpeciality speciality) {
         this.speciality = speciality;
     }
 
     @Override
-    public String getDegree() {
+    public IDegree getDegree() {
         return degree;
     }
 
     @Override
-    public void setDegree(String degree) {
+    public void setDegree(IDegree degree) {
         this.degree = degree;
     }
 
