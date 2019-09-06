@@ -38,7 +38,7 @@ public class ProfileController extends AbstractController {
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView index(Locale locale) {
 
-        IUserAccount loggedUser = userAccountService.get(AuthHelper.getLoggedUserId());
+        IUserAccount loggedUser = userAccountService.getFullInfo(AuthHelper.getLoggedUserId());
         Map<String, Object> hashMap = new HashMap<>();
         hashMap.put("userAccountDTO", toDtoConverter.apply(loggedUser));
         loadLanguages(hashMap);
@@ -49,7 +49,7 @@ public class ProfileController extends AbstractController {
     @RequestMapping(value = "/edit", method = RequestMethod.GET)
     public ModelAndView edit(Locale locale){
 
-        IUserAccount loggedUser = userAccountService.get(AuthHelper.getLoggedUserId());
+        IUserAccount loggedUser = userAccountService.getFullInfo(AuthHelper.getLoggedUserId());
         Map<String, Object> hashMap = new HashMap<>();
         hashMap.put("userAccountDTO", toDtoConverter.apply(loggedUser));
         loadLanguages(hashMap);
