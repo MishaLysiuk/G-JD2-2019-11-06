@@ -46,6 +46,7 @@ public class UserAccountServiceTest extends AbstractTest {
         entity.setLastName("admin");
         entity.setJobTitle("admin job title");
         entity.setContactInfo("admin contact info");
+        entity.setMotherTongue(saveNewLanguage());
         userAccountService.save(entity);
     }
 
@@ -59,6 +60,7 @@ public class UserAccountServiceTest extends AbstractTest {
         entity.setLastName("user");
         entity.setJobTitle("user job title");
         entity.setContactInfo("user contact info");
+        entity.setMotherTongue(saveNewLanguage());
         userAccountService.save(entity);
     }
 

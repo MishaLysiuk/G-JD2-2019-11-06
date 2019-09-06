@@ -1,6 +1,8 @@
 package com.itacademy.jd2.ml.linkedin.web.converter.fromDTO;
 
+import com.itacademy.jd2.ml.linkedin.ILanguageService;
 import com.itacademy.jd2.ml.linkedin.IUserAccountService;
+import com.itacademy.jd2.ml.linkedin.entity.table.ILanguage;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 import com.itacademy.jd2.ml.linkedin.web.dto.UserAccountDTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +14,12 @@ import java.util.function.Function;
 public class UserAccountFromDTOConverter implements Function<UserAccountDTO, IUserAccount> {
 
     private IUserAccountService userAccountService;
+    private ILanguageService languageService;
 
     @Autowired
-    public UserAccountFromDTOConverter(IUserAccountService userAccountService) {
+    public UserAccountFromDTOConverter(IUserAccountService userAccountService, ILanguageService languageService) {
         this.userAccountService = userAccountService;
+        this.languageService = languageService;
     }
 
     @Override
@@ -30,7 +34,11 @@ public class UserAccountFromDTOConverter implements Function<UserAccountDTO, IUs
         entity.setBirthday(dto.getBirthday());
         entity.setJobTitle(dto.getJobTitle());
         entity.setContactInfo(dto.getContactInfo());
-        entity.setMotherTongue(dto.getMotherTongue());
+
+        ILanguage motherTongue = languageService.createEntity();
+        motherTongue.setId(dto.getMotherTongueId());
+        entity.setMotherTongue(motherTongue);
+
         return entity;
     }
 

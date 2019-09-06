@@ -1,5 +1,6 @@
 package com.itacademy.jd2.ml.linkedin.web.converter.toDTO;
 
+import com.itacademy.jd2.ml.linkedin.entity.table.ILanguage;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 import com.itacademy.jd2.ml.linkedin.web.dto.UserAccountDTO;
 import org.springframework.stereotype.Component;
@@ -22,9 +23,11 @@ public class UserAccountToDTOConverter implements Function<IUserAccount, UserAcc
         dto.setBirthday(entity.getBirthday());
         dto.setJobTitle(entity.getJobTitle());
         dto.setContactInfo(entity.getContactInfo());
-        dto.setMotherTongue(entity.getMotherTongue());
-        dto.setCreated(entity.getCreated());
-        dto.setUpdated(entity.getUpdated());
+
+        ILanguage motherTongue = entity.getMotherTongue();
+        dto.setMotherTongueId(motherTongue.getId());
+        dto.setMotherTongueName(motherTongue.getName());
+
         return dto;
     }
 }

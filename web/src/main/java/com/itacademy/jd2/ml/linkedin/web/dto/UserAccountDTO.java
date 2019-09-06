@@ -3,6 +3,7 @@ package com.itacademy.jd2.ml.linkedin.web.dto;
 import com.itacademy.jd2.ml.linkedin.entity.enums.Role;
 import com.itacademy.jd2.ml.linkedin.entity.table.ILanguage;
 
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
@@ -19,9 +20,9 @@ public class UserAccountDTO {
     private Date birthday;
     private String jobTitle;
     private String contactInfo;
-    private ILanguage motherTongue;
-    private Date created;
-    private Date updated;
+    @NotNull
+    private Integer motherTongueId;
+    private String motherTongueName;
 
     public Integer getId() {
         return id;
@@ -95,27 +96,19 @@ public class UserAccountDTO {
         this.contactInfo = contactInfo;
     }
 
-    public ILanguage getMotherTongue() {
-        return motherTongue;
+    public Integer getMotherTongueId() {
+        return motherTongueId;
     }
 
-    public void setMotherTongue(ILanguage motherTongue) {
-        this.motherTongue = motherTongue;
+    public void setMotherTongueId(Integer motherTongueId) {
+        this.motherTongueId = motherTongueId;
     }
 
-    public Date getCreated() {
-        return created;
+    public String getMotherTongueName() {
+        return motherTongueName;
     }
 
-    public void setCreated(Date created) {
-        this.created = created;
-    }
-
-    public Date getUpdated() {
-        return updated;
-    }
-
-    public void setUpdated(Date updated) {
-        this.updated = updated;
+    public void setMotherTongueName(String motherTongueName) {
+        this.motherTongueName = motherTongueName;
     }
 }

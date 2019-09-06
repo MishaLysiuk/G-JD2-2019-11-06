@@ -33,6 +33,8 @@ public abstract class AbstractTest {
     protected ICountryService countryService;
     @Autowired
     protected IRegionService regionService;
+    @Autowired
+    protected ILanguageService languageService;
 
     private static final Random RANDOM = new Random();
 
@@ -70,6 +72,13 @@ public abstract class AbstractTest {
         final ICompany entity = companyService.createEntity();
         entity.setName("company-" + getRandomPrefix());
         companyService.save(entity);
+        return entity;
+    }
+
+    protected ILanguage saveNewLanguage() {
+        final ILanguage entity = languageService.createEntity();
+        entity.setName("Japanese");
+        languageService.save(entity);
         return entity;
     }
 

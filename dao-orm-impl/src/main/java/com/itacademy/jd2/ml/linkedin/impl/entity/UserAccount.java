@@ -24,7 +24,7 @@ public class UserAccount extends BaseEntity implements IUserAccount {
     @Column
     private String password;
     @Column
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     private Role role;
     @Column
     @Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO)

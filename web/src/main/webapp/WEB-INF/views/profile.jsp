@@ -34,13 +34,10 @@
                 <label for="birthday">Birthday</label>
             </div>
             <div class="input-field col s6">
-                <select>
-                    <option value="" disabled selected>Choose your mother tongue</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                </select>
-                <label>Mother tongue</label>
+                <form:select path="motherTongueId" disabled="${readonly}">
+                    <form:options items="${languagesChoices}"/>
+                </form:select>
+                <label for="motherTongueId">Mother tongue</label>
             </div>
         </div>
 
