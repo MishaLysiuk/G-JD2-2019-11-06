@@ -22,9 +22,21 @@ public interface IUserAccount extends IBaseEntity {
 
     void setFirstName(String firstName);
 
+    Set<IEducation> getEducations();
+
+    void setEducations(Set<IEducation> educations);
+
     Set<ICourse> getCourses();
 
     void setCourses(Set<ICourse> courses);
+
+    Set<IWorkExperience> getWorkExperiences();
+
+    void setWorkExperiences(Set<IWorkExperience> workExperiences);
+
+    Set<ISkill> getSkills();
+
+    void setSkills(Set<ISkill> skills);
 
     String getLastName();
 

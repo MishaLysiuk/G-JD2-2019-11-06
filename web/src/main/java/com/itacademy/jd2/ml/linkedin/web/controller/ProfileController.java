@@ -6,15 +6,18 @@ import com.itacademy.jd2.ml.linkedin.entity.table.ILanguage;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 import com.itacademy.jd2.ml.linkedin.web.converter.fromDTO.UserAccountFromDTOConverter;
 import com.itacademy.jd2.ml.linkedin.web.converter.toDTO.UserAccountToDTOConverter;
+import com.itacademy.jd2.ml.linkedin.web.dto.UserAccountDTO;
 import com.itacademy.jd2.ml.linkedin.web.security.AuthHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.util.HashMap;
-import java.util.Locale;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -36,7 +39,7 @@ public class ProfileController extends AbstractController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView index(Locale locale) {
+    public ModelAndView index() {
 
         IUserAccount loggedUser = userAccountService.getFullInfo(AuthHelper.getLoggedUserId());
         Map<String, Object> hashMap = new HashMap<>();
@@ -47,7 +50,7 @@ public class ProfileController extends AbstractController {
     }
 
     @RequestMapping(value = "/edit", method = RequestMethod.GET)
-    public ModelAndView edit(Locale locale){
+    public ModelAndView edit() {
 
         IUserAccount loggedUser = userAccountService.getFullInfo(AuthHelper.getLoggedUserId());
         Map<String, Object> hashMap = new HashMap<>();
@@ -55,7 +58,22 @@ public class ProfileController extends AbstractController {
         loadLanguages(hashMap);
         hashMap.put("readonly", false);
         return new ModelAndView("profile", hashMap);
+    }
 
+    @RequestMapping(method = RequestMethod.POST)
+    public Object save(@Valid @ModelAttribute("userAccountDTO") final UserAccountDTO loggedUser,
+                       final BindingResult result) {
+        if (result.hasErrors()) {
+            final Map<String, Object> hashMap = new HashMap<>();
+            hashMap.put("userAccountDTO", loggedUser);
+            loadLanguages(hashMap);
+            hashMap.put("readonly", false);
+            return new ModelAndView("profile", hashMap);
+        } else {
+            final IUserAccount entity = fromDtoConverter.apply(loggedUser);
+            userAccountService.save(entity);
+            return "redirect:/profile";
+        }
     }
 
     private void loadLanguages(final Map<String, Object> hashMap) {

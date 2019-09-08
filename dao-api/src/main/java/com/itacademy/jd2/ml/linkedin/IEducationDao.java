@@ -9,4 +9,7 @@ public interface IEducationDao extends IDao<IEducation, Integer> {
 
     List<IEducation> find(EducationFilter filter);
 
+    List<IEducation> findByUserId(Integer userId);
+
+    IEducation getFullInfo(Integer id);
 }

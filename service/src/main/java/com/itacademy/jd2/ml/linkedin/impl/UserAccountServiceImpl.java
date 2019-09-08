@@ -84,6 +84,18 @@ public class UserAccountServiceImpl implements IUserAccountService {
     }
 
     @Override
+    public IUserAccount getUserCourses(Integer id) {
+        final IUserAccount entity = dao.getUserCourses(id);
+        return entity;
+    }
+
+    @Override
+    public IUserAccount getUserEducations(Integer id) {
+        final IUserAccount entity = dao.getUserEducation(id);
+        return entity;
+    }
+
+    @Override
     public IUserAccount findByEmail(String email){
         final IUserAccount entity = dao.findByEmail(email);
         return entity;

@@ -1,8 +1,8 @@
 //сделать чтобы хидер оставался всё время вверху
 
-поля локации на фронте
-
 dto location
 
 ongoing studies
-locale
+
+find(Filter)
+date pattern

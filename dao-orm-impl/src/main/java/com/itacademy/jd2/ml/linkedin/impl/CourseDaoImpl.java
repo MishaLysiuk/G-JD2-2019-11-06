@@ -79,21 +79,4 @@ public class CourseDaoImpl extends AbstractDaoImpl<ICourse,Integer> implements I
         return resultList;
     }
 
-    @Override
-    public List<ICourse> findByUserId(Integer userId) {
-        final EntityManager em = getEntityManager();
-        final CriteriaBuilder cb = em.getCriteriaBuilder();
-        final CriteriaQuery<ICourse> cq = cb.createQuery(ICourse.class);
-        final Root<Course> from = cq.from(Course.class);
-        cq.select(from);
-
-        cq.where(cb.equal(from.get(Course_.id), userId));
-        final TypedQuery<ICourse> q = em.createQuery(cq);
-
-        List<ICourse> resultList = q.getResultList();
-
-
-        return resultList;
-    }
-
 }

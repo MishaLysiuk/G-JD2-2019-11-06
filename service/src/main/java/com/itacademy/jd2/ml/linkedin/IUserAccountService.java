@@ -32,5 +32,9 @@ public interface IUserAccountService {
 
     IUserAccount getFullInfo(Integer id);
 
+    IUserAccount getUserEducations(Integer id);
+
     IUserAccount findByEmail(String email);
+
+    IUserAccount getUserCourses(Integer id);
 }

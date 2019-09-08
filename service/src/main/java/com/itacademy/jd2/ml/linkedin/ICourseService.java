@@ -26,6 +26,4 @@ public interface ICourseService {
     ICourse getFullInfo(Integer id);
 
     List<ICourse> findByName(String name);
-
-    List<ICourse> findByUserId(Integer userId);
 }

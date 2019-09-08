@@ -16,7 +16,11 @@ public interface IUserAccountDao extends IDao<IUserAccount, Integer> {
 
     IUserAccount getFullInfo(Integer id);
 
+    IUserAccount getUserEducation(Integer id);
+
     IUserAccount findByEmail(String email);
 
     List<IUserAccount> search(String text);
+
+    IUserAccount getUserCourses(Integer id);
 }

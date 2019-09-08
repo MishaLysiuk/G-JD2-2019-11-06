@@ -2,6 +2,7 @@ package com.itacademy.jd2.ml.linkedin.web.dto;
 
 import com.itacademy.jd2.ml.linkedin.entity.enums.Role;
 import com.itacademy.jd2.ml.linkedin.entity.table.ILanguage;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -17,6 +18,7 @@ public class UserAccountDTO {
     private Role role;
     private String firstName;
     private String lastName;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthday;
     private String jobTitle;
     private String contactInfo;

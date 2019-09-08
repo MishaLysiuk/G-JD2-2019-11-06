@@ -89,6 +89,53 @@ public class UserAccountDaoImpl extends AbstractDaoImpl<IUserAccount, Integer> i
         cq.select(from); // define what need to be selected
 
         from.fetch(UserAccount_.motherTongue, JoinType.LEFT);
+        from.fetch(UserAccount_.courses, JoinType.LEFT);
+        from.fetch(UserAccount_.skills, JoinType.LEFT);
+        from.fetch(UserAccount_.educations, JoinType.LEFT);
+        from.fetch(UserAccount_.workExperiences, JoinType.LEFT);
+        cq.distinct(true);
+
+        // .. where id=...
+        cq.where(cb.equal(from.get(UserAccount_.id), id)); // where id=?
+
+        final TypedQuery<IUserAccount> q = em.createQuery(cq);
+
+        return getSingleResult(q);
+    }
+
+    @Override
+    public IUserAccount getUserCourses(Integer id) {
+        final EntityManager em = getEntityManager();
+        final CriteriaBuilder cb = em.getCriteriaBuilder();
+
+        final CriteriaQuery<IUserAccount> cq = cb.createQuery(IUserAccount.class); // define returning result
+        final Root<UserAccount> from = cq.from(UserAccount.class); // define table for select
+
+        cq.select(from); // define what need to be selected
+
+        from.fetch(UserAccount_.courses, JoinType.LEFT);
+        cq.distinct(true);
+
+        // .. where id=...
+        cq.where(cb.equal(from.get(UserAccount_.id), id)); // where id=?
+
+        final TypedQuery<IUserAccount> q = em.createQuery(cq);
+
+        return getSingleResult(q);
+    }
+
+    @Override
+    public IUserAccount getUserEducation(Integer id) {
+        final EntityManager em = getEntityManager();
+        final CriteriaBuilder cb = em.getCriteriaBuilder();
+
+        final CriteriaQuery<IUserAccount> cq = cb.createQuery(IUserAccount.class); // define returning result
+        final Root<UserAccount> from = cq.from(UserAccount.class); // define table for select
+
+        cq.select(from); // define what need to be selected
+
+        from.fetch(UserAccount_.courses, JoinType.LEFT);
+        cq.distinct(true);
 
         // .. where id=...
         cq.where(cb.equal(from.get(UserAccount_.id), id)); // where id=?
@@ -139,4 +186,5 @@ public class UserAccountDaoImpl extends AbstractDaoImpl<IUserAccount, Integer> i
         return jpaQuery.getResultList();
 
     }
+
 }

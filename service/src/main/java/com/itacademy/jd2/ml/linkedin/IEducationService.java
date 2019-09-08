@@ -23,4 +23,6 @@ public interface IEducationService {
     List<IEducation> getAll();
 
     List<IEducation> find(EducationFilter filter);
+
+    IEducation getFullInfo(Integer id);
 }

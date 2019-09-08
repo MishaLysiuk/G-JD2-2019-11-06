@@ -65,4 +65,10 @@ public class EducationServiceImpl implements IEducationService {
     public List<IEducation> find(EducationFilter filter) {
         return dao.find(filter);
     }
+
+    @Override
+    public IEducation getFullInfo(final Integer id) {
+        final IEducation entity = dao.getFullInfo(id);
+        return entity;
+    }
 }
