@@ -41,13 +41,13 @@ public class CityServiceImpl implements ICityService {
 
     @Override
     public List<ICountry> findCountryByRegionId(Integer regionId){
-        List<ICountry> countries = findCountryByRegionId(regionId);
+        List<ICountry> countries = dao.findCountryByRegionId(regionId);
         return countries;
     }
 
     @Override
     public List<ICity> findCityByCountryId(Integer countryId){
-        List<ICity> cities = findCityByCountryId(countryId);
+        List<ICity> cities = dao.findCityByCountryId(countryId);
         return cities;
     }
 

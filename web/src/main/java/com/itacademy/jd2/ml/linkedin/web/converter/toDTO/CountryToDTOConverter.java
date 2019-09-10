@@ -15,7 +15,6 @@ public class CountryToDTOConverter implements Function<ICountry, CountryDTO> {
         final CountryDTO dto = new CountryDTO();
         dto.setId(entity.getId());
         dto.setName(entity.getName());
-        dto.setRegion(entity.getRegion());
         return dto;
     }
 }

@@ -68,20 +68,6 @@ public class EducationController extends AbstractController {
         final Map<String, Object> hashMap = new HashMap<>();
         hashMap.put("educations", educationsDTO);
         return new ModelAndView("profile.education.list", hashMap);
-
-       /* IUserAccount loggedUser = userAccountService.getFullInfo(AuthHelper.getLoggedUserId());
-
-        Set<IEducation> educations = loggedUser.getEducations();
-
-        List<EducationDTO> educationsDTO = educations.stream().map(toDTOConverter).collect(Collectors.toList());
-
-        EducationDTO education = educationsDTO.get(0);
-
-        Map<String, Object> hashMap = new HashMap<>();
-        hashMap.put("education", education);
-        hashMap.put("readonly", true);
-
-        return new ModelAndView("profile.education", hashMap);*/
     }
 
     private void loadSpecialities(final Map<String, Object> hashMap) {

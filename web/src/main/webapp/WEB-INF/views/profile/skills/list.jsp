@@ -13,14 +13,14 @@
         <th>Level</th>
         <th></th>
     </tr>
-    <c:forEach var="skill" items="${skills}" varStatus="loopCounter">
+    <c:forEach var="item" items="${skills}" varStatus="loopCounter">
         <tr>
-            <td><c:out value="${skill.groupName}"/></td>
-            <td><c:out value="${skill.name}"/></td>
-            <td class="right"><a class="btn-floating" href="${skill}/${skill.id}"><i
+            <td><c:out value="${item.groupName}"/></td>
+            <td><c:out value="${item.name}"/></td>
+            <td class="right"><a class="btn-floating" href="${skill}/${item.id}"><i
                     class="material-icons">info</i></a> <a
-                    class="btn-floating" href="${skill}/${skill.id}/edit"><i class="material-icons">edit</i></a> <a
-                    class="btn-floating red disabled" href="${skill}/${skill.id}/delete"><i class="material-icons">delete</i></a>
+                    class="btn-floating" href="${skill}/${item.id}/edit"><i class="material-icons">edit</i></a> <a
+                    class="btn-floating red disabled" href="${skill}/${item.id}/delete"><i class="material-icons">delete</i></a>
             </td>
         </tr>
     </c:forEach>

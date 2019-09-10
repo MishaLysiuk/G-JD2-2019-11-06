@@ -12,13 +12,16 @@ public class SkillToDTOConverter implements Function<ISkill, SkillDTO> {
 
     @Override
     public SkillDTO apply(ISkill entity) {
+
         SkillDTO dto = new SkillDTO();
         dto.setId(entity.getId());
         dto.setName(entity.getName());
 
         IGroupSkill group = entity.getGroup();
-        dto.setGroupId(group.getId());
-        dto.setGroupName(group.getName());
+        if (group != null) {
+            dto.setGroupId(group.getId());
+            dto.setGroupName(group.getName());
+        }
 
         return dto;
     }

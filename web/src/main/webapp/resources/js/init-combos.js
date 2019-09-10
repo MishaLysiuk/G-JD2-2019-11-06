@@ -15,7 +15,7 @@ function initSelectElement(htmlElementId, jsonArray) {
 
     // вставляет новые опции в элемент
     $.each(jsonArray, function(key, value) {
-        $('#' + htmlElementId).append($("<option></option>").attr("value", value.id).text(value.title));
+        $('#' + htmlElementId).append($("<option></option>").attr("value", value.id).text(value.name));
     });
 }
 
@@ -23,22 +23,32 @@ function initComboboxes(contextUrl) {
 
     $.get(contextUrl + "/location/regions", function(regionsArray) {
 
-        initSelectElement('region', regionsArray);
+        initSelectElement('regionId', regionsArray);
 
-        $("#region").change(function() {
+        $("#regionId").change(function() {
+            resetSelectElement('countryId')
+            resetSelectElement('cityId')
+
             var selectedId = $(this).val();
             $.get(contextUrl + "/location/countries?regionId=" + selectedId, function(countriesArray) {
-                initSelectElement('country', countriesArray);
+                initSelectElement('countryId', countriesArray);
             })
         });
 
-        $("#country").change(function() {
+        $("#countryId").change(function() {
+            resetSelectElement('cityId')
             var selectedId = $(this).val();
             $.get(contextUrl + "/location/cities?countryId=" + selectedId, function(citiesArray) {
-                initSelectElement('city', citiesArray);
+                initSelectElement('cityId', citiesArray);
             })
 
         });
     });
 
+}
+
+
+function resetSelectElement(id){
+
+    $('#'+id).prop('selectedIndex',0);
 }

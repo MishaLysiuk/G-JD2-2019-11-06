@@ -14,15 +14,15 @@
         <th>Start date</th>
         <th></th>
     </tr>
-    <c:forEach var="education" items="${educations}" varStatus="loopCounter">
+    <c:forEach var="item" items="${educations}" varStatus="loopCounter">
         <tr>
-            <td><c:out value="${education.specialityName}"/></td>
-            <td><c:out value="${education.university}"/></td>
-            <td><fmt:formatDate pattern="yyyy-MM-dd" value="${education.startDate}"/></td>
-            <td class="right"><a class="btn-floating" href="${education}/${education.id}"><i
+            <td><c:out value="${item.specialityName}"/></td>
+            <td><c:out value="${item.university}"/></td>
+            <td><fmt:formatDate pattern="yyyy-MM-dd" value="${item.startDate}"/></td>
+            <td class="right"><a class="btn-floating" href="${education}/${item.id}"><i
                     class="material-icons">info</i></a> <a
-                    class="btn-floating" href="${education}/${education.id}/edit"><i class="material-icons">edit</i></a> <a
-                    class="btn-floating red disabled" href="${education}/${education.id}/delete"><i class="material-icons">delete</i></a>
+                    class="btn-floating" href="${education}/${item.id}/edit"><i class="material-icons">edit</i></a> <a
+                    class="btn-floating red disabled" href="${education}/${item.id}/delete"><i class="material-icons">delete</i></a>
             </td>
         </tr>
     </c:forEach>

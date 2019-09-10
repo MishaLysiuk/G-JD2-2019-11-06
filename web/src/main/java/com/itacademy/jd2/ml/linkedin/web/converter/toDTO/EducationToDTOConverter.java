@@ -17,25 +17,29 @@ public class EducationToDTOConverter implements Function<IEducation, EducationDT
         dto.setUniversity(entity.getUniversity());
         dto.setStartDate(entity.getStartDate());
         dto.setEndDate(entity.getEndDate());
-
-        ISpeciality speciality = entity.getSpeciality();
-        dto.setSpecialityId(speciality.getId());
-        dto.setSpecialityName(speciality.getName());
-
-        IDegree degree = entity.getDegree();
-        dto.setDegreeId(degree.getId());
-        dto.setDegreeName(degree.getName());
-
         dto.setAddress(entity.getAddress());
 
-        ICity city = entity.getCity();
-        dto.setCityId(city.getId());
+        ISpeciality speciality = entity.getSpeciality();
 
-        ICountry country = city.getCountry();
-        dto.setCountryId(country.getId());
+        if (speciality != null) {
+            dto.setSpecialityId(speciality.getId());
+            dto.setSpecialityName(speciality.getName());
 
-        IRegion region = country.getRegion();
-        dto.setRegionId(region.getId());
+            IDegree degree = entity.getDegree();
+            dto.setDegreeId(degree.getId());
+            dto.setDegreeName(degree.getName());
+
+
+            ICity city = entity.getCity();
+            dto.setCityId(city.getId());
+
+            ICountry country = city.getCountry();
+            dto.setCountryId(country.getId());
+
+            IRegion region = country.getRegion();
+            dto.setRegionId(region.getId());
+        }
+
         return dto;
     }
 }

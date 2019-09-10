@@ -2,11 +2,18 @@
 
 dto location
 
-ongoing studies
-
-find(Filter)
 delete from user:education
-null pointer exception
 add new education to user list
 ask about work experience from dto converter
-getFullInfo all users
+
+
+
+
+
+
+повторить:
+методы класса object
+SOLID принципы
+нормальные формы БД
+join в БД
+coockies and session

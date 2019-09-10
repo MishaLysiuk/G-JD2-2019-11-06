@@ -50,7 +50,7 @@ public class UserAccountController extends AbstractController {
         final UserAccountFilter filter = new UserAccountFilter();
         prepareFilter(gridState, filter);
 
-        final List<IUserAccount> workers = userAccountService.getAll();
+        final List<IUserAccount> workers = userAccountService.find(filter);
         List<UserAccountDTO> workersDTO = workers.stream().map(toDtoConverter).collect(Collectors.toList());
         gridState.setTotalCount(userAccountService.getCount(filter));
 

@@ -23,7 +23,6 @@ public class CountryFromDTOConverter implements Function<CountryDTO, ICountry> {
         final ICountry entity = countryService.createEntity();
         entity.setId(dto.getId());
         entity.setName(dto.getName());
-        entity.setRegion(dto.getRegion());
         return entity;
     }
 }

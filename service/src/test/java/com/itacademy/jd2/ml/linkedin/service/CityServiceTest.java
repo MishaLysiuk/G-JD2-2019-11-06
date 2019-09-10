@@ -9,7 +9,7 @@ public class CityServiceTest extends AbstractTest {
 
     @Test
     public void testCreate() {
-        /*final ICity entity = saveNewCity();
+        final ICity entity = saveNewCity();
 
         final ICity entityFromDb = cityService.get(entity.getId());
 
@@ -18,7 +18,7 @@ public class CityServiceTest extends AbstractTest {
         assertNotNull(entityFromDb.getId());
         assertNotNull(entityFromDb.getCreated());
         assertNotNull(entityFromDb.getUpdated());
-        assertTrue(entityFromDb.getCreated().equals(entityFromDb.getUpdated()));*/
+        assertTrue(entityFromDb.getCreated().equals(entityFromDb.getUpdated()));
     }
     
 }

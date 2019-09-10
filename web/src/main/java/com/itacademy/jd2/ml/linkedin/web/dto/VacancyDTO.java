@@ -1,7 +1,5 @@
 package com.itacademy.jd2.ml.linkedin.web.dto;
 
-import com.itacademy.jd2.ml.linkedin.entity.table.ICompany;
-import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 
 import java.util.Date;
 
@@ -9,15 +7,16 @@ import java.util.Date;
 public class VacancyDTO {
 
     private Integer id;
-    private IUserAccount creator;
     private String jobTitle;
-    private ICompany company;
     private String companyName;
-    private Long cityId;
     private String address;
     private String contactInfo;
     private String description;
     private Date created;
+
+    private Integer cityId;
+    private Integer countryId;
+    private Integer regionId;
 
     public Integer getId() {
         return id;
@@ -25,14 +24,6 @@ public class VacancyDTO {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public IUserAccount getCreator() {
-        return creator;
-    }
-
-    public void setCreator(IUserAccount creator) {
-        this.creator = creator;
     }
 
     public String getJobTitle() {
@@ -43,28 +34,12 @@ public class VacancyDTO {
         this.jobTitle = jobTitle;
     }
 
-    public ICompany getCompany() {
-        return company;
-    }
-
-    public void setCompany(ICompany company) {
-        this.company = company;
-    }
-
     public String getCompanyName() {
         return companyName;
     }
 
     public void setCompanyName(String companyName) {
         this.companyName = companyName;
-    }
-
-    public Long getCityId() {
-        return cityId;
-    }
-
-    public void setCityId(Long cityId) {
-        this.cityId = cityId;
     }
 
     public String getAddress() {
@@ -97,5 +72,29 @@ public class VacancyDTO {
 
     public void setCreated(Date created) {
         this.created = created;
+    }
+
+    public Integer getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(Integer cityId) {
+        this.cityId = cityId;
+    }
+
+    public Integer getCountryId() {
+        return countryId;
+    }
+
+    public void setCountryId(Integer countryId) {
+        this.countryId = countryId;
+    }
+
+    public Integer getRegionId() {
+        return regionId;
+    }
+
+    public void setRegionId(Integer regionId) {
+        this.regionId = regionId;
     }
 }

@@ -15,7 +15,6 @@ public class CityToDTOConverter implements Function<ICity, CityDTO> {
         final CityDTO dto = new CityDTO();
         dto.setId(entity.getId());
         dto.setName(entity.getName());
-        dto.setCountry(entity.getCountry());
         return dto;
     }
 }

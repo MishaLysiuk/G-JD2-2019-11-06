@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.function.Function;
 
 @Component
-public class WorkExperienceToDTOConverter implements Function<IWorkExperience, WorkExperienceDTO>{
+public class WorkExperienceToDTOConverter implements Function<IWorkExperience, WorkExperienceDTO> {
 
 
     @Override
@@ -20,16 +20,18 @@ public class WorkExperienceToDTOConverter implements Function<IWorkExperience, W
         dto.setAddress(entity.getAddress());
 
         ICompany company = entity.getCompany();
-        dto.setCompanyName(company.getName());
+        if (company != null) {
+            dto.setCompanyName(company.getName());
 
-        ICity city = entity.getCity();
-        dto.setCityId(city.getId());
+            ICity city = entity.getCity();
+            dto.setCityId(city.getId());
 
-        ICountry country = city.getCountry();
-        dto.setCountryId(country.getId());
+            ICountry country = city.getCountry();
+            dto.setCountryId(country.getId());
 
-        IRegion region = country.getRegion();
-        dto.setRegionId(region.getId());
+            IRegion region = country.getRegion();
+            dto.setRegionId(region.getId());
+        }
 
         return dto;
     }

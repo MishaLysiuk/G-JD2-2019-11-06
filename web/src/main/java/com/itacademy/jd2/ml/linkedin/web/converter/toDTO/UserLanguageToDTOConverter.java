@@ -17,12 +17,14 @@ public class UserLanguageToDTOConverter implements Function<IUserLanguage, UserL
         dto.setId(entity.getId());
 
         ILanguage language = entity.getLanguage();
-        dto.setLanguageId(language.getId());
-        dto.setLanguageName(language.getName());
+        if (language != null) {
+            dto.setLanguageId(language.getId());
+            dto.setLanguageName(language.getName());
 
-        ILanguageLevel level = entity.getLevel();
-        dto.setLevelId(level.getId());
-        dto.setLevelName(level.getName());
+            ILanguageLevel level = entity.getLevel();
+            dto.setLevelId(level.getId());
+            dto.setLevelName(level.getName());
+        }
 
         return dto;
     }

@@ -13,14 +13,14 @@
         <th>Level</th>
         <th></th>
     </tr>
-    <c:forEach var="language" items="${userLanguages}" varStatus="loopCounter">
+    <c:forEach var="item" items="${userLanguages}" varStatus="loopCounter">
         <tr>
-            <td><c:out value="${language.languageName}"/></td>
-            <td><c:out value="${language.levelName}"/></td>
-            <td class="right"><a class="btn-floating" href="${language}/${language.id}"><i
+            <td><c:out value="${item.languageName}"/></td>
+            <td><c:out value="${item.levelName}"/></td>
+            <td class="right"><a class="btn-floating" href="${language}/${item.id}"><i
                     class="material-icons">info</i></a> <a
-                    class="btn-floating" href="${language}/${language.id}/edit"><i class="material-icons">edit</i></a> <a
-                    class="btn-floating red disabled" href="${language}/${language.id}/delete"><i class="material-icons">delete</i></a>
+                    class="btn-floating" href="${language}/${item.id}/edit"><i class="material-icons">edit</i></a> <a
+                    class="btn-floating red disabled" href="${language}/${item.id}/delete"><i class="material-icons">delete</i></a>
             </td>
         </tr>
     </c:forEach>

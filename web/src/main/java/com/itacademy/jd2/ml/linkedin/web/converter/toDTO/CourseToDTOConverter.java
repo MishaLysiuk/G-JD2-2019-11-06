@@ -17,7 +17,9 @@ public class CourseToDTOConverter implements Function<ICourse, CourseDTO> {
         dto.setName(entity.getName());
 
         ICompany company = entity.getCompany();
-        dto.setCompanyName(company.getName());
+        if (company != null) {
+            dto.setCompanyName(company.getName());
+        }
 
         dto.setStartDate(entity.getStartDate());
         dto.setEndDate(entity.getEndDate());

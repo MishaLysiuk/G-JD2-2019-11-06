@@ -17,19 +17,22 @@
 
         <div class="row">
             <div class="input-field col s12">
-                <form:select path="region" cssClass="browser-default" />
+                <form:select path="regionId" cssClass="browser-default" />
+                <label for="regionId">Region</label>
             </div>
         </div>
 
         <div class="row">
             <div class="input-field col s12">
-                <form:select path="country" cssClass="browser-default" />
+                <form:select path="countryId" cssClass="browser-default" />
+                <label for="countryId">Country</label>
             </div>
         </div>
 
         <div class="row">
             <div class="input-field col s12">
-                <form:select path="city" cssClass="browser-default" />
+                <form:select path="cityId" cssClass="browser-default" />
+                <label for="cityId">City</label>
             </div>
         </div>
 
@@ -39,7 +42,7 @@
                 <form:errors path="address" cssClass="red-text"/>
                 <label for="address">Address</label>
             </div>
-            <div class="input-field col s12">
+            <div class="input-field col s6">
                 <form:input path="companyName" type="text" disabled="${readonly}"/>
                 <form:errors path="companyName" cssClass="red-text"/>
                 <label for="companyName">Company</label>
@@ -51,6 +54,14 @@
                 <form:input path="contactInfo" type="text" disabled="${readonly}"/>
                 <form:errors path="contactInfo" cssClass="red-text"/>
                 <label for="contactInfo">Contact info</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <form:textarea path="description" type="textarea" disabled="${readonly}"/>
+                <form:errors path="description" cssClass="red-text"/>
+                <label for="description">Description</label>
             </div>
         </div>
 
@@ -68,29 +79,20 @@
 </script>
 
 <script>
-    $(document).ready(function(){
-        var input= $('input.autocomplete');
+    $(document).ready(function () {
+        var input = $('#companyName');
         input.autocomplete({
-            data: {
-                "Apple": null,
-                "Microsoft": null,
-                "Google": 'https://placehold.it/250x250'
-            },
+            minLength: 3,
+            limit: 10,
         });
-
-
-
-
         input.on("input change", function () {
+            var currentValue = this.value;
             $.ajax({
-                url: '/source/to/server/data',
-                type: 'post',
-                cache: false,
-
+                url: '${contextPath}/autocomplete/company?name=' + currentValue,
+                type: 'get',
                 success: function (data) {
-                    alert ('ajax response received')
-                   // data = JSON.parse(data);
-                   // $(self).autocomplete("updateData", data/*should be object*/);
+                    var instance = M.Autocomplete.getInstance(input);
+                    instance.updateData(data)
                 },
                 error: function (err) {
                     console.log(err);
@@ -98,4 +100,8 @@
             });
         });
     });
+</script>
+<script src="${pageContext.request.contextPath}/resources/js/init-combos.js"></script>
+<script>
+    initComboboxes('${pageContext.request.contextPath}');
 </script>

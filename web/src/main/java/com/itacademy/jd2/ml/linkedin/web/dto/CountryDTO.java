@@ -6,7 +6,6 @@ public class CountryDTO {
 
     private Integer id;
     private String name;
-    private IRegion region;
 
     public Integer getId() {
         return id;
@@ -22,13 +21,5 @@ public class CountryDTO {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public IRegion getRegion() {
-        return region;
-    }
-
-    public void setRegion(IRegion region) {
-        this.region = region;
     }
 }

@@ -70,7 +70,7 @@ public abstract class AbstractTest {
 
     protected ICompany saveNewCompany() {
         final ICompany entity = companyService.createEntity();
-        entity.setName("company-" + getRandomPrefix());
+        entity.setName("company-" + getRandomObjectsCount());
         companyService.save(entity);
         return entity;
     }
@@ -91,23 +91,27 @@ public abstract class AbstractTest {
 
     protected ICity saveNewCity() {
         final ICity entity = cityService.createEntity();
-        entity.setName("city-" + getRandomObjectsCount());
-        entity.setCountry(saveNewCountry());
+        entity.setName("Brest");
+        ICountry country = countryService.createEntity();
+        country.setId(1);
+        entity.setCountry(country);
         cityService.save(entity);
         return entity;
     }
 
     protected ICountry saveNewCountry() {
         final ICountry entity = countryService.createEntity();
-        entity.setName("country-" + getRandomObjectsCount());
-        entity.setRegion(saveNewRegion());
+        entity.setName("Germany");
+        IRegion region = regionService.createEntity();
+        region.setId(3);
+        entity.setRegion(region);
         countryService.save(entity);
         return entity;
     }
 
     protected IRegion saveNewRegion() {
         final IRegion entity = regionService.createEntity();
-        entity.setName("region-" + getRandomObjectsCount());
+        entity.setName("city-" + getRandomObjectsCount());
         regionService.save(entity);
         return entity;
     }

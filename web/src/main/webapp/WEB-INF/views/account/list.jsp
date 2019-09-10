@@ -13,14 +13,14 @@
         <th>Contact info</th>
         <th>Birthday</th>
     </tr>
-    <c:forEach var="worker" items="${workers}" varStatus="loopCounter ">
+    <c:forEach var="item" items="${workers}" varStatus="loopCounter ">
         <tr>
-            <td><c:out value="${worker.firstName}"/></td>
-            <td><c:out value="${worker.lastName}"/></td>
-            <td><c:out value="${worker.jobTitle}"/></td>
-            <td><c:out value="${worker.contactInfo}"/></td>
-            <td><fmt:formatDate pattern="yyyy-MM-dd" value="${worker.birthday}"/></td>
-            <td class="right"><a class="btn-floating blue darken-2" href="${worker}/${worker.id}"><i class="material-icons">info</i></a></td>
+            <td><c:out value="${item.firstName}"/></td>
+            <td><c:out value="${item.lastName}"/></td>
+            <td><c:out value="${item.jobTitle}"/></td>
+            <td><c:out value="${item.contactInfo}"/></td>
+            <td><fmt:formatDate pattern="yyyy-MM-dd" value="${item.birthday}"/></td>
+            <td class="right"><a class="btn-floating blue darken-2" href="${worker}/${item.id}"><i class="material-icons">info</i></a></td>
         </tr>
     </c:forEach>
     </tbody>
