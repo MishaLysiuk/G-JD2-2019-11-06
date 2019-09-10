@@ -66,4 +66,10 @@ public class WorkExperienceServiceImpl implements IWorkExperienceService {
         return dao.find(filter);
     }
 
+    @Override
+    public IWorkExperience getFullInfo(Integer id) {
+        final IWorkExperience entity = dao.getFullInfo(id);
+        return entity;
+    }
+
 }

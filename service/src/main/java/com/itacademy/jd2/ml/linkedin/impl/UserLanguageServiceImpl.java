@@ -67,4 +67,16 @@ public class UserLanguageServiceImpl implements IUserLanguageService {
         return dao.find(filter);
     }
 
+    @Override
+    public List<IUserLanguage> findByUserId(Integer loggedUserId) {
+        final List<IUserLanguage> languages = dao.findByUserId(loggedUserId);
+        return languages;
+    }
+
+    @Override
+    public IUserLanguage getFullInfo(Integer id) {
+        final IUserLanguage entity = dao.getFullInfo(id);
+        return entity;
+    }
+
 }

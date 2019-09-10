@@ -73,6 +73,12 @@ public class CityServiceImpl implements ICityService {
         return all;
     }
 
+    @Override
+    public ICity getFullInfo(final Integer id) {
+        final ICity entity = dao.getFullInfo(id);
+        return entity;
+    }
+
 
     @Override
     public List<ICity> find(CityFilter filter) {

@@ -22,5 +22,7 @@ public interface ICountryService {
 
     List<ICountry> getAll();
 
+    ICountry getFullInfo(Integer id);
+
     List<ICountry> find(CountryFilter filter);
 }

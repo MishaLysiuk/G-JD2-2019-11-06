@@ -21,23 +21,10 @@ function initSelectElement(htmlElementId, jsonArray) {
 
 function initComboboxes(contextUrl) {
 
-    // $ - это ссылка на глобальный jquery Объект. через него можно делать все
-    // "магические штуки", которые тут происходят.
-
-    // делаем GET запрос на наш контроллер и пишем функцию для обработки
-    // результата
-    // запроса.
-    // текущая строка кода выполнится при загрузке страницы (в соответствии с
-    // местом встави в JSP)
     $.get(contextUrl + "/location/regions", function(regionsArray) {
 
-        // получив список стран - инициализируем соответствующий комбик
         initSelectElement('region', regionsArray);
 
-        // вешаем функцию-обработчик на 'onchange' событие на нужные элементы.
-        // получаем выбранный сейчас элемент и строим с его помощь. новый GET
-        // запрос
-        // на сервер
         $("#region").change(function() {
             var selectedId = $(this).val();
             $.get(contextUrl + "/location/countries?regionId=" + selectedId, function(countriesArray) {
@@ -53,28 +40,5 @@ function initComboboxes(contextUrl) {
 
         });
     });
-    // документация по JQUERY - https://api.jquery.com/
-
-    // вот к примеру, где я взял "как сделать GET запрос" -
-    // https://api.jquery.com/get/
-
-    // вот тут я подсмотрел как повесить onchange на элемент -
-    // https://api.jquery.com/change/
-
-    // вот тут -
-    // https://stackoverflow.com/questions/8605516/default-select-option-as-blank
-    // -
-    // как сгенерить пустую опцию в селекте, чтобы оно не показывало первую из
-    // списка (это неправильно)
-
-    // а вот тут -
-    // https://stackoverflow.com/questions/47824/how-do-you-remove-all-the-options-of-a-select-box-and-then-add-one-option-and-se
-    // - как почистить список опция, чтобы установить новый
-
-    // Итого: я знаю только факт существования JQuery, хорошо знаю JS (но на
-    // достаточном уровне его можно за 1 день узнать), а весь результат - это
-    // разбивка задачи на кусочки и помощь гугла. в таком же стиле пробуйте
-    // решщать
-    // остальные похожие
 
 }

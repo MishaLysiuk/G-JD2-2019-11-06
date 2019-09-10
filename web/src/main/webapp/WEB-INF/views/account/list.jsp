@@ -7,29 +7,22 @@
 <table class="stripped highlight ">
     <tbody>
     <tr>
-        <th><mytaglib:sort-link pageUrl="${listWorker}" column="first_name">First Name</mytaglib:sort-link></th>
-        <th><mytaglib:sort-link pageUrl="${listWorker}" column="last_name">Last Name</mytaglib:sort-link></th>
-        <th><mytaglib:sort-link pageUrl="${listWorker}" column="password">Password</mytaglib:sort-link></th>
-        <th><mytaglib:sort-link pageUrl="${listWorker}" column="role_id">RoleId</mytaglib:sort-link></th>
-        <th><mytaglib:sort-link pageUrl="${listWorker}" column="updated">Updated</mytaglib:sort-link></th>
-        <th></th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Job title</th>
+        <th>Contact info</th>
+        <th>Birthday</th>
     </tr>
-    <c:forEach var="account" items="${gridItems}" varStatus="loopCounter ">
+    <c:forEach var="worker" items="${workers}" varStatus="loopCounter ">
         <tr>
-            <td><c:out value="${account.firstName}"/></td>
-            <td><c:out value="${account.lastName}"/></td>
-            <td><c:out value="${account.password}"/></td>
-            <td><c:out value="${account.role}"/></td>
-            <td><fmt:formatDate pattern="yyyy-MM-dd" value="${account.updated}"/></td>
-            <td class="right"><a class="btn-floating blue darken-2" href="${listWorker}/${account.id}"><i class="material-icons">info</i></a>
-                <a
-                        class="btn-floating blue darken-2" href="${listWorker}/${account.id}/edit"><i class="material-icons">edit</i></a>
-                <a
-                        class="btn-floating red" href="${listWorker}/${account.id}/delete"><i
-                        class="material-icons">delete</i></a></td>
+            <td><c:out value="${worker.firstName}"/></td>
+            <td><c:out value="${worker.lastName}"/></td>
+            <td><c:out value="${worker.jobTitle}"/></td>
+            <td><c:out value="${worker.contactInfo}"/></td>
+            <td><fmt:formatDate pattern="yyyy-MM-dd" value="${worker.birthday}"/></td>
+            <td class="right"><a class="btn-floating blue darken-2" href="${worker}/${worker.id}"><i class="material-icons">info</i></a></td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
 <jspFragments:paging/>
-<a class="blue darken-2 btn right " href="${listWorker}/add"><i class="material-icons">add</i></a>

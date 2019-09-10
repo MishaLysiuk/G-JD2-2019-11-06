@@ -13,13 +13,13 @@ public interface IEducation extends IBaseEntity {
 
     void setUniversity(String university);
 
-    Date getStart();
+    Date getStartDate();
 
-    void setStart(Date start);
+    void setStartDate(Date startDate);
 
-    Date getEnd();
+    Date getEndDate();
 
-    void setEnd(Date end);
+    void setEndDate(Date endDate);
 
     ISpeciality getSpeciality();
 

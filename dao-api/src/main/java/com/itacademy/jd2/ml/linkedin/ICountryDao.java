@@ -9,4 +9,5 @@ public interface ICountryDao extends IDao<ICountry, Integer> {
 
     List<ICountry> find(CountryFilter filter);
 
+    ICountry getFullInfo(Integer id);
 }

@@ -23,4 +23,8 @@ public interface IUserLanguageService {
     List<IUserLanguage> getAll();
 
     List<IUserLanguage> find(UserLanguageFilter filter);
+
+    List<IUserLanguage> findByUserId(Integer loggedUserId);
+
+    IUserLanguage getFullInfo(Integer id);
 }

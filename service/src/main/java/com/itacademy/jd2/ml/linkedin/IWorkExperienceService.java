@@ -23,4 +23,6 @@ public interface IWorkExperienceService {
     List<IWorkExperience> getAll();
 
     List<IWorkExperience> find(WorkExperienceFilter filter);
+
+    IWorkExperience getFullInfo(Integer id);
 }

@@ -9,4 +9,7 @@ public interface IUserLanguageDao extends IDao<IUserLanguage, Integer> {
 
     List<IUserLanguage> find(UserLanguageFilter filter);
 
+    List<IUserLanguage> findByUserId(Integer loggedUserId);
+
+    IUserLanguage getFullInfo(Integer id);
 }

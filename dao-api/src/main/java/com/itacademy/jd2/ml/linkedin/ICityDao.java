@@ -10,6 +10,8 @@ public interface ICityDao extends IDao<ICity, Integer> {
 
     List<ICity> find(CityFilter filter);
 
+    ICity getFullInfo(Integer id);
+
     List<ICountry> findCountryByRegionId(Integer regionId);
 
     List<ICity> findCityByCountryId(Integer countryId);

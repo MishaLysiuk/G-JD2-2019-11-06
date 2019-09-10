@@ -1,6 +1,8 @@
 package com.itacademy.jd2.ml.linkedin.web.controller;
 
+import com.itacademy.jd2.ml.linkedin.ILanguageService;
 import com.itacademy.jd2.ml.linkedin.IUserAccountService;
+import com.itacademy.jd2.ml.linkedin.entity.table.ILanguage;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 import com.itacademy.jd2.ml.linkedin.filter.UserAccountFilter;
 import com.itacademy.jd2.ml.linkedin.web.converter.fromDTO.UserAccountFromDTOConverter;
@@ -27,94 +29,56 @@ import java.util.stream.Collectors;
 public class UserAccountController extends AbstractController {
 
     private IUserAccountService userAccountService;
-    private UserAccountFromDTOConverter fromDtoConverter;
     private UserAccountToDTOConverter toDtoConverter;
 
+    private ILanguageService languageService;
+
     @Autowired
-    public UserAccountController(IUserAccountService userAccountService, UserAccountFromDTOConverter fromDtoConverter, UserAccountToDTOConverter toDtoConverter) {
-        super();
+    public UserAccountController(IUserAccountService userAccountService, UserAccountToDTOConverter toDtoConverter, ILanguageService languageService) {
         this.userAccountService = userAccountService;
-        this.fromDtoConverter = fromDtoConverter;
         this.toDtoConverter = toDtoConverter;
+        this.languageService = languageService;
     }
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView index(final HttpServletRequest req,
-                              @RequestParam(name = "page", required = false) final Integer pageNumber,
-                              @RequestParam(name = "sort", required = false) final String sortColumn) {
+                              @RequestParam(name = "page", required = false) final Integer pageNumber) {
 
         final GridStateDTO gridState = getListDTO(req);
         gridState.setPage(pageNumber);
-        gridState.setSort(sortColumn, "id");
 
         final UserAccountFilter filter = new UserAccountFilter();
         prepareFilter(gridState, filter);
 
-        final List<IUserAccount> entities = userAccountService.find(filter);
-        List<UserAccountDTO> dtos = entities.stream().map(toDtoConverter).collect(Collectors.toList());
+        final List<IUserAccount> workers = userAccountService.getAll();
+        List<UserAccountDTO> workersDTO = workers.stream().map(toDtoConverter).collect(Collectors.toList());
         gridState.setTotalCount(userAccountService.getCount(filter));
 
-        final Map<String, Object> models = new HashMap<>();
-        models.put("gridItems", dtos);
-        return new ModelAndView("account.list", models);
-    }
-
-    @RequestMapping(value = "/add", method = RequestMethod.GET)
-    public ModelAndView showForm() {
         final Map<String, Object> hashMap = new HashMap<>();
-        final IUserAccount newEntity = userAccountService.createEntity();
-        hashMap.put("formAccount", toDtoConverter.apply(newEntity));
-
-        return new ModelAndView("account.edit", hashMap);
+        hashMap.put("workers", workersDTO);
+        return new ModelAndView("account.list", hashMap);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public String save(@Valid @ModelAttribute("formAccount") final UserAccountDTO formAccount,
-                       final BindingResult result) {
-        if (result.hasErrors()) {
-            return "account.edit";
-        } else {
-            final IUserAccount entity = fromDtoConverter.apply(formAccount);
-            userAccountService.save(entity);
-            return "redirect:/worker";
-        }
-    }
+    private void loadLanguages(final Map<String, Object> hashMap) {
 
-    @RequestMapping(value = "/{id}/delete", method = RequestMethod.GET)
-    public String delete(@PathVariable(name = "id", required = true) final Integer id) {
-        userAccountService.delete(id);
-        return "redirect:/worker";
+        final Map<Integer, String> languagesTypesMap = languageService.getAll().stream()
+                .collect(Collectors.toMap(ILanguage::getId, ILanguage::getName));
+
+        hashMap.put("languagesChoices", languagesTypesMap);
+
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ModelAndView viewDetails(
             @PathVariable(name = "id", required = true) final Integer id) {
-        final IUserAccount dbAccount = userAccountService.get(id);
-        final UserAccountDTO dto = toDtoConverter.apply(dbAccount);
+        final IUserAccount worker = userAccountService.getFullInfo(id);
+        final UserAccountDTO workerDTO = toDtoConverter.apply(worker);
         final Map<String, Object> hashMap = new HashMap<>();
-        hashMap.put("formAccount", dto);
+        loadLanguages(hashMap);
+        hashMap.put("worker", workerDTO);
         hashMap.put("readonly", true);
 
         return new ModelAndView("account.edit", hashMap);
-    }
-
-    @RequestMapping(value = "/{id}/edit", method = RequestMethod.GET)
-    public ModelAndView edit(
-            @PathVariable(name = "id", required = true) final Integer id) {
-        final UserAccountDTO dto = toDtoConverter.apply(userAccountService.get(id));
-
-        final Map<String, Object> hashMap = new HashMap<>();
-        hashMap.put("formAccount", dto);
-
-        return new ModelAndView("account.edit", hashMap);
-    }
-
-    @RequestMapping(value = "/json", method = RequestMethod.GET)
-    public ResponseEntity<UserAccountDTO> getCountries(
-            @RequestParam(name = "id", required = true) final Integer id) {
-        final UserAccountDTO dto = toDtoConverter.apply(userAccountService.get(id));
-
-        return new ResponseEntity<UserAccountDTO>(dto, HttpStatus.OK);
     }
     
 }

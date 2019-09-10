@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping(value = "/myvacancy")
-public class MyVacancyController extends AbstractController{
+public class MyVacancyController extends AbstractController {
 
     private IVacancyService vacancyService;
     private VacancyFromDTOConverter fromDtoConverter;
@@ -82,9 +82,6 @@ public class MyVacancyController extends AbstractController{
             @PathVariable(name = "id", required = true) final Integer id) {
         final IVacancy dbAccount = vacancyService.get(id);
         final VacancyDTO dto = toDtoConverter.apply(dbAccount);
-
-
-
 
 
         final Map<String, Object> hashMap = new HashMap<>();

@@ -13,14 +13,13 @@ public interface IWorkExperience extends IBaseEntity {
 
     void setJobTitle(String jobTitle);
 
-    Date getStart();
+    Date getStartDate();
 
-    void setStart(Date start);
+    void setStartDate(Date startDate);
 
-    Date getEnd();
+    Date getEndDate();
 
-    void setEnd(Date end);
-
+    void setEndDate(Date endDate);
 
     ICity getCity();
 

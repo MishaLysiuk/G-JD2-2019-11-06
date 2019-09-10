@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Controller
@@ -69,14 +70,28 @@ public class LocationController {
         return new ResponseEntity<List<CityDTO>>(citiesDTO, HttpStatus.OK);
     }
 
-    /*@RequestMapping(method = RequestMethod.POST)
-    public Object save(@Valid @ModelAttribute("addressForm") final AddressDTO formModel, final BindingResult result) {
-        return "redirect:/location";
+    /*private Map<Integer, String> loadCities(Integer countryId) {
+
+        final Map<Integer, String> cities = cityService.findCityByCountryId(countryId).stream()
+                .collect(Collectors.toMap(ICity::getId, ICity::getName));
+
+        return cities;
     }
 
-    @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView showPage() {
-        return new ModelAndView("ajax-samples", "addressForm", new AddressDTO());
+    private Map<Integer, String> loadCountries(Integer regionId) {
+
+        final Map<Integer, String> countries = cityService.findCountryByRegionId(regionId).stream()
+                .collect(Collectors.toMap(ICountry::getId, ICountry::getName));
+
+        return countries;
+    }
+
+    private Map<Integer, String> loadRegions() {
+
+        final Map<Integer, String> regions = regionService.getAll().stream()
+                .collect(Collectors.toMap(IRegion::getId, IRegion::getName));
+
+        return regions;
     }*/
 
 }

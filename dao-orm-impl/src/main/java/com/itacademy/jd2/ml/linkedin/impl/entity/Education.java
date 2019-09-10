@@ -17,9 +17,9 @@ public class Education extends BaseEntity implements IEducation {
     @Column
     private String university;
     @Column
-    private Date start;
+    private Date startDate;
     @Column
-    private Date end;
+    private Date endDate;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Speciality.class)
     private ISpeciality speciality;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Degree.class)
@@ -50,23 +50,23 @@ public class Education extends BaseEntity implements IEducation {
     }
 
     @Override
-    public Date getStart() {
-        return start;
+    public Date getStartDate() {
+        return startDate;
     }
 
     @Override
-    public void setStart(Date start) {
-        this.start = start;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
     @Override
-    public Date getEnd() {
-        return end;
+    public Date getEndDate() {
+        return endDate;
     }
 
     @Override
-    public void setEnd(Date end) {
-        this.end = end;
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 
     @Override

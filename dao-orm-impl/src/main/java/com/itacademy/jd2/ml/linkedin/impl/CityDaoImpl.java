@@ -11,6 +11,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.JoinType;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
@@ -30,6 +31,26 @@ public class CityDaoImpl extends AbstractDaoImpl<ICity,Integer> implements ICity
     public ICity createEntity() {
         City city = new City();
         return city;
+    }
+
+    @Override
+    public ICity getFullInfo(final Integer id) {
+        final EntityManager em = getEntityManager();
+        final CriteriaBuilder cb = em.getCriteriaBuilder();
+
+        final CriteriaQuery<ICity> cq = cb.createQuery(ICity.class); // define returning result
+        final Root<City> from = cq.from(City.class); // define table for select
+
+        cq.select(from); // define what need to be selected
+
+        from.fetch(City_.country, JoinType.LEFT);
+
+        // .. where id=...
+        cq.where(cb.equal(from.get(City_.id), id)); // where id=?
+
+        final TypedQuery<ICity> q = em.createQuery(cq);
+
+        return getSingleResult(q);
     }
 
     @Override

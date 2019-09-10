@@ -32,12 +32,17 @@
                 <label for="finalResult">Final result</label>
             </div>
         </div>
-        <div class="col s2 offset-s10">
-            <a class="btn-floating btn-large blue darken-2"><i class="material-icons">add</i></a>
-        </div>
-
-        <div class="col s2 offset-s5">
-            <button class="btn blue darken-2 " type="submit" name="action">Save changes</button>
+        <div class="row">
+            <div class="col s6"></div>
+            <div class="col s3">
+                <c:if test="${!readonly}">
+                    <button class="btn waves-effect waves-light right" type="submit">Save</button>
+                </c:if>
+            </div>
+            <div class="col s3">
+                <a class="btn waves-effect waves-light right" href="${education}">Back<i class="material-icons right"></i>
+                </a>
+            </div>
         </div>
     </form:form>
 </div>

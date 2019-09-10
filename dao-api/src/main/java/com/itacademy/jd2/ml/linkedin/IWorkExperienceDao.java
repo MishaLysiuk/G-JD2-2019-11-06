@@ -9,4 +9,5 @@ public interface IWorkExperienceDao extends IDao<IWorkExperience, Integer> {
 
     List<IWorkExperience> find(WorkExperienceFilter filter);
 
+    IWorkExperience getFullInfo(Integer id);
 }

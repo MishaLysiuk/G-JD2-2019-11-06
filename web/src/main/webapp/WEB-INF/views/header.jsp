@@ -24,7 +24,7 @@
                     <li><a href="${workExperience}/"><spring:message code="header.workExperience"></spring:message></a></li>
                     <li><a href="${course}/"><spring:message code="header.course"></spring:message></a></li>
                     <li><a href="${skill}/"><spring:message code="header.skill"></spring:message></a></li>
-                    <li><a href="${listWorker}"><spring:message code="header.workers"></spring:message></a></li>
+                    <li><a href="${worker}"><spring:message code="header.workers"></spring:message></a></li>
                     <li><a href="${findVacancy}"><spring:message code="header.findVacancy"></spring:message></a></li>
                     <li><a href="${myVacancy}"><spring:message code="header.myVacancy"></spring:message></a></li>
                 </sec:authorize>

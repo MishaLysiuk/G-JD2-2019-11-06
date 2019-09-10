@@ -27,5 +27,7 @@ public interface ICityService {
 
     List<ICity> getAll();
 
+    ICity getFullInfo(Integer id);
+
     List<ICity> find(CityFilter filter);
 }

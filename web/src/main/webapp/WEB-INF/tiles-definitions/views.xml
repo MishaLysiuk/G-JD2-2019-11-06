@@ -19,28 +19,54 @@
                        value="/WEB-INF/views/profile.jsp"/>
     </definition>
 
-    <definition name="profile.skill" extends="DefaultTemplate">
+    <definition name="profile.skill.form" extends="DefaultTemplate">
         <put-attribute name="body"
-                       value="/WEB-INF/views/profile/skill.jsp"/>
-
-    </definition><definition name="profile.language" extends="DefaultTemplate">
-        <put-attribute name="body"
-                       value="/WEB-INF/views/profile/language.jsp"/>
+                       value="/WEB-INF/views/profile/skills/form.jsp"/>
     </definition>
 
-    <definition name="profile.course" extends="DefaultTemplate">
+    <definition name="profile.skill.list" extends="DefaultTemplate">
         <put-attribute name="body"
-                       value="/WEB-INF/views/profile/course.jsp"/>
+                       value="/WEB-INF/views/profile/skills/list.jsp"/>
     </definition>
 
-    <definition name="profile.education" extends="DefaultTemplate">
+    <definition name="profile.language.list" extends="DefaultTemplate">
         <put-attribute name="body"
-                       value="/WEB-INF/views/profile/education.jsp"/>
+                       value="/WEB-INF/views/profile/language/list.jsp"/>
     </definition>
 
-    <definition name="profile.work-experience" extends="DefaultTemplate">
+    <definition name="profile.language.form" extends="DefaultTemplate">
         <put-attribute name="body"
-                       value="/WEB-INF/views/profile/work-experience.jsp"/>
+                       value="/WEB-INF/views/profile/language/form.jsp"/>
+    </definition>
+
+    <definition name="profile.course.list" extends="DefaultTemplate">
+        <put-attribute name="body"
+                       value="/WEB-INF/views/profile/course/list.jsp"/>
+    </definition>
+
+    <definition name="profile.course.form" extends="DefaultTemplate">
+        <put-attribute name="body"
+                       value="/WEB-INF/views/profile/course/form.jsp"/>
+    </definition>
+
+    <definition name="profile.education.form" extends="DefaultTemplate">
+        <put-attribute name="body"
+                       value="/WEB-INF/views/profile/education/form.jsp"/>
+    </definition>
+
+    <definition name="profile.education.list" extends="DefaultTemplate">
+        <put-attribute name="body"
+                       value="/WEB-INF/views/profile/education/list.jsp"/>
+    </definition>
+
+    <definition name="profile.work-experience.list" extends="DefaultTemplate">
+        <put-attribute name="body"
+                       value="/WEB-INF/views/profile/work-experience/list.jsp"/>
+    </definition>
+
+    <definition name="profile.work-experience.form" extends="DefaultTemplate">
+        <put-attribute name="body"
+                       value="/WEB-INF/views/profile/work-experience/form.jsp"/>
     </definition>
 
     <definition name="account.list" extends="DefaultTemplate">

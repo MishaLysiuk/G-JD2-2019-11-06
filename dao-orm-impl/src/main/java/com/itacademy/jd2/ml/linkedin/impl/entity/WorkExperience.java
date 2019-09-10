@@ -20,9 +20,9 @@ public class WorkExperience extends BaseEntity implements IWorkExperience {
     @Column
     private String jobTitle;
     @Column
-    private Date start;
+    private Date startDate;
     @Column
-    private Date end;
+    private Date endDate;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = City.class)
     private ICity city;
     @Column
@@ -51,23 +51,23 @@ public class WorkExperience extends BaseEntity implements IWorkExperience {
     }
 
     @Override
-    public Date getStart() {
-        return start;
+    public Date getStartDate() {
+        return startDate;
     }
 
     @Override
-    public void setStart(Date start) {
-        this.start = start;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
     @Override
-    public Date getEnd() {
-        return end;
+    public Date getEndDate() {
+        return endDate;
     }
 
     @Override
-    public void setEnd(Date end) {
-        this.end = end;
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 
     @Override

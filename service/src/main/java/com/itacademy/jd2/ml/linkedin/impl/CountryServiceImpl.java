@@ -62,6 +62,12 @@ public class CountryServiceImpl implements ICountryService {
     }
 
     @Override
+    public ICountry getFullInfo(final Integer id) {
+        final ICountry entity = dao.getFullInfo(id);
+        return entity;
+    }
+
+    @Override
     public List<ICountry> find(CountryFilter filter) {
         return dao.find(filter);
     }
