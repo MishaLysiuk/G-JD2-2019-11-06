@@ -100,14 +100,19 @@ public class EducationController extends AbstractController {
         return new ModelAndView("profile.education.form", hashMap);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String save(@Valid @ModelAttribute("education") final EducationDTO educationDTO,
                        final BindingResult result) {
         if (result.hasErrors()) {
             return "profile.education.form";
         } else {
-            final IEducation entity = fromDTOConverter.apply(educationDTO);
+            IEducation entity = fromDTOConverter.apply(educationDTO);
             educationService.save(entity);
+            IUserAccount loggedUser = userAccountService.getFullInfo(AuthHelper.getLoggedUserId());
+            Set<IEducation> educations = loggedUser.getEducations();
+            educations.add(entity);
+            loggedUser.setEducations(educations);
+            userAccountService.save(loggedUser);
             return "redirect:/education";
         }
     }

@@ -5,13 +5,25 @@
     <h1>Work Experience</h1>
 </div>
 <div class="row">
-    <form:form class="col s12" method="post" modelAttribute="workExperience">
+    <form:form class="col s12" method="post" action="${workExperience}/add" modelAttribute="workExperience">
         <div class="row">
             <form:input path="id" type="hidden" />
             <div class="input-field col s12">
                 <form:input path="jobTitle" type="text" class="validate" disabled="${readonly}"/>
                 <form:errors path="jobTitle" cssClass="red-text" />
                 <label for="jobTitle">Job title</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s4">
+                <form:select path="regionId" cssClass="browser-default"/>
+            </div>
+            <div class="input-field col s4">
+                <form:select path="countryId" cssClass="browser-default"/>
+            </div>
+            <div class="input-field col s4">
+                <form:select path="cityId" cssClass="browser-default"/>
             </div>
         </div>
 
@@ -25,21 +37,6 @@
                 <form:input path="endDate" type="date" cssClass="date-picker" disabled="${readonly}"/>
                 <form:errors path="endDate" cssClass="red-text" />
                 <label for="endDate">End date</label>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="input-field col s4">
-                <form:select path="regionId" cssClass="browser-default"/>
-                <label for="regionId">Region</label>
-            </div>
-            <div class="input-field col s4">
-                <form:select path="countryId" cssClass="browser-default"/>
-                <label for="countryId">Country</label>
-            </div>
-            <div class="input-field col s4">
-                <form:select path="cityId" cssClass="browser-default"/>
-                <label for="cityId">City</label>
             </div>
         </div>
 

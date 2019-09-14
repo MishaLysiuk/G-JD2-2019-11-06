@@ -91,7 +91,6 @@ public class CompanyDaoImpl extends AbstractDaoImpl<ICompany, Integer> implement
 
         List<ICompany> resultList = q.getResultList();
 
-
         return resultList;
     }
 

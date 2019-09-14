@@ -24,6 +24,9 @@ public interface ICompanyService {
 
     ICompany createEntity();
 
+    @Transactional
+    ICompany saveOrCreate(String name);
+
     List<ICompany> find(CompanyFilter filter);
 
     long getCount(CompanyFilter filter);

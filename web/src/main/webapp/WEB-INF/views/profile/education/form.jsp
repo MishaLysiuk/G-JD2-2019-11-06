@@ -6,20 +6,35 @@
 </div>
 
 <div class="row">
-    <form:form class="col s12" method="POST" action="${pageContext.request.contextPath}/location" modelAttribute="education">
+    <form:form class="col s12" method="POST" action="${education}/add" modelAttribute="education">
+
+        <div class="row">
+            <div class="input-field col s6">
+                <form:select path="specialityId" disabled="${readonly}">
+                    <form:options items="${specialities}"/>
+                </form:select>
+                <form:errors path="specialityId" cssClass="red-text" />
+                <label for="specialityId">Speciality</label>
+            </div>
+            <div class="input-field col s6">
+                <form:select path="degreeId" disabled="${readonly}">
+                    <form:options items="${degrees}"/>
+                </form:select>
+                <form:errors path="degreeId" cssClass="red-text" />
+                <label for="degreeId">Degree</label>
+            </div>
+        </div>
+
         <div class="row">
             <form:input path="id" type="hidden" />
             <div class="input-field col s4">
                 <form:select path="regionId" cssClass="browser-default"/>
-                <label for="regionId">Region</label>
             </div>
             <div class="input-field col s4">
                 <form:select path="countryId" cssClass="browser-default"/>
-                <label for="countryId">Country</label>
             </div>
             <div class="input-field col s4">
                 <form:select path="cityId" cssClass="browser-default"/>
-                <label for="cityId">City</label>
             </div>
         </div>
 
@@ -40,31 +55,15 @@
             <div class="input-field col s6">
                 <form:input path="startDate" type="date" cssClass="date-picker" disabled="${readonly}"/>
                 <form:errors path="startDate" cssClass="red-text" />
-                <label for="startDate">Birthday</label>
+                <label for="startDate">Start date</label>
             </div>
             <div class="input-field col s6">
                 <form:input path="endDate" type="date" cssClass="date-picker" disabled="${readonly}"/>
                 <form:errors path="endDate" cssClass="red-text" />
-                <label for="endDate">Birthday</label>
+                <label for="endDate">End date</label>
             </div>
         </div>
 
-        <div class="row">
-            <div class="input-field col s6">
-                <form:select path="specialityId" disabled="${readonly}">
-                    <form:options items="${specialities}"/>
-                </form:select>
-                <form:errors path="specialityId" cssClass="red-text" />
-                <label for="specialityId">Speciality</label>
-            </div>
-            <div class="input-field col s6">
-                <form:select path="degreeId" disabled="${readonly}">
-                    <form:options items="${degrees}"/>
-                </form:select>
-                <form:errors path="degreeId" cssClass="red-text" />
-                <label for="degreeId">Degree</label>
-            </div>
-        </div>
         <div class="row">
             <div class="col s6"></div>
             <div class="col s3">

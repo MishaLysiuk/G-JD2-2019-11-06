@@ -5,7 +5,7 @@
 <%@ taglib prefix="mytaglib" uri="my-custom-tags-uri" %>
 
 
-<h4 class="header">Educations</h4>
+<h4 class="header">Work experience</h4>
 <table class="bordered highlight">
     <tbody>
     <tr>
@@ -22,7 +22,7 @@
             <td class="right"><a class="btn-floating" href="${workExperience}/${item.id}"><i
                     class="material-icons">info</i></a> <a
                     class="btn-floating" href="${workExperience}/${item.id}/edit"><i class="material-icons">edit</i></a> <a
-                    class="btn-floating red disabled" href="${workExperience}/${item.id}/delete"><i class="material-icons">delete</i></a>
+                    class="btn-floating red" href="${workExperience}/${item.id}/delete"><i class="material-icons">delete</i></a>
             </td>
         </tr>
     </c:forEach>

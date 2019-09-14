@@ -34,6 +34,8 @@ public class UserLanguageDaoImpl extends AbstractDaoImpl<IUserLanguage,Integer> 
         final CriteriaQuery<IUserLanguage> cq = cb.createQuery(IUserLanguage.class);
         final Root<UserLanguage> from = cq.from(UserLanguage.class);
         cq.select(from);
+        from.fetch(UserLanguage_.level, JoinType.LEFT);
+        from.fetch(UserLanguage_.language, JoinType.LEFT);
 
         cq.where(cb.equal(from.get(UserLanguage_.user).get(UserAccount_.id), loggedUserId));
         final TypedQuery<IUserLanguage> q = em.createQuery(cq);

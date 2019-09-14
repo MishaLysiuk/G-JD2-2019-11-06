@@ -40,12 +40,6 @@ public class WorkExperienceFromDTOConverter implements Function<WorkExperienceDT
         city.setId(dto.getCityId());
         entity.setCity(city);
 
-        ICompany company = companyService.findByName(dto.getCompanyName()).get(0);
-        if (company == null){
-            companyService.save(company);
-            entity.setCompany(company);
-        }else entity.setCompany(company);
-
         return entity;
     }
 }

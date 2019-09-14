@@ -10,9 +10,7 @@ import java.util.Set;
 @Entity
 public class Education extends BaseEntity implements IEducation {
 
-    @JoinTable(name = "education_2_user", joinColumns = {@JoinColumn(name = "education_id")}, inverseJoinColumns = {
-            @JoinColumn(name = "user_id")})
-    @ManyToMany(targetEntity = UserAccount.class, fetch = FetchType.LAZY)
+    @ManyToMany(targetEntity = UserAccount.class, fetch = FetchType.LAZY, mappedBy = "educations")
     private Set<IUserAccount> users = new HashSet<>();
     @Column
     private String university;

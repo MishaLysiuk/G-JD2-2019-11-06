@@ -1,7 +1,9 @@
 package com.itacademy.jd2.ml.linkedin.web.controller;
 
+import com.itacademy.jd2.ml.linkedin.ICompanyService;
 import com.itacademy.jd2.ml.linkedin.IUserAccountService;
 import com.itacademy.jd2.ml.linkedin.IWorkExperienceService;
+import com.itacademy.jd2.ml.linkedin.entity.table.ICompany;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 import com.itacademy.jd2.ml.linkedin.entity.table.IWorkExperience;
 import com.itacademy.jd2.ml.linkedin.filter.WorkExperienceFilter;
@@ -31,13 +33,15 @@ public class WorkExperienceController extends AbstractController {
     private WorkExperienceFromDTOConverter fromDTOConverter;
 
     private IUserAccountService userAccountService;
+    private ICompanyService companyService;
 
     @Autowired
-    public WorkExperienceController(IWorkExperienceService workExperienceService, WorkExperienceToDTOConverter toDTOConverter, WorkExperienceFromDTOConverter fromDTOConverter, IUserAccountService userAccountService) {
+    public WorkExperienceController(IWorkExperienceService workExperienceService, WorkExperienceToDTOConverter toDTOConverter, WorkExperienceFromDTOConverter fromDTOConverter, IUserAccountService userAccountService, ICompanyService companyService) {
         this.workExperienceService = workExperienceService;
         this.toDTOConverter = toDTOConverter;
         this.fromDTOConverter = fromDTOConverter;
         this.userAccountService = userAccountService;
+        this.companyService = companyService;
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -73,14 +77,21 @@ public class WorkExperienceController extends AbstractController {
         return new ModelAndView("profile.work-experience.form", hashMap);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public String save(@Valid @ModelAttribute("education") final WorkExperienceDTO workExperienceDTO,
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public String save(@Valid @ModelAttribute("workExperience") final WorkExperienceDTO workExperienceDTO, @RequestParam("companyName") String companyName,
                        final BindingResult result) {
         if (result.hasErrors()) {
             return "profile.work-experience.form";
         } else {
-            final IWorkExperience entity = fromDTOConverter.apply(workExperienceDTO);
+            IWorkExperience entity = fromDTOConverter.apply(workExperienceDTO);
+            ICompany company = companyService.saveOrCreate(companyName);
+            entity.setCompany(company);
             workExperienceService.save(entity);
+            IUserAccount loggedUser = userAccountService.getFullInfo(AuthHelper.getLoggedUserId());
+            Set<IWorkExperience> experience = loggedUser.getWorkExperiences();
+            experience.add(entity);
+            loggedUser.setWorkExperiences(experience);
+            userAccountService.save(loggedUser);
             return "redirect:/work-experience";
         }
     }

@@ -29,7 +29,7 @@ import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping(value = "/language")
-public class LanguageController extends AbstractController{
+public class LanguageController extends AbstractController {
 
     private IUserLanguageService userLanguageService;
     private UserLanguageToDTOConverter toDTOConverter;
@@ -98,7 +98,7 @@ public class LanguageController extends AbstractController{
         return new ModelAndView("profile.language.form", hashMap);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
     public String save(@Valid @ModelAttribute("userLanguage") final UserLanguageDTO userLanguageDTO,
                        final BindingResult result) {
         if (result.hasErrors()) {
@@ -116,7 +116,7 @@ public class LanguageController extends AbstractController{
     @RequestMapping(value = "/{id}/delete", method = RequestMethod.GET)
     public String delete(@PathVariable(name = "id", required = true) final Integer id) {
         userLanguageService.delete(id);
-        return "redirect:/UserLanguage";
+        return "redirect:/language";
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)

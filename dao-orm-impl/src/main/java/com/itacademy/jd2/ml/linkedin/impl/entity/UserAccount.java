@@ -34,16 +34,24 @@ public class UserAccount extends BaseEntity implements IUserAccount {
     @Column
     private String lastName;
 
-    @ManyToMany(targetEntity = Education.class, fetch = FetchType.LAZY, mappedBy = "users")
+    @JoinTable(name = "education_2_user", joinColumns = {@JoinColumn(name = "user_id")}, inverseJoinColumns = {
+            @JoinColumn(name = "education_id")})
+    @ManyToMany(targetEntity = Education.class, fetch = FetchType.LAZY)
     private Set<IEducation> educations = new HashSet<>();
 
-    @ManyToMany(targetEntity = Course.class, fetch = FetchType.LAZY, mappedBy = "users")
+    @JoinTable(name = "course_2_user", joinColumns = {@JoinColumn(name = "user_id")}, inverseJoinColumns = {
+            @JoinColumn(name = "course_id")})
+    @ManyToMany(targetEntity = Course.class, fetch = FetchType.LAZY)
     private Set<ICourse> courses = new HashSet<>();
 
-    @ManyToMany(targetEntity = WorkExperience.class, fetch = FetchType.LAZY, mappedBy = "users")
+    @JoinTable(name = "experience_2_user", joinColumns = {@JoinColumn(name = "user_id")}, inverseJoinColumns = {
+            @JoinColumn(name = "experience_id")})
+    @ManyToMany(targetEntity = WorkExperience.class, fetch = FetchType.LAZY)
     private Set<IWorkExperience> workExperiences = new HashSet<>();
 
-    @ManyToMany(targetEntity = Skill.class, fetch = FetchType.LAZY, mappedBy = "users")
+    @JoinTable(name = "skill_2_user", joinColumns = {@JoinColumn(name = "user_id")}, inverseJoinColumns = {
+            @JoinColumn(name = "skill_id")})
+    @ManyToMany(targetEntity = Skill.class, fetch = FetchType.LAZY)
     private Set<ISkill> skills = new HashSet<>();
 
     @Column

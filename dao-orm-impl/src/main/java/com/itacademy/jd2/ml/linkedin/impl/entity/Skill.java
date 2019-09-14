@@ -14,9 +14,7 @@ public class Skill extends BaseEntity implements ISkill {
     @Column
     private String name;
 
-    @JoinTable(name = "skill_2_user", joinColumns = {@JoinColumn(name = "skill_id")}, inverseJoinColumns = {
-            @JoinColumn(name = "user_id")})
-    @ManyToMany(targetEntity = UserAccount.class, fetch = FetchType.LAZY)
+    @ManyToMany(targetEntity = UserAccount.class, fetch = FetchType.LAZY, mappedBy = "skills")
     private Set<IUserAccount> users = new HashSet<>();
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = GroupSkill.class)

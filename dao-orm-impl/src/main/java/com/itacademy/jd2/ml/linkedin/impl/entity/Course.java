@@ -13,9 +13,7 @@ import java.util.Set;
 
 public class Course extends BaseEntity implements ICourse {
 
-    @JoinTable(name = "course_2_user", joinColumns = {@JoinColumn(name = "course_id")}, inverseJoinColumns = {
-            @JoinColumn(name = "user_id")})
-    @ManyToMany(targetEntity = UserAccount.class, fetch = FetchType.LAZY)
+    @ManyToMany(targetEntity = UserAccount.class, fetch = FetchType.LAZY, mappedBy = "courses")
     private Set<IUserAccount> users = new HashSet<>();
     @Column
     private String name;

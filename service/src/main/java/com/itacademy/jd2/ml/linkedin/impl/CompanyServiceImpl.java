@@ -4,7 +4,6 @@ import com.itacademy.jd2.ml.linkedin.ICompanyDao;
 import com.itacademy.jd2.ml.linkedin.ICompanyService;
 import com.itacademy.jd2.ml.linkedin.entity.table.ICompany;
 import com.itacademy.jd2.ml.linkedin.filter.CompanyFilter;
-import com.itacademy.jd2.ml.linkedin.impl.entity.Company;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -61,6 +60,19 @@ public class CompanyServiceImpl implements ICompanyService {
         return all;
     }
 
+    @Override
+    public ICompany saveOrCreate(String name) {
+        List<ICompany> companies = findByName(name);
+
+        if (companies.isEmpty()) {
+            ICompany company = dao.createEntity();
+            company.setName(name);
+            save(company);
+            return company;
+        } else {
+            return companies.get(0);
+        }
+    }
 
 
     @Override

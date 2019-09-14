@@ -1,6 +1,5 @@
 package com.itacademy.jd2.ml.linkedin.service;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -35,6 +34,11 @@ public abstract class AbstractTest {
     protected IRegionService regionService;
     @Autowired
     protected ILanguageService languageService;
+    @Autowired
+    protected ISpecialityService specialityService;
+    @Autowired IDegreeService degreeService;
+    @Autowired
+    protected ILanguageLevelService levelService;
 
     private static final Random RANDOM = new Random();
 
@@ -91,9 +95,9 @@ public abstract class AbstractTest {
 
     protected ICity saveNewCity() {
         final ICity entity = cityService.createEntity();
-        entity.setName("Brest");
+        entity.setName("Melbourne");
         ICountry country = countryService.createEntity();
-        country.setId(1);
+        country.setId(18);
         entity.setCountry(country);
         cityService.save(entity);
         return entity;
@@ -101,9 +105,9 @@ public abstract class AbstractTest {
 
     protected ICountry saveNewCountry() {
         final ICountry entity = countryService.createEntity();
-        entity.setName("Germany");
+        entity.setName("Australia");
         IRegion region = regionService.createEntity();
-        region.setId(3);
+        region.setId(6);
         entity.setRegion(region);
         countryService.save(entity);
         return entity;
@@ -111,7 +115,7 @@ public abstract class AbstractTest {
 
     protected IRegion saveNewRegion() {
         final IRegion entity = regionService.createEntity();
-        entity.setName("city-" + getRandomObjectsCount());
+        entity.setName("Australia");
         regionService.save(entity);
         return entity;
     }

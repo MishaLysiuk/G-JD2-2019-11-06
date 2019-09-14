@@ -2,10 +2,6 @@
 
 dto location
 
-delete from user:education
-add new education to user list
-ask about work experience from dto converter
-
 
 
 

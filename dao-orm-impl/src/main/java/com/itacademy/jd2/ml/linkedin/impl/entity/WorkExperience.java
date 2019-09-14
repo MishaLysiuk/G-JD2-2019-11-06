@@ -13,9 +13,7 @@ import java.util.Set;
 @Entity
 public class WorkExperience extends BaseEntity implements IWorkExperience {
 
-    @JoinTable(name = "experience_2_user", joinColumns = {@JoinColumn(name = "experience_id")}, inverseJoinColumns = {
-            @JoinColumn(name = "user_id")})
-    @ManyToMany(targetEntity = UserAccount.class, fetch = FetchType.LAZY)
+    @ManyToMany(targetEntity = UserAccount.class, fetch = FetchType.LAZY, mappedBy = "workExperiences")
     private Set<IUserAccount> users = new HashSet<>();
     @Column
     private String jobTitle;
