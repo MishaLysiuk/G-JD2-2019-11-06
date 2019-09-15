@@ -42,3 +42,6 @@ web/logs/
 log.txt
 dao-orm-impl/target/ROOT.jar
 dao-orm-impl/target/
+*.project
+*.classpath
+.settings/
