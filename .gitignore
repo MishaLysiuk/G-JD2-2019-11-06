@@ -31,3 +31,6 @@ dao-jdbc-impl/target/
 web/target/
 logs/2019-07/app-07-02-2019-1.log.gz
 dao-orm-impl/target/
+*.project
+*.classpath
+.settings/
