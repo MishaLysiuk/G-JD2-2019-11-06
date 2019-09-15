@@ -1,5 +1,6 @@
 package com.itacademy.jd2.ml.linkedin.service;
 
+import com.itacademy.jd2.ml.linkedin.entity.table.IGroupSkill;
 import com.itacademy.jd2.ml.linkedin.entity.table.ISkill;
 import org.junit.jupiter.api.Test;
 
@@ -11,8 +12,9 @@ public class SkillServiceTest extends AbstractTest {
     @Test
     public void testCreate() {
         final ISkill entity = skillService.createEntity();
-        entity.setName("skill-" + getRandomPrefix());
-        entity.setGroup(saveNewGroup());
+        entity.setName("skill" + getRandomPrefix());
+        IGroupSkill group = saveNewGroup();
+        entity.setGroup(group);
         skillService.save(entity);
 
         final ISkill entityFromDb = skillService.getFullInfo(entity.getId());

@@ -1,16 +1,24 @@
 package com.itacademy.jd2.ml.linkedin.web.controller;
 
+import com.itacademy.jd2.ml.linkedin.IGroupSkillService;
 import com.itacademy.jd2.ml.linkedin.ISkillService;
 import com.itacademy.jd2.ml.linkedin.IUserAccountService;
+import com.itacademy.jd2.ml.linkedin.entity.table.IGroupSkill;
 import com.itacademy.jd2.ml.linkedin.entity.table.ISkill;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 import com.itacademy.jd2.ml.linkedin.filter.SkillFilter;
+import com.itacademy.jd2.ml.linkedin.impl.entity.Skill;
 import com.itacademy.jd2.ml.linkedin.web.converter.fromDTO.SkillFromDTOConverter;
+import com.itacademy.jd2.ml.linkedin.web.converter.toDTO.GroupSkillToDTOConverter;
+import com.itacademy.jd2.ml.linkedin.web.converter.toDTO.SkillLoaderToDTOConverter;
 import com.itacademy.jd2.ml.linkedin.web.converter.toDTO.SkillToDTOConverter;
 import com.itacademy.jd2.ml.linkedin.web.dto.SkillDTO;
+import com.itacademy.jd2.ml.linkedin.web.dto.GroupSkillDTO;
 import com.itacademy.jd2.ml.linkedin.web.dto.grid.GridStateDTO;
 import com.itacademy.jd2.ml.linkedin.web.security.AuthHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -30,13 +38,19 @@ public class SkillController extends AbstractController {
     private SkillFromDTOConverter fromDTOConverter;
 
     private IUserAccountService userAccountService;
+    private IGroupSkillService groupSkillService;
+    private GroupSkillToDTOConverter groupSkillToDTOConverter;
+    private SkillLoaderToDTOConverter skillLoaderToDTOConverter;
 
     @Autowired
-    public SkillController(ISkillService skillService, SkillToDTOConverter toDTOConverter, SkillFromDTOConverter fromDTOConverter, IUserAccountService userAccountService) {
+    public SkillController(ISkillService skillService, SkillToDTOConverter toDTOConverter, SkillFromDTOConverter fromDTOConverter, IUserAccountService userAccountService, IGroupSkillService groupSkillService, GroupSkillToDTOConverter groupSkillToDTOConverter, SkillLoaderToDTOConverter skillLoaderToDTOConverter) {
         this.skillService = skillService;
         this.toDTOConverter = toDTOConverter;
         this.fromDTOConverter = fromDTOConverter;
         this.userAccountService = userAccountService;
+        this.groupSkillService = groupSkillService;
+        this.groupSkillToDTOConverter = groupSkillToDTOConverter;
+        this.skillLoaderToDTOConverter = skillLoaderToDTOConverter;
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -71,14 +85,18 @@ public class SkillController extends AbstractController {
         return new ModelAndView("profile.skill.form", hashMap);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public String save(@Valid @ModelAttribute("skill") final SkillDTO skillDTO,
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public String save(@Valid @ModelAttribute("skill") final SkillDTO skillDTO, @RequestParam("id") Integer skillId,
                        final BindingResult result) {
         if (result.hasErrors()) {
             return "profile.skill.form";
         } else {
-            final ISkill entity = fromDTOConverter.apply(skillDTO);
-            skillService.save(entity);
+            ISkill entity = fromDTOConverter.apply(skillDTO);
+            IUserAccount loggedUser = userAccountService.getFullInfo(AuthHelper.getLoggedUserId());
+            Set<ISkill> skills = loggedUser.getSkills();
+            skills.add(entity);
+            loggedUser.setSkills(skills);
+            userAccountService.save(loggedUser);
             return "redirect:/skill";
         }
     }
@@ -111,6 +129,21 @@ public class SkillController extends AbstractController {
         hashMap.put("readonly", false);
 
         return new ModelAndView("profile.skill.form", hashMap);
+    }
+
+    @RequestMapping(value = "/groups", method = RequestMethod.GET)
+    public ResponseEntity<List<GroupSkillDTO>> getRegions() {
+        final List<IGroupSkill> groups = groupSkillService.getAll();
+        List<GroupSkillDTO> groupsDTO = groups.stream().map(groupSkillToDTOConverter).collect(Collectors.toList());
+        return new ResponseEntity<List<GroupSkillDTO>>(groupsDTO, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/skills", method = RequestMethod.GET)
+    public ResponseEntity<List<SkillDTO>> getCountries(
+            @RequestParam(name = "groupId", required = true) final Integer groupId) {
+        final List<ISkill> skills = skillService.findByGroupId(groupId);
+        List<SkillDTO> skillsDTO = skills.stream().map(skillLoaderToDTOConverter).collect(Collectors.toList());
+        return new ResponseEntity<List<SkillDTO>>(skillsDTO, HttpStatus.OK);
     }
 
 

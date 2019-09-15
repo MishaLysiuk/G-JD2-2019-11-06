@@ -6,34 +6,31 @@
 </div>
 
 <div class="row">
-    <form:form class="col s12" method="post">
+    <form:form class="col s12" method="post" action="${skill}/add" modelAttribute="skill">
         <div class="row">
             <div class="input-field col s6">
-                <select>
-                    <option value="" disabled selected>Group</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                </select>
-                <label>Group</label>
+                <form:select path="groupId" cssClass="browser-default" required="required"/>
             </div>
             <div class="input-field col s6">
-                <select>
-                    <option value="" disabled selected>Skill</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
-                </select>
-                <label>Skill</label>
+                <form:select path="id" cssClass="browser-default" required="required"/>
             </div>
         </div>
 
-        <div class="col s2 offset-s10">
-            <a class="btn-floating btn-large blue darken-2"><i class="material-icons">add</i></a>
-        </div>
-
-        <div class="col s2 offset-s5">
-            <button class="btn blue darken-2 " type="submit" name="action">Save changes</button>
+        <div class="row">
+            <div class="col s3">
+                <c:if test="${!readonly}">
+                    <button class="btn waves-effect waves-light right" type="submit">Save</button>
+                </c:if>
+            </div>
+            <div class="col s3">
+                <a class="btn waves-effect waves-light right" href="${skill}">Back<i
+                        class="material-icons right"></i>
+                </a>
+            </div>
         </div>
     </form:form>
 </div>
+<script src="${pageContext.request.contextPath}/resources/js/initSkills.js"></script>
+<script>
+    initComboboxes('${pageContext.request.contextPath}');
+</script>

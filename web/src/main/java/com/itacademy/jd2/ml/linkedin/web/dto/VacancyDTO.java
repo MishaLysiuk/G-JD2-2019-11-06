@@ -1,6 +1,8 @@
 package com.itacademy.jd2.ml.linkedin.web.dto;
 
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 
@@ -12,6 +14,7 @@ public class VacancyDTO {
     private String address;
     private String contactInfo;
     private String description;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date created;
 
     private Integer cityId;

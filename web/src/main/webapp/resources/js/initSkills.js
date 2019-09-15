@@ -21,27 +21,17 @@ function initSelectElement(htmlElementId, jsonArray) {
 
 function initComboboxes(contextUrl) {
 
-    $.get(contextUrl + "/location/regions", function(regionsArray) {
+    $.get(contextUrl + "/skill/groups", function(groups) {
 
-        initSelectElement('regionId', regionsArray);
+        initSelectElement('groupId', groups);
 
-        $("#regionId").change(function() {
-            resetSelectElement('countryId')
-            resetSelectElement('cityId')
+        $("#groupId").change(function() {
+            resetSelectElement('id')
 
             var selectedId = $(this).val();
-            $.get(contextUrl + "/location/countries?regionId=" + selectedId, function(countriesArray) {
-                initSelectElement('countryId', countriesArray);
+            $.get(contextUrl + "/skill/skills?groupId=" + selectedId, function(skills) {
+                initSelectElement('id', skills);
             })
-        });
-
-        $("#countryId").change(function() {
-            resetSelectElement('cityId')
-            var selectedId = $(this).val();
-            $.get(contextUrl + "/location/cities?countryId=" + selectedId, function(citiesArray) {
-                initSelectElement('cityId', citiesArray);
-            })
-
         });
     });
 

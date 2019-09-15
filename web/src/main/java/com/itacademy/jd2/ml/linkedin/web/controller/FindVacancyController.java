@@ -65,7 +65,7 @@ public class FindVacancyController extends AbstractController{
         hashMap.put("formVacancy", dto);
         hashMap.put("readonly", true);
 
-        return new ModelAndView("findVacancy.edit", hashMap);
+        return new ModelAndView("findVacancy.form", hashMap);
     }
 
 }

@@ -51,6 +51,9 @@ public class VacancyDaoImpl extends AbstractDaoImpl<IVacancy,Integer> implements
         final Root<Vacancy> from = cq.from(Vacancy.class);
         cq.select(from);
 
+        from.fetch(Vacancy_.company, JoinType.LEFT);
+        from.fetch(Vacancy_.city, JoinType.LEFT);
+
         cq.where(cb.equal(from.get(Vacancy_.creator).get(UserAccount_.id), creatorId));
         final TypedQuery<IVacancy> q = em.createQuery(cq);
 

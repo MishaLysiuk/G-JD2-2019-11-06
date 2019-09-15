@@ -11,7 +11,7 @@ public class LanguageLevelServiceTest extends AbstractTest {
     @Test
     public void testCreate() {
         final ILanguageLevel entity = levelService.createEntity();
-        entity.setName("level" + getRandomPrefix());
+        entity.setName("level-" + getRandomPrefix());
         entity.setPriority(getRandomObjectsCount());
         levelService.save(entity);
 

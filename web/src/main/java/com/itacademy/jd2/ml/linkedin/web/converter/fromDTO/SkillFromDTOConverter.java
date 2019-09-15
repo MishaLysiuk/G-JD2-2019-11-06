@@ -26,11 +26,11 @@ public class SkillFromDTOConverter implements Function<SkillDTO, ISkill> {
     public ISkill apply(SkillDTO dto) {
         ISkill entity = skillService.createEntity();
         entity.setId(dto.getId());
-        entity.setName(dto.getName());
+        /*entity.setName(dto.getName());
 
         IGroupSkill group = groupService.createEntity();
         group.setId(dto.getGroupId());
-        entity.setGroup(group);
+        entity.setGroup(group);*/
 
         return entity;
     }

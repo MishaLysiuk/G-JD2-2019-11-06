@@ -3,6 +3,7 @@ package com.itacademy.jd2.ml.linkedin.impl;
 import com.itacademy.jd2.ml.linkedin.ISkillDao;
 import com.itacademy.jd2.ml.linkedin.entity.table.ISkill;
 import com.itacademy.jd2.ml.linkedin.filter.SkillFilter;
+import com.itacademy.jd2.ml.linkedin.impl.entity.GroupSkill_;
 import com.itacademy.jd2.ml.linkedin.impl.entity.Skill;
 import com.itacademy.jd2.ml.linkedin.impl.entity.Skill_;
 import org.springframework.stereotype.Repository;
@@ -13,6 +14,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.JoinType;
 import javax.persistence.criteria.Root;
+import java.util.List;
 
 @Repository
 public class SkillDaoImpl extends AbstractDaoImpl<ISkill,Integer> implements ISkillDao {
@@ -47,6 +49,21 @@ public class SkillDaoImpl extends AbstractDaoImpl<ISkill,Integer> implements ISk
         final TypedQuery<ISkill> q = em.createQuery(cq);
 
         return getSingleResult(q);
+    }
+
+    @Override
+    public List<ISkill> findByGroupId(Integer groupId) {
+        final EntityManager em = getEntityManager();
+        final CriteriaBuilder cb = em.getCriteriaBuilder();
+        final CriteriaQuery<ISkill> cq = cb.createQuery(ISkill.class);
+        final Root<Skill> from = cq.from(Skill.class);
+        cq.select(from);
+
+        cq.where(cb.equal(from.get(Skill_.group).get(GroupSkill_.id), groupId));
+        final TypedQuery<ISkill> q = em.createQuery(cq);
+
+        List<ISkill> resultList = q.getResultList();
+        return resultList;
     }
 
     @Override

@@ -16,13 +16,11 @@ import java.util.function.Function;
 public class VacancyFromDTOConverter implements Function<VacancyDTO, IVacancy> {
     
     private IVacancyService vacancyService;
-    private ICompanyService companyService;
     private ICityService cityService;
 
     @Autowired
-    public VacancyFromDTOConverter(IVacancyService vacancyService, ICompanyService companyService, ICityService cityService) {
+    public VacancyFromDTOConverter(IVacancyService vacancyService, ICityService cityService) {
         this.vacancyService = vacancyService;
-        this.companyService = companyService;
         this.cityService = cityService;
     }
 
@@ -39,12 +37,6 @@ public class VacancyFromDTOConverter implements Function<VacancyDTO, IVacancy> {
         ICity city = cityService.createEntity();
         city.setId(dto.getCityId());
         entity.setCity(city);
-
-        ICompany company = companyService.findByName(dto.getCompanyName()).get(0);
-        if (company == null){
-            companyService.save(company);
-            entity.setCompany(company);
-        }else entity.setCompany(company);
 
         return entity;
     }

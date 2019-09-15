@@ -22,5 +22,5 @@ public class RegionServiceTest extends AbstractTest {
         assertNotNull(entityFromDb.getUpdated());
         assertTrue(entityFromDb.getCreated().equals(entityFromDb.getUpdated()));
     }
-    
+
 }

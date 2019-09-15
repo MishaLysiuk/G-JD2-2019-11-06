@@ -1,6 +1,7 @@
 package com.itacademy.jd2.ml.linkedin.service;
 
 import com.itacademy.jd2.ml.linkedin.entity.enums.Role;
+import com.itacademy.jd2.ml.linkedin.entity.table.ILanguage;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 import org.junit.jupiter.api.Test;
 
@@ -53,14 +54,16 @@ public class UserAccountServiceTest extends AbstractTest {
     @Test
     public void testAddUser() {
         final IUserAccount entity = userAccountService.createEntity();
-        entity.setEmail("user@gmail.com");
-        entity.setPassword("user");
+        entity.setEmail("worker@gmail.com");
+        entity.setPassword("1234");
         entity.setRole(Role.USER);
-        entity.setFirstName("user");
-        entity.setLastName("user");
-        entity.setJobTitle("user job title");
-        entity.setContactInfo("user contact info");
-        entity.setMotherTongue(saveNewLanguage());
+        entity.setFirstName("Worker");
+        entity.setLastName("Worker");
+        entity.setJobTitle("Senior Scala Developer");
+        entity.setContactInfo("skype: worker322, email: worker@gmail.com");
+        ILanguage motherTongue = languageService.createEntity();
+        motherTongue.setId(7);
+        entity.setMotherTongue(motherTongue);
         userAccountService.save(entity);
     }
 

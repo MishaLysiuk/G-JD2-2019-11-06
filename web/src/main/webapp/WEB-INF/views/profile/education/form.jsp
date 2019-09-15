@@ -10,14 +10,14 @@
 
         <div class="row">
             <div class="input-field col s6">
-                <form:select path="specialityId" disabled="${readonly}">
+                <form:select path="specialityId" required="required" disabled="${readonly}">
                     <form:options items="${specialities}"/>
                 </form:select>
                 <form:errors path="specialityId" cssClass="red-text" />
                 <label for="specialityId">Speciality</label>
             </div>
             <div class="input-field col s6">
-                <form:select path="degreeId" disabled="${readonly}">
+                <form:select path="degreeId" required="required" disabled="${readonly}">
                     <form:options items="${degrees}"/>
                 </form:select>
                 <form:errors path="degreeId" cssClass="red-text" />
@@ -28,24 +28,24 @@
         <div class="row">
             <form:input path="id" type="hidden" />
             <div class="input-field col s4">
-                <form:select path="regionId" cssClass="browser-default"/>
+                <form:select path="regionId" cssClass="browser-default" required="required" disabled="${readonly}"/>
             </div>
             <div class="input-field col s4">
-                <form:select path="countryId" cssClass="browser-default"/>
+                <form:select path="countryId" cssClass="browser-default" required="required" disabled="${readonly}"/>
             </div>
             <div class="input-field col s4">
-                <form:select path="cityId" cssClass="browser-default"/>
+                <form:select path="cityId" cssClass="browser-default" required="required" disabled="${readonly}"/>
             </div>
         </div>
 
         <div class="row">
             <div class="input-field col s6">
-                <form:input path="university" type="text" class="validate" disabled="${readonly}"/>
+                <form:input path="university" type="text" class="validate" required="required" disabled="${readonly}"/>
                 <form:errors path="university" cssClass="red-text" />
                 <label for="university">University</label>
             </div>
             <div class="input-field col s6">
-                <form:input path="address" type="text" class="validate" disabled="${readonly}"/>
+                <form:input path="address" type="text" class="validate" required="required" disabled="${readonly}"/>
                 <form:errors path="address" cssClass="red-text" />
                 <label for="address">address</label>
             </div>
@@ -53,12 +53,12 @@
 
         <div class="row">
             <div class="input-field col s6">
-                <form:input path="startDate" type="date" cssClass="date-picker" disabled="${readonly}"/>
+                <form:input path="startDate" type="date" cssClass="date-picker" required="required" disabled="${readonly}"/>
                 <form:errors path="startDate" cssClass="red-text" />
                 <label for="startDate">Start date</label>
             </div>
             <div class="input-field col s6">
-                <form:input path="endDate" type="date" cssClass="date-picker" disabled="${readonly}"/>
+                <form:input path="endDate" type="date" cssClass="date-picker" required="required" disabled="${readonly}"/>
                 <form:errors path="endDate" cssClass="red-text" />
                 <label for="endDate">End date</label>
             </div>

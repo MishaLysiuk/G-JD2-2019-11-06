@@ -63,4 +63,10 @@ public class SkillServiceImpl implements ISkillService {
     public ISkill getFullInfo(Integer id) {
         return dao.getFullInfo(id);
     }
+
+    @Override
+    public List<ISkill> findByGroupId(Integer groupId) {
+        final List<ISkill> skills = dao.findByGroupId(groupId);
+        return skills;
+    }
 }

@@ -23,4 +23,6 @@ public interface ISkillService {
     long getCount(SkillFilter filter);
 
     ISkill getFullInfo(Integer id);
+
+    List<ISkill> findByGroupId(Integer groupId);
 }

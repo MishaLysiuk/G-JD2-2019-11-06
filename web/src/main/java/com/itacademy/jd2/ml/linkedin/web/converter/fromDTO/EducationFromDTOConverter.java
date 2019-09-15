@@ -44,7 +44,7 @@ public class EducationFromDTOConverter implements Function<EducationDTO, IEducat
         entity.setSpeciality(speciality);
 
         IDegree degree = degreeService.createEntity();
-        degree.setId(dto.getSpecialityId());
+        degree.setId(dto.getDegreeId());
         entity.setDegree(degree);
 
         entity.setAddress(dto.getAddress());

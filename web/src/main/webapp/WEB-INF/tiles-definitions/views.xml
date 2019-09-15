@@ -82,7 +82,7 @@
         <put-attribute name="body" value="/WEB-INF/views/my-vacancy/list.jsp"/>
     </definition>
 
-    <definition name="myVacancy.edit" extends="DefaultTemplate">
+    <definition name="myVacancy.form" extends="DefaultTemplate">
         <put-attribute name="body" value="/WEB-INF/views/my-vacancy/form.jsp"/>
     </definition>
 
@@ -90,7 +90,7 @@
         <put-attribute name="body" value="/WEB-INF/views/find-vacancy/list.jsp"/>
     </definition>
 
-    <definition name="findVacancy.edit" extends="DefaultTemplate">
+    <definition name="findVacancy.form" extends="DefaultTemplate">
         <put-attribute name="body" value="/WEB-INF/views/find-vacancy/form.jsp"/>
     </definition>
 

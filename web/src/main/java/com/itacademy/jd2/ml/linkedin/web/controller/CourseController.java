@@ -1,7 +1,9 @@
 package com.itacademy.jd2.ml.linkedin.web.controller;
 
+import com.itacademy.jd2.ml.linkedin.ICompanyService;
 import com.itacademy.jd2.ml.linkedin.ICourseService;
 import com.itacademy.jd2.ml.linkedin.IUserAccountService;
+import com.itacademy.jd2.ml.linkedin.entity.table.ICompany;
 import com.itacademy.jd2.ml.linkedin.entity.table.ICourse;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 import com.itacademy.jd2.ml.linkedin.filter.CourseFilter;
@@ -26,19 +28,22 @@ import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping(value = "/course")
-public class CourseController extends AbstractController{
+public class CourseController extends AbstractController {
 
     private IUserAccountService userAccountService;
     private ICourseService courseService;
     private CourseToDTOConverter toDTOConverter;
     private CourseFromDTOConverter fromDTOConverter;
 
+    private ICompanyService companyService;
+
     @Autowired
-    public CourseController(IUserAccountService userAccountService, ICourseService courseService, CourseToDTOConverter toDTOConverter, CourseFromDTOConverter fromDTOConverter) {
+    public CourseController(IUserAccountService userAccountService, ICourseService courseService, CourseToDTOConverter toDTOConverter, CourseFromDTOConverter fromDTOConverter, ICompanyService companyService) {
         this.userAccountService = userAccountService;
         this.courseService = courseService;
         this.toDTOConverter = toDTOConverter;
         this.fromDTOConverter = fromDTOConverter;
+        this.companyService = companyService;
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -73,14 +78,21 @@ public class CourseController extends AbstractController{
         return new ModelAndView("profile.course.form", hashMap);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public String save(@Valid @ModelAttribute("Course") final CourseDTO courseDTO,
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public String save(@Valid @ModelAttribute("Course") final CourseDTO courseDTO, @RequestParam("companyName") String companyName,
                        final BindingResult result) {
         if (result.hasErrors()) {
             return "profile.course.form";
         } else {
-            final ICourse entity = fromDTOConverter.apply(courseDTO);
+            ICourse entity = fromDTOConverter.apply(courseDTO);
+            ICompany company = companyService.saveOrCreate(companyName);
+            entity.setCompany(company);
             courseService.save(entity);
+            IUserAccount loggedUser = userAccountService.getFullInfo(AuthHelper.getLoggedUserId());
+            Set<ICourse> courses = loggedUser.getCourses();
+            courses.add(entity);
+            loggedUser.setCourses(courses);
+            userAccountService.save(loggedUser);
             return "redirect:/course";
         }
     }

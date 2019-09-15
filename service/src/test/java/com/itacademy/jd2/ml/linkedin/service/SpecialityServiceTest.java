@@ -10,7 +10,7 @@ public class SpecialityServiceTest extends AbstractTest {
     @Test
     public void testCreate() {
         ISpeciality entity = specialityService.createEntity();
-        entity.setName("Environmental Engineer");
+        entity.setName("Web Design and Application Development");
         specialityService.save(entity);
 
         ISpeciality entityFromDb = specialityService.get(entity.getId());

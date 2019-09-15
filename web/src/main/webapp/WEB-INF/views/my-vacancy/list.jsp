@@ -7,25 +7,25 @@
 <table class="stripped highlight ">
     <tbody>
     <tr>
-        <th><mytaglib:sort-link pageUrl="${myVacancy}" column="job_title">Job title</mytaglib:sort-link></th>
-        <th><mytaglib:sort-link pageUrl="${myVacancy}" column="contact_info">Contact info</mytaglib:sort-link></th>
-        <th><mytaglib:sort-link pageUrl="${myVacancy}" column="company">Company</mytaglib:sort-link></th>
-        <th><mytaglib:sort-link pageUrl="${myVacancy}" column="address">Location</mytaglib:sort-link></th>
+        <th>Job title</th>
+        <th>Contact info</th>
+        <th>Company</th>
+        <th>Location</th>
         <th></th>
     </tr>
-    <c:forEach var="vacancy" items="${gridItems}" varStatus="loopCounter ">
+    <c:forEach var="item" items="${vacancies}" varStatus="loopCounter ">
         <tr>
-            <td><c:out value="${vacancy.jobTitle}"/></td>
-            <td><c:out value="${vacancy.contactInfo}"/></td>
-            <td><c:out value="${vacancy.companyName}"/></td>
-            <td><c:out value="${vacancy.address}"/></td>
-            <td class="right"><a class="btn-floating blue darken-2" href="${myVacancy}/${vacancy.id}"><i
+            <td><c:out value="${item.jobTitle}"/></td>
+            <td><c:out value="${item.contactInfo}"/></td>
+            <td><c:out value="${item.companyName}"/></td>
+            <td><c:out value="${item.address}"/></td>
+            <td class="right"><a class="btn-floating blue darken-2" href="${myVacancy}/${item.id}"><i
                     class="material-icons">info</i></a>
                 <a
-                        class="btn-floating blue darken-2" href="${myVacancy}/${vacancy.id}/edit"><i
+                        class="btn-floating blue darken-2" href="${myVacancy}/${item.id}/edit"><i
                         class="material-icons">edit</i></a>
                 <a
-                        class="btn-floating red" href="${myVacancy}/${vacancy.id}/delete"><i
+                        class="btn-floating red" href="${myVacancy}/${item.id}/delete"><i
                         class="material-icons">delete</i></a></td>
         </tr>
     </c:forEach>

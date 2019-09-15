@@ -6,44 +6,41 @@
 </div>
 
 <div class="row">
-    <form:form class="col s12" method="POST" modelAttribute="formVacancy" action="${pageContext.request.contextPath}/location">
+    <form:form class="col s12" method="POST" modelAttribute="formVacancy" action="${myVacancy}/add">
         <form:input path="id" type="hidden" />
 
         <div class="input-field col s12">
-            <form:input path="jobTitle" type="text" disabled="${readonly}"/>
+            <form:input path="jobTitle" type="text" required="required" disabled="${readonly}" />
             <form:errors path="jobTitle" cssClass="red-text"/>
             <label for="jobTitle">Job title</label>
         </div>
 
         <div class="row">
             <div class="input-field col s12">
-                <form:select path="regionId" cssClass="browser-default" />
-                <label for="regionId">Region</label>
+                <form:select path="regionId" cssClass="browser-default" required="required" disabled="${readonly}"/>
             </div>
         </div>
 
         <div class="row">
             <div class="input-field col s12">
-                <form:select path="countryId" cssClass="browser-default" />
-                <label for="countryId">Country</label>
+                <form:select path="countryId" cssClass="browser-default" required="required" disabled="${readonly}"/>
             </div>
         </div>
 
         <div class="row">
             <div class="input-field col s12">
-                <form:select path="cityId" cssClass="browser-default" />
-                <label for="cityId">City</label>
+                <form:select path="cityId" cssClass="browser-default" required="required" disabled="${readonly}"/>
             </div>
         </div>
 
         <div class="row">
             <div class="input-field col s6">
-                <form:input path="address" type="text" disabled="${readonly}"/>
+                <form:input path="address" type="text" required="required" disabled="${readonly}"/>
                 <form:errors path="address" cssClass="red-text"/>
                 <label for="address">Address</label>
             </div>
             <div class="input-field col s6">
-                <form:input path="companyName" type="text" disabled="${readonly}"/>
+                <form:input path="companyName" type="text" required="required" disabled="${readonly}"/>
                 <form:errors path="companyName" cssClass="red-text"/>
                 <label for="companyName">Company</label>
             </div>
@@ -51,7 +48,7 @@
 
         <div class="row">
             <div class="input-field col s12">
-                <form:input path="contactInfo" type="text" disabled="${readonly}"/>
+                <form:input path="contactInfo" type="text" required="required" disabled="${readonly}"/>
                 <form:errors path="contactInfo" cssClass="red-text"/>
                 <label for="contactInfo">Contact info</label>
             </div>
@@ -59,7 +56,7 @@
 
         <div class="row">
             <div class="input-field col s12">
-                <form:textarea path="description" type="textarea" disabled="${readonly}"/>
+                <form:textarea path="description" type="textarea" required="required" disabled="${readonly}"/>
                 <form:errors path="description" cssClass="red-text"/>
                 <label for="description">Description</label>
             </div>

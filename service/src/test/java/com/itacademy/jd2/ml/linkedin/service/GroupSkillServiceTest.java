@@ -10,9 +10,7 @@ public class GroupSkillServiceTest extends AbstractTest {
     @Test
     public void testCreate() {
 
-        final IGroupSkill entity = groupService.createEntity();
-        entity.setName("group-" + getRandomPrefix());
-        groupService.save(entity);
+        final IGroupSkill entity = saveNewGroup();
 
         final IGroupSkill entityFromDb = groupService.get(entity.getId());
 

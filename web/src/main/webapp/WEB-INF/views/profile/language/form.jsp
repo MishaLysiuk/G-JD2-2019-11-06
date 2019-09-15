@@ -10,14 +10,14 @@
         <div class="row">
             <form:input path="id" type="hidden" />
             <div class="input-field col s6">
-                <form:select path="languageId" disabled="${readonly}">
+                <form:select path="languageId" required="required" disabled="${readonly}">
                     <form:options items="${languagesChoices}"/>
                 </form:select>
                 <form:errors path="languageId" cssClass="red-text" />
                 <label for="languageId">Language</label>
             </div>
             <div class="input-field col s6">
-                <form:select path="levelId" disabled="${readonly}">
+                <form:select path="levelId" required="required" disabled="${readonly}">
                     <form:options items="${levels}"/>
                 </form:select>
                 <form:errors path="levelId" cssClass="red-text" />

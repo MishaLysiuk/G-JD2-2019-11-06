@@ -9,16 +9,19 @@ public class CityServiceTest extends AbstractTest {
 
     @Test
     public void testCreate() {
-        final ICity entity = saveNewCity();
+        for (int i = 0; i < 1; i++) {
 
-        final ICity entityFromDb = cityService.get(entity.getId());
+            final ICity entity = saveNewCity();
 
-        assertNotNull(entityFromDb);
-        assertEquals(entity.getName(), entityFromDb.getName());
-        assertNotNull(entityFromDb.getId());
-        assertNotNull(entityFromDb.getCreated());
-        assertNotNull(entityFromDb.getUpdated());
-        assertTrue(entityFromDb.getCreated().equals(entityFromDb.getUpdated()));
+            final ICity entityFromDb = cityService.get(entity.getId());
+
+            assertNotNull(entityFromDb);
+            assertEquals(entity.getName(), entityFromDb.getName());
+            assertNotNull(entityFromDb.getId());
+            assertNotNull(entityFromDb.getCreated());
+            assertNotNull(entityFromDb.getUpdated());
+            assertTrue(entityFromDb.getCreated().equals(entityFromDb.getUpdated()));
+        }
     }
-    
+
 }

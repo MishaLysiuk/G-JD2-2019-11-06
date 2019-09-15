@@ -10,7 +10,7 @@ public class DegreeServiceTest extends AbstractTest {
     @Test
     public void testCreate() {
         IDegree entity = degreeService.createEntity();
-        entity.setName("Doctor");
+        entity.setName("degree" + getRandomPrefix());
         degreeService.save(entity);
 
         IDegree entityFromDb = degreeService.get(entity.getId());

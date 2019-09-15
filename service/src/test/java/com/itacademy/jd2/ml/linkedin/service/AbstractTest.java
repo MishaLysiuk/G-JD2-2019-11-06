@@ -36,7 +36,8 @@ public abstract class AbstractTest {
     protected ILanguageService languageService;
     @Autowired
     protected ISpecialityService specialityService;
-    @Autowired IDegreeService degreeService;
+    @Autowired
+    IDegreeService degreeService;
     @Autowired
     protected ILanguageLevelService levelService;
 
@@ -81,23 +82,22 @@ public abstract class AbstractTest {
 
     protected ILanguage saveNewLanguage() {
         final ILanguage entity = languageService.createEntity();
-        entity.setName("Japanese");
+        entity.setName("language-" + getRandomPrefix());
         languageService.save(entity);
         return entity;
     }
 
     protected IGroupSkill saveNewGroup() {
         final IGroupSkill entity = groupService.createEntity();
-        entity.setName("name-" + getRandomPrefix());
+        entity.setName("group" + getRandomPrefix());
         groupService.save(entity);
         return entity;
     }
 
     protected ICity saveNewCity() {
         final ICity entity = cityService.createEntity();
-        entity.setName("Melbourne");
-        ICountry country = countryService.createEntity();
-        country.setId(18);
+        entity.setName("city" + getRandomPrefix());
+        ICountry country = saveNewCountry();
         entity.setCountry(country);
         cityService.save(entity);
         return entity;
@@ -105,9 +105,8 @@ public abstract class AbstractTest {
 
     protected ICountry saveNewCountry() {
         final ICountry entity = countryService.createEntity();
-        entity.setName("Australia");
-        IRegion region = regionService.createEntity();
-        region.setId(6);
+        entity.setName("country" + getRandomPrefix());
+        IRegion region = saveNewRegion();
         entity.setRegion(region);
         countryService.save(entity);
         return entity;
@@ -115,7 +114,7 @@ public abstract class AbstractTest {
 
     protected IRegion saveNewRegion() {
         final IRegion entity = regionService.createEntity();
-        entity.setName("Australia");
+        entity.setName("region" + getRandomPrefix());
         regionService.save(entity);
         return entity;
     }

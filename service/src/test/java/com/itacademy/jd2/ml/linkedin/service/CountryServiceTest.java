@@ -22,5 +22,5 @@ public class CountryServiceTest extends AbstractTest {
         assertNotNull(entityFromDb.getUpdated());
         assertTrue(entityFromDb.getCreated().equals(entityFromDb.getUpdated()));
     }
-    
+
 }

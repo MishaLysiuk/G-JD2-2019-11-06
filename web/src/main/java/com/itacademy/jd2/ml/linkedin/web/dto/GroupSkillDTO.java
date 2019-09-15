@@ -1,6 +1,6 @@
 package com.itacademy.jd2.ml.linkedin.web.dto;
 
-public class CountryDTO {
+public class GroupSkillDTO {
 
     private Integer id;
     private String name;
