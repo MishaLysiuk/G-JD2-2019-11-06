@@ -27,6 +27,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.*;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 @Controller
@@ -65,7 +66,8 @@ public class SkillController extends AbstractController {
 
         IUserAccount loggedUser = userAccountService.getFullInfo(AuthHelper.getLoggedUserId());
 
-        Set<ISkill> skills = loggedUser.getSkills();
+        Set<ISkill> skills = loggedUser.getSkills()
+                .stream().map(iSkill -> skillService.getFullInfo(iSkill.getId())).collect(Collectors.toSet());
 
         List<SkillDTO> skillsDTO = skills.stream().map(toDTOConverter).collect(Collectors.toList());
 
@@ -103,7 +105,14 @@ public class SkillController extends AbstractController {
 
     @RequestMapping(value = "/{id}/delete", method = RequestMethod.GET)
     public String delete(@PathVariable(name = "id", required = true) final Integer id) {
-        skillService.delete(id);
+        /*Predicate<ISkill> isEquels = iSkill -> iSkill.getId() == id;*/
+        ISkill entity = skillService.createEntity();
+        entity.setId(id);
+        IUserAccount loggedUser = userAccountService.getFullInfo(AuthHelper.getLoggedUserId());
+        Set<ISkill> skills = loggedUser.getSkills();
+        skills.removeIf(iSkill -> iSkill.getId() == id);
+        loggedUser.setSkills(skills);
+        userAccountService.save(loggedUser);
         return "redirect:/skill";
     }
 

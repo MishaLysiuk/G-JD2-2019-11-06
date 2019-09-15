@@ -9,6 +9,7 @@ import com.itacademy.jd2.ml.linkedin.entity.table.IEducation;
 import com.itacademy.jd2.ml.linkedin.entity.table.ISpeciality;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 import com.itacademy.jd2.ml.linkedin.filter.EducationFilter;
+import com.itacademy.jd2.ml.linkedin.impl.EducationServiceImpl;
 import com.itacademy.jd2.ml.linkedin.web.converter.fromDTO.EducationFromDTOConverter;
 import com.itacademy.jd2.ml.linkedin.web.converter.toDTO.EducationToDTOConverter;
 import com.itacademy.jd2.ml.linkedin.web.dto.EducationDTO;
@@ -59,7 +60,8 @@ public class EducationController extends AbstractController {
 
         IUserAccount loggedUser = userAccountService.getFullInfo(AuthHelper.getLoggedUserId());
 
-        Set<IEducation> educations = loggedUser.getEducations();
+        Set<IEducation> educations = loggedUser.getEducations()
+                .stream().map(iEducation -> educationService.getFullInfo(iEducation.getId())).collect(Collectors.toSet());
 
         List<EducationDTO> educationsDTO = educations.stream().map(toDTOConverter).collect(Collectors.toList());
 

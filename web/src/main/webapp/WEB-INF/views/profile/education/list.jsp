@@ -22,7 +22,7 @@
             <td class="right"><a class="btn-floating" href="${education}/${item.id}"><i
                     class="material-icons">info</i></a> <a
                     class="btn-floating" href="${education}/${item.id}/edit"><i class="material-icons">edit</i></a> <a
-                    class="btn-floating red disabled" href="${education}/${item.id}/delete"><i class="material-icons">delete</i></a>
+                    class="btn-floating red" href="${education}/${item.id}/delete"><i class="material-icons">delete</i></a>
             </td>
         </tr>
     </c:forEach>

@@ -58,7 +58,8 @@ public class CourseController extends AbstractController {
 
         IUserAccount loggedUser = userAccountService.getFullInfo(AuthHelper.getLoggedUserId());
 
-        Set<ICourse> courses = loggedUser.getCourses();
+        Set<ICourse> courses = loggedUser.getCourses()
+                .stream().map(iCourse -> courseService.getFullInfo(iCourse.getId())).collect(Collectors.toSet());
 
         List<CourseDTO> coursesDTO = courses.stream().map(toDTOConverter).collect(Collectors.toList());
 

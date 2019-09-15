@@ -28,13 +28,9 @@ public class UserAccountDaoImpl extends AbstractDaoImpl<IUserAccount, Integer> i
     public List<IUserAccount> find(UserAccountFilter filter) {
         final EntityManager em = getEntityManager();
         final CriteriaBuilder cb = em.getCriteriaBuilder();
-        final CriteriaQuery<IUserAccount> cq = cb.createQuery(IUserAccount.class); // define
-        // type
-        // of
-        // result
-        final Root<UserAccount> from = cq.from(UserAccount.class);// select from UserAccount
-        cq.select(from); // select what? select *
-
+        final CriteriaQuery<IUserAccount> cq = cb.createQuery(IUserAccount.class);
+        final Root<UserAccount> from = cq.from(UserAccount.class);
+        cq.select(from);
 
         from.fetch(UserAccount_.motherTongue, JoinType.LEFT);
 

@@ -30,6 +30,10 @@ public class VacancyDaoImpl extends AbstractDaoImpl<IVacancy,Integer> implements
         final Root<Vacancy> from = cq.from(Vacancy.class);// select from Vacancy
         cq.select(from); // select what? select *
 
+        from.fetch(Vacancy_.creator, JoinType.LEFT);
+        from.fetch(Vacancy_.company, JoinType.LEFT);
+        from.fetch(Vacancy_.city, JoinType.LEFT);
+
         if (filter.getSortColumn() != null) {
             final SingularAttribute<? super Vacancy, ?> sortProperty = toMetamodelFormat(
                     filter.getSortColumn());

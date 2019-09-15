@@ -55,6 +55,7 @@ public class EducationDaoImpl extends AbstractDaoImpl<IEducation, Integer> imple
 
         from.fetch(Education_.speciality, JoinType.LEFT);
         from.fetch(Education_.degree, JoinType.LEFT);
+        from.fetch(Education_.city, JoinType.LEFT);
 
         // .. where id=...
         cq.where(cb.equal(from.get(Education_.id), id)); // where id=?

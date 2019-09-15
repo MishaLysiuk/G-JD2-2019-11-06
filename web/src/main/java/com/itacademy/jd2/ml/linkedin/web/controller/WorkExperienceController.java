@@ -56,7 +56,8 @@ public class WorkExperienceController extends AbstractController {
 
         IUserAccount loggedUser = userAccountService.getFullInfo(AuthHelper.getLoggedUserId());
 
-        Set<IWorkExperience> workExperience = loggedUser.getWorkExperiences();
+        Set<IWorkExperience> workExperience = loggedUser.getWorkExperiences()
+                .stream().map(iWorkExperience -> workExperienceService.getFullInfo(iWorkExperience.getId())).collect(Collectors.toSet());
 
         List<WorkExperienceDTO> workExperienceDTO = workExperience.stream().map(toDTOConverter).collect(Collectors.toList());
 

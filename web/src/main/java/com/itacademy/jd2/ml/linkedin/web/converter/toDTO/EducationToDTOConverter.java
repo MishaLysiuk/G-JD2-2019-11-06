@@ -33,11 +33,11 @@ public class EducationToDTOConverter implements Function<IEducation, EducationDT
             ICity city = entity.getCity();
             dto.setCityId(city.getId());
 
-            ICountry country = city.getCountry();
+            /*ICountry country = city.getCountry();
             dto.setCountryId(country.getId());
 
             IRegion region = country.getRegion();
-            dto.setRegionId(region.getId());
+            dto.setRegionId(region.getId());*/
         }
 
         return dto;
