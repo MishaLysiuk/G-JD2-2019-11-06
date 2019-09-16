@@ -2,20 +2,19 @@
     <div class="container ">
         <div class="row">
             <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                <a target="_blank" href="${contextPath}/images/database.png"><h5 class="white-text">Database</h5></a>
             </div>
-            <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                    <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                </ul>
+            <div class="col l6 s12">
+                <a target="_blank" href="${contextPath}/images/users.txt"><h5 class="white-text">Users</h5></a>
             </div>
         </div>
     </div>
     <div class="footer-copyright blue darken-4">
         <div class="container">
-            2018 Copyright Text <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            2019 Copyright. All rights reserved.
+            <a class="grey-text text-lighten-4 right" target="_blank" href="https://www.instagram.com"><i class="small material-icons">photo_camera</i></a>
+            <a class="grey-text text-lighten-4 right" target="_blank" href="https://www.gmail.com"><i class="small material-icons">email</i></a>
+            <a class="grey-text text-lighten-4 right" target="_blank" href="https://www.youtube.com"><i class="small material-icons">play_circle_filled</i></a>
         </div>
     </div>
 </footer>

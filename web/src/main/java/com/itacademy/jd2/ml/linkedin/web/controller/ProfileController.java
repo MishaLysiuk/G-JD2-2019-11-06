@@ -6,6 +6,7 @@ import com.itacademy.jd2.ml.linkedin.entity.table.ILanguage;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 import com.itacademy.jd2.ml.linkedin.web.converter.fromDTO.UserAccountFromDTOConverter;
 import com.itacademy.jd2.ml.linkedin.web.converter.toDTO.UserAccountToDTOConverter;
+import com.itacademy.jd2.ml.linkedin.web.dto.PasswordDTO;
 import com.itacademy.jd2.ml.linkedin.web.dto.UserAccountDTO;
 import com.itacademy.jd2.ml.linkedin.web.security.AuthHelper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
@@ -58,6 +60,40 @@ public class ProfileController extends AbstractController {
         loadLanguages(hashMap);
         hashMap.put("readonly", false);
         return new ModelAndView("profile", hashMap);
+    }
+
+    @RequestMapping(value = "/password", method = RequestMethod.GET)
+    public ModelAndView changePassword() {
+
+        Map<String, Object> hashMap = new HashMap<>();
+
+        hashMap.put("passwordDTO", new PasswordDTO());
+
+        return new ModelAndView("password", hashMap);
+    }
+
+    @RequestMapping(value = "/password", method = RequestMethod.POST)
+    public Object saveNewPassword(@Valid @ModelAttribute("passwordDTO") PasswordDTO passwordDTO, final BindingResult result) {
+
+        if (result.hasErrors()) {
+            return "profile.work-experience.form";
+        } else {
+
+            Map<String, Object> hashMap = new HashMap<>();
+
+            IUserAccount loggedUser = userAccountService.get(AuthHelper.getLoggedUserId());
+
+            String userPassword = loggedUser.getPassword();
+
+            if (userAccountService.checkPassword(userPassword, passwordDTO.getOldPassword(), passwordDTO.getNewPassword(), passwordDTO.getConfirmPassword())) {
+                loggedUser.setPassword(passwordDTO.getNewPassword());
+                userAccountService.save(loggedUser);
+                return "redirect:/profile";
+            } else {
+                hashMap.put("error", "Invalid password");
+                return new ModelAndView("password", hashMap);
+            }
+        }
     }
 
     @RequestMapping(method = RequestMethod.POST)

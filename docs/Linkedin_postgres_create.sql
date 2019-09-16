@@ -3,11 +3,11 @@ CREATE TABLE "course"
     "id"           serial                      NOT NULL,
     "name"         VARCHAR(255)                NOT NULL UNIQUE,
     "company_id"   integer                     NOT NULL,
-    "start_date"   TIMESTAMP without time zone NOT NULL,
-    "end_date"     TIMESTAMP without time zone NOT NULL,
+    "start_date"   timestamp without time zone NOT NULL,
+    "end_date"     timestamp without time zone NOT NULL,
     "final_result" integer,
-    "created"      TIMESTAMP without time zone NOT NULL,
-    "updated"      TIMESTAMP without time zone NOT NULL,
+    "created"      timestamp without time zone NOT NULL,
+    "updated"      timestamp without time zone NOT NULL,
     CONSTRAINT "course_pk" PRIMARY KEY ("id")
 ) WITH (
       OIDS= FALSE
@@ -19,8 +19,8 @@ CREATE TABLE "language"
 (
     "id"      serial                      NOT NULL,
     "name"    VARCHAR(255)                NOT NULL,
-    "created" TIMESTAMP without time zone NOT NULL,
-    "updated" TIMESTAMP without time zone NOT NULL,
+    "created" timestamp without time zone NOT NULL,
+    "updated" timestamp without time zone NOT NULL,
     CONSTRAINT "language_pk" PRIMARY KEY ("id")
 ) WITH (
       OIDS= FALSE
@@ -34,8 +34,8 @@ CREATE TABLE "user_language"
     "language_id" integer                     NOT NULL,
     "level_id"    integer                     NOT NULL,
     "user_id"     integer                     NOT NULL,
-    "created"     TIMESTAMP without time zone NOT NULL,
-    "updated"     TIMESTAMP without time zone NOT NULL,
+    "created"     timestamp without time zone NOT NULL,
+    "updated"     timestamp without time zone NOT NULL,
     CONSTRAINT "user_language_pk" PRIMARY KEY ("id")
 ) WITH (
       OIDS= FALSE
@@ -52,11 +52,11 @@ CREATE TABLE "user_account"
     "first_name"       VARCHAR(255)                NOT NULL,
     "last_name"        VARCHAR(255),
     "job_title"        VARCHAR(255),
-    "birthday"         TIMESTAMP without time zone,
+    "birthday"         timestamp without time zone,
     "contact_info"     VARCHAR(255),
     "mother_tongue_id" integer,
-    "created"          TIMESTAMP without time zone NOT NULL,
-    "updated"          TIMESTAMP without time zone NOT NULL,
+    "created"          timestamp without time zone NOT NULL,
+    "updated"          timestamp without time zone NOT NULL,
     CONSTRAINT "user_account_pk" PRIMARY KEY ("id")
 ) WITH (
       OIDS= FALSE
@@ -69,8 +69,8 @@ CREATE TABLE "skill"
     "id"       serial                      NOT NULL,
     "name"     VARCHAR(255)                NOT NULL UNIQUE,
     "group_id" integer                     NOT NULL,
-    "created"  TIMESTAMP without time zone NOT NULL,
-    "updated"  TIMESTAMP without time zone NOT NULL,
+    "created"  timestamp without time zone NOT NULL,
+    "updated"  timestamp without time zone NOT NULL,
     CONSTRAINT "skill_pk" PRIMARY KEY ("id")
 ) WITH (
       OIDS= FALSE
@@ -82,8 +82,8 @@ CREATE TABLE "group_skill"
 (
     "id"      serial                      NOT NULL,
     "name"    VARCHAR(255)                NOT NULL,
-    "created" TIMESTAMP without time zone NOT NULL,
-    "updated" TIMESTAMP without time zone NOT NULL,
+    "created" timestamp without time zone NOT NULL,
+    "updated" timestamp without time zone NOT NULL,
     CONSTRAINT "group_skill_pk" PRIMARY KEY ("id")
 ) WITH (
       OIDS= FALSE
@@ -95,8 +95,8 @@ CREATE TABLE "company"
 (
     "id"      serial                      NOT NULL,
     "name"    VARCHAR(255)                NOT NULL,
-    "created" TIMESTAMP without time zone NOT NULL,
-    "updated" TIMESTAMP without time zone NOT NULL,
+    "created" timestamp without time zone NOT NULL,
+    "updated" timestamp without time zone NOT NULL,
     CONSTRAINT "company_pk" PRIMARY KEY ("id")
 ) WITH (
       OIDS= FALSE
@@ -108,14 +108,14 @@ CREATE TABLE "education"
 (
     "id"            serial                      NOT NULL,
     "university"    VARCHAR(255)                NOT NULL,
-    "start_date"    TIMESTAMP without time zone NOT NULL,
-    "end_date"      TIMESTAMP without time zone NOT NULL,
+    "start_date"    timestamp without time zone NOT NULL,
+    "end_date"      timestamp without time zone NOT NULL,
     "speciality_id" integer                     NOT NULL,
     "degree_id"     integer,
     "address"       VARCHAR(255)                NOT NULL,
     "city_id"       integer                     NOT NULL,
-    "created"       TIMESTAMP without time zone NOT NULL,
-    "updated"       TIMESTAMP without time zone NOT NULL,
+    "created"       timestamp without time zone NOT NULL,
+    "updated"       timestamp without time zone NOT NULL,
     CONSTRAINT "education_pk" PRIMARY KEY ("id")
 ) WITH (
       OIDS= FALSE
@@ -126,15 +126,15 @@ CREATE TABLE "education"
 CREATE TABLE "vacancy"
 (
     "id"           serial                      NOT NULL,
-    "creator_id"   integer                     NOT NULL UNIQUE,
-    "job_title"    VARCHAR(255)                NOT NULL UNIQUE,
+    "creator_id"   integer                     NOT NULL,
+    "job_title"    VARCHAR(255)                NOT NULL,
     "company_id"   integer                     NOT NULL,
     "address"      VARCHAR(255)                NOT NULL,
     "city_id"      integer                     NOT NULL,
     "description"  VARCHAR(255),
     "contact_info" VARCHAR(255)                NOT NULL,
-    "created"      TIMESTAMP without time zone NOT NULL,
-    "updated"      TIMESTAMP without time zone NOT NULL,
+    "created"      timestamp without time zone NOT NULL,
+    "updated"      timestamp without time zone NOT NULL,
     CONSTRAINT "vacancy_pk" PRIMARY KEY ("id")
 ) WITH (
       OIDS= FALSE
@@ -146,13 +146,13 @@ CREATE TABLE "work_experience"
 (
     "id"         serial                      NOT NULL,
     "job_title"  VARCHAR(255)                NOT NULL,
-    "start_date" TIMESTAMP without time zone NOT NULL,
-    "end_date"   TIMESTAMP without time zone NOT NULL,
+    "start_date" timestamp without time zone NOT NULL,
+    "end_date"   timestamp without time zone NOT NULL,
     "address"    VARCHAR(255)                NOT NULL,
     "city_id"    integer                     NOT NULL,
     "company_id" integer                     NOT NULL,
-    "created"    TIMESTAMP without time zone NOT NULL,
-    "updated"    TIMESTAMP without time zone NOT NULL,
+    "created"    timestamp without time zone NOT NULL,
+    "updated"    timestamp without time zone NOT NULL,
     CONSTRAINT "work_experience_pk" PRIMARY KEY ("id")
 ) WITH (
       OIDS= FALSE
@@ -165,8 +165,8 @@ CREATE TABLE "city"
     "id"         serial                      NOT NULL,
     "name"       VARCHAR(255)                NOT NULL,
     "country_id" integer                     NOT NULL,
-    "created"    TIMESTAMP without time zone NOT NULL,
-    "updated"    TIMESTAMP without time zone NOT NULL,
+    "created"    timestamp without time zone NOT NULL,
+    "updated"    timestamp without time zone NOT NULL,
     CONSTRAINT "city_pk" PRIMARY KEY ("id")
 ) WITH (
       OIDS= FALSE
@@ -179,8 +179,8 @@ CREATE TABLE "country"
     "id"        serial                      NOT NULL,
     "name"      VARCHAR(255)                NOT NULL,
     "region_id" integer                     NOT NULL,
-    "created"   TIMESTAMP without time zone NOT NULL,
-    "updated"   TIMESTAMP without time zone NOT NULL,
+    "created"   timestamp without time zone NOT NULL,
+    "updated"   timestamp without time zone NOT NULL,
     CONSTRAINT "country_pk" PRIMARY KEY ("id")
 ) WITH (
       OIDS= FALSE
@@ -192,8 +192,8 @@ CREATE TABLE "region"
 (
     "id"      serial                      NOT NULL,
     "name"    VARCHAR(255)                NOT NULL,
-    "created" TIMESTAMP without time zone NOT NULL,
-    "updated" TIMESTAMP without time zone NOT NULL,
+    "created" timestamp without time zone NOT NULL,
+    "updated" timestamp without time zone NOT NULL,
     CONSTRAINT "region_pk" PRIMARY KEY ("id")
 ) WITH (
       OIDS= FALSE
@@ -206,8 +206,8 @@ CREATE TABLE "language_level"
     "id"       serial                      NOT NULL,
     "name"     VARCHAR(255)                NOT NULL UNIQUE,
     "priority" integer                     NOT NULL UNIQUE,
-    "created"  TIMESTAMP without time zone NOT NULL,
-    "updated"  TIMESTAMP without time zone NOT NULL,
+    "created"  timestamp without time zone NOT NULL,
+    "updated"  timestamp without time zone NOT NULL,
     CONSTRAINT "language_level_pk" PRIMARY KEY ("id")
 ) WITH (
       OIDS= FALSE
@@ -257,10 +257,10 @@ CREATE TABLE "skill_2_user"
 
 CREATE TABLE "speciality"
 (
-    "id"      serial       NOT NULL,
-    "name"    VARCHAR(255) NOT NULL UNIQUE,
-    "created" DATE         NOT NULL,
-    "updated" DATE         NOT NULL,
+    "id"      serial                      NOT NULL,
+    "name"    VARCHAR(255)                NOT NULL UNIQUE,
+    "created" timestamp without time zone NOT NULL,
+    "updated" timestamp without time zone NOT NULL,
     CONSTRAINT "speciality_pk" PRIMARY KEY ("id")
 ) WITH (
       OIDS= FALSE
@@ -270,10 +270,10 @@ CREATE TABLE "speciality"
 
 CREATE TABLE "degree"
 (
-    "id"      serial       NOT NULL,
-    "name"    VARCHAR(255) NOT NULL UNIQUE,
-    "created" DATE         NOT NULL,
-    "updated" DATE         NOT NULL,
+    "id"      serial                      NOT NULL,
+    "name"    VARCHAR(255)                NOT NULL UNIQUE,
+    "created" timestamp without time zone NOT NULL,
+    "updated" timestamp without time zone NOT NULL,
     CONSTRAINT "degree_pk" PRIMARY KEY ("id")
 ) WITH (
       OIDS= FALSE

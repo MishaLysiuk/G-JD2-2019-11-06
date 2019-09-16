@@ -37,4 +37,6 @@ public interface IUserAccountService {
     IUserAccount findByEmail(String email);
 
     IUserAccount getUserCourses(Integer id);
+
+    boolean checkPassword(String userPassword, String oldPassword, String newPassword, String confirmPassword);
 }

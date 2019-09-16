@@ -102,6 +102,14 @@
         <put-attribute name="body" value="/WEB-INF/views/registration.jsp"/>
     </definition>
 
+    <definition name="password" extends="DefaultTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/profile/password.jsp"/>
+    </definition>
+
+    <definition name="database">
+        <put-attribute name="body" value="/WEB-INF/views/database.jsp"/>
+    </definition>
+
     <definition name="errors.401" extends="DefaultTemplate">
         <put-attribute name="body" value="/WEB-INF/views/errors/401.jsp"/>
     </definition>

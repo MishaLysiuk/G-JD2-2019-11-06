@@ -5,7 +5,12 @@
 <%@ taglib prefix="mytaglib" uri="my-custom-tags-uri" %>
 
 
-<h4 class="header">Languages</h4>
+<div class="row ">
+    <div class="col s6 offset-s3">
+        <h1>Language</h1>
+    </div>
+</div>
+
 <table class="bordered highlight">
     <tbody>
     <tr>
@@ -26,4 +31,4 @@
     </tbody>
 </table>
 <jspFragments:paging/>
-<a class="waves-effect waves-light btn right" href="${language}/add">Add new language</a>
+<a class="waves-effect waves-light btn right blue darken-2" href="${language}/add">Add new language</a>

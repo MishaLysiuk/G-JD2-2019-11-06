@@ -15,18 +15,30 @@
 <header>
     <nav>
         <div class="nav-wrapper blue darken-2">
-            <a href="#" class="brand-logo">FindDreamJob</a>
+            <a href="${profile}/" class="brand-logo left">FindDreamJob<i class="material-icons right">brightness_3</i></a>
             <ul class="right hide-on-med-and-down">
                 <sec:authorize access="hasRole('USER')">
-                    <li><a href="${profile}/"><spring:message code="header.myAccount"></spring:message></a></li>
-                    <li><a href="${education}/"><spring:message code="header.education"></spring:message></a></li>
-                    <li><a href="${language}/"><spring:message code="header.language"></spring:message></a></li>
-                    <li><a href="${workExperience}/"><spring:message code="header.workExperience"></spring:message></a></li>
-                    <li><a href="${course}/"><spring:message code="header.course"></spring:message></a></li>
-                    <li><a href="${skill}/"><spring:message code="header.skill"></spring:message></a></li>
-                    <li><a href="${worker}"><spring:message code="header.workers"></spring:message></a></li>
-                    <li><a href="${findVacancy}"><spring:message code="header.findVacancy"></spring:message></a></li>
-                    <li><a href="${myVacancy}"><spring:message code="header.myVacancy"></spring:message></a></li>
+                    <li><a href="${profile}/"><spring:message code="header.myAccount"></spring:message><i class="material-icons left">account_box</i></a></li>
+                    <ul id="additional" class="dropdown-content">
+                        <li><a href="${education}/"><spring:message code="header.education"></spring:message></a></li>
+                        <li><a href="${language}/"><spring:message code="header.language"></spring:message></a></li>
+                        <li><a href="${workExperience}/"><spring:message
+                                code="header.workExperience"></spring:message></a></li>
+                        <li><a href="${course}/"><spring:message code="header.course"></spring:message></a></li>
+                        <li><a href="${skill}/"><spring:message code="header.skill"></spring:message></a></li>
+                    </ul>
+                    <li><a class="dropdown-trigger" href="#!" data-target="additional"><spring:message code="header.moreInformation"></spring:message><i
+                            class="material-icons left">apps</i></a></li>
+
+                    <ul id="search" class="dropdown-content">
+                        <li><a href="${worker}"><spring:message code="header.workers"></spring:message></a></li>
+                        <li><a href="${findVacancy}"><spring:message code="header.findVacancy"></spring:message></a></li>
+                    </ul>
+                    <li><a class="dropdown-trigger" href="#!" data-target="search"><spring:message code="header.search"></spring:message><i
+                            class="material-icons left">search</i></a></li>
+
+                    <li><a href="${myVacancy}"><spring:message code="header.myVacancy"></spring:message><i
+                            class="material-icons left">work</i></a></li>
                 </sec:authorize>
 
                 <sec:authorize access="hasRole('ADMIN')">

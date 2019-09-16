@@ -4,6 +4,7 @@
     <entry key="page.home.title">Home Page</entry>
     <entry key="page.home.welcomeMessage">Hello, {0}</entry>
     <entry key="page.login.credentialsError">Invalid username and password!</entry>
+    <entry key="profile.password.error">Incorrect password</entry>
     <entry key="header.myAccount">My account</entry>
     <entry key="header.education">Education</entry>
     <entry key="header.language">Foreign languages</entry>
@@ -11,7 +12,9 @@
     <entry key="header.course">Course</entry>
     <entry key="header.skill">Skills</entry>
     <entry key="header.workers">Workers</entry>
-    <entry key="header.findVacancy">Job search</entry>
+    <entry key="header.findVacancy">Jobs</entry>
     <entry key="header.myVacancy">My vacancies</entry>
+    <entry key="header.moreInformation">More information</entry>
+    <entry key="header.search">Search</entry>
 
 </properties>

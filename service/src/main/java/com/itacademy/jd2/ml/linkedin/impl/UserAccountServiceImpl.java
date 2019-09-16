@@ -90,13 +90,24 @@ public class UserAccountServiceImpl implements IUserAccountService {
     }
 
     @Override
+    public boolean checkPassword(String userPassword, String oldPassword, String newPassword, String confirmPassword) {
+        if (userPassword.equals(oldPassword)) {
+            if (newPassword.equals(confirmPassword)) {
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
+
+    @Override
     public IUserAccount getUserEducations(Integer id) {
         final IUserAccount entity = dao.getUserEducation(id);
         return entity;
     }
 
     @Override
-    public IUserAccount findByEmail(String email){
+    public IUserAccount findByEmail(String email) {
         final IUserAccount entity = dao.findByEmail(email);
         return entity;
     }

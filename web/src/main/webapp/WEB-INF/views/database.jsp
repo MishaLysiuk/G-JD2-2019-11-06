@@ -1,0 +1,1 @@
+<img src="images/database.png" width="100%">

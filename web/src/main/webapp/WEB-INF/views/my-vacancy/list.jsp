@@ -3,7 +3,12 @@
 <%@ taglib prefix="mytaglib" uri="my-custom-tags-uri" %>
 <%@ taglib prefix="jspFragments" tagdir="/WEB-INF/tags" %>
 
-<h4 class="header">My vacancies</h4>
+<div class="row ">
+    <div class="col s6 offset-s3">
+        <h1>My vacancies</h1>
+    </div>
+</div>
+
 <table class="stripped highlight ">
     <tbody>
     <tr>

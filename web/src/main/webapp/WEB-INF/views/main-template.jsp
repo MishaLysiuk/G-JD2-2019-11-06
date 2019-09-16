@@ -10,6 +10,7 @@
 <c:set var="worker" value="${contextPath}/worker" scope="request"/>
 <c:set var="findVacancy" value="${contextPath}/findvacancy" scope="request"/>
 <c:set var="myVacancy" value="${contextPath}/myvacancy" scope="request"/>
+<c:set var="database" value="${contextPath}/footer/database.png" scope="request"/>
 
 
 <html xmlns="http://www.w3.org/1999/xhtml">

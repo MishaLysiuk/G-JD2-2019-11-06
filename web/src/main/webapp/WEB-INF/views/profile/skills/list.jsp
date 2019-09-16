@@ -5,7 +5,11 @@
 <%@ taglib prefix="mytaglib" uri="my-custom-tags-uri" %>
 
 
-<h4 class="header">Skills</h4>
+<div class="row ">
+    <div class="col s6 offset-s4">
+        <h1>Skills</h1>
+    </div>
+</div>
 <table class="bordered highlight">
     <tbody>
     <tr>
@@ -25,4 +29,4 @@
     </tbody>
 </table>
 <jspFragments:paging/>
-<a class="waves-effect waves-light btn right" href="${skill}/add">Add new skill</a>
+<a class="waves-effect waves-light btn right blue darken-2" href="${skill}/add">Add new skill</a>

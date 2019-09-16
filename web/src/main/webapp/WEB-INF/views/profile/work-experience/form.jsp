@@ -1,9 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<div class="row s12">
-    <h1>Work Experience</h1>
+<div class="row ">
+    <div class="col s6 offset-s3">
+        <h1>Work experience</h1>
+    </div>
 </div>
+
 <div class="row">
     <form:form class="col s12" method="post" action="${workExperience}/add" modelAttribute="workExperience">
         <div class="row">
@@ -56,11 +59,11 @@
             <div class="col s6"></div>
             <div class="col s3">
                 <c:if test="${!readonly}">
-                    <button class="btn waves-effect waves-light right" type="submit">Save</button>
+                    <button class="btn waves-effect waves-light right blue darken-2" type="submit">Save</button>
                 </c:if>
             </div>
             <div class="col s3">
-                <a class="btn waves-effect waves-light right" href="${workExperience}">Back<i class="material-icons right"></i>
+                <a class="btn waves-effect waves-light right blue darken-2" href="${workExperience}">Back<i class="material-icons right"></i>
                 </a>
             </div>
         </div>

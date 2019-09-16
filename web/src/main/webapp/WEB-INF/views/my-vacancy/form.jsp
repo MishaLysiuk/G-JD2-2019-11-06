@@ -1,8 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<div class="row s12">
-    <h1>New vacancy</h1>
+<div class="row ">
+    <div class="col s6 offset-s3">
+        <h1>Vacancy</h1>
+    </div>
 </div>
 
 <div class="row">
