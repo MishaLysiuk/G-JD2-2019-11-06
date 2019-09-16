@@ -5,17 +5,17 @@ import org.hibernate.validator.constraints.Length;
 public class PasswordDTO {
 
     @Length.List({
-            @Length(min = 5, message = "The field must be at least 5 characters"),
+            @Length(min = 4, message = "The field must be at least 4 characters"),
             @Length(max = 20, message = "The field must be less than 20 characters")
     })
     private String oldPassword;
     @Length.List({
-            @Length(min = 5, message = "The field must be at least 5 characters"),
+            @Length(min = 4, message = "The field must be at least 4 characters"),
             @Length(max = 20, message = "The field must be less than 20 characters")
     })
     private String newPassword;
     @Length.List({
-            @Length(min = 5, message = "The field must be at least 5 characters"),
+            @Length(min = 4, message = "The field must be at least 4 characters"),
             @Length(max = 20, message = "The field must be less than 20 characters")
     })
     private String confirmPassword;

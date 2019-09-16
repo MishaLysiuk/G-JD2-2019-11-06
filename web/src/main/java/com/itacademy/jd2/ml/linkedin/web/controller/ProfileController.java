@@ -76,7 +76,7 @@ public class ProfileController extends AbstractController {
     public Object saveNewPassword(@Valid @ModelAttribute("passwordDTO") PasswordDTO passwordDTO, final BindingResult result) {
 
         if (result.hasErrors()) {
-            return "profile.work-experience.form";
+            return "password";
         } else {
 
             Map<String, Object> hashMap = new HashMap<>();

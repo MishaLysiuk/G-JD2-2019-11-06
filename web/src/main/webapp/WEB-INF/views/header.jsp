@@ -15,10 +15,12 @@
 <header>
     <nav>
         <div class="nav-wrapper blue darken-2">
-            <a href="${profile}/" class="brand-logo left">FindDreamJob<i class="material-icons right">brightness_3</i></a>
+            <a href="${profile}/" class="brand-logo left">FindDreamJob<i
+                    class="material-icons right">brightness_3</i></a>
             <ul class="right hide-on-med-and-down">
                 <sec:authorize access="hasRole('USER')">
-                    <li><a href="${profile}/"><spring:message code="header.myAccount"></spring:message><i class="material-icons left">account_box</i></a></li>
+                    <li><a href="${profile}/"><spring:message code="header.myAccount"></spring:message><i
+                            class="material-icons left">account_box</i></a></li>
                     <ul id="additional" class="dropdown-content">
                         <li><a href="${education}/"><spring:message code="header.education"></spring:message></a></li>
                         <li><a href="${language}/"><spring:message code="header.language"></spring:message></a></li>
@@ -27,15 +29,32 @@
                         <li><a href="${course}/"><spring:message code="header.course"></spring:message></a></li>
                         <li><a href="${skill}/"><spring:message code="header.skill"></spring:message></a></li>
                     </ul>
-                    <li><a class="dropdown-trigger" href="#!" data-target="additional"><spring:message code="header.moreInformation"></spring:message><i
+                    <li><a class="dropdown-trigger" href="#!" data-target="additional"><spring:message
+                            code="header.moreInformation"></spring:message><i
                             class="material-icons left">apps</i></a></li>
 
-                    <ul id="search" class="dropdown-content">
-                        <li><a href="${worker}"><spring:message code="header.workers"></spring:message></a></li>
-                        <li><a href="${findVacancy}"><spring:message code="header.findVacancy"></spring:message></a></li>
+                    <ul id="searchVacancy" class="dropdown-content">
+                        <li><a href="${findVacancy}/byCompany"><spring:message
+                                code="header.searchVacancy.byCompany"></spring:message></a></li>
+                        <li><a href="${findVacancy}/byCity"><spring:message
+                                code="header.searchVacancy.byCity"></spring:message></a>
+                        <li><a href="${findVacancy}/byJobTitle"><spring:message
+                                code="header.searchVacancy.byJobTitle"></spring:message></a>
+                        </li>
                     </ul>
-                    <li><a class="dropdown-trigger" href="#!" data-target="search"><spring:message code="header.search"></spring:message><i
+                    <li><a class="dropdown-trigger" href="#!" data-target="searchVacancy"><spring:message
+                            code="header.searchVacancy"></spring:message><i
                             class="material-icons left">search</i></a></li>
+
+                    <ul id="searchWorker" class="dropdown-content">
+                        <li><a href="${worker}"><spring:message code="header.searchWorker.all"></spring:message></a>
+                        <li><a href="${worker}/byJobTitle"><spring:message
+                                code="header.searchWorker.byJobTitle"></spring:message></a>
+                        </li>
+                    </ul>
+                    <li><a class="dropdown-trigger" href="#!" data-target="searchWorker"><spring:message
+                            code="header.searchWorker"></spring:message><i
+                            class="material-icons left">group</i></a></li>
 
                     <li><a href="${myVacancy}"><spring:message code="header.myVacancy"></spring:message><i
                             class="material-icons left">work</i></a></li>

@@ -45,9 +45,17 @@ public abstract class AbstractTest {
 
     @BeforeEach
     public void setUpMethod() {
-        // clean DB recursive
-        //modelService.deleteAll();
-        // userPortfolioService.deleteAll();
+        cityService.getAll();
+        companyService.deleteAll();
+        countryService.deleteAll();
+        degreeService.deleteAll();
+        groupService.deleteAll();
+        levelService.deleteAll();
+        languageService.deleteAll();
+        regionService.deleteAll();
+        specialityService.deleteAll();
+        userAccountService.deleteAll();
+        vacancyService.deleteAll();
     }
 
     protected String getRandomPrefix() {

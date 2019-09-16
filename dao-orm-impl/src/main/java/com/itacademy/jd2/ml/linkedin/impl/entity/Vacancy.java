@@ -4,6 +4,7 @@ import com.itacademy.jd2.ml.linkedin.entity.table.ICity;
 import com.itacademy.jd2.ml.linkedin.entity.table.ICompany;
 import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 import com.itacademy.jd2.ml.linkedin.entity.table.IVacancy;
+import org.hibernate.search.annotations.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,11 +12,13 @@ import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 
 @Entity
+@Indexed
 public class Vacancy extends BaseEntity implements IVacancy {
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = UserAccount.class)
     private IUserAccount creator;
     @Column
+    @Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO)
     private String jobTitle;
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Company.class)
     private ICompany company;

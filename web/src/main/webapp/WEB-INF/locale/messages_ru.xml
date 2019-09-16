@@ -15,6 +15,12 @@
     <entry key="header.findVacancy">Работа</entry>
     <entry key="header.myVacancy">Мои вакансии</entry>
     <entry key="header.moreInformation">Больше информации</entry>
-    <entry key="header.search">Поиск</entry>
+    <entry key="header.searchVacancy">Поиск работы</entry>
+    <entry key="header.searchVacancy.byCompany">По компании</entry>
+    <entry key="header.searchVacancy.byCity">По местоположению</entry>
+    <entry key="header.searchVacancy.byJobTitle">По заголовку</entry>
+    <entry key="header.searchWorker">Поиск работников</entry>
+    <entry key="header.searchWorker.byJobTitle">По заголовку</entry>
+    <entry key="header.searchWorker.all">Все работники</entry>
 
 </properties>

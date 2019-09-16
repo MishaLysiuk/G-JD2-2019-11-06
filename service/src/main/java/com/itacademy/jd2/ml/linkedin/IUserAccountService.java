@@ -5,6 +5,7 @@ import com.itacademy.jd2.ml.linkedin.entity.table.IUserAccount;
 import com.itacademy.jd2.ml.linkedin.filter.UserAccountFilter;
 
 import javax.transaction.Transactional;
+import java.util.Arrays;
 import java.util.List;
 
 public interface IUserAccountService {
@@ -39,4 +40,7 @@ public interface IUserAccountService {
     IUserAccount getUserCourses(Integer id);
 
     boolean checkPassword(String userPassword, String oldPassword, String newPassword, String confirmPassword);
+
+    @Transactional
+    List<IUserAccount> searchByJobTitle(String jobTitle);
 }

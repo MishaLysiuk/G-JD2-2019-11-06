@@ -2,32 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4fdadc5c-09c1-423b-8a65-e565040cd045" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Linkedin_postgres_create.sql" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Linkedin_postgres_create.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/IUserAccountDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/IUserAccountDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/IVacancyDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/IVacancyDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/UserAccountDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/UserAccountDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/VacancyDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/VacancyDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/entity/UserAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/entity/UserAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/entity/Vacancy.java" beforeDir="false" afterPath="$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/entity/Vacancy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/IUserAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/IUserAccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/IVacancyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/IVacancyService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/impl/UserAccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/impl/UserAccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/impl/VacancyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/impl/VacancyServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/AbstractTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/AbstractTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/test/resources/jdbc-test.properties" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/resources/jdbc-test.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/FindVacancyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/FindVacancyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/MyVacancyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/MyVacancyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/ProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/UserAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/UserAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/dto/PasswordDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/dto/PasswordDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/locale/messages_en.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/locale/messages_en.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/locale/messages_ru.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/locale/messages_ru.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/tags/paging.tag" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/tags/paging.tag" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/tiles-definitions/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/tiles-definitions/views.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/errors/images/404.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/images/404.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/footer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/account/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/account/form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/account/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/account/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/find-vacancy/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/find-vacancy/form.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/find-vacancy/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/find-vacancy/list.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/main-template.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/main-template.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/my-vacancy/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/my-vacancy/form.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/my-vacancy/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/my-vacancy/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/course/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/course/form.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/course/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/course/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/education/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/education/form.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/education/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/education/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/language/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/language/form.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/language/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/language/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/skills/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/skills/form.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/skills/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/skills/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/work-experience/form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/work-experience/form.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/work-experience/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/work-experience/list.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/dao-orm-impl/target/" />
@@ -59,28 +61,61 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/CourseController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="167">
+              <caret line="79" column="5" lean-forward="true" selection-start-line="78" selection-start-column="64" selection-end-line="79" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/course/form.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="54" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/education/form.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="30" column="50" lean-forward="true" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/EducationController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="269">
+              <caret line="111" column="42" selection-start-line="111" selection-start-column="42" selection-end-line="111" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
         <option value="HTML File" />
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>IUserAccount</find>
-      <find>UserAccountFilter</find>
-      <find>ISpeciality</find>
       <find>SpecialityFilter</find>
       <find>ICompany</find>
       <find>ICourse</find>
       <find>getFullInfo</find>
-      <find>UserAccount</find>
       <find>Company</find>
       <find>City</find>
       <find>Cours</find>
@@ -103,6 +138,10 @@
       <find>vaca</find>
       <find>UserLanguage</find>
       <find>WorkExperience</find>
+      <find>UserAccount</find>
+      <find>header.search.byCity</find>
+      <find>header.search.byJobTitle</find>
+      <find>acco</find>
     </findStrings>
     <replaceStrings>
       <replace>IVacancy</replace>
@@ -143,57 +182,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/SkillServiceTest.java" />
-        <option value="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/RegionServiceTest.java" />
-        <option value="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/CountryServiceTest.java" />
-        <option value="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/CityServiceTest.java" />
-        <option value="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/AbstractTest.java" />
-        <option value="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/converter/fromDTO/EducationFromDTOConverter.java" />
-        <option value="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/UserAccountServiceTest.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/converter/toDTO/EducationToDTOConverter.java" />
-        <option value="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/WorkExperienceController.java" />
-        <option value="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/EducationController.java" />
-        <option value="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/converter/toDTO/WorkExperienceToDTOConverter.java" />
-        <option value="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/CourseController.java" />
-        <option value="$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/EducationDaoImpl.java" />
-        <option value="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/SkillController.java" />
-        <option value="$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/VacancyDaoImpl.java" />
-        <option value="$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/UserAccountDaoImpl.java" />
-        <option value="$PROJECT_DIR$/docs/Linkedin_postgres_create.sql" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/database.jsp" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/database.html" />
-        <option value="$PROJECT_DIR$/web/src/main/resources/security-context.xml" />
-        <option value="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/FooterController.java" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/images/users" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/main-template.jsp" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/footer.jsp" />
-        <option value="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/UserAccountController.java" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/tiles-definitions/views.xml" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/IUserAccountService.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/impl/UserAccountServiceImpl.java" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/locale/messages_ru.xml" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/locale/messages_en.xml" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/dto/Password.java" />
         <option value="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/converter/fromDTO/PasswordFromDTOConverter.java" />
-        <option value="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/ProfileController.java" />
-        <option value="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/dto/PasswordDTO.java" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/password.jsp" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile.jsp" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/my-vacancy/form.jsp" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/my-vacancy/list.jsp" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/header.jsp" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/course/form.jsp" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/course/list.jsp" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/tags/paging.tag" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/education/list.jsp" />
-        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/education/form.jsp" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/language/list.jsp" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/language/form.jsp" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/skills/list.jsp" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/skills/form.jsp" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/work-experience/list.jsp" />
         <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/work-experience/form.jsp" />
+        <option value="$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/CompanyDaoImpl.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/impl/VacancyServiceImpl.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/IVacancyService.java" />
+        <option value="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/IVacancyDao.java" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/MyVacancyController.java" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/my-vacancy/list.jsp" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/my-vacancy/form.jsp" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/find-vacancy/find-by-company.jsp" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/dto/JobTitleDTO.java" />
+        <option value="$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/entity/Vacancy.java" />
+        <option value="$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/VacancyDaoImpl.java" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/dto/LocationDTO.java" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/find-vacancy/find-by-job-title.jsp" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/find-vacancy/find-by-city.jsp" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/find-vacancy/list.jsp" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/find-vacancy/form.jsp" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/locale/messages_en.xml" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/header.jsp" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/locale/messages_ru.xml" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/ProfileController.java" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/dto/PasswordDTO.java" />
+        <option value="$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/entity/UserAccount.java" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/FindVacancyController.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/impl/UserAccountServiceImpl.java" />
+        <option value="$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/IUserAccountDao.java" />
+        <option value="$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/UserAccountDaoImpl.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/IUserAccountService.java" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/tiles-definitions/views.xml" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/account/find-by-job-title.jsp" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/login.jsp" />
+        <option value="$PROJECT_DIR$/service/src/test/resources/jdbc-test.properties" />
+        <option value="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/AbstractTest.java" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/account/list.jsp" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/main-template.jsp" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/account/form.jsp" />
+        <option value="$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/UserAccountController.java" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/education/form.jsp" />
+        <option value="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/course/form.jsp" />
       </list>
     </option>
   </component>
@@ -210,7 +249,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="390" />
     <option name="y" value="68" />
     <option name="width" value="1300" />
@@ -467,6 +506,17 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="locale" type="462c0819:PsiDirectoryNode" />
+              <item name="Resource Bundle 'messages'" type="a6c14932:ResourceBundleNode" />
+            </path>
+            <path>
+              <item name="parent-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G-JD2-2019-11-06" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="tiles-definitions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -489,6 +539,18 @@
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="profile" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="parent-project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="G-JD2-2019-11-06" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="profile" type="462c0819:PsiDirectoryNode" />
+              <item name="education" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -704,7 +766,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="357303000" />
+    <option name="totallyTimeSpent" value="377950000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -717,8 +779,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.2185501" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49945828" visible="true" weight="0.2185501" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Persistence" order="3" side_tool="true" />
@@ -731,7 +794,7 @@
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32936078" />
       <window_info anchor="bottom" id="Run" order="3" weight="0.3066089" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49946696" weight="0.3997833" />
+      <window_info active="true" anchor="bottom" id="Debug" order="4" sideWeight="0.49946696" visible="true" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32936078" />
@@ -757,34 +820,19 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/CourseController.java</url>
+          <line>90</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/SkillController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="69" column="110" lean-forward="true" selection-start-line="69" selection-start-column="110" selection-end-line="69" selection-end-column="110" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/entity/UserAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="36" column="111" lean-forward="true" selection-start-line="36" selection-start-column="111" selection-end-line="36" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/impl/VacancyServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="66" column="21" selection-start-line="66" selection-start-column="21" selection-end-line="66" selection-end-column="21" />
-          <folding>
-            <element signature="e#1609#1610#0" expanded="true" />
-            <element signature="e#1648#1649#0" expanded="true" />
-            <element signature="e#1726#1727#0" expanded="true" />
-            <element signature="e#1779#1780#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/converter/toDTO/VacancyToDTOConverter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -792,193 +840,265 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/MyVacancyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="111" column="40" lean-forward="true" selection-start-line="111" selection-start-column="40" selection-end-line="111" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/WorkExperienceController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="61" column="64" selection-start-line="61" selection-start-column="64" selection-end-line="61" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/dto/LocationDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <folding>
+            <element signature="e#234#235#0" expanded="true" />
+            <element signature="e#283#284#0" expanded="true" />
+            <element signature="e#323#324#0" expanded="true" />
+            <element signature="e#360#361#0" expanded="true" />
+            <element signature="e#392#393#0" expanded="true" />
+            <element signature="e#443#444#0" expanded="true" />
+            <element signature="e#485#486#0" expanded="true" />
+            <element signature="e#519#520#0" expanded="true" />
+            <element signature="e#548#549#0" expanded="true" />
+            <element signature="e#593#594#0" expanded="true" />
+            <element signature="e#629#630#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/find-vacancy/form.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="72" column="6" selection-start-line="72" selection-start-column="6" selection-end-line="72" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/find-vacancy/find-by-city.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="31" column="75" lean-forward="true" selection-start-line="31" selection-start-column="75" selection-end-line="31" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/impl/EducationServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-105">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/EducationDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-221">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/impl/VacancyServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="81" column="36" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
+          <folding>
+            <element signature="e#1609#1610#0" expanded="true" />
+            <element signature="e#1648#1649#0" expanded="true" />
+            <element signature="e#1726#1727#0" expanded="true" />
+            <element signature="e#1779#1780#0" expanded="true" />
+            <element signature="e#2112#2113#0" expanded="true" />
+            <element signature="e#2165#2166#0" expanded="true" />
+            <element signature="e#2240#2241#0" expanded="true" />
+            <element signature="e#2291#2292#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/VacancyDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="30" column="24" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="24" />
+        <state relative-caret-position="197">
+          <caret line="122" column="15" selection-start-line="122" selection-start-column="15" selection-end-line="122" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/UserAccountDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/HibernateSearchInitializer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="29" column="59" lean-forward="true" selection-start-line="29" selection-start-column="59" selection-end-line="29" selection-end-column="59" />
+        <state relative-caret-position="340">
+          <caret line="28" column="54" lean-forward="true" selection-start-line="28" selection-start-column="54" selection-end-line="28" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/images/dreamJob.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/Linkedin_postgres_create.sql">
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/locale/messages_en.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4675">
-          <caret line="275" column="41" selection-start-line="275" selection-start-column="41" selection-end-line="275" selection-end-column="41" />
+        <state relative-caret-position="289">
+          <caret line="17" column="56" lean-forward="true" selection-start-line="17" selection-start-column="56" selection-end-line="17" selection-end-column="56" />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/locale/messages_ru.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="58" lean-forward="true" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/dto/PasswordDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="82" lean-forward="true" selection-start-line="17" selection-start-column="82" selection-end-line="17" selection-end-column="82" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/images/database.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/database.html">
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/password.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="50" lean-forward="true" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
+        <state relative-caret-position="153">
+          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/entity/UserAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="60" column="70" selection-start-line="60" selection-start-column="70" selection-end-line="60" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/find-vacancy/find-by-company.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="38" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/FindVacancyController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="56" column="5" lean-forward="true" selection-start-line="37" selection-start-column="4" selection-end-line="56" selection-end-column="5" />
+        <state relative-caret-position="552">
+          <caret line="158" column="75" selection-start-line="158" selection-start-column="75" selection-end-line="158" selection-end-column="75" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/resources/security-context.xml">
+    <entry file="file://$PROJECT_DIR$/dao-api/src/main/java/com/itacademy/jd2/ml/linkedin/IUserAccountDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="68" lean-forward="true" selection-start-line="17" selection-start-column="68" selection-end-line="17" selection-end-column="68" />
+        <state relative-caret-position="68">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/FooterController.java">
+    <entry file="file://$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/UserAccountDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/images/users">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/database.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="44" lean-forward="true" selection-start-column="44" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/footer.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="111" lean-forward="true" selection-start-line="7" selection-start-column="111" selection-end-line="7" selection-end-column="111" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/UserAccountController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="81" column="5" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/main-template.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="73" lean-forward="true" selection-start-line="11" selection-start-column="73" selection-end-line="11" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/registration.jsp">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/tiles-definitions/views.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="68" column="70" selection-start-line="68" selection-start-column="70" selection-end-line="68" selection-end-column="70" />
+        <state relative-caret-position="1402">
+          <caret line="131" column="120" lean-forward="true" selection-start-line="131" selection-start-column="120" selection-end-line="131" selection-end-column="120" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/IUserAccountService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="40" column="26" lean-forward="true" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="45" />
+        <state relative-caret-position="646">
+          <caret line="43" column="18" selection-start-line="43" selection-start-column="18" selection-end-line="43" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/impl/UserAccountServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="97" column="25" lean-forward="true" selection-start-line="97" selection-start-column="25" selection-end-line="97" selection-end-column="25" />
+        <state relative-caret-position="535">
+          <caret line="103" column="32" lean-forward="true" selection-start-line="103" selection-start-column="32" selection-end-line="103" selection-end-column="32" />
           <folding>
-            <element signature="e#1721#1722#0" expanded="true" />
-            <element signature="e#1760#1761#0" expanded="true" />
+            <element signature="e#1603#1604#0" expanded="true" />
+            <element signature="e#1642#1643#0" expanded="true" />
+            <element signature="e#2610#2611#0" expanded="true" />
+            <element signature="e#2637#2638#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.1.5.RELEASE/spring-context-5.1.5.RELEASE.jar!/org/springframework/context/MessageSource.class">
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/tiles-definitions/views.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="82" column="74" selection-start-line="82" selection-start-column="74" selection-end-line="82" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/find-vacancy/find-by-job-title.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="38" lean-forward="true" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/find-vacancy/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="422">
+          <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/account/find-by-job-title.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="51" column="68" selection-start-line="51" selection-start-column="68" selection-end-line="51" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="18" lean-forward="true" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+        <state relative-caret-position="51">
+          <caret line="3" column="33" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/locale/messages_ru.xml">
+    <entry file="file://$PROJECT_DIR$/service/src/test/resources/jdbc-test.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="15" lean-forward="true" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/CourseServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
-          <caret line="4" column="61" lean-forward="true" selection-start-line="4" selection-start-column="61" selection-end-line="4" selection-end-column="61" />
-        </state>
-      </provider>
-      <provider editor-type-id="ResourceBundle" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/locale/messages_en.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="66" lean-forward="true" selection-start-line="6" selection-start-column="66" selection-end-line="6" selection-end-column="66" />
-        </state>
-      </provider>
-      <provider editor-type-id="ResourceBundle" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="93" lean-forward="true" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/converter/fromDTO/LanguageFromDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="11" column="72" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/converter/fromDTO/RegionFromDTOConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/converter/fromDTO/PasswordFromDTOConverter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="39" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/dto/UserLanguageDTO.java">
+    <entry file="file://$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/EducationServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/WorkExperienceController.java">
+    <entry file="file://$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/UserLanguageServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="74" column="60" lean-forward="true" selection-start-line="74" selection-start-column="60" selection-end-line="74" selection-end-column="60" />
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/AbstractTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="799">
+          <caret line="57" column="35" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -989,133 +1109,118 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/dto/PasswordDTO.java">
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/main-template.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="82" lean-forward="true" selection-start-line="17" selection-start-column="82" selection-end-line="17" selection-end-column="82" />
-          <folding>
-            <element signature="e#212#213#0" expanded="true" />
-            <element signature="e#246#247#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="153">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/account/list.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="88" lean-forward="true" selection-start-line="35" selection-start-column="88" selection-end-line="35" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/CourseDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="61" column="15" selection-start-line="61" selection-start-column="15" selection-end-line="61" selection-end-column="15" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/ProfileController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="93" column="61" lean-forward="true" selection-start-line="93" selection-start-column="61" selection-end-line="93" selection-end-column="61" />
+        <state relative-caret-position="969">
+          <caret line="78" column="30" lean-forward="true" selection-start-line="78" selection-start-column="30" selection-end-line="78" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/my-vacancy/form.jsp">
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/account/form.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/my-vacancy/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/header.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="30" column="60" selection-start-line="30" selection-start-column="60" selection-end-line="30" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="71" column="48" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/course/form.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="52" column="133" lean-forward="true" selection-start-line="52" selection-start-column="133" selection-end-line="52" selection-end-column="133" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/tags/paging.tag">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="55" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
+        <state relative-caret-position="756">
+          <caret line="63" column="14" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/course/list.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+        <state relative-caret-position="408">
+          <caret line="30" column="120" lean-forward="true" selection-start-line="30" selection-start-column="120" selection-end-line="30" selection-end-column="120" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/education/list.jsp">
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/ICourseService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="53" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
+        <state relative-caret-position="136">
+          <caret line="12" column="11" lean-forward="true" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao-orm-impl/src/main/java/com/itacademy/jd2/ml/linkedin/impl/AbstractDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <element signature="e#1518#1519#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/impl/CourseServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/converter/toDTO/UserAccountToDTOConverter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/UserAccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-683">
+          <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/itacademy/jd2/ml/linkedin/impl/CompanyServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/education/form.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="72" column="83" selection-start-line="72" selection-start-column="83" selection-end-line="72" selection-end-column="83" />
+        <state relative-caret-position="255">
+          <caret line="30" column="50" lean-forward="true" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/language/list.jsp">
+    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/course/form.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="58" selection-start-line="33" selection-start-column="58" selection-end-line="33" selection-end-column="58" />
+        <state relative-caret-position="221">
+          <caret line="13" column="54" selection-start-line="13" selection-start-column="54" selection-end-line="13" selection-end-column="54" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/language/form.jsp">
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/EducationController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="37" column="74" selection-start-line="37" selection-start-column="74" selection-end-line="37" selection-end-column="74" />
+        <state relative-caret-position="269">
+          <caret line="111" column="42" selection-start-line="111" selection-start-column="42" selection-end-line="111" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/skills/list.jsp">
+    <entry file="file://$PROJECT_DIR$/web/src/main/java/com/itacademy/jd2/ml/linkedin/web/controller/CourseController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="58" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/password.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/skills/form.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="74" selection-start-line="27" selection-start-column="74" selection-end-line="27" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/work-experience/list.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="53" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/profile/work-experience/form.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="65" column="74" selection-start-line="65" selection-start-column="74" selection-end-line="65" selection-end-column="74" />
+        <state relative-caret-position="167">
+          <caret line="79" column="5" lean-forward="true" selection-start-line="78" selection-start-column="64" selection-end-line="79" selection-end-column="5" />
         </state>
       </provider>
     </entry>

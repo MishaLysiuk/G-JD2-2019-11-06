@@ -3,26 +3,41 @@
 <%@ taglib prefix="mytaglib" uri="my-custom-tags-uri" %>
 <%@ taglib prefix="jspFragments" tagdir="/WEB-INF/tags" %>
 
-<h4 class="header">Find vacancies</h4>
+<div class="row ">
+    <div class="col s6 offset-s3">
+        <h1>Search results</h1>
+    </div>
+</div>
+
 <table class="stripped highlight ">
     <tbody>
     <tr>
-        <th><mytaglib:sort-link pageUrl="${myVacancy}" column="job_title">Job title</mytaglib:sort-link></th>
-        <th><mytaglib:sort-link pageUrl="${myVacancy}" column="contact_info">Contact info</mytaglib:sort-link></th>
-        <th><mytaglib:sort-link pageUrl="${myVacancy}" column="company">Company</mytaglib:sort-link></th>
-        <th><mytaglib:sort-link pageUrl="${myVacancy}" column="address">Location</mytaglib:sort-link></th>
+        <th>Job title</th>
+        <th>Contact info</th>
+        <th>Company</th>
+        <th>Location</th>
         <th></th>
     </tr>
-    <c:forEach var="vacancy" items="${gridItems}" varStatus="loopCounter ">
+    <c:forEach var="item" items="${vacancies}" varStatus="loopCounter ">
         <tr>
-            <td><c:out value="${vacancy.jobTitle}"/></td>
-            <td><c:out value="${vacancy.contactInfo}"/></td>
-            <td><c:out value="${vacancy.companyName}"/></td>
-            <td><c:out value="${vacancy.address}"/></td>
-            <td class="right"><a class="btn-floating blue darken-2" href="${findVacancy}/${vacancy.id}"><i
+            <td><c:out value="${item.jobTitle}"/></td>
+            <td><c:out value="${item.contactInfo}"/></td>
+            <td><c:out value="${item.companyName}"/></td>
+            <td><c:out value="${item.address}"/></td>
+            <td class="right"><a target="_blank" class="btn-floating blue darken-2" href="${findVacancy}/${item.id}"><i
                     class="material-icons">info</i></a>
+            </td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
 <jspFragments:paging/>
+<c:if test="${company}">
+    <a class="blue darken-2 btn right " href="${findVacancy}/byCompany">Search again</a>
+</c:if>
+<c:if test="${job}">
+    <a class="blue darken-2 btn right " href="${findVacancy}/byJobTitle">Search again</a>
+</c:if>
+<c:if test="${city}">
+    <a class="blue darken-2 btn right " href="${findVacancy}/byCity">Search again</a>
+</c:if>

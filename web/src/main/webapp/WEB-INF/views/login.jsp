@@ -1,7 +1,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<div class="row s12">
-    <h2>Login with Email and Password</h2>
+
+<div class="row ">
+    <div class="col s12 offset-s2">
+        <h1>Login with email and password</h1>
+    </div>
 </div>
+
 <div class="row">
     <div class="col s3"></div>
     <div class="col s6">

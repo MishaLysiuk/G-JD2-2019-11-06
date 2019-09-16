@@ -15,6 +15,12 @@
     <entry key="header.findVacancy">Jobs</entry>
     <entry key="header.myVacancy">My vacancies</entry>
     <entry key="header.moreInformation">More information</entry>
-    <entry key="header.search">Search</entry>
+    <entry key="header.searchVacancy">Search job</entry>
+    <entry key="header.searchVacancy.byCompany">By company</entry>
+    <entry key="header.searchVacancy.byCity">By location</entry>
+    <entry key="header.searchVacancy.byJobTitle">By job title</entry>
+    <entry key="header.searchWorker">Search workers</entry>
+    <entry key="header.searchWorker.byJobTitle">By job title</entry>
+    <entry key="header.searchWorker.all">All workers</entry>
 
 </properties>

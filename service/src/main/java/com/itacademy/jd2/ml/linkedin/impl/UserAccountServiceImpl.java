@@ -66,7 +66,6 @@ public class UserAccountServiceImpl implements IUserAccountService {
         return dao.search(text);
     }
 
-
     @Override
     public List<IUserAccount> find(UserAccountFilter filter) {
         return dao.find(filter);
@@ -98,6 +97,11 @@ public class UserAccountServiceImpl implements IUserAccountService {
             return false;
         }
         return false;
+    }
+
+    @Override
+    public List<IUserAccount> searchByJobTitle(String jobTitle) {
+        return dao.searchByJobTitle(jobTitle);
     }
 
     @Override

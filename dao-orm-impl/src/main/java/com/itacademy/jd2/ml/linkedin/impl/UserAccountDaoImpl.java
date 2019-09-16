@@ -124,6 +124,19 @@ public class UserAccountDaoImpl extends AbstractDaoImpl<IUserAccount, Integer> i
     }
 
     @Override
+    public List<IUserAccount> searchByJobTitle(String jobTitle) {
+        EntityManager em = getEntityManager();
+        FullTextEntityManager fullTextEntityManager = org.hibernate.search.jpa.Search.getFullTextEntityManager(em);
+
+        QueryBuilder qb = fullTextEntityManager.getSearchFactory().buildQueryBuilder().forEntity(UserAccount.class).get();
+        org.apache.lucene.search.Query luceneQuery = qb.keyword().onFields("jobTitle").matching(jobTitle).createQuery();
+
+        javax.persistence.Query jpaQuery = fullTextEntityManager.createFullTextQuery(luceneQuery, UserAccount.class);
+
+        return jpaQuery.getResultList();
+    }
+
+    @Override
     public IUserAccount getUserEducation(Integer id) {
         final EntityManager em = getEntityManager();
         final CriteriaBuilder cb = em.getCriteriaBuilder();

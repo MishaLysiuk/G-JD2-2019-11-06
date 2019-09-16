@@ -11,6 +11,7 @@
     <form:form class="col s12" method="post" action="${course}/add" modelAttribute="course">
         <div class="row">
             <div class="input-field col s12">
+                <form:input path="id" type="hidden" />
                 <form:input path="name" type="text" required="required" disabled="${readonly}"/>
                 <form:errors path="name" cssClass="red-text"/>
                 <label for="name">Name</label>

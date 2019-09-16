@@ -1,6 +1,5 @@
 package com.itacademy.jd2.ml.linkedin;
 
-import com.itacademy.jd2.ml.linkedin.entity.table.ICourse;
 import com.itacademy.jd2.ml.linkedin.entity.table.IVacancy;
 import com.itacademy.jd2.ml.linkedin.filter.VacancyFilter;
 
@@ -30,4 +29,13 @@ public interface IVacancyService {
     long getCount(VacancyFilter filter);
 
     IVacancy getFullInfo(Integer id);
+
+    List<IVacancy> findByCompany(String compamyName);
+
+    List<IVacancy> findByJobTitle(String jobTitle);
+
+    @Transactional
+    List<IVacancy> searchByJobTitle(String jobTitle);
+
+    List<IVacancy> findByCityId(Integer cityId);
 }

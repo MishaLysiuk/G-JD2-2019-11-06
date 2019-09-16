@@ -100,7 +100,3 @@
         });
     });
 </script>
-<script src="${pageContext.request.contextPath}/resources/js/init-combos.js"></script>
-<script>
-    initComboboxes('${pageContext.request.contextPath}');
-</script>

@@ -58,6 +58,7 @@ public class UserAccount extends BaseEntity implements IUserAccount {
     private Date birthday;
 
     @Column
+    @Field(index = Index.YES, analyze = Analyze.YES, store = Store.NO)
     private String jobTitle;
 
     @Column

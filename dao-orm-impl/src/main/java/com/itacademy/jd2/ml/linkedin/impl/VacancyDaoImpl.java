@@ -3,10 +3,10 @@ package com.itacademy.jd2.ml.linkedin.impl;
 import com.itacademy.jd2.ml.linkedin.IVacancyDao;
 import com.itacademy.jd2.ml.linkedin.entity.table.IVacancy;
 import com.itacademy.jd2.ml.linkedin.filter.VacancyFilter;
-import com.itacademy.jd2.ml.linkedin.impl.entity.UserAccount_;
-import com.itacademy.jd2.ml.linkedin.impl.entity.Vacancy;
-import com.itacademy.jd2.ml.linkedin.impl.entity.Vacancy_;
+import com.itacademy.jd2.ml.linkedin.impl.entity.*;
 import org.hibernate.jpa.criteria.OrderImpl;
+import org.hibernate.search.jpa.FullTextEntityManager;
+import org.hibernate.search.query.dsl.QueryBuilder;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -121,5 +121,74 @@ public class VacancyDaoImpl extends AbstractDaoImpl<IVacancy,Integer> implements
         final TypedQuery<IVacancy> q = em.createQuery(cq);
 
         return getSingleResult(q);
+    }
+
+    @Override
+    public List<IVacancy> findByCompany(String compamyName) {
+        final EntityManager em = getEntityManager();
+        final CriteriaBuilder cb = em.getCriteriaBuilder();
+        final CriteriaQuery<IVacancy> cq = cb.createQuery(IVacancy.class);
+        final Root<Vacancy> from = cq.from(Vacancy.class);
+        cq.select(from);
+
+        from.fetch(Vacancy_.company, JoinType.LEFT);
+        from.fetch(Vacancy_.city, JoinType.LEFT);
+
+        cq.where(cb.like(cb.lower(from.get(Vacancy_.company).get(Company_.name)), "%" + compamyName.toLowerCase() + "%"));
+        final TypedQuery<IVacancy> q = em.createQuery(cq);
+
+        List<IVacancy> resultList = q.getResultList();
+        return resultList;
+    }
+
+    @Override
+    public List<IVacancy> findByJobTitle(String jobTitle) {
+        final EntityManager em = getEntityManager();
+        final CriteriaBuilder cb = em.getCriteriaBuilder();
+        final CriteriaQuery<IVacancy> cq = cb.createQuery(IVacancy.class);
+        final Root<Vacancy> from = cq.from(Vacancy.class);
+        cq.select(from);
+
+        from.fetch(Vacancy_.company, JoinType.LEFT);
+        from.fetch(Vacancy_.city, JoinType.LEFT);
+
+        cq.where(cb.like(cb.lower(from.get(Vacancy_.jobTitle)), "%" + jobTitle.toLowerCase() + "%"));
+        final TypedQuery<IVacancy> q = em.createQuery(cq);
+
+        List<IVacancy> resultList = q.getResultList();
+        return resultList;
+    }
+
+    @Override
+    public List<IVacancy> searchByJobTitle(String jobTitle) {
+
+        EntityManager em = getEntityManager();
+        FullTextEntityManager fullTextEntityManager = org.hibernate.search.jpa.Search.getFullTextEntityManager(em);
+
+        QueryBuilder qb = fullTextEntityManager.getSearchFactory().buildQueryBuilder().forEntity(Vacancy.class).get();
+        org.apache.lucene.search.Query luceneQuery = qb.keyword().onFields("jobTitle").matching(jobTitle).createQuery();
+
+        javax.persistence.Query jpaQuery = fullTextEntityManager.createFullTextQuery(luceneQuery, Vacancy.class);
+
+        return jpaQuery.getResultList();
+
+    }
+
+    @Override
+    public List<IVacancy> findByCityId(Integer cityId) {
+        final EntityManager em = getEntityManager();
+        final CriteriaBuilder cb = em.getCriteriaBuilder();
+        final CriteriaQuery<IVacancy> cq = cb.createQuery(IVacancy.class);
+        final Root<Vacancy> from = cq.from(Vacancy.class);
+        cq.select(from);
+
+        from.fetch(Vacancy_.company, JoinType.LEFT);
+        from.fetch(Vacancy_.city, JoinType.LEFT);
+
+        cq.where(cb.equal(from.get(Vacancy_.city).get(City_.id), cityId));
+        final TypedQuery<IVacancy> q = em.createQuery(cq);
+
+        List<IVacancy> resultList = q.getResultList();
+        return resultList;
     }
 }

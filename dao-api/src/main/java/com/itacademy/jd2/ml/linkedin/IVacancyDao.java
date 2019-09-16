@@ -14,4 +14,13 @@ public interface IVacancyDao extends IDao<IVacancy, Integer> {
     long getCount(VacancyFilter filter);
 
     IVacancy getFullInfo(Integer id);
+
+    List<IVacancy> findByCompany(String compamyName);
+
+    List<IVacancy> findByJobTitle(String jobTitle);
+
+    List<IVacancy> searchByJobTitle(String jobTitle);
+
+    List<IVacancy> findByCityId(Integer cityId);
+
 }

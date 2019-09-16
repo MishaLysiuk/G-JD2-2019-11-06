@@ -78,6 +78,11 @@
         <put-attribute name="body" value="/WEB-INF/views/account/form.jsp"/>
     </definition>
 
+    <definition name="account.findByJobTitle" extends="DefaultTemplate">
+        <put-attribute name="body"
+                       value="/WEB-INF/views/account/find-by-job-title.jsp"/>
+    </definition>
+
     <definition name="myVacancy.list" extends="DefaultTemplate">
         <put-attribute name="body" value="/WEB-INF/views/my-vacancy/list.jsp"/>
     </definition>
@@ -92,6 +97,18 @@
 
     <definition name="findVacancy.form" extends="DefaultTemplate">
         <put-attribute name="body" value="/WEB-INF/views/find-vacancy/form.jsp"/>
+    </definition>
+
+    <definition name="findVacancy.byCompany" extends="DefaultTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/find-vacancy/find-by-company.jsp"/>
+    </definition>
+
+    <definition name="findVacancy.byJobTitle" extends="DefaultTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/find-vacancy/find-by-job-title.jsp"/>
+    </definition>
+
+    <definition name="findVacancy.byCity" extends="DefaultTemplate">
+        <put-attribute name="body" value="/WEB-INF/views/find-vacancy/find-by-city.jsp"/>
     </definition>
 
     <definition name="login" extends="DefaultTemplate">

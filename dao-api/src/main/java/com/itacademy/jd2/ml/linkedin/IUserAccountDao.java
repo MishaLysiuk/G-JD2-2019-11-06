@@ -23,4 +23,6 @@ public interface IUserAccountDao extends IDao<IUserAccount, Integer> {
     List<IUserAccount> search(String text);
 
     IUserAccount getUserCourses(Integer id);
+
+    List<IUserAccount> searchByJobTitle(String jobTitle);
 }

@@ -82,5 +82,25 @@ public class VacancyServiceImpl implements IVacancyService {
         final IVacancy entity = dao.getFullInfo(id);
         return entity;
     }
-    
+
+    @Override
+    public List<IVacancy> findByCompany(String compamyName) {
+        return dao.findByCompany(compamyName);
+    }
+
+    @Override
+    public List<IVacancy> findByJobTitle(String jobTitle) {
+        return dao.findByJobTitle(jobTitle);
+    }
+
+    @Override
+    public List<IVacancy> searchByJobTitle(String jobTitle) {
+        return dao.searchByJobTitle(jobTitle);
+    }
+
+    @Override
+    public List<IVacancy> findByCityId(Integer cityId) {
+        return dao.findByCityId(cityId);
+    }
+
 }
