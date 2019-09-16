@@ -2,10 +2,10 @@
     <div class="container ">
         <div class="row">
             <div class="col l6 s12">
-                <a target="_blank" href="${contextPath}/images/database.png"><h5 class="white-text">Database</h5></a>
+                <a target="_blank" href="https://www.dropbox.com/s/xqinm1dc4j6f62r/database.png?dl=0"><h5 class="white-text">Database</h5></a>
             </div>
             <div class="col l6 s12">
-                <a target="_blank" href="${contextPath}/images/users.txt"><h5 class="white-text">Users</h5></a>
+                <a target="_blank" href="https://www.dropbox.com/s/m8bgs4eb0suzz3e/users.png?dl=0"><h5 class="white-text">Users</h5></a>
             </div>
         </div>
     </div>
