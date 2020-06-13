@@ -2,37 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe1facf1-d79b-484b-a403-e160a22e8158" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao-orm-impl/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dao-orm-impl/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/logger/LoggerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/AbstractTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/CityServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/CompanyServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/CountryServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/CourseServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/DegreeServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/EducationServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/GroupSkillServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/LanguageLevelServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/LanguageServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/RegionServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/SkillServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/SpecialityServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/UserAccountServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/UserLanguageServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/VacancyServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/service/WorkExperienceServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/itacademy/jd2/ml/linkedin/spring/ServiceSpringContextExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/resources/jdbc-test.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/resources/service-context-test.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/tiles-definitions/views.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/tiles-definitions/views.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/main/webapp/WEB-INF/views/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/src/test/resources/jetty-env.xml" beforeDir="false" afterPath="$PROJECT_DIR$/web/src/test/resources/jetty-env.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/service/target/" />
@@ -102,7 +72,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="390" />
     <option name="y" value="68" />
     <option name="width" value="1300" />
@@ -222,15 +192,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1592047234076</updated>
-      <workItem from="1592047235638" duration="2751000" />
+      <workItem from="1592047235638" duration="3370000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2751000" />
+    <option name="totallyTimeSpent" value="3370000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="32" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" />
