@@ -15,7 +15,7 @@
 <header>
     <nav>
         <div class="nav-wrapper blue darken-2">
-            <a href="${profile}/" class="brand-logo left">FindDreamJob<i
+            <a href="${profile}/" class="brand-logo left">WorldAroundYou<i
                     class="material-icons right">brightness_3</i></a>
             <ul class="right hide-on-med-and-down">
                 <sec:authorize access="hasRole('USER')">

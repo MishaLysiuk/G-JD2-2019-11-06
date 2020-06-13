@@ -6,9 +6,12 @@
         <Arg>jdbc/project-datasource</Arg>
         <Arg>
             <New class="org.apache.commons.dbcp.BasicDataSource">
-                <Set name="username">postgres</Set>
+                <!--<Set name="username">postgres</Set>
                 <Set name="password">0212</Set>
-                <Set name="url">jdbc:postgresql://localhost:5432/lm-linkedin</Set>
+                <Set name="url">jdbc:postgresql://localhost:5432/lm-linkedin</Set>-->
+                <Set name="username">omojhfgromygwu</Set>
+                <Set name="password">2c4e4915940551f58d40e486ef5111a634ec1b26cb2ce16a811b318a9b6c97c6</Set>
+                <Set name="url">jdbc:postgres://omojhfgromygwu:2c4e4915940551f58d40e486ef5111a634ec1b26cb2ce16a811b318a9b6c97c6@ec2-54-75-246-118.eu-west-1.compute.amazonaws.com:5432/dc5i54djns8ls0</Set>
             </New>
         </Arg>
     </New>
